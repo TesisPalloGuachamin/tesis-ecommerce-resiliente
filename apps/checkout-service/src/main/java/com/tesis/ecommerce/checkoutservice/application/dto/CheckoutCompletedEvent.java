@@ -14,10 +14,6 @@ public class CheckoutCompletedEvent {
 
     private UUID eventId;
     private UUID checkoutRequestId;
-    private UUID orderId;
-    private UUID userId;
-    private Double totalAmount;
-    private String status;
     private Long timestamp;
 
 }

@@ -6,6 +6,8 @@ import com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.dto.UserDTO;
 import com.tesis.ecommerce.coreapi.application.mapper.UserMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class GetCurrentUserUseCase {
 
@@ -17,7 +19,7 @@ public class GetCurrentUserUseCase {
         this.userMapper = userMapper;
     }
 
-    public UserDTO execute(Long userId) {
+    public UserDTO execute(UUID userId) {
         User user = userRepository.findById(userId)
             .orElseThrow(() -> new IllegalArgumentException("User not found"));
         return userMapper.toDTO(user);

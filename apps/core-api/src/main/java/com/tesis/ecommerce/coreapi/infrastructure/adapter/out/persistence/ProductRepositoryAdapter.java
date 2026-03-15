@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Component
 public class ProductRepositoryAdapter implements ProductRepository {
@@ -17,7 +18,7 @@ public class ProductRepositoryAdapter implements ProductRepository {
     }
 
     @Override
-    public Optional<Product> findById(Long id) {
+    public Optional<Product> findById(UUID id) {
         return jpaRepository.findById(id);
     }
 

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
+import java.util.UUID;
 
 @Component
 public class CheckoutRepositoryAdapter implements CheckoutRepository {
@@ -23,12 +24,12 @@ public class CheckoutRepositoryAdapter implements CheckoutRepository {
     }
 
     @Override
-    public Optional<CheckoutRequest> findByRequestId(String requestId) {
+    public Optional<CheckoutRequest> findByRequestId(UUID requestId) {
         return jpaRepository.findByRequestId(requestId);
     }
 
     @Override
-    public Optional<CheckoutRequest> findById(Long id) {
+    public Optional<CheckoutRequest> findById(UUID id) {
         return jpaRepository.findById(id);
     }
 }

@@ -6,6 +6,8 @@ import com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.dto.ProductDTO;
 import com.tesis.ecommerce.coreapi.application.mapper.ProductMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class GetProductByIdUseCase {
 
@@ -17,7 +19,7 @@ public class GetProductByIdUseCase {
         this.productMapper = productMapper;
     }
 
-    public ProductDTO execute(Long productId) {
+    public ProductDTO execute(UUID productId) {
         Product product = productRepository.findById(productId)
             .orElseThrow(() -> new IllegalArgumentException("Product not found"));
         return productMapper.toDTO(product);

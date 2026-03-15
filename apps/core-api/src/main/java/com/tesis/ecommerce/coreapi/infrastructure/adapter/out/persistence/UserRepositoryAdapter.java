@@ -5,6 +5,7 @@ import com.tesis.ecommerce.coreapi.domain.port.out.UserRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Component
 public class UserRepositoryAdapter implements UserRepository {
@@ -21,7 +22,7 @@ public class UserRepositoryAdapter implements UserRepository {
     }
 
     @Override
-    public Optional<User> findById(Long id) {
+    public Optional<User> findById(UUID id) {
         return jpaRepository.findById(id);
     }
 

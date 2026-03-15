@@ -54,10 +54,10 @@ public class JwtProviderAdapter implements JwtProvider {
     @Override
     public boolean validateToken(String token) {
         try {
-            Jwts.parserBuilder()
+            Jwts.parser()
                 .setSigningKey(secretKey)
                 .build()
-                .parseClaimsJws(token);
+                .parseSignedClaims(token);
             return true;
         } catch (Exception e) {
             return false;
@@ -65,11 +65,11 @@ public class JwtProviderAdapter implements JwtProvider {
     }
 
     private Claims getAllClaimsFromToken(String token) {
-        return Jwts.parserBuilder()
+        return Jwts.parser()
             .setSigningKey(secretKey)
             .build()
-            .parseClaimsJws(token)
-            .getBody();
+            .parseSignedClaims(token)
+            .getPayload();
     }
 }
 

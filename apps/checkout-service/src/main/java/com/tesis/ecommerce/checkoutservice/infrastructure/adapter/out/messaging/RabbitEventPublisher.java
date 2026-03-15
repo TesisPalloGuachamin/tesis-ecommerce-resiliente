@@ -48,8 +48,6 @@ public class RabbitEventPublisher implements EventPublisherPort {
         var event = CheckoutCompletedEvent.builder()
                 .eventId(UUID.randomUUID())
                 .checkoutRequestId(checkoutRequestId)
-                .orderId(orderId)
-                .status("COMPLETED")
                 .timestamp(System.currentTimeMillis())
                 .build();
 

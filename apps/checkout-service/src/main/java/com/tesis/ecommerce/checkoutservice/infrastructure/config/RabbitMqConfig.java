@@ -120,15 +120,4 @@ public class RabbitMqConfig {
     }
 
 }
-                .with(CHECKOUT_COMPLETED_ROUTING_KEY);
-    }
-
-    @Bean
-    public Binding checkoutFailedBinding() {
-        return BindingBuilder.bind(checkoutFailedQueue())
-                .to(checkoutExchange())
-                .with(CHECKOUT_FAILED_ROUTING_KEY);
-    }
-
-}
 

@@ -14,7 +14,6 @@ public class CheckoutFailedEvent {
 
     private UUID eventId;
     private UUID checkoutRequestId;
-    private UUID userId;
     private String reason;
     private Long timestamp;
 

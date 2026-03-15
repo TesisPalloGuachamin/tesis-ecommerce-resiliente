@@ -5,6 +5,7 @@ import com.tesis.ecommerce.coreapi.domain.port.out.CartItemRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Component
 public class CartItemRepositoryAdapter implements CartItemRepository {
@@ -21,7 +22,7 @@ public class CartItemRepositoryAdapter implements CartItemRepository {
     }
 
     @Override
-    public Optional<CartItem> findById(Long id) {
+    public Optional<CartItem> findById(UUID id) {
         return jpaRepository.findById(id);
     }
 

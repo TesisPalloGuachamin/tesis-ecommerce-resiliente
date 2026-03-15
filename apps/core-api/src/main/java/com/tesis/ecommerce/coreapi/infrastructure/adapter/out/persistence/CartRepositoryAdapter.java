@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
+import java.util.UUID;
 
 @Component
 public class CartRepositoryAdapter implements CartRepository {
@@ -23,12 +24,12 @@ public class CartRepositoryAdapter implements CartRepository {
     }
 
     @Override
-    public Optional<Cart> findByUserId(Long userId) {
+    public Optional<Cart> findByUserId(UUID userId) {
         return jpaRepository.findByUserId(userId);
     }
 
     @Override
-    public Optional<Cart> findById(Long id) {
+    public Optional<Cart> findById(UUID id) {
         return jpaRepository.findById(id);
     }
 }

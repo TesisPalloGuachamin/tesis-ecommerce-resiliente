@@ -6,6 +6,8 @@ import com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.dto.CheckoutReq
 import com.tesis.ecommerce.coreapi.application.mapper.CheckoutMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class GetCheckoutRequestUseCase {
 
@@ -17,7 +19,7 @@ public class GetCheckoutRequestUseCase {
         this.checkoutMapper = checkoutMapper;
     }
 
-    public CheckoutRequestDTO execute(String requestId) {
+    public CheckoutRequestDTO execute(UUID requestId) {
         CheckoutRequest request = checkoutRepository.findByRequestId(requestId)
             .orElseThrow(() -> new IllegalArgumentException("Checkout request not found"));
         return checkoutMapper.toDTO(request);
