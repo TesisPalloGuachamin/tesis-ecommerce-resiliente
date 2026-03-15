@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: core-api
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecommerce_test
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+server:
+  port: 8080
+
+jwt:
+  secret: "test-secret-key-that-should-be-at-least-32-characters-long"
+  expiration: 3600000
+
+logging:
+  level:
+    root: WARN
+
