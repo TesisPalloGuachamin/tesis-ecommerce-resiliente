@@ -12,7 +12,7 @@ CREATE TABLE products (
     sku VARCHAR(255) NOT NULL UNIQUE,
     name VARCHAR(255) NOT NULL,
     description TEXT,
-    price DOUBLE PRECISION NOT NULL,
+    price numeric(19,2) NOT NULL,
     stock INTEGER NOT NULL,
     active BOOLEAN NOT NULL DEFAULT true,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -31,7 +31,7 @@ CREATE TABLE cart_items (
     cart_id UUID NOT NULL,
     product_id UUID NOT NULL,
     quantity INTEGER NOT NULL,
-    unit_price DOUBLE PRECISION NOT NULL,
+    unit_price numeric(19,2) NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (cart_id) REFERENCES carts(id) ON DELETE CASCADE,
     FOREIGN KEY (product_id) REFERENCES products(id)
@@ -42,7 +42,7 @@ CREATE TABLE checkout_requests (
     request_id UUID NOT NULL UNIQUE,
     user_id UUID NOT NULL,
     cart_id UUID NOT NULL,
-    total_amount DOUBLE PRECISION NOT NULL,
+    total_amount numeric(19,2) NOT NULL,
     status VARCHAR(50) NOT NULL DEFAULT 'PENDING',
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,

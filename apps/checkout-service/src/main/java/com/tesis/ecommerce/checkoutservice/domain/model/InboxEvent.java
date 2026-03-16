@@ -18,6 +18,7 @@ public class InboxEvent {
 
     @Id
     @Column(columnDefinition = "UUID")
+    @Builder.Default
     private UUID id = UUID.randomUUID();
 
     @Column(name = "event_id", unique = true, nullable = false)

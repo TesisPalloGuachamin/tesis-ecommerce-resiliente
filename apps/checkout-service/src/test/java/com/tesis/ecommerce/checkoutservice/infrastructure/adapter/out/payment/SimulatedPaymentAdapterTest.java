@@ -2,6 +2,9 @@ package com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment;
 
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
+import java.util.UUID;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class SimulatedPaymentAdapterTest {
@@ -11,7 +14,7 @@ class SimulatedPaymentAdapterTest {
     @Test
     void testExecutePaymentReturnsResult() {
         // Act
-        var result = paymentAdapter.executePayment(1L, 100.0);
+        var result = paymentAdapter.executePayment(UUID.randomUUID(), new BigDecimal("100.00"));
 
         // Assert
         assertNotNull(result);
@@ -22,7 +25,7 @@ class SimulatedPaymentAdapterTest {
     @Test
     void testExecutePaymentWithValidParameters() {
         // Act
-        var result = paymentAdapter.executePayment(1L, 50.0);
+        var result = paymentAdapter.executePayment(UUID.randomUUID(), new BigDecimal("50.00"));
 
         // Assert
         assertNotNull(result);

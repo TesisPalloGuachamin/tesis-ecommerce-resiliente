@@ -1,6 +1,7 @@
 package com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.dto;
 
 import lombok.*;
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Getter
@@ -11,7 +12,7 @@ import java.util.UUID;
 public class CheckoutRequestDTO {
     private UUID requestId;
     private UUID userId;
-    private Double totalAmount;
+    private BigDecimal totalAmount;
     private String status;
 }
 

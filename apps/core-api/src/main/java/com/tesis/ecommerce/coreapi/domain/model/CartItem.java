@@ -1,7 +1,10 @@
 package com.tesis.ecommerce.coreapi.domain.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.type.descriptor.jdbc.NumericJdbcType;
 import lombok.*;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -29,14 +32,15 @@ public class CartItem {
     @Column(nullable = false)
     private Integer quantity;
 
-    @Column(nullable = false)
-    private Double unitPrice;
+    @JdbcType(NumericJdbcType.class)
+    @Column(nullable = false, columnDefinition = "numeric(19,2)")
+    private BigDecimal unitPrice;
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    public Double getTotal() {
-        return unitPrice * quantity;
+    public BigDecimal getTotal() {
+        return unitPrice.multiply(new BigDecimal(quantity));
     }
 }
 

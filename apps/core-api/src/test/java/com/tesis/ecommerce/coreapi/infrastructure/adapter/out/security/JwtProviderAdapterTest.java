@@ -3,6 +3,8 @@ package com.tesis.ecommerce.coreapi.infrastructure.adapter.out.security;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.UUID;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class JwtProviderAdapterTest {
@@ -18,7 +20,7 @@ class JwtProviderAdapterTest {
 
     @Test
     void testGenerateAndValidateToken() {
-        Long userId = 1L;
+        UUID userId = UUID.randomUUID();
         String email = "test@example.com";
 
         String token = jwtProvider.generateToken(userId, email);

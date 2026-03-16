@@ -5,7 +5,7 @@ CREATE TABLE checkout_requests (
     request_id UUID NOT NULL UNIQUE,
     user_id UUID NOT NULL,
     status VARCHAR(50) NOT NULL,
-    total_amount NUMERIC(19, 2) NOT NULL,
+    total_amount numeric(19,2) NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP
 );
@@ -16,7 +16,7 @@ CREATE TABLE orders (
     checkout_request_id UUID NOT NULL UNIQUE,
     user_id UUID NOT NULL,
     status VARCHAR(50) NOT NULL,
-    total_amount NUMERIC(19, 2) NOT NULL,
+    total_amount numeric(19,2) NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP
 );
@@ -30,8 +30,8 @@ CREATE TABLE order_items (
     product_id UUID NOT NULL,
     product_name VARCHAR(255) NOT NULL,
     quantity INTEGER NOT NULL,
-    unit_price NUMERIC(19, 2) NOT NULL,
-    total_price NUMERIC(19, 2) NOT NULL,
+    unit_price numeric(19,2) NOT NULL,
+    total_price numeric(19,2) NOT NULL,
     FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE
 );
 
@@ -40,7 +40,7 @@ CREATE INDEX idx_order_items_order_id ON order_items(order_id);
 CREATE TABLE payment_attempts (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     order_id UUID NOT NULL,
-    amount NUMERIC(19, 2) NOT NULL,
+    amount numeric(19,2) NOT NULL,
     status VARCHAR(50) NOT NULL,
     attempt_number INTEGER NOT NULL,
     error_message TEXT,

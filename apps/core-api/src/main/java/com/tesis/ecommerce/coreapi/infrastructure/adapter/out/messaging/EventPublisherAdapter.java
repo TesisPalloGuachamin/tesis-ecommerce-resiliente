@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.extern.slf4j.Slf4j;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -55,7 +56,7 @@ public class EventPublisherAdapter implements EventPublisher {
 
     @Override
     @Transactional
-    public void publishCheckoutRequested(UUID requestId, UUID userId, Double totalAmount) {
+    public void publishCheckoutRequested(UUID requestId, UUID userId, BigDecimal totalAmount) {
         Map<String, Object> payload = new HashMap<>();
         payload.put("eventId", UUID.randomUUID());
         payload.put("requestId", requestId);

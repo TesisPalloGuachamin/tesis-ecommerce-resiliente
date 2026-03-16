@@ -9,8 +9,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Optional;
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
@@ -33,19 +35,19 @@ class GetProductsUseCaseTest {
     @Test
     void testGetAllProducts() {
         Product product1 = Product.builder()
-            .id(1L)
+            .id(UUID.randomUUID())
             .sku("PROD001")
             .name("Laptop")
-            .price(1299.99)
+            .price(new BigDecimal("1299.99"))
             .stock(10)
             .active(true)
             .build();
 
         Product product2 = Product.builder()
-            .id(2L)
+            .id(UUID.randomUUID())
             .sku("PROD002")
             .name("Mouse")
-            .price(29.99)
+            .price(new BigDecimal("29.99"))
             .stock(50)
             .active(true)
             .build();

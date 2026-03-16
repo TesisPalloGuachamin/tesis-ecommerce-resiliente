@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 
+import com.tesis.ecommerce.checkoutservice.infrastructure.config.RabbitMqConfig;
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -14,7 +16,7 @@ public class CheckoutEventConsumer {
 
     private final ProcessCheckoutUseCase processCheckoutUseCase;
 
-    @RabbitListener(queues = "checkout.requested.queue")
+    @RabbitListener(queues = RabbitMqConfig.CHECKOUT_REQUESTED_QUEUE)
     public void handleCheckoutRequested(CheckoutRequestedEvent event) {
         log.info("Received checkout.requested event: {}", event.getEventId());
         try {

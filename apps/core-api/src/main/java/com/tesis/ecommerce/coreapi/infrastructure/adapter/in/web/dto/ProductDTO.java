@@ -1,6 +1,7 @@
 package com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.dto;
 
 import lombok.*;
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Getter
@@ -13,7 +14,7 @@ public class ProductDTO {
     private String sku;
     private String name;
     private String description;
-    private Double price;
+    private BigDecimal price;
     private Integer stock;
     private Boolean active;
 }

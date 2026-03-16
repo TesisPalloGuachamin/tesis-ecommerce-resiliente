@@ -11,6 +11,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.UUID;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -42,15 +44,16 @@ class RegisterUseCaseTest {
         String email = "test@example.com";
         String password = "password123";
         String name = "Test User";
+        UUID userId = UUID.randomUUID();
 
         when(userRepository.existsByEmail(email)).thenReturn(false);
         when(passwordEncoder.encode(password)).thenReturn("encoded-password");
         when(userRepository.save(any(User.class))).thenAnswer(invocation -> {
             User user = invocation.getArgument(0);
-            user.setId(1L);
+            user.setId(userId);
             return user;
         });
-        when(jwtProvider.generateToken(1L, email)).thenReturn("jwt-token");
+        when(jwtProvider.generateToken(userId, email)).thenReturn("jwt-token");
 
         var response = registerUseCase.execute(email, password, name);
 

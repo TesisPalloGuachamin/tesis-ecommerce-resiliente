@@ -3,6 +3,7 @@ package com.tesis.ecommerce.coreapi.domain.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,10 +35,10 @@ public class Cart {
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt = LocalDateTime.now();
 
-    public Double getTotal() {
+    public BigDecimal getTotal() {
         return items.stream()
-            .mapToDouble(CartItem::getTotal)
-            .sum();
+            .map(CartItem::getTotal)
+            .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 }
 

@@ -68,7 +68,7 @@ public class ProcessCheckoutUseCase {
                         .productName(item.getProductName())
                         .quantity(item.getQuantity())
                         .unitPrice(item.getUnitPrice())
-                        .totalPrice(item.getUnitPrice() * item.getQuantity())
+                        .totalPrice(item.getUnitPrice().multiply(new java.math.BigDecimal(item.getQuantity())))
                         .build())
                 .collect(Collectors.toList());
         savedOrder.setItems(items);

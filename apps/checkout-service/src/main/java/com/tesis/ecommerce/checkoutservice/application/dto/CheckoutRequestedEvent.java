@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -15,7 +16,7 @@ public class CheckoutRequestedEvent {
 
     private UUID eventId;
     private UUID userId;
-    private Double totalAmount;
+    private BigDecimal totalAmount;
     private List<CartItemDto> items;
     private Long timestamp;
 
@@ -27,7 +28,7 @@ public class CheckoutRequestedEvent {
         private UUID productId;
         private String productName;
         private Integer quantity;
-        private Double unitPrice;
+        private BigDecimal unitPrice;
     }
 
 }

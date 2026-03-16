@@ -1,7 +1,10 @@
 package com.tesis.ecommerce.coreapi.domain.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.type.descriptor.jdbc.NumericJdbcType;
 import lombok.*;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -29,8 +32,9 @@ public class CheckoutRequest {
     @JoinColumn(name = "cart_id", nullable = false)
     private Cart cart;
 
-    @Column(nullable = false)
-    private Double totalAmount;
+    @JdbcType(NumericJdbcType.class)
+    @Column(nullable = false, columnDefinition = "numeric(19,2)")
+    private BigDecimal totalAmount;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

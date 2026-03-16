@@ -4,6 +4,7 @@ import com.tesis.ecommerce.checkoutservice.domain.port.out.PaymentPort;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.Random;
 import java.util.UUID;
 
@@ -14,7 +15,7 @@ public class SimulatedPaymentAdapter implements PaymentPort {
     private static final Random random = new Random();
 
     @Override
-    public PaymentResult executePayment(UUID orderId, Double amount) {
+    public PaymentResult executePayment(UUID orderId, BigDecimal amount) {
         log.info("Executing simulated payment for order: {}, amount: {}", orderId, amount);
 
         // Simulate payment processing delay

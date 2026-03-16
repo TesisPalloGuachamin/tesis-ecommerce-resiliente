@@ -1,10 +1,13 @@
 package com.tesis.ecommerce.checkoutservice.domain.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.type.descriptor.jdbc.NumericJdbcType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
@@ -17,6 +20,7 @@ public class OrderItem {
 
     @Id
     @Column(columnDefinition = "UUID")
+    @Builder.Default
     private UUID id = UUID.randomUUID();
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -32,11 +36,13 @@ public class OrderItem {
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
 
-    @Column(name = "unit_price", nullable = false)
-    private Double unitPrice;
+    @JdbcType(NumericJdbcType.class)
+    @Column(name = "unit_price", nullable = false, columnDefinition = "numeric(19,2)")
+    private BigDecimal unitPrice;
 
-    @Column(name = "total_price", nullable = false)
-    private Double totalPrice;
+    @JdbcType(NumericJdbcType.class)
+    @Column(name = "total_price", nullable = false, columnDefinition = "numeric(19,2)")
+    private BigDecimal totalPrice;
 
 }
 

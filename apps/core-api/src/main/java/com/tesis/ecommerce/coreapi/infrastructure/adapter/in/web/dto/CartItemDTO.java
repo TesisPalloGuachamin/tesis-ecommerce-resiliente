@@ -1,6 +1,7 @@
 package com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.dto;
 
 import lombok.*;
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Getter
@@ -13,7 +14,7 @@ public class CartItemDTO {
     private UUID productId;
     private ProductDTO product;
     private Integer quantity;
-    private Double unitPrice;
-    private Double total;
+    private BigDecimal unitPrice;
+    private BigDecimal total;
 }
 

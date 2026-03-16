@@ -12,6 +12,7 @@ import com.tesis.ecommerce.coreapi.application.mapper.CheckoutMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Service
@@ -44,7 +45,7 @@ public class CheckoutUseCase {
             throw new IllegalArgumentException("Cart is empty");
         }
 
-        Double totalAmount = cart.getTotal();
+        BigDecimal totalAmount = cart.getTotal();
         UUID requestId = UUID.randomUUID();
 
         CheckoutRequest checkoutRequest = CheckoutRequest.builder()

@@ -1,10 +1,11 @@
 package com.tesis.ecommerce.coreapi.domain.port.out;
 
 import com.tesis.ecommerce.coreapi.domain.model.OutboxEvent;
+import java.math.BigDecimal;
 import java.util.UUID;
 
 public interface EventPublisher {
     void publish(OutboxEvent event);
-    void publishCheckoutRequested(UUID requestId, UUID userId, Double totalAmount);
+    void publishCheckoutRequested(UUID requestId, UUID userId, BigDecimal totalAmount);
 }
 

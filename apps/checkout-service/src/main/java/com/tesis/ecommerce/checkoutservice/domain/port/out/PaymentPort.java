@@ -1,10 +1,11 @@
 package com.tesis.ecommerce.checkoutservice.domain.port.out;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 public interface PaymentPort {
 
-    PaymentResult executePayment(UUID orderId, Double amount);
+    PaymentResult executePayment(UUID orderId, BigDecimal amount);
 
     class PaymentResult {
         public String transactionId;

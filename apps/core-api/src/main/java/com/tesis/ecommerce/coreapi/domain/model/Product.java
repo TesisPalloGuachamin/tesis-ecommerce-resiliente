@@ -1,7 +1,10 @@
 package com.tesis.ecommerce.coreapi.domain.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.type.descriptor.jdbc.NumericJdbcType;
 import lombok.*;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -27,8 +30,9 @@ public class Product {
     @Column(length = 1000)
     private String description;
 
-    @Column(nullable = false)
-    private Double price;
+    @JdbcType(NumericJdbcType.class)
+    @Column(nullable = false, columnDefinition = "numeric(19,2)")
+    private BigDecimal price;
 
     @Column(nullable = false)
     private Integer stock;
