@@ -1,0 +1,27 @@
+name: Deploy to EC2
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to EC2 Instance
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+          script_stop: true
+          script: |
+            cd ${{ secrets.EC2_DEPLOY_PATH }}
+            docker compose -f docker-compose.ec2.yml pull
+            docker compose -f docker-compose.ec2.yml up -d
+            docker compose -f docker-compose.ec2.yml ps
+            
+            echo "Sleeping for 45s to let Spring Boot services fully start..."
+            sleep 45
+            
+            curl -f http://localhost:8080/actuator/health
+            curl -f http://localhost:8082/api/actuator/health
