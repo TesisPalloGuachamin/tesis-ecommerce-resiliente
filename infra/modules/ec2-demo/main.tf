@@ -2,12 +2,6 @@ data "aws_vpc" "default" {
   default = true
 }
 
-data "aws_subnets" "default" {
-  filter {
-    name   = "vpc-id"
-    values = [data.aws_vpc.default.id]
-  }
-}
 
 data "aws_ami" "al2023" {
   most_recent = true
@@ -29,7 +23,7 @@ resource "aws_security_group" "demo_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [var.allowed_ssh_cidr]
+    cidr_blocks = ["0.0.0.0/0"] # Diagnóstico temporal, revertir a var.allowed_ssh_cidr luego
   }
 
   ingress {
@@ -88,12 +82,13 @@ resource "aws_security_group" "demo_sg" {
 resource "aws_instance" "demo_ec2" {
   ami           = data.aws_ami.al2023.id
   instance_type = var.instance_type
-  subnet_id     = data.aws_subnets.default.ids[0]
+  subnet_id     = var.subnet_id
+  key_name      = var.key_name != "" ? var.key_name : null
   
   vpc_security_group_ids = [aws_security_group.demo_sg.id]
 
   root_block_device {
-    volume_size = 20
+    volume_size = var.root_volume_size
     volume_type = "gp3"
   }
 

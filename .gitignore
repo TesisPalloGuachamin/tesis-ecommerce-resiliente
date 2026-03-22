@@ -12,4 +12,12 @@ target/
 .env
 .env.local
 node_modules/
-
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+infra/environments/demo/terraform.tfvars

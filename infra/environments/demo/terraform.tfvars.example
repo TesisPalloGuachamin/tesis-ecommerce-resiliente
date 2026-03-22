@@ -1,8 +1,11 @@
 # Configuraciones de Región y Entorno
-aws_region    = "us-east-1"
-project_name  = "tesis"
-environment   = "demo"
-instance_type = "t3.medium"
+aws_region       = "us-east-1"
+project_name     = "tesis"
+environment      = "demo"
+instance_type    = "t3.medium"
+key_name         = "mi-llave-ssh"
+root_volume_size = 20
+subnet_id        = "subnet-xxxxxxxxxxxx"
 
 # Consideraciones de Seguridad (Reglas Ingress / CIDR)
 # Por motivos de seguridad y alcance académico inicial, reemplaza el placeholder ("TU_IP/32") con tu IP real.

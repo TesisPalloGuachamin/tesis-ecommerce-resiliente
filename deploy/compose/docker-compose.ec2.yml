@@ -1,0 +1,206 @@
+services:
+  # ==========================================
+  # Bases de Datos - Core Domain
+  # ==========================================
+  core-db:
+    image: postgres:15-alpine
+    container_name: tesis-core-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_CORE_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_CORE_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_CORE_DB:-core_db}
+    ports:
+      - "${POSTGRES_CORE_PORT:-5432}:5432"
+    volumes:
+      - core_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_CORE_USER:-postgres}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - tesis-network
+
+  # ==========================================
+  # Bases de Datos - Checkout Domain
+  # ==========================================
+  checkout-db:
+    image: postgres:15-alpine
+    container_name: tesis-checkout-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_CHECKOUT_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_CHECKOUT_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_CHECKOUT_DB:-checkout_db}
+    ports:
+      - "${POSTGRES_CHECKOUT_PORT:-5433}:5432"
+    volumes:
+      - checkout_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_CHECKOUT_USER:-postgres}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - tesis-network
+
+  # ==========================================
+  # Message Broker
+  # ==========================================
+  rabbitmq:
+    image: rabbitmq:3.12-management-alpine
+    container_name: tesis-rabbitmq
+    restart: unless-stopped
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER:-guest}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:-guest}
+    ports:
+      - "${RABBITMQ_PORT:-5672}:5672"
+      - "${RABBITMQ_MANAGEMENT_PORT:-15672}:15672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - tesis-network
+
+  # ==========================================
+  # Core API Service
+  # ==========================================
+  core-api:
+    image: christopherpallo2000/tesis-core-api:latest
+    container_name: tesis-core-api
+    restart: unless-stopped
+    ports:
+      - "${CORE_API_PORT:-8080}:8080"
+    environment:
+      JAVA_TOOL_OPTIONS: "-Xms300m -Xmx300m"
+      SPRING_APPLICATION_NAME: core-api
+      SPRING_DATASOURCE_URL: jdbc:postgresql://${POSTGRES_CORE_HOST:-core-db}:5432/${POSTGRES_CORE_DB:-core_db}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_CORE_USER:-postgres}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_CORE_PASSWORD:-postgres}
+      SPRING_RABBITMQ_HOST: ${RABBITMQ_HOST:-rabbitmq}
+      SPRING_RABBITMQ_PORT: ${RABBITMQ_PORT:-5672}
+      SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER:-guest}
+      SPRING_RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD:-guest}
+      JWT_SECRET: ${CORE_API_JWT_SECRET:-my-super-secret-key-that-should-be-at-least-32-characters-long-in-production}
+      JWT_EXPIRATION: ${CORE_API_JWT_EXPIRATION:-86400000}
+      CORS_ALLOWED_ORIGINS: http://localhost:3000,http://localhost:8000
+      MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: health,info,metrics
+      LOGGING_LEVEL_ROOT: INFO
+      LOGGING_LEVEL_COM_TESIS_ECOMMERCE: ${CORE_API_LOG_LEVEL:-DEBUG}
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    depends_on:
+      core-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    networks:
+      - tesis-network
+    healthcheck:
+      test: [ "CMD-SHELL", "wget --quiet --tries=1 --spider http://localhost:8080/actuator/health || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ==========================================
+  # Checkout Service
+  # ==========================================
+  checkout-service:
+    image: christopherpallo2000/tesis-checkout-service:latest
+    container_name: tesis-checkout-service
+    restart: unless-stopped
+    ports:
+      - "${CHECKOUT_SERVICE_PORT:-8082}:8082"
+    environment:
+      JAVA_TOOL_OPTIONS: "-Xms300m -Xmx300m"
+      SPRING_APPLICATION_NAME: checkout-service
+      SPRING_DATASOURCE_URL: jdbc:postgresql://${POSTGRES_CHECKOUT_HOST:-checkout-db}:5432/${POSTGRES_CHECKOUT_DB:-checkout_db}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_CHECKOUT_USER:-postgres}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_CHECKOUT_PASSWORD:-postgres}
+      SPRING_RABBITMQ_HOST: ${RABBITMQ_HOST:-rabbitmq}
+      SPRING_RABBITMQ_PORT: ${RABBITMQ_PORT:-5672}
+      SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER:-guest}
+      SPRING_RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD:-guest}
+      MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: health,info,metrics
+      LOGGING_LEVEL_ROOT: WARN
+      LOGGING_LEVEL_COM_TESIS_ECOMMERCE: ${CHECKOUT_SERVICE_LOG_LEVEL:-INFO}
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    depends_on:
+      checkout-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    networks:
+      - tesis-network
+    healthcheck:
+      test: [ "CMD-SHELL", "wget --quiet --tries=1 --spider http://localhost:8082/api/actuator/health || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ==========================================
+  # Prometheus (Observability)
+  # ==========================================
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: tesis-prometheus
+    ports:
+      - "${PROMETHEUS_PORT:-9090}:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    networks:
+      - tesis-network
+    depends_on:
+      - core-api
+      - checkout-service
+
+  # ==========================================
+  # Grafana (Visualization & Dashboards)
+  # ==========================================
+  grafana:
+    image: grafana/grafana:latest
+    container_name: tesis-grafana
+    ports:
+      - "${GRAFANA_PORT:-3000}:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER:-admin}
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-admin123}
+      GF_USERS_ALLOW_SIGN_UP: 'false'
+      GF_LOG_LEVEL: ${GRAFANA_LOG_LEVEL:-info}
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources:ro
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards:ro
+    networks:
+      - tesis-network
+    depends_on:
+      - prometheus
+
+volumes:
+  core_db_data:
+  checkout_db_data:
+  rabbitmq_data:
+  prometheus_data:
+  grafana_data:
+
+
+networks:
+  tesis-network:
+    driver: bridge
