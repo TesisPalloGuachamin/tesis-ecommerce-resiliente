@@ -7,6 +7,7 @@ import com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.dto.AuthRegiste
 import com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.dto.AuthLoginRequest;
 import com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.dto.AuthResponse;
 import com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.dto.UserDTO;
+import jakarta.validation.Valid;
 import org.springframework.security.core.Authentication;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +30,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<AuthResponse> register(@RequestBody AuthRegisterRequest request) {
+    public ResponseEntity<AuthResponse> register(@Valid @RequestBody AuthRegisterRequest request) {
         AuthResponse response = registerUseCase.execute(request.getEmail(), request.getPassword(), request.getName());
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }

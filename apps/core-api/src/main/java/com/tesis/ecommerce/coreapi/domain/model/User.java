@@ -16,6 +16,7 @@ public class User {
 
     @Id
     @Column(columnDefinition = "UUID")
+    @Builder.Default
     private UUID id = UUID.randomUUID();
 
     @Column(nullable = false, unique = true)
@@ -28,9 +29,11 @@ public class User {
     private String name;
 
     @Column(nullable = false)
+    @Builder.Default
     private Boolean enabled = true;
 
     @Column(name = "created_at", nullable = false, updatable = false)
+    @Builder.Default
     private LocalDateTime createdAt = LocalDateTime.now();
 }
 
