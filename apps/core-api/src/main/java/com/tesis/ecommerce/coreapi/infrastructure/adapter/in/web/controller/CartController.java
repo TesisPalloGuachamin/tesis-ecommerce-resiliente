@@ -4,6 +4,7 @@ import com.tesis.ecommerce.coreapi.application.usecase.*;
 import com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.dto.CartDTO;
 import com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.dto.AddCartItemRequest;
 import com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.dto.UpdateCartItemRequest;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -36,7 +37,7 @@ public class CartController {
     }
 
     @PostMapping("/items")
-    public ResponseEntity<CartDTO> addItem(Authentication authentication, @RequestBody AddCartItemRequest request) {
+    public ResponseEntity<CartDTO> addItem(Authentication authentication, @Valid @RequestBody AddCartItemRequest request) {
         UUID userId = (UUID) authentication.getPrincipal();
         CartDTO cart = addCartItemUseCase.execute(userId, request.getProductId(), request.getQuantity());
         return ResponseEntity.status(HttpStatus.CREATED).body(cart);

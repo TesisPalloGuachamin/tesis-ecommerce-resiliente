@@ -10,6 +10,7 @@ import com.tesis.ecommerce.coreapi.domain.port.out.ProductRepository;
 import com.tesis.ecommerce.coreapi.domain.port.out.UserRepository;
 import com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.dto.CartDTO;
 import com.tesis.ecommerce.coreapi.application.mapper.CartMapper;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -39,7 +40,7 @@ public class AddCartItemUseCase {
             .orElseThrow(() -> new IllegalArgumentException("User not found"));
 
         Product product = productRepository.findById(productId)
-            .orElseThrow(() -> new IllegalArgumentException("Product not found"));
+            .orElseThrow(() -> new EntityNotFoundException("Product not found"));
 
         if (product.getStock() < quantity) {
             throw new IllegalArgumentException("Not enough stock");
