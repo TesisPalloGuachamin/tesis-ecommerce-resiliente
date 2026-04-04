@@ -17,8 +17,8 @@ public class RabbitMqConfig {
     public static final String CORE_API_DLX_EXCHANGE = "core-api.dlx";
 
     // Queues
-    public static final String CHECKOUT_COMPLETED_QUEUE = "core-api.checkout-result.q";
-    public static final String CHECKOUT_FAILED_QUEUE = "core-api.checkout-result.q";
+    public static final String CHECKOUT_COMPLETED_QUEUE = "core-api.checkout-completed.q";
+    public static final String CHECKOUT_FAILED_QUEUE    = "core-api.checkout-failed.q";
     public static final String CORE_API_DLQ = "core-api.dlq";
 
     // Routing keys
@@ -56,8 +56,17 @@ public class RabbitMqConfig {
     }
 
     @Bean
-    public Binding checkoutFailedBinding(Queue checkoutCompletedQueue, TopicExchange checkoutExchange) {
-        return BindingBuilder.bind(checkoutCompletedQueue)
+    public Queue checkoutFailedQueue() {
+        return QueueBuilder.durable(CHECKOUT_FAILED_QUEUE)
+                .withArgument("x-dead-letter-exchange", CORE_API_DLX_EXCHANGE)
+                .withArgument("x-dead-letter-routing-key", "checkout.result.dlq")
+                .withArgument("x-message-ttl", 86400000)
+                .build();
+    }
+
+    @Bean
+    public Binding checkoutFailedBinding(Queue checkoutFailedQueue, TopicExchange checkoutExchange) {
+        return BindingBuilder.bind(checkoutFailedQueue)
                 .to(checkoutExchange)
                 .with(CHECKOUT_FAILED_RK);
     }
@@ -85,6 +94,16 @@ public class RabbitMqConfig {
         RabbitTemplate template = new RabbitTemplate(connectionFactory);
         template.setMessageConverter(jsonMessageConverter);
         return template;
+    }
+
+    @Bean
+    public org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory(
+            ConnectionFactory connectionFactory,
+            MessageConverter jsonMessageConverter) {
+        var factory = new org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory();
+        factory.setConnectionFactory(connectionFactory);
+        factory.setMessageConverter(jsonMessageConverter);
+        return factory;
     }
 
 }

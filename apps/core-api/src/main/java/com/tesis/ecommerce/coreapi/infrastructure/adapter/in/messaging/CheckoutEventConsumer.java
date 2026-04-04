@@ -4,6 +4,7 @@ import com.tesis.ecommerce.coreapi.domain.model.CheckoutRequest;
 import com.tesis.ecommerce.coreapi.domain.port.out.CheckoutRepository;
 import com.tesis.ecommerce.coreapi.infrastructure.adapter.in.messaging.dto.CheckoutCompletedEvent;
 import com.tesis.ecommerce.coreapi.infrastructure.adapter.in.messaging.dto.CheckoutFailedEvent;
+import com.tesis.ecommerce.coreapi.infrastructure.config.RabbitMqConfig;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +20,7 @@ public class CheckoutEventConsumer {
         this.checkoutRepository = checkoutRepository;
     }
 
-    @RabbitListener(queues = "core-api.checkout-result.q")
+    @RabbitListener(queues = RabbitMqConfig.CHECKOUT_COMPLETED_QUEUE)
     @Transactional
     public void handleCheckoutCompleted(CheckoutCompletedEvent event) {
         try {
@@ -38,7 +39,7 @@ public class CheckoutEventConsumer {
         }
     }
 
-    @RabbitListener(queues = "core-api.checkout-result.q")
+    @RabbitListener(queues = RabbitMqConfig.CHECKOUT_FAILED_QUEUE)
     @Transactional
     public void handleCheckoutFailed(CheckoutFailedEvent event) {
         try {
