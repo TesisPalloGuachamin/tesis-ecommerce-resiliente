@@ -57,7 +57,7 @@ public class CheckoutUseCase {
             .build();
 
         CheckoutRequest savedRequest = checkoutRepository.save(checkoutRequest);
-        eventPublisher.publishCheckoutRequested(requestId, userId, totalAmount);
+        eventPublisher.publishCheckoutRequested(requestId, userId, totalAmount, cart.getItems());
 
         return checkoutMapper.toDTO(savedRequest);
     }

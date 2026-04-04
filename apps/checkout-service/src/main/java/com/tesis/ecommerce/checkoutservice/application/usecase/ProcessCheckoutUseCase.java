@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
+import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -61,7 +63,9 @@ public class ProcessCheckoutUseCase {
         var savedOrder = orderRepository.save(orderToSave);
 
         // Create OrderItems
-        var items = event.getItems().stream()
+        List<CheckoutRequestedEvent.CartItemDto> eventItems =
+                event.getItems() != null ? event.getItems() : Collections.emptyList();
+        var items = eventItems.stream()
                 .map(item -> OrderItem.builder()
                         .order(savedOrder)
                         .productId(item.getProductId())

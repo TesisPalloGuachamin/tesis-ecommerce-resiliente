@@ -1,6 +1,7 @@
 package com.tesis.ecommerce.coreapi.infrastructure.adapter.out.messaging;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.tesis.ecommerce.coreapi.domain.model.CartItem;
 import com.tesis.ecommerce.coreapi.domain.model.OutboxEvent;
 import com.tesis.ecommerce.coreapi.domain.port.out.EventPublisher;
 import com.tesis.ecommerce.coreapi.infrastructure.adapter.out.persistence.OutboxEventJpaRepository;
@@ -11,8 +12,10 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Component
 @Slf4j
@@ -36,7 +39,7 @@ public class EventPublisherAdapter implements EventPublisher {
         try {
             // Save to outbox first (transactional)
             outboxEventRepository.save(event);
-            
+
             // Then attempt to publish
             try {
                 String routingKey = event.getEventType();
@@ -57,13 +60,23 @@ public class EventPublisherAdapter implements EventPublisher {
 
     @Override
     @Transactional
-    public void publishCheckoutRequested(UUID requestId, UUID userId, BigDecimal totalAmount) {
+    public void publishCheckoutRequested(UUID requestId, UUID userId, BigDecimal totalAmount, List<CartItem> items) {
         Map<String, Object> payload = new HashMap<>();
         payload.put("eventId", UUID.randomUUID());
         payload.put("requestId", requestId);
         payload.put("userId", userId);
         payload.put("totalAmount", totalAmount);
         payload.put("timestamp", System.currentTimeMillis());
+
+        List<Map<String, Object>> itemsList = items.stream().map(item -> {
+            Map<String, Object> i = new HashMap<>();
+            i.put("productId", item.getProduct().getId());
+            i.put("productName", item.getProduct().getName());
+            i.put("quantity", item.getQuantity());
+            i.put("unitPrice", item.getUnitPrice());
+            return i;
+        }).collect(Collectors.toList());
+        payload.put("items", itemsList);
 
         try {
             String payloadJson = objectMapper.writeValueAsString(payload);
@@ -81,4 +94,3 @@ public class EventPublisherAdapter implements EventPublisher {
         }
     }
 }
-
