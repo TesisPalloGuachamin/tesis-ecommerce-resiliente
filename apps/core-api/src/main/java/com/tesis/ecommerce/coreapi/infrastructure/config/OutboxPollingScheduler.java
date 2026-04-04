@@ -35,15 +35,16 @@ public class OutboxPollingScheduler {
             
             for (OutboxEvent event : unpublished) {
                 try {
+                    Object payloadObject = objectMapper.readValue(event.getPayload(), Object.class);
                     rabbitTemplate.convertAndSend(
                         "ecommerce.checkout.exchange",
                         event.getEventType(),
-                        event.getPayload()
+                        payloadObject
                     );
-                    
+
                     event.setPublished(true);
                     outboxEventRepository.save(event);
-                    
+
                     log.info("Successfully republished event {} with type {}", event.getId(), event.getEventType());
                 } catch (Exception e) {
                     log.warn("Failed to republish event {}, will retry in next cycle: {}", event.getId(), e.getMessage());
