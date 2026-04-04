@@ -79,7 +79,7 @@ public class ProcessCheckoutUseCase {
         var order = orderRepository.save(savedOrder);
 
         // Publish checkout.accepted
-        eventPublisherPort.publishCheckoutAccepted(event.getEventId(), order.getId());
+        eventPublisherPort.publishCheckoutAccepted(event.getRequestId(), order.getId());
 
         // Create PaymentAttempt
         var paymentAttempt = PaymentAttempt.builder()
@@ -106,13 +106,13 @@ public class ProcessCheckoutUseCase {
             order.setStatus("COMPLETED");
             order.setUpdatedAt(LocalDateTime.now());
             orderRepository.save(order);
-            eventPublisherPort.publishCheckoutCompleted(event.getEventId(), order.getId());
+            eventPublisherPort.publishCheckoutCompleted(event.getRequestId(), order.getId());
             log.info("Checkout completed successfully for order: {}", order.getOrderNumber());
         } else {
             order.setStatus("FAILED");
             order.setUpdatedAt(LocalDateTime.now());
             orderRepository.save(order);
-            eventPublisherPort.publishCheckoutFailed(event.getEventId(), paymentResult.errorMessage);
+            eventPublisherPort.publishCheckoutFailed(event.getRequestId(), paymentResult.errorMessage);
             log.error("Checkout failed for order: {}, reason: {}", order.getOrderNumber(), paymentResult.errorMessage);
         }
 
