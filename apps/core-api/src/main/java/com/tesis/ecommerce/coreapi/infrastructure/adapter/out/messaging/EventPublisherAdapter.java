@@ -40,7 +40,8 @@ public class EventPublisherAdapter implements EventPublisher {
             // Then attempt to publish
             try {
                 String routingKey = event.getEventType();
-                rabbitTemplate.convertAndSend("ecommerce.checkout.exchange", routingKey, event.getPayload());
+                Object payloadObject = objectMapper.readValue(event.getPayload(), Object.class);
+                rabbitTemplate.convertAndSend("ecommerce.checkout.exchange", routingKey, payloadObject);
                 event.setPublished(true);
                 outboxEventRepository.save(event);
                 log.info("Published event: {}", event.getId());
