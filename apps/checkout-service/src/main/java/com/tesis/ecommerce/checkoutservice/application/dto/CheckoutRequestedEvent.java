@@ -1,5 +1,6 @@
 package com.tesis.ecommerce.checkoutservice.application.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,9 +13,11 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CheckoutRequestedEvent {
 
     private UUID eventId;
+    private UUID requestId;
     private UUID userId;
     private BigDecimal totalAmount;
     private List<CartItemDto> items;
