@@ -16,6 +16,7 @@ public class OutboxEvent {
 
     @Id
     @Column(columnDefinition = "UUID")
+    @Builder.Default
     private UUID id = UUID.randomUUID();
 
     @Column(nullable = false)
@@ -25,9 +26,11 @@ public class OutboxEvent {
     private String payload;
 
     @Column(nullable = false)
+    @Builder.Default
     private Boolean published = false;
 
     @Column(name = "created_at", nullable = false, updatable = false)
+    @Builder.Default
     private LocalDateTime createdAt = LocalDateTime.now();
 }
 

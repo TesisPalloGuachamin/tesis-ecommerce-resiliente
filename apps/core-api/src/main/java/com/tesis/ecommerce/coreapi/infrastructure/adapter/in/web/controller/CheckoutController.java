@@ -30,7 +30,7 @@ public class CheckoutController {
             @Valid @RequestBody CreateCheckoutRequest request) {
         UUID userId = (UUID) authentication.getPrincipal();
         CheckoutRequestDTO response = checkoutUseCase.execute(userId, request.getCartId());
-        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(response);
     }
 
     @GetMapping("/{requestId}")

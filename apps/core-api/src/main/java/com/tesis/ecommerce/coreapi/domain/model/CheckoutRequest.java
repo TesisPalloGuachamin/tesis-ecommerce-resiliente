@@ -19,6 +19,7 @@ public class CheckoutRequest {
 
     @Id
     @Column(columnDefinition = "UUID")
+    @Builder.Default
     private UUID id = UUID.randomUUID();
 
     @Column(nullable = false, unique = true)
@@ -38,12 +39,15 @@ public class CheckoutRequest {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
+    @Builder.Default
     private CheckoutStatus status = CheckoutStatus.PENDING;
 
     @Column(name = "created_at", nullable = false, updatable = false)
+    @Builder.Default
     private LocalDateTime createdAt = LocalDateTime.now();
 
     @Column(name = "updated_at", nullable = false)
+    @Builder.Default
     private LocalDateTime updatedAt = LocalDateTime.now();
 
     public enum CheckoutStatus {

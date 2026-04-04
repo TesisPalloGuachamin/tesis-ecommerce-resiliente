@@ -70,13 +70,13 @@ public class EventPublisherAdapter implements EventPublisher {
             OutboxEvent event = OutboxEvent.builder()
                 .eventType("checkout.requested")
                 .payload(payloadJson)
-                .published(false)
                 .build();
 
             publish(event);
         } catch (Exception e) {
-            log.error("Failed to publish checkout.requested event", e);
-            throw new RuntimeException("Failed to publish checkout.requested event", e);
+            log.error("Failed to publish checkout.requested event — outbox will retry", e);
+            // Do NOT re-throw: the CheckoutRequest is already persisted.
+            // The outbox polling job will deliver the event when RabbitMQ recovers.
         }
     }
 }
