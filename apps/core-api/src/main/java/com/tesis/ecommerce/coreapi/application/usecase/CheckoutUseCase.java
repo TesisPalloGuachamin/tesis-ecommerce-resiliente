@@ -34,11 +34,11 @@ public class CheckoutUseCase {
         this.checkoutMapper = checkoutMapper;
     }
 
-    public CheckoutRequestDTO execute(UUID userId) {
+    public CheckoutRequestDTO execute(UUID userId, UUID cartId) {
         User user = userRepository.findById(userId)
             .orElseThrow(() -> new IllegalArgumentException("User not found"));
 
-        Cart cart = cartRepository.findByUserId(userId)
+        Cart cart = cartRepository.findById(cartId)
             .orElseThrow(() -> new IllegalArgumentException("Cart not found"));
 
         if (cart.getItems().isEmpty()) {

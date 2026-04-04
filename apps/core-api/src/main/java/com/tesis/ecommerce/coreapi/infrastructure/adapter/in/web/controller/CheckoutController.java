@@ -3,6 +3,8 @@ package com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.controller;
 import com.tesis.ecommerce.coreapi.application.usecase.CheckoutUseCase;
 import com.tesis.ecommerce.coreapi.application.usecase.GetCheckoutRequestUseCase;
 import com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.dto.CheckoutRequestDTO;
+import com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.dto.CreateCheckoutRequest;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -23,9 +25,11 @@ public class CheckoutController {
     }
 
     @PostMapping
-    public ResponseEntity<CheckoutRequestDTO> checkout(Authentication authentication) {
+    public ResponseEntity<CheckoutRequestDTO> checkout(
+            Authentication authentication,
+            @Valid @RequestBody CreateCheckoutRequest request) {
         UUID userId = (UUID) authentication.getPrincipal();
-        CheckoutRequestDTO response = checkoutUseCase.execute(userId);
+        CheckoutRequestDTO response = checkoutUseCase.execute(userId, request.getCartId());
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
@@ -35,4 +39,3 @@ public class CheckoutController {
         return ResponseEntity.ok(response);
     }
 }
-
