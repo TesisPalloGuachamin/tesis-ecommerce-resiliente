@@ -23,7 +23,7 @@ resource "aws_security_group" "demo_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] # Diagnóstico temporal, revertir a var.allowed_ssh_cidr luego
+    cidr_blocks = [var.allowed_ssh_cidr]
   }
 
   ingress {

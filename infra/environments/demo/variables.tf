@@ -22,16 +22,6 @@ variable "instance_type" {
   default     = "t3.medium"
 }
 
-variable "allowed_ssh_cidr" {
-  description = "CIDR block allowed for SSH"
-  type        = string
-}
-
-variable "allowed_app_cidr" {
-  description = "CIDR block allowed for app accesses"
-  type        = string
-}
-
 variable "key_name" {
   description = "Name of the SSH key pair"
   type        = string
@@ -42,9 +32,4 @@ variable "root_volume_size" {
   description = "Size of the root volume in GB"
   type        = number
   default     = 20
-}
-
-variable "subnet_id" {
-  description = "Target Subnet ID"
-  type        = string
 }
