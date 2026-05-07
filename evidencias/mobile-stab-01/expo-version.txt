@@ -1,0 +1,5 @@
+
+> mobile@1.0.0 expo
+> npx -y -p node@20 node ./node_modules/expo/bin/cli --version
+
+54.0.24

@@ -1,0 +1,16 @@
+
+> mobile@1.0.0 expo
+> npx -y -p node@20 node ./node_modules/expo/bin/cli export --platform android --output-dir /tmp/mobile-stab-01-export
+
+env: load .env.local
+env: export EXPO_PUBLIC_API_BASE_URL
+Starting Metro Bundler
+Android Bundled 1194ms index.ts (575 modules)
+
+› android bundles (1):
+_expo/static/js/android/index-57d3c052d62b8e1ad90f28ff38170060.hbc (1.75 MB)
+
+› Files (1):
+metadata.json (150 B)
+
+Exported: /tmp/mobile-stab-01-export

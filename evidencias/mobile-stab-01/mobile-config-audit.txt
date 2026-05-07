@@ -1,0 +1,20 @@
+--- config.ts ---
+declare const process: {
+  env?: {
+    EXPO_PUBLIC_API_BASE_URL?: string;
+  };
+};
+
+export const API_BASE_URL =
+  process.env?.EXPO_PUBLIC_API_BASE_URL?.replace(/\/$/, "") ??
+  "http://localhost:8080";
+
+export const DEMO_EMAIL = "mobile-int-01@example.com";
+export const DEMO_PASSWORD = "password123";
+--- .env.example ---
+# AWS Academy changes the public IP when the lab is restarted.
+# Copy this file to .env.local and set the current backend host.
+EXPO_PUBLIC_API_BASE_URL=http://<AWS_PUBLIC_IP>:8080
+--- .env.local ---
+EXPO_PUBLIC_API_BASE_URL=http://44.195.21.215:8080
+--- aws ips in source ---

@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2026-05-06T20:13:55-05:00",
+  "selectedHost": "http://44.195.21.215",
+  "apiBaseUrl": "http://44.195.21.215:8080",
+  "checkoutBaseUrl": "http://44.195.21.215:8082/api",
+  "terraformOutputPublicIp": "32.197.47.40",
+  "awsCliStatus": "RequestExpired",
+  "health": {
+    "coreApi": "UP",
+    "checkoutService": "UP"
+  }
+}
