@@ -1,0 +1,23 @@
+{
+  "id": "777be9dc-b916-4b34-bb27-54084a4682f3",
+  "userId": "bfd699d8-7f41-4433-9ab1-399e4b8ee33c",
+  "items": [
+    {
+      "id": "5555a528-8257-466b-8a52-3a2a90784a06",
+      "productId": "fdc0e49c-ed21-4d6d-90f2-5ad566e9f2ef",
+      "product": {
+        "id": "fdc0e49c-ed21-4d6d-90f2-5ad566e9f2ef",
+        "sku": "PROD001",
+        "name": "Laptop Dell XPS 13",
+        "description": "High-performance laptop with Intel i7 processor",
+        "price": 1299.99,
+        "stock": 10,
+        "active": true
+      },
+      "quantity": 1,
+      "unitPrice": 1299.99,
+      "total": 1299.99
+    }
+  ],
+  "total": 1299.99
+}

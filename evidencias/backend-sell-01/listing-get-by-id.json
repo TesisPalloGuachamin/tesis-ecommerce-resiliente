@@ -1,0 +1,11 @@
+{
+  "id": "cb99d30d-7dc2-45bb-94c1-70ccfad89331",
+  "sellerId": "bfd699d8-7f41-4433-9ab1-399e4b8ee33c",
+  "title": "Bicicleta urbana demo",
+  "description": "Publicacion minima BACKEND-SELL-01",
+  "price": 125.5,
+  "quantity": 1,
+  "status": "ACTIVE",
+  "createdAt": "2026-05-07T02:53:29.820780",
+  "updatedAt": "2026-05-07T02:53:29.820790"
+}

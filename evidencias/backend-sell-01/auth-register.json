@@ -1,0 +1,9 @@
+{
+  "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZmQ2OTlkOC03ZjQxLTQ0MzMtOWFiMS0zOTllNGI4ZWUzM2MiLCJlbWFpbCI6ImJhY2tlbmQtc2VsbC0wMS0xNzc4MTIyNDA5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzc4MTIyNDA5LCJleHAiOjE3NzgyMDg4MDl9.yGI-i075sXyKOSTb3crwQ2iC177XRJMEaxY6XEuTnGlbdeK0znjvaVz_mAe6LjRPFMveEjmlohSIpZClWYenVg",
+  "user": {
+    "id": "bfd699d8-7f41-4433-9ab1-399e4b8ee33c",
+    "email": "backend-sell-01-1778122409@example.com",
+    "name": "Backend Sell 01",
+    "enabled": true
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "fdc0e49c-ed21-4d6d-90f2-5ad566e9f2ef",
+    "sku": "PROD001",
+    "name": "Laptop Dell XPS 13",
+    "description": "High-performance laptop with Intel i7 processor",
+    "price": 1299.99,
+    "stock": 10,
+    "active": true
+  },
+  {
+    "id": "643d6574-8bfa-4b26-b63e-b41c6fc485bb",
+    "sku": "PROD002",
+    "name": "Wireless Mouse Logitech",
+    "description": "Ergonomic wireless mouse with USB receiver",
+    "price": 29.99,
+    "stock": 50,
+    "active": true
+  }
+]

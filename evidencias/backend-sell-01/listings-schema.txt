@@ -1,0 +1,19 @@
+                                    Table "public.listings"
+   Column    |            Type             | Collation | Nullable |           Default           
+-------------+-----------------------------+-----------+----------+-----------------------------
+ id          | uuid                        |           | not null | gen_random_uuid()
+ seller_id   | uuid                        |           | not null | 
+ title       | character varying(140)      |           | not null | 
+ description | text                        |           |          | 
+ price       | numeric(19,2)               |           | not null | 
+ quantity    | integer                     |           | not null | 
+ status      | character varying(50)       |           | not null | 'ACTIVE'::character varying
+ created_at  | timestamp without time zone |           | not null | CURRENT_TIMESTAMP
+ updated_at  | timestamp without time zone |           | not null | CURRENT_TIMESTAMP
+Indexes:
+    "listings_pkey" PRIMARY KEY, btree (id)
+    "idx_listings_seller_id" btree (seller_id)
+    "idx_listings_status_created_at" btree (status, created_at DESC)
+Foreign-key constraints:
+    "listings_seller_id_fkey" FOREIGN KEY (seller_id) REFERENCES users(id)
+

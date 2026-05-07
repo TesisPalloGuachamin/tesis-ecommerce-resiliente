@@ -1,0 +1,57 @@
+[
+  {
+    "id": "cb99d30d-7dc2-45bb-94c1-70ccfad89331",
+    "sellerId": "bfd699d8-7f41-4433-9ab1-399e4b8ee33c",
+    "title": "Bicicleta urbana demo",
+    "description": "Publicacion minima BACKEND-SELL-01",
+    "price": 125.5,
+    "quantity": 1,
+    "status": "ACTIVE",
+    "createdAt": "2026-05-07T02:53:29.820780",
+    "updatedAt": "2026-05-07T02:53:29.820790"
+  },
+  {
+    "id": "699e9bb1-7a5c-496d-8525-1a7390fae2b4",
+    "sellerId": "7a02c438-48da-46a2-a240-9f725b7cc48a",
+    "title": "Bicicleta urbana demo",
+    "description": "Publicacion minima BACKEND-SELL-01",
+    "price": 125.5,
+    "quantity": 1,
+    "status": "ACTIVE",
+    "createdAt": "2026-05-07T02:52:30.902323",
+    "updatedAt": "2026-05-07T02:52:30.902345"
+  },
+  {
+    "id": "60e27143-f465-4642-ab0f-fc430c6a508e",
+    "sellerId": "7a02c438-48da-46a2-a240-9f725b7cc48a",
+    "title": "Bicicleta urbana demo",
+    "description": "Publicacion minima BACKEND-SELL-01",
+    "price": 125.5,
+    "quantity": 1,
+    "status": "ACTIVE",
+    "createdAt": "2026-05-07T02:51:04.276966",
+    "updatedAt": "2026-05-07T02:51:04.276986"
+  },
+  {
+    "id": "6684a17b-e766-4825-a559-836e9f521217",
+    "sellerId": "7a02c438-48da-46a2-a240-9f725b7cc48a",
+    "title": "Bicicleta urbana demo",
+    "description": "Publicacion minima BACKEND-SELL-01",
+    "price": 125.5,
+    "quantity": 1,
+    "status": "ACTIVE",
+    "createdAt": "2026-05-07T02:48:34.245721",
+    "updatedAt": "2026-05-07T02:48:34.245731"
+  },
+  {
+    "id": "edc49bcc-5319-4c62-bfaa-bb8b0a7c679f",
+    "sellerId": "7a02c438-48da-46a2-a240-9f725b7cc48a",
+    "title": "Bicicleta urbana demo",
+    "description": "Publicacion minima BACKEND-SELL-01",
+    "price": 125.5,
+    "quantity": 1,
+    "status": "ACTIVE",
+    "createdAt": "2026-05-07T02:48:09.089322",
+    "updatedAt": "2026-05-07T02:48:09.089347"
+  }
+]
