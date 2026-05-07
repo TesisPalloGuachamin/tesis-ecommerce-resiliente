@@ -1,0 +1,27 @@
+{
+  "block": "BQ-QA-SL-01",
+  "step": "06 - GET /api/v1/listings AFTER creation (verificacion persistencia)",
+  "timestamp": "2026-05-07T03:35:45Z",
+  "endpoint": "GET /api/v1/listings",
+  "http_status": 200,
+  "count_before": 7,
+  "count_after": 8,
+  "delta": 1,
+  "new_listing_present": true,
+  "new_listing_id": "f8971735-54a6-488f-a7c6-332f4ac5d3c2",
+  "new_listing_first_in_list": true,
+  "result": "PASS",
+  "response_top": [
+    {
+      "id": "f8971735-54a6-488f-a7c6-332f4ac5d3c2",
+      "sellerId": "707017a9-359c-40d8-92ba-b2805d5a6400",
+      "title": "Cámara Sony BQ-QA-SL-01",
+      "description": "Mirrorless APS-C, validacion formal QA",
+      "price": 480.0,
+      "quantity": 2,
+      "status": "ACTIVE",
+      "createdAt": "2026-05-07T03:35:40.026228",
+      "updatedAt": "2026-05-07T03:35:40.026247"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "block": "BQ-QA-SL-01",
+  "step": "03 - GET /api/v1/listings BEFORE creation",
+  "timestamp": "2026-05-07T03:35:18Z",
+  "endpoint": "GET /api/v1/listings",
+  "http_status": 200,
+  "count": 7,
+  "result": "PASS",
+  "note": "7 listings preexistentes de sesiones BACKEND-SELL-01 y MOBILE-SELL-01",
+  "response_sample": [
+    {
+      "id": "c99734ab-1e6f-4429-968b-2114a5c1726e",
+      "sellerId": "7d216152-4428-454b-982e-9255e7ce3828",
+      "title": "Laptop gaming usada",
+      "price": 850.0,
+      "quantity": 1,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "929ca1a3-e445-40ca-a147-0473e484920d",
+      "sellerId": "7d216152-4428-454b-982e-9255e7ce3828",
+      "title": "Bicicleta de montaña usada",
+      "price": 250.0,
+      "quantity": 1,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "cb99d30d-7dc2-45bb-94c1-70ccfad89331",
+      "sellerId": "bfd699d8-7f41-4433-9ab1-399e4b8ee33c",
+      "title": "Bicicleta urbana demo",
+      "price": 125.5,
+      "quantity": 1,
+      "status": "ACTIVE"
+    }
+  ]
+}

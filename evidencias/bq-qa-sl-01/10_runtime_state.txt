@@ -1,0 +1,34 @@
+BQ-QA-SL-01 — Estado del runtime al momento de ejecucion
+Timestamp: 2026-05-07T03:35:00Z
+
+CONTENEDORES ACTIVOS (docker ps):
+NAME                     STATUS                    PORTS
+tesis-core-api           Up 41 minutes (healthy)   0.0.0.0:18080->8080/tcp
+tesis-checkout-service   Up 46 minutes (healthy)   0.0.0.0:18082->8082/tcp
+tesis-rabbitmq           Up 47 minutes (healthy)   0.0.0.0:5672->5672/tcp
+tesis-core-db            Up 47 minutes (healthy)   0.0.0.0:15432->5432/tcp
+tesis-checkout-db        Up 47 minutes (healthy)   0.0.0.0:15433->5432/tcp
+
+HOST API: http://localhost:18080
+BASE DE DATOS: PostgreSQL 15 (tesis-core-db, puerto 15432)
+MENSAJERÍA: RabbitMQ 3.12.14 (tesis-rabbitmq, puerto 5672)
+
+ESTADO HEALTH /actuator/health:
+- db: UP (PostgreSQL)
+- ping: UP
+- rabbit: UP (3.12.14)
+- diskSpace: UP
+
+CONTRATO RUNTIME LISTINGS:
+- POST   /api/v1/listings        → 201 Created (requiere JWT)
+- GET    /api/v1/listings        → 200 OK array (requiere JWT)
+- GET    /api/v1/listings/{id}   → 200 OK objeto (requiere JWT)
+- POST   /api/v1/listings sin token → 403 Forbidden
+
+LISTING CREADO EN ESTA SESION BQ-QA-SL-01:
+- ID:        f8971735-54a6-488f-a7c6-332f4ac5d3c2
+- Titulo:    Cámara Sony BQ-QA-SL-01
+- Precio:    480.00
+- Cantidad:  2
+- Status:    ACTIVE
+- SellerID:  707017a9-359c-40d8-92ba-b2805d5a6400

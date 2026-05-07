@@ -1,0 +1,17 @@
+{
+  "block": "BQ-QA-SL-01",
+  "step": "01 - Health Check core-api",
+  "timestamp": "2026-05-07T03:35:00Z",
+  "host": "localhost:18080",
+  "endpoint": "GET /actuator/health",
+  "response": {
+    "status": "UP",
+    "components": {
+      "db": { "status": "UP", "details": { "database": "PostgreSQL" } },
+      "ping": { "status": "UP" },
+      "rabbit": { "status": "UP", "details": { "version": "3.12.14" } },
+      "diskSpace": { "status": "UP" }
+    }
+  },
+  "result": "PASS"
+}

@@ -1,0 +1,9 @@
+{
+  "block": "BQ-QA-SL-01",
+  "step": "07 - Intento sin token (seguridad minima)",
+  "timestamp": "2026-05-07T03:35:46Z",
+  "endpoint": "POST /api/v1/listings (sin Authorization header)",
+  "http_status": 403,
+  "result": "PASS",
+  "note": "El endpoint rechaza requests sin token JWT valido. Contrato de seguridad respetado."
+}

@@ -1,0 +1,22 @@
+{
+  "block": "BQ-QA-SL-01",
+  "step": "02 - Register user for QA session",
+  "timestamp": "2026-05-07T03:35:17Z",
+  "endpoint": "POST /api/v1/auth/register",
+  "request": {
+    "name": "BQ QA SL01 User",
+    "email": "bq-qa-sl-01-1778124917@example.com",
+    "password": "[REDACTED]"
+  },
+  "response": {
+    "token": "eyJhbGciOiJIUzUxMiJ9...P0Pg",
+    "user": {
+      "id": "707017a9-359c-40d8-92ba-b2805d5a6400",
+      "email": "bq-qa-sl-01-1778124917@example.com",
+      "name": "BQ QA SL01 User",
+      "enabled": true
+    }
+  },
+  "http_status": 200,
+  "result": "PASS"
+}

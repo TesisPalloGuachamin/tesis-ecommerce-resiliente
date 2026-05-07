@@ -1,0 +1,112 @@
+{
+  "block": "BQ-QA-SL-01",
+  "fecha": "2026-05-07",
+  "ejecutor": "Claude Code — executor tecnico BQ-QA-SL-01",
+  "resultado_global": "PASS",
+
+  "contexto_qa_previo": {
+    "MF-QA-01_a_08": "PASS",
+    "BQ-QA-MO-01": "PASS",
+    "BQ-QA-IA-01": "PASS",
+    "BQ-QA-RL-01": "PASS",
+    "BACKEND-SELL-01": "PASS",
+    "MOBILE-SELL-01": "PASS"
+  },
+
+  "runtime": {
+    "host": "localhost:18080",
+    "contenedor": "tesis-core-api (healthy)",
+    "db": "tesis-core-db PostgreSQL 15 (healthy)",
+    "rabbitmq": "tesis-rabbitmq 3.12.14 (healthy)"
+  },
+
+  "ruta_api": {
+    "user_id": "707017a9-359c-40d8-92ba-b2805d5a6400",
+    "user_email": "bq-qa-sl-01-1778124917@example.com",
+    "listing_id": "f8971735-54a6-488f-a7c6-332f4ac5d3c2",
+    "POST_listings": { "http_status": 201, "result": "PASS" },
+    "GET_listings": { "http_status": 200, "count_after": 8, "new_listing_present": true, "result": "PASS" },
+    "GET_listings_by_id": { "http_status": 200, "id_match": true, "result": "PASS" },
+    "db_persistence": { "query_result": "1 row ACTIVE", "result": "PASS" },
+    "unauthorized_check": { "http_status": 403, "result": "PASS" }
+  },
+
+  "ruta_movil": {
+    "source": "MOBILE-SELL-01 (evidencias/mobile-sell-01/)",
+    "user_id": "7d216152-4428-454b-982e-9255e7ce3828",
+    "listing_id_creado": "c99734ab-1e6f-4429-968b-2114a5c1726e",
+    "creacion_listing": "PASS (HTTP 201)",
+    "confirmacion_visual": "PASS (createdListing state en app)",
+    "verificacion_por_listado": "PASS (listing aparece en GET /api/v1/listings after)",
+    "verificacion_por_id": "PASS (GET /api/v1/listings/{id} retorna objeto correcto)",
+    "tsc_clean": true,
+    "expo_bundle_clean": true,
+    "flujo_compra_intacto": true
+  },
+
+  "consistencia_backend_movil": {
+    "mismo_endpoint_POST": true,
+    "mismo_endpoint_GET_all": true,
+    "mismo_endpoint_GET_by_id": true,
+    "listings_mobile_visibles_en_api": true,
+    "listings_api_visibles_en_mobile": true,
+    "result": "CONSISTENTE"
+  },
+
+  "NO_ejecutado": [
+    "carga masiva / stress test",
+    "fallos simulados / resiliencia",
+    "campanas avanzadas",
+    "arquitectura de escritura",
+    "publicacion en stores",
+    "e-commerce integral"
+  ],
+
+  "evidencias_api": [
+    "01_health_check.json",
+    "02_register_user.json",
+    "03_api_get_listings_before.json",
+    "04_api_post_create_listing.json",
+    "05_api_get_listing_by_id.json",
+    "06_api_get_listings_after.json",
+    "07_api_unauthorized_check.json",
+    "08_api_db_persistence.txt",
+    "10_runtime_state.txt"
+  ],
+
+  "evidencias_movil": [
+    "09_mobile_evidence_reference.json",
+    "evidencias/mobile-sell-01/01_login_response.json",
+    "evidencias/mobile-sell-01/02_get_listings_before.json",
+    "evidencias/mobile-sell-01/03_post_create_listing.json",
+    "evidencias/mobile-sell-01/04_get_listing_by_id.json",
+    "evidencias/mobile-sell-01/05_get_listings_after.json",
+    "evidencias/mobile-sell-01/06_tsc_no_errors.txt",
+    "evidencias/mobile-sell-01/07_expo_bundle_result.txt",
+    "evidencias/mobile-sell-01/09_sell_flow_summary.json"
+  ],
+
+  "rollback": "NO APLICADO — todos los pasos resultaron PASS, base QA de compra/checkout no afectada",
+
+  "estado_final": {
+    "creacion_por_api": "PASS",
+    "listado_por_api": "PASS",
+    "consulta_por_id": "PASS",
+    "persistencia_db": "PASS",
+    "seguridad_sin_token": "PASS",
+    "evidencia_movil": "PASS",
+    "consistencia_backend_movil": "PASS"
+  },
+
+  "material_capitulo_4": {
+    "listingId_referencia": "f8971735-54a6-488f-a7c6-332f4ac5d3c2",
+    "sellerId_referencia": "707017a9-359c-40d8-92ba-b2805d5a6400",
+    "contrato_api_verificado": [
+      "POST /api/v1/listings → 201",
+      "GET /api/v1/listings → 200 array",
+      "GET /api/v1/listings/{id} → 200 objeto"
+    ],
+    "flujo_movil_verificado": true,
+    "evidencias_trazables": true
+  }
+}

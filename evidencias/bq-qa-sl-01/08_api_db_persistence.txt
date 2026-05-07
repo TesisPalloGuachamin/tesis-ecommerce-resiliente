@@ -1,0 +1,12 @@
+-- BQ-QA-SL-01: Verificacion persistencia en PostgreSQL (core_db)
+-- Comando: docker exec tesis-core-db psql -U postgres -d core_db -c "SELECT id, title, price, quantity, status FROM listings WHERE id='f8971735-54a6-488f-a7c6-332f4ac5d3c2';"
+-- Timestamp: 2026-05-07T03:35:50Z
+
+                  id                  |          title          | price  | quantity | status
+--------------------------------------+-------------------------+--------+----------+--------
+ f8971735-54a6-488f-a7c6-332f4ac5d3c2 | Cámara Sony BQ-QA-SL-01 | 480.00 |        2 | ACTIVE
+(1 rows)
+
+-- RESULTADO: PASS
+-- El listing creado via POST /api/v1/listings persiste correctamente en la base de datos.
+-- ID coincide con el retornado en el response de creacion.

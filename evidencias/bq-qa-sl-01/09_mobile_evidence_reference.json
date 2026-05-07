@@ -1,0 +1,55 @@
+{
+  "block": "BQ-QA-SL-01",
+  "step": "09 - Evidencia movil (referencia a MOBILE-SELL-01 validada)",
+  "timestamp": "2026-05-07T03:35:55Z",
+  "source_block": "MOBILE-SELL-01",
+  "source_path": "evidencias/mobile-sell-01/",
+  "mobile_user": {
+    "id": "7d216152-4428-454b-982e-9255e7ce3828",
+    "email": "mobile-int-01@example.com"
+  },
+  "mobile_flow": {
+    "step_1_login": {
+      "file": "01_login_response.json",
+      "result": "JWT obtenido correctamente",
+      "http_status": 200
+    },
+    "step_2_get_listings_before": {
+      "file": "02_get_listings_before.json",
+      "result": "6 listings preexistentes recuperados",
+      "http_status": 200
+    },
+    "step_3_create_listing": {
+      "file": "03_post_create_listing.json",
+      "listing_id": "c99734ab-1e6f-4429-968b-2114a5c1726e",
+      "title": "Laptop gaming usada",
+      "price": 850.0,
+      "http_status": 201,
+      "result": "PASS"
+    },
+    "step_4_get_by_id": {
+      "file": "04_get_listing_by_id.json",
+      "listing_id": "c99734ab-1e6f-4429-968b-2114a5c1726e",
+      "id_match": true,
+      "http_status": 200,
+      "result": "PASS"
+    },
+    "step_5_get_listings_after": {
+      "file": "05_get_listings_after.json",
+      "count_before": 6,
+      "count_after": 7,
+      "new_listing_present": true,
+      "result": "PASS"
+    }
+  },
+  "tsc_clean": true,
+  "expo_bundle_clean": true,
+  "purchase_flow_untouched": true,
+  "new_screen": "sell",
+  "api_methods_integrated": [
+    "api.createListing(token, {title, description?, price, quantity})",
+    "api.getListings(token)",
+    "api.getListingById(token, listingId)"
+  ],
+  "result": "PASS"
+}
