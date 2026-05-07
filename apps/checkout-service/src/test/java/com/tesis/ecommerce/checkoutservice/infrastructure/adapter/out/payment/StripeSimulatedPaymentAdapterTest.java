@@ -7,33 +7,28 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SimulatedPaymentAdapterTest {
+class StripeSimulatedPaymentAdapterTest {
 
-    private final SimulatedPaymentAdapter paymentAdapter = new SimulatedPaymentAdapter();
+    private final StripeSimulatedPaymentAdapter paymentAdapter = new StripeSimulatedPaymentAdapter();
 
     @Test
-    void testExecutePaymentReturnsResult() {
-        // Act
+    void testExecutePaymentReturnsApprovedStripeSimulatedResult() {
         var result = paymentAdapter.executePayment(UUID.randomUUID(), new BigDecimal("100.00"));
 
-        // Assert
         assertNotNull(result);
         assertNotNull(result.transactionId);
-        assertTrue(result.success || result.errorMessage != null);
+        assertTrue(result.transactionId.startsWith("stripe_sim_"));
+        assertTrue(result.success);
+        assertNull(result.errorMessage);
     }
 
     @Test
     void testExecutePaymentWithValidParameters() {
-        // Act
         var result = paymentAdapter.executePayment(UUID.randomUUID(), new BigDecimal("50.00"));
 
-        // Assert
         assertNotNull(result);
         assertNotNull(result.transactionId);
-        if (!result.success) {
-            assertNotNull(result.errorMessage);
-        }
+        assertTrue(result.success);
     }
 
 }
-

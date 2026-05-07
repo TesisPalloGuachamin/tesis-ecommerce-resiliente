@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-05-06T19:37:47-05:00",
+  "payment": {
+    "port": "apps/checkout-service/src/main/java/com/tesis/ecommerce/checkoutservice/domain/port/out/PaymentPort.java",
+    "adapter": "apps/checkout-service/src/main/java/com/tesis/ecommerce/checkoutservice/infrastructure/adapter/out/payment/StripeSimulatedPaymentAdapter.java",
+    "usecase": "apps/checkout-service/src/main/java/com/tesis/ecommerce/checkoutservice/application/usecase/ProcessCheckoutUseCase.java",
+    "mode": "stripe-simulated",
+    "realStripeCalls": false,
+    "realPayments": false,
+    "transactionPrefix": "stripe_sim_"
+  },
+  "mobile": {
+    "config": "apps/mobile/src/config.ts",
+    "hostVariable": "EXPO_PUBLIC_API_BASE_URL",
+    "sourceFallback": "http://localhost:8080",
+    "localEnvIgnored": true
+  },
+  "documentation": "docs/payment-simulation.md"
+}

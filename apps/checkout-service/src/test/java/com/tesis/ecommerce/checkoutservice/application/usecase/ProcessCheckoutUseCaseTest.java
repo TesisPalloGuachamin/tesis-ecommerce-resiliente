@@ -55,6 +55,7 @@ class ProcessCheckoutUseCaseTest {
 
         testEvent = CheckoutRequestedEvent.builder()
                 .eventId(UUID.randomUUID())
+                .requestId(UUID.randomUUID())
                 .userId(UUID.randomUUID())
                 .totalAmount(new BigDecimal("100.00"))
                 .items(List.of(item))
@@ -138,4 +139,3 @@ class ProcessCheckoutUseCaseTest {
     }
 
 }
-
