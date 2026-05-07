@@ -1,0 +1,25 @@
+{
+  "block": "DEVOPS-OBS-01",
+  "step": "09 - Referencia al dashboard de Grafana versionado",
+  "timestamp": "2026-05-07T04:15:00Z",
+  "classification": "DISEÑADO — dashboard configurado, sin datos reales de backend",
+  "dashboard_file": "deploy/compose/grafana/dashboards/services-overview.json",
+  "provisioning_datasource": "deploy/compose/grafana/provisioning/datasources/prometheus.yml",
+  "provisioning_dashboards_config": "deploy/compose/grafana/provisioning/dashboards/dashboards.yml",
+  "dashboard_panels_designed": [
+    "HTTP Request Rate (http_server_requests_seconds_count — apoyo analítico)",
+    "JVM Memory Usage (jvm_memory_used_bytes — apoyo analítico)",
+    "Active DB Connections (hikaricp_connections_active — apoyo analítico)",
+    "Service Uptime (up metric — observable con self-monitoring)"
+  ],
+  "grafana_version": "grafana/grafana:latest (configurado en compose)",
+  "access_when_running": "http://localhost:3000 | admin / admin123",
+  "how_to_activate": [
+    "1. Agregar micrometer-registry-prometheus a pom.xml de core-api y checkout-service",
+    "2. Recompilar servicios (mvn clean package)",
+    "3. Descomentar scrape jobs en deploy/compose/prometheus/prometheus.yml",
+    "4. Levantar stack completo: docker compose -f deploy/compose/docker-compose.dev.yml up -d",
+    "5. Acceder a Grafana en localhost:3000"
+  ],
+  "for_thesis": "El dashboard está diseñado, versionado y provisionado. En la tesis debe presentarse como infraestructura de observabilidad preparada para extensión, con la aclaración de que los datos reales del backend requieren habilitar micrometer-prometheus."
+}

@@ -1,0 +1,81 @@
+{
+  "block": "DEVOPS-OBS-01",
+  "step": "02 - Mensajeria RabbitMQ observada via Management API",
+  "timestamp": "2026-05-07T04:15:00Z",
+  "classification": "OBSERVADO",
+  "source": "curl -u guest:guest http://localhost:15674/api/queues",
+  "broker": "RabbitMQ 3.12.14",
+  "exchange": "ecommerce.checkout.exchange (topic, durable)",
+  "dlx_exchanges": ["checkout.dlx", "core-api.dlx"],
+  "queues": [
+    {
+      "name": "checkout-service.checkout-requested.q",
+      "messages_total": 0,
+      "messages_ready": 0,
+      "published": 2,
+      "delivered": 2,
+      "consumers": 1,
+      "interpretation": "checkout.requested: 2 eventos publicados, 2 consumidos por checkout-service. Estado: saludable."
+    },
+    {
+      "name": "core-api.checkout-completed.q",
+      "messages_total": 0,
+      "messages_ready": 0,
+      "published": 2,
+      "delivered": 2,
+      "consumers": 1,
+      "interpretation": "checkout.completed: 2 eventos publicados, 2 entregados a core-api. Estado: saludable."
+    },
+    {
+      "name": "checkout-service.checkout-accepted.q",
+      "messages_total": 2,
+      "messages_ready": 2,
+      "published": 2,
+      "delivered": 0,
+      "consumers": 0,
+      "interpretation": "checkout.accepted: 2 eventos publicados, sin consumidor activo (normal en sandbox sin suscriptor externo)."
+    },
+    {
+      "name": "checkout-service.checkout-completed.q",
+      "messages_total": 2,
+      "messages_ready": 2,
+      "published": 2,
+      "delivered": 0,
+      "consumers": 0,
+      "interpretation": "checkout.completed: 2 eventos almacenados, sin consumidor externo (esperado)."
+    },
+    {
+      "name": "checkout-service.payment-processed.q",
+      "messages_total": 2,
+      "messages_ready": 2,
+      "published": 2,
+      "delivered": 0,
+      "consumers": 0,
+      "interpretation": "payment.processed: 2 pagos simulados registrados."
+    },
+    {
+      "name": "checkout-service.checkout-failed.q",
+      "messages_total": 0,
+      "published": 0,
+      "interpretation": "Sin fallos de checkout. DLQ activo como salvaguarda."
+    },
+    {
+      "name": "checkout-service.dlq",
+      "messages_total": 0,
+      "interpretation": "Dead Letter Queue vacia: ningun mensaje rechazado ni fallido."
+    },
+    {
+      "name": "core-api.dlq",
+      "messages_total": 0,
+      "interpretation": "Dead Letter Queue de core-api vacia."
+    },
+    {
+      "name": "core-api.checkout-failed.q",
+      "messages_total": 0,
+      "published": 0,
+      "consumers": 1,
+      "interpretation": "Sin checkouts fallidos detectados."
+    }
+  ],
+  "observability_conclusion": "El flujo de mensajeria del checkout (requested → accepted → payment → completed) es completamente observable via RabbitMQ Management API sin necesidad de Prometheus. Los 2 checkouts ejecutados durante las sesiones BACKEND-SELL-01 y BQ-QA-SL-01 quedan trazados en colas durable."
+}

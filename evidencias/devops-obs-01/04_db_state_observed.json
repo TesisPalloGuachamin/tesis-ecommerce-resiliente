@@ -1,0 +1,39 @@
+{
+  "block": "DEVOPS-OBS-01",
+  "step": "04 - Estado de bases de datos observado via psql",
+  "timestamp": "2026-05-07T04:15:00Z",
+  "classification": "OBSERVADO",
+  "core_db": {
+    "host": "tesis-core-db",
+    "port": 15432,
+    "database": "core_db",
+    "engine": "PostgreSQL 15",
+    "tables": [
+      {"table": "listings", "live_rows": 8},
+      {"table": "users", "live_rows": 5},
+      {"table": "flyway_schema_history", "live_rows": 3},
+      {"table": "outbox_events", "live_rows": 2},
+      {"table": "cart_items", "live_rows": 2},
+      {"table": "products", "live_rows": 2},
+      {"table": "checkout_requests", "live_rows": 2},
+      {"table": "carts", "live_rows": 2}
+    ],
+    "migration_count": 3,
+    "note": "8 listings acumulados de sesiones BACKEND-SELL-01, MOBILE-SELL-01 y BQ-QA-SL-01. 2 checkouts iniciados desde core-api."
+  },
+  "checkout_db": {
+    "host": "tesis-checkout-db",
+    "port": 15433,
+    "database": "checkout_db",
+    "engine": "PostgreSQL 15",
+    "tables": [
+      {"table": "orders", "live_rows": 2},
+      {"table": "payment_attempts", "live_rows": 2},
+      {"table": "inbox_events", "live_rows": 2},
+      {"table": "order_items", "live_rows": 2},
+      {"table": "flyway_schema_history", "live_rows": 1},
+      {"table": "checkout_requests", "live_rows": 0}
+    ],
+    "note": "2 ordenes completadas con pago stripe-simulated. inbox_events muestra idempotencia aplicada. DLQ vacia confirma flujo sin errores."
+  }
+}

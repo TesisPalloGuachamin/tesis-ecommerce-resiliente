@@ -1,0 +1,39 @@
+{
+  "block": "DEVOPS-OBS-01",
+  "step": "05 - Estado de infraestructura Prometheus/Grafana",
+  "timestamp": "2026-05-07T04:15:00Z",
+  "prometheus": {
+    "infrastructure_status": "CONFIGURADO - NO CORRIENDO en sesion actual",
+    "config_file": "deploy/compose/prometheus/prometheus.yml",
+    "compose_definition": "deploy/compose/docker-compose.dev.yml (servicio prometheus, puerto 9090)",
+    "scrape_jobs_active": ["prometheus (self-monitoring)"],
+    "scrape_jobs_disabled": [
+      "core-api (/actuator/prometheus) — comentado: micrometer-registry-prometheus no en pom.xml",
+      "checkout-service (/actuator/prometheus) — comentado: misma razon"
+    ],
+    "reason_scraping_disabled": "micrometer-registry-prometheus NO agregado a pom.xml de core-api ni checkout-service. Solo spring-boot-starter-actuator esta presente. El endpoint /actuator/prometheus retorna 403 (Spring Security + endpoint no disponible).",
+    "what_would_be_observable_if_enabled": [
+      "http_server_requests_seconds_count (latencia HTTP por endpoint)",
+      "jvm_memory_used_bytes (memoria JVM)",
+      "jvm_gc_pause_seconds (pausas GC)",
+      "logback_events_total (conteo de log events por nivel)",
+      "hikaricp_connections_active (pool de DB)",
+      "spring_rabbitmq_listener_seconds (tiempo de procesamiento de mensajes)"
+    ]
+  },
+  "grafana": {
+    "infrastructure_status": "CONFIGURADO - NO CORRIENDO en sesion actual",
+    "compose_definition": "deploy/compose/docker-compose.dev.yml (servicio grafana, puerto 3000)",
+    "dashboard_file": "deploy/compose/grafana/dashboards/services-overview.json",
+    "provisioning_datasource": "deploy/compose/grafana/provisioning/datasources/prometheus.yml",
+    "provisioning_dashboards": "deploy/compose/grafana/provisioning/dashboards/dashboards.yml",
+    "dashboard_status": "Definicion JSON existe y es valida. No fue cargado con datos reales de metricas (Prometheus no estuvo scrapeando servicios Java).",
+    "classification": "DISENADO — dashboard configurado y provisionado pero sin datos de scraping real de backend"
+  },
+  "observability_achieved_without_prometheus": {
+    "health_endpoints": "OBSERVADO — /actuator/health disponible y retorna UP para db/rabbit/ping/diskSpace",
+    "rabbitmq_management_api": "OBSERVADO — colas, exchanges, message counts accesibles via localhost:15674/api/",
+    "stdout_logging": "OBSERVADO — docker logs muestra flujo completo de eventos checkout (requested → payment → completed)",
+    "db_direct_query": "OBSERVADO — psql directo a tesis-core-db y tesis-checkout-db muestra row counts reales"
+  }
+}

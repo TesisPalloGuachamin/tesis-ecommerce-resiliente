@@ -1,0 +1,77 @@
+{
+  "block": "DEVOPS-OBS-01",
+  "artifact": "Matriz DRP Final — observado / diseñado / documental",
+  "timestamp": "2026-05-07T04:15:00Z",
+  "scope": "Recuperacion controlada, medible y verificable. No alta disponibilidad enterprise. No active-active productivo.",
+  "matrix": [
+    {
+      "scenario": "Reconstrucción AWS (misma región) — F6",
+      "classification": "OBSERVADO",
+      "evidence": [
+        "evidencias/pay-sim-01/checkout-flow-aws.json (host 44.195.21.215, health UP, checkout COMPLETED)",
+        "evidencias/pay-sim-01/deployed-checkout-service.txt",
+        "evidencias/devops-drp-02/aws-current-health.json (coreApi UP, checkoutService UP, prometheusReady)"
+      ],
+      "what_can_be_claimed": "El stack completo (core-api, checkout-service, RabbitMQ, PostgreSQL) fue desplegado y validado en EC2 AWS (región us-east-1). Se ejecutó el flujo de checkout completo con pago simulado Stripe sobre ese host. RTO/RPO están acotados a la sesión de prueba: reconstrucción desde compose bundle + imágenes Docker existentes.",
+      "rto_rpo": "Observado: reconstrucción en < 30 min desde compose bundle e imágenes disponibles. No se midió RTO formal con cronómetro.",
+      "what_cannot_be_claimed": "No se midió failover automático. No hay SLA formal."
+    },
+    {
+      "scenario": "Reconstrucción AWS (región alterna)",
+      "classification": "DISEÑADO + runbook-ready",
+      "evidence": [
+        "infra/environments/demo/terraform.alternate-region.tfvars.example",
+        "docs/devops/drp-02-expanded-runbook.md (pasos 1-10 documentados)",
+        "evidencias/devops-drp-02/aws-demo-terraform-validate.txt (validate pass)"
+      ],
+      "what_can_be_claimed": "La infraestructura Terraform está parametrizada por región (variable aws_region). El runbook de recuperación a región alterna está documentado paso a paso. No se ejecutó el apply ni se midió RTO en región alterna.",
+      "rto_rpo": "Diseñado: mismo procedimiento que F6, tiempo estimado < 45 min si imágenes y backup disponibles. Sin observación real.",
+      "what_cannot_be_claimed": "RTO/RPO observados en región alterna. No se drill-tested."
+    },
+    {
+      "scenario": "Azure alterno",
+      "classification": "DISEÑADO + Terraform-validado",
+      "evidence": [
+        "infra/environments/azure-drp/main.tf (VM Ubuntu + Docker Cloud Init)",
+        "evidencias/devops-drp-02/azure-terraform-init.txt (init pass)",
+        "evidencias/devops-drp-02/azure-terraform-validate.txt (validate pass)",
+        "evidencias/devops-drp-02/azure-viability-summary.json (azureApply: not-executed)"
+      ],
+      "what_can_be_claimed": "El plan IaC para Azure (Terraform provider azurerm 3.117.1) es sintácticamente válido y tiene estructura completa para reproducir el entorno en una VM Azure. No se aplicó por ausencia de credenciales/cuota Azure disponibles.",
+      "rto_rpo": "No observados. Azure RPO diseñado como 'último backup disponible'.",
+      "what_cannot_be_claimed": "Cualquier métrica observada en Azure. El apply no fue ejecutado."
+    },
+    {
+      "scenario": "Google Cloud",
+      "classification": "DOCUMENTAL",
+      "evidence": [
+        "docs/devops/drp-02-expanded-runbook.md (mencionado como alternativa)"
+      ],
+      "what_can_be_claimed": "GCP es mencionado como alternativa de recuperación en la documentación de DEVOPS-DRP-02. No hay implementación Terraform ni runbook detallado para GCP.",
+      "rto_rpo": "No definidos formalmente para GCP en este proyecto.",
+      "what_cannot_be_claimed": "Cualquier implementación, validación o métrica GCP."
+    },
+    {
+      "scenario": "Fallback degradado / infraestructura propia",
+      "classification": "DOCUMENTAL",
+      "evidence": [
+        "docs/devops/drp-02-expanded-runbook.md (sección 'Fallback: Own Infrastructure')",
+        "docs/devops/drp-02-backup-rpo-matrix.md (fila Docker Compose stack)"
+      ],
+      "what_can_be_claimed": "El compose bundle (deploy/compose/) es portable a cualquier host Linux con Docker. El procedimiento manual está documentado como último recurso. Sin SLA de nube.",
+      "rto_rpo": "Manual. Depende de disponibilidad del operador y conectividad. No cuantificable en términos de SLA.",
+      "what_cannot_be_claimed": "Ninguna métrica observada. Es un fallback de último recurso documentado."
+    }
+  ],
+  "drp_summary": {
+    "observado": ["AWS misma región F6 — stack desplegado y flujo checkout validado en EC2"],
+    "disenado_runbook_ready": ["AWS región alterna — Terraform parametrizado + runbook completo"],
+    "disenado_validado_terraform": ["Azure — terraform init/validate pass, sin apply"],
+    "documental": ["Google Cloud", "Fallback infra propia"]
+  },
+  "source_blocks": {
+    "DEVOPS-DRP-01": "F6 reconstrucción AWS — base observada",
+    "DEVOPS-F6-01": "Reconstrucción y recovery total — observado",
+    "DEVOPS-DRP-02": "Extension diseñada: región alterna AWS + Azure IaC"
+  }
+}

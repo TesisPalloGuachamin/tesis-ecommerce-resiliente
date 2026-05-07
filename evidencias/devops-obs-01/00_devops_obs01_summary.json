@@ -1,0 +1,117 @@
+{
+  "block": "DEVOPS-OBS-01",
+  "fecha": "2026-05-07",
+  "ejecutor": "Claude Code — executor tecnico DEVOPS-OBS-01",
+  "resultado_global": "PASS",
+
+  "contexto_devops_previo": {
+    "DEVOPS-REBUILD-01": "PASS",
+    "DEVOPS-IAC-01": "PASS",
+    "DEVOPS-DRP-01": "PASS",
+    "DEVOPS-F6-01": "PASS",
+    "DEVOPS-DRP-02": "PASS"
+  },
+
+  "auditoria": {
+    "prometheus": {
+      "config_exists": true,
+      "path": "deploy/compose/prometheus/prometheus.yml",
+      "container_running": false,
+      "scraping_backend": false,
+      "reason": "micrometer-registry-prometheus no en pom.xml; scrape jobs comentados"
+    },
+    "grafana": {
+      "config_exists": true,
+      "dashboard_exists": true,
+      "dashboard_path": "deploy/compose/grafana/dashboards/services-overview.json",
+      "container_running": false,
+      "data_populated": false
+    },
+    "logging": {
+      "stdout_spring_boot": true,
+      "checkout_event_flow_observable": true,
+      "centralized_logging": false,
+      "log_shipping": false
+    },
+    "evidencias_previas": {
+      "devops-drp-02": "8 archivos: aws health, azure terraform, RPO matrix, runbook, tooling audit",
+      "pay-sim-01": "checkout-flow-aws.json muestra checkout COMPLETED en EC2 44.195.21.215",
+      "4_5_10_observabilidad": "VACIO",
+      "4_5_12_iac_drp": "VACIO",
+      "4_5_11_cicd": "VACIO"
+    }
+  },
+
+  "ejecutado": {
+    "01_health_observed": "GET /actuator/health en localhost:18080 — UP (db, rabbit, ping, diskSpace)",
+    "02_rabbitmq_observed": "curl RabbitMQ Management API — 9 colas, 2 checkout flows trazados, 0 DLQ",
+    "03_checkout_logs": "docker logs tesis-checkout-service — 32 lineas con ciclo completo pago",
+    "04_db_state": "psql core_db + checkout_db — row counts reales: 8 listings, 2 ordenes",
+    "05_prometheus_status": "Auditoria: configurado pero NO corriendo; /actuator/prometheus 403",
+    "06_promql_queries": "Set final: 3 observables + 10 apoyo analitico (clasificados)",
+    "07_logging_note": "Decision cerrada: qué SI/NO implementado + redaccion para tesis",
+    "08_drp_matrix": "Matriz 5 escenarios: 1 observado, 1 runbook, 1 tf-validado, 2 documental",
+    "09_grafana_ref": "Referencia a dashboard versionado + como activar",
+    "10_estado_devops": "Texto consolidado ESTADO_DEVOPS.txt",
+    "11_estado_global": "Sugerencia de parrafo para ESTADO_GLOBAL"
+  },
+
+  "NO_ejecutado": [
+    "Levantar Prometheus/Grafana en nueva sesion (no requerido para consolidacion)",
+    "Agregar micrometer-registry-prometheus a pom.xml (fuera de alcance de este bloque)",
+    "Tocar Terraform ni aplicar ningun cambio de IaC",
+    "Abrir new campanas de carga, stress o resiliencia avanzada",
+    "Implementar centralizacion de logs (ELK/Loki)",
+    "Active-active ni multicloud productivo"
+  ],
+
+  "observabilidad_real": {
+    "health_endpoint": "OBSERVADO — /actuator/health 200 OK",
+    "rabbitmq_management": "OBSERVADO — queues/exchanges/message counts reales",
+    "stdout_logging": "OBSERVADO — checkout event flow completo en docker logs",
+    "db_state": "OBSERVADO — row counts directos via psql",
+    "prometheus_scraping_backend": "NO OBSERVADO — micrometer ausente",
+    "grafana_con_datos": "NO OBSERVADO — sin series de backend",
+    "logs_centralizados": "NO IMPLEMENTADO"
+  },
+
+  "drp_matrix_summary": {
+    "AWS_misma_region_F6": "OBSERVADO",
+    "AWS_region_alterna": "DISENADO + runbook-ready",
+    "Azure": "DISENADO + Terraform-validado",
+    "Google_Cloud": "DOCUMENTAL",
+    "Fallback_propio": "DOCUMENTAL"
+  },
+
+  "promql_summary": {
+    "observables": 3,
+    "apoyo_analitico": 10,
+    "archivo": "evidencias/devops-obs-01/06_promql_final_queries.md"
+  },
+
+  "rollback": "NO APLICADO — solo lectura, auditoria y generacion de artefactos. Ningun cambio de infraestructura.",
+
+  "material_capitulo_4": {
+    "nota_logging": "07_logging_technical_note.md — lista para copiar/adaptar",
+    "matriz_drp": "08_drp_matrix_final.json — base para diagrama de recuperacion",
+    "promql": "06_promql_final_queries.md — base para Anexo PromQL",
+    "evidencias_runtime": ["01", "02", "03", "04"] ,
+    "estado_devops": "10_ESTADO_DEVOPS.txt — texto listo para coordinacion",
+    "estado_global": "11_ESTADO_GLOBAL_suggestion.txt — parrafo para ESTADO_GLOBAL"
+  },
+
+  "archivos_generados": [
+    "00_devops_obs01_summary.json",
+    "01_runtime_health_observed.json",
+    "02_rabbitmq_messaging_observed.json",
+    "03_checkout_service_logs_observed.txt",
+    "04_db_state_observed.json",
+    "05_prometheus_grafana_status.json",
+    "06_promql_final_queries.md",
+    "07_logging_technical_note.md",
+    "08_drp_matrix_final.json",
+    "09_grafana_dashboard_reference.json",
+    "10_ESTADO_DEVOPS.txt",
+    "11_ESTADO_GLOBAL_suggestion.txt"
+  ]
+}

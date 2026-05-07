@@ -1,0 +1,65 @@
+{
+  "block": "DEVOPS-OBS-01",
+  "step": "01 - Runtime health observado en vivo",
+  "timestamp": "2026-05-07T04:15:00Z",
+  "classification": "OBSERVADO",
+  "containers": [
+    {
+      "name": "tesis-core-api",
+      "image": "tesis-core-api (backend-sell-01 build)",
+      "status": "Up ~1h30m (healthy)",
+      "port": "0.0.0.0:18080->8080/tcp",
+      "restarts": 0,
+      "started_at": "2026-05-07T02:52:12Z",
+      "health_endpoint": "http://localhost:18080/actuator/health",
+      "health_response": {
+        "status": "UP",
+        "components": {
+          "db": "UP (PostgreSQL)",
+          "ping": "UP",
+          "rabbit": "UP (3.12.14)",
+          "diskSpace": "UP"
+        }
+      }
+    },
+    {
+      "name": "tesis-checkout-service",
+      "image": "tesis-checkout-service (backend-sell-01 build)",
+      "status": "Up ~1h30m (healthy)",
+      "port": "0.0.0.0:18082->8082/tcp",
+      "restarts": 0,
+      "started_at": "2026-05-07T02:47:22Z"
+    },
+    {
+      "name": "tesis-rabbitmq",
+      "image": "rabbitmq:3.12-management-alpine",
+      "status": "Up ~1h30m (healthy)",
+      "port": "0.0.0.0:5672->5672/tcp | 0.0.0.0:15674->15672/tcp",
+      "restarts": 0,
+      "started_at": "2026-05-07T02:46:51Z"
+    },
+    {
+      "name": "tesis-core-db",
+      "image": "postgres:15-alpine",
+      "status": "Up ~1h30m (healthy)",
+      "port": "0.0.0.0:15432->5432/tcp",
+      "restarts": 0,
+      "started_at": "2026-05-07T02:46:51Z"
+    },
+    {
+      "name": "tesis-checkout-db",
+      "image": "postgres:15-alpine",
+      "status": "Up ~1h30m (healthy)",
+      "port": "0.0.0.0:15433->5432/tcp",
+      "restarts": 0
+    }
+  ],
+  "prometheus_container": "NOT RUNNING en esta sesion",
+  "grafana_container": "NOT RUNNING en esta sesion",
+  "note": "Prometheus/Grafana configurados en docker-compose.dev.yml pero no levantados en esta sesion. El stack backend está sobre el docker-compose.yml raíz.",
+  "actuator_endpoints_available": {
+    "health": "200 OK (anonimo)",
+    "metrics": "403 Forbidden (Spring Security bloquea sin JWT)",
+    "prometheus": "403 Forbidden (micrometer-registry-prometheus NO está en pom.xml)"
+  }
+}

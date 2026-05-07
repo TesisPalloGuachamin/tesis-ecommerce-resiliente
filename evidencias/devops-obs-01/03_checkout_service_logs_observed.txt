@@ -1,0 +1,32 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-05-07T02:47:23.299Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Starting CheckoutServiceApplication v1.0.0 using Java 17.0.18 with PID 1 (/app/app.jar started by root in /app)
+2026-05-07T02:47:23.302Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-05-07T02:47:27.608Z  WARN 1 --- [checkout-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-07T02:47:29.534Z  WARN 1 --- [checkout-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-07T02:47:31.468Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Started CheckoutServiceApplication in 8.704 seconds (process running for 9.231)
+2026-05-07T02:48:09.435Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.requested event: 6570d2be-6b55-413d-a56e-2164bb05ef20
+2026-05-07T02:48:09.439Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.a.u.ProcessCheckoutUseCase       : Processing checkout for request: 6570d2be-6b55-413d-a56e-2164bb05ef20
+2026-05-07T02:48:09.565Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.accepted event for checkout request: 4a41664b-ae42-4a00-a0c5-a9152ae2461a
+2026-05-07T02:48:09.568Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Executing Stripe simulated payment for order: 79363dec-af37-4881-ab97-3b720d37e60a, amount: 1299.99
+2026-05-07T02:48:10.069Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Stripe simulated payment approved for order: 79363dec-af37-4881-ab97-3b720d37e60a, transaction: stripe_sim_bad44647-03ec-48f9-8861-97bdee184cc5
+2026-05-07T02:48:10.075Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published payment.processed event for order: 79363dec-af37-4881-ab97-3b720d37e60a, success: true
+2026-05-07T02:48:10.078Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.completed event for checkout request: 4a41664b-ae42-4a00-a0c5-a9152ae2461a
+2026-05-07T02:48:10.078Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.a.u.ProcessCheckoutUseCase       : Checkout completed successfully for order: ORD-EC9E7C5C
+2026-05-07T02:48:10.135Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Checkout processed successfully for event: 6570d2be-6b55-413d-a56e-2164bb05ef20
+2026-05-07T02:53:30.061Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.requested event: d29b6dd8-b2e2-4d92-b546-02135796d115
+2026-05-07T02:53:30.061Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.a.u.ProcessCheckoutUseCase       : Processing checkout for request: d29b6dd8-b2e2-4d92-b546-02135796d115
+2026-05-07T02:53:30.069Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.accepted event for checkout request: 8820a3ff-6716-455b-bdb6-0e93a769e7d8
+2026-05-07T02:53:30.070Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Executing Stripe simulated payment for order: 2c6c5cca-8b81-445e-be50-95bad8dcb25b, amount: 1299.99
+2026-05-07T02:53:30.570Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Stripe simulated payment approved for order: 2c6c5cca-8b81-445e-be50-95bad8dcb25b, transaction: stripe_sim_8977603a-1611-4554-997c-55d34cbd8d73
+2026-05-07T02:53:30.573Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published payment.processed event for order: 2c6c5cca-8b81-445e-be50-95bad8dcb25b, success: true
+2026-05-07T02:53:30.575Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.completed event for checkout request: 8820a3ff-6716-455b-bdb6-0e93a769e7d8
+2026-05-07T02:53:30.575Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.a.u.ProcessCheckoutUseCase       : Checkout completed successfully for order: ORD-F44C2E89
+2026-05-07T02:53:30.590Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Checkout processed successfully for event: d29b6dd8-b2e2-4d92-b546-02135796d115
