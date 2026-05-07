@@ -1,0 +1,12 @@
+--- aws --version ---
+aws-cli/2.34.9 Python/3.13.11 Linux/6.12.74+deb12-amd64 exe/x86_64.debian.12
+--- az version ---
+/bin/bash: línea 1: az: orden no encontrada
+--- terraform version ---
+Terraform v1.8.5
+on linux_amd64
+
+Your version of Terraform is out of date! The latest version
+is 1.15.1. You can update by downloading from https://www.terraform.io/downloads.html
+--- docker version ---
+Docker version 20.10.24+dfsg1, build 297e128

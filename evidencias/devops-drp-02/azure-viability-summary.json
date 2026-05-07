@@ -1,0 +1,9 @@
+{
+  "generatedAt": "2026-05-06T21:26:45-05:00",
+  "azureCli": "not-installed",
+  "terraformInit": "pass",
+  "terraformValidate": "pass",
+  "azureApply": "not-executed",
+  "limitation": "Azure credentials/quota were not available in this environment; DEVOPS-DRP-02 validates Terraform viability only.",
+  "observedMetrics": false
+}

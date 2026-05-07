@@ -1,0 +1,15 @@
+# DEVOPS-DRP-02 - Azure designed recovery target
+#
+# This is not an active-active or productive multicloud deployment.
+# Use only for a controlled DRP recovery drill when Azure credentials and quota exist.
+
+project_name = "tesis-ecommerce"
+environment  = "drp-azure"
+location     = "eastus"
+
+admin_username       = "azureuser"
+admin_ssh_public_key = "ssh-rsa REPLACE_WITH_PUBLIC_KEY"
+operator_cidr        = "REPLACE_WITH_OPERATOR_IP/32"
+
+vm_size           = "Standard_B2s"
+root_disk_size_gb = 30

@@ -1,0 +1,7 @@
+{
+  "generatedAt": "2026-05-06T21:26:07-05:00",
+  "awsCurrentHost": "44.195.21.215",
+  "coreApi": {"status":"UP","db":"UP","rabbit":"UP"},
+  "checkoutService": {"status":"UP","db":"UP","rabbit":"UP"},
+  "prometheusReady": "Prometheus Server is Ready."
+}

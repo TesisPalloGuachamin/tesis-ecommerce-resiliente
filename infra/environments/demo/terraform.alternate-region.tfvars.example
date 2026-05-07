@@ -1,0 +1,17 @@
+# DEVOPS-DRP-02 - AWS alternate-region recovery template
+#
+# This file is intentionally separate from terraform.tfvars so the observed
+# demo environment is not changed by accident. Copy it to a temporary tfvars
+# file only when executing a controlled DRP recovery in another AWS region.
+
+aws_region       = "us-west-2"
+project_name     = "tesis-ecommerce"
+environment      = "drp-aws-alt"
+instance_type    = "t3.small"
+key_name         = "vockey"
+root_volume_size = 20
+
+# Notes:
+# - The key pair name must exist in the target region.
+# - The module selects the default VPC/subnet in the selected region.
+# - SSH and app ingress are restricted to the operator public IP detected by Terraform.
