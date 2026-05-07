@@ -42,3 +42,15 @@ export type CheckoutRequest = {
   totalAmount: number | string;
   status: "PENDING" | "COMPLETED" | "FAILED" | string;
 };
+
+export type Listing = {
+  id: string;
+  sellerId: string;
+  title: string;
+  description: string | null;
+  price: number | string;
+  quantity: number;
+  status: string;
+  createdAt: string;
+  updatedAt: string;
+};

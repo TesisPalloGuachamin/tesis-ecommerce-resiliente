@@ -1,0 +1,10 @@
+iOS ./index.ts ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 99.9% (577/577)
+iOS Bundled 6927ms index.ts (577 modules)
+
+› ios bundles (1):
+_expo/static/js/ios/index-30ae1fe3f70e2b87fa4ea78a9b2336a9.hbc (1.75 MB)
+
+› Files (1):
+metadata.json (142 B)
+
+Exported: /tmp/expo-sell-bundle

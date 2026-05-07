@@ -1,5 +1,5 @@
 import { API_BASE_URL } from "./config";
-import type { AuthResponse, Cart, CheckoutRequest, Product } from "./types";
+import type { AuthResponse, Cart, CheckoutRequest, Listing, Product } from "./types";
 
 type Method = "GET" | "POST" | "PATCH" | "DELETE";
 
@@ -107,5 +107,24 @@ export const api = {
 
   getCheckout(token: string, requestId: string) {
     return request<CheckoutRequest>(`/api/v1/checkout/${requestId}`, { token });
+  },
+
+  createListing(
+    token: string,
+    data: { title: string; description?: string; price: number; quantity: number },
+  ) {
+    return request<Listing>("/api/v1/listings", {
+      method: "POST",
+      token,
+      body: data,
+    });
+  },
+
+  getListings(token: string) {
+    return request<Listing[]>("/api/v1/listings", { token });
+  },
+
+  getListingById(token: string, listingId: string) {
+    return request<Listing>(`/api/v1/listings/${listingId}`, { token });
   },
 };

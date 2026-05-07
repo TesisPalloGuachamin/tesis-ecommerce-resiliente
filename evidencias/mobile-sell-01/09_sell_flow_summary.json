@@ -1,0 +1,22 @@
+{
+  "block": "MOBILE-SELL-01",
+  "date": "2026-05-06",
+  "backend_base_url": "http://192.168.100.16:18080",
+  "new_screen": "sell",
+  "new_api_methods": [
+    "api.createListing(token, {title, description?, price, quantity})",
+    "api.getListings(token)",
+    "api.getListingById(token, listingId)"
+  ],
+  "new_types": ["Listing"],
+  "navigation_entry": "Boton Publicar en header (visible post-login)",
+  "tsc_clean": true,
+  "expo_bundle_clean": true,
+  "backend_integration_verified": true,
+  "purchase_flow_untouched": true,
+  "endpoints_tested": {
+    "POST /api/v1/listings": "201 CREATED",
+    "GET /api/v1/listings": "200 OK (array)",
+    "GET /api/v1/listings/{id}": "200 OK (single)"
+  }
+}

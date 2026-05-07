@@ -1,0 +1,9 @@
+{
+    "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3ZDIxNjE1Mi00NDI4LTQ1NGItOTgyZS05MjU1ZTdjZTM4MjgiLCJlbWFpbCI6Im1vYmlsZS1pbnQtMDFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NzgxMjM2MTAsImV4cCI6MTc3ODIxMDAxMH0.o-eVT0SwN1X9RfsGu9ftQUA4AQEmPMhuVSo1elvF7MV8-MWdmooo4nnU0OHRqs8539a2fI6aRFMq1yFvBoYFrg",
+    "user": {
+        "id": "7d216152-4428-454b-982e-9255e7ce3828",
+        "email": "mobile-int-01@example.com",
+        "name": "Mobile Test User",
+        "enabled": true
+    }
+}

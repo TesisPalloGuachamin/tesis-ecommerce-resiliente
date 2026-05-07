@@ -1,0 +1,303 @@
+diff --git a/apps/mobile/App.tsx b/apps/mobile/App.tsx
+index 9f3e082..042d72d 100644
+--- a/apps/mobile/App.tsx
++++ b/apps/mobile/App.tsx
+@@ -13,9 +13,9 @@ import {
+ 
+ import { api } from "./src/api";
+ import { API_BASE_URL, DEMO_EMAIL, DEMO_PASSWORD } from "./src/config";
+-import type { Cart, CartItem, CheckoutRequest, Product, User } from "./src/types";
++import type { Cart, CartItem, CheckoutRequest, Listing, Product, User } from "./src/types";
+ 
+-type Screen = "login" | "catalog" | "detail" | "cart" | "confirmation";
++type Screen = "login" | "catalog" | "detail" | "cart" | "confirmation" | "sell";
+ 
+ const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+ 
+@@ -36,6 +36,8 @@ export default function App() {
+   const [checkout, setCheckout] = useState<CheckoutRequest | null>(null);
+   const [busy, setBusy] = useState(false);
+   const [error, setError] = useState("");
++  const [listings, setListings] = useState<Listing[]>([]);
++  const [createdListing, setCreatedListing] = useState<Listing | null>(null);
+ 
+   const cartCount = useMemo(
+     () => cart?.items.reduce((total, item) => total + item.quantity, 0) ?? 0,
+@@ -94,10 +96,40 @@ export default function App() {
+     setSelectedProduct(null);
+     setCart(null);
+     setCheckout(null);
++    setListings([]);
++    setCreatedListing(null);
+     setError("");
+     setScreen("login");
+   };
+ 
++  const openSell = () =>
++    runWithError(async () => {
++      if (!token) throw new Error("Sesion no disponible.");
++      setCreatedListing(null);
++      const all = await api.getListings(token);
++      setListings(all);
++      setScreen("sell");
++    });
++
++  const handleCreateListing = (data: {
++    title: string;
++    description: string;
++    price: number;
++    quantity: number;
++  }) =>
++    runWithError(async () => {
++      if (!token) throw new Error("Sesion no disponible.");
++      const created = await api.createListing(token, {
++        title: data.title,
++        description: data.description || undefined,
++        price: data.price,
++        quantity: data.quantity,
++      });
++      setCreatedListing(created);
++      const all = await api.getListings(token);
++      setListings(all);
++    });
++
+   const openDetail = (product: Product) =>
+     runWithError(async () => {
+       setSelectedProduct(product);
+@@ -166,7 +198,8 @@ export default function App() {
+       }
+     });
+ 
+-  const title = screen === "login" ? "Tesis Mobile" : "Compra sandbox";
++  const title =
++    screen === "login" ? "Tesis Mobile" : screen === "sell" ? "Venta sandbox" : "Compra sandbox";
+ 
+   return (
+     <SafeAreaView style={styles.safeArea}>
+@@ -182,6 +215,9 @@ export default function App() {
+               <Pressable style={styles.secondaryButton} onPress={() => setScreen("cart")}>
+                 <Text style={styles.secondaryButtonText}>Carrito {cartCount}</Text>
+               </Pressable>
++              <Pressable style={styles.sellButton} onPress={openSell} disabled={busy}>
++                <Text style={styles.sellButtonText}>Publicar</Text>
++              </Pressable>
+               <Pressable style={styles.ghostButton} onPress={handleLogout}>
+                 <Text style={styles.ghostButtonText}>Salir</Text>
+               </Pressable>
+@@ -245,6 +281,16 @@ export default function App() {
+             onCart={() => setScreen("cart")}
+           />
+         ) : null}
++
++        {screen === "sell" ? (
++          <SellScreen
++            listings={listings}
++            createdListing={createdListing}
++            busy={busy}
++            onBack={() => setScreen("catalog")}
++            onSubmit={handleCreateListing}
++          />
++        ) : null}
+       </View>
+     </SafeAreaView>
+   );
+@@ -466,11 +512,112 @@ function ConfirmationScreen({ checkout, busy, onCatalog, onCart }: ConfirmationP
+   );
+ }
+ 
++type SellProps = {
++  listings: Listing[];
++  createdListing: Listing | null;
++  busy: boolean;
++  onBack: () => void;
++  onSubmit: (data: { title: string; description: string; price: number; quantity: number }) => void;
++};
++
++function SellScreen({ listings, createdListing, busy, onBack, onSubmit }: SellProps) {
++  const [title, setTitle] = useState("");
++  const [description, setDescription] = useState("");
++  const [priceText, setPriceText] = useState("");
++  const [quantityText, setQuantityText] = useState("1");
++  const [formError, setFormError] = useState("");
++
++  const handleSubmit = () => {
++    setFormError("");
++    const price = parseFloat(priceText.replace(",", "."));
++    const quantity = parseInt(quantityText, 10);
++    if (!title.trim()) {
++      setFormError("El titulo es obligatorio.");
++      return;
++    }
++    if (!Number.isFinite(price) || price <= 0) {
++      setFormError("El precio debe ser mayor a 0.");
++      return;
++    }
++    if (!Number.isInteger(quantity) || quantity < 1) {
++      setFormError("La cantidad debe ser al menos 1.");
++      return;
++    }
++    onSubmit({ title: title.trim(), description: description.trim(), price, quantity });
++  };
++
++  return (
++    <ScrollView contentContainerStyle={styles.content}>
++      <View style={styles.sectionHeader}>
++        <Text style={styles.screenTitle}>Publicar</Text>
++        <Pressable style={styles.ghostButton} onPress={onBack}>
++          <Text style={styles.ghostButtonText}>Catalogo</Text>
++        </Pressable>
++      </View>
++
++      <View style={styles.panel}>
++        <Text style={styles.label}>Nueva publicacion</Text>
++        <Field label="Titulo *" value={title} onChangeText={setTitle} />
++        <Field label="Descripcion (opcional)" value={description} onChangeText={setDescription} />
++        <Field
++          label="Precio *"
++          value={priceText}
++          onChangeText={setPriceText}
++          keyboardType="decimal-pad"
++        />
++        <Field
++          label="Cantidad *"
++          value={quantityText}
++          onChangeText={setQuantityText}
++          keyboardType="numeric"
++        />
++        {formError ? (
++          <Text style={styles.errorText}>{formError}</Text>
++        ) : null}
++        <PrimaryButton label="Publicar" busy={busy} onPress={handleSubmit} />
++      </View>
++
++      {createdListing ? (
++        <View style={[styles.panel, styles.successPanel]}>
++          <Text style={styles.successTitle}>Publicacion creada</Text>
++          <Text style={styles.bodyText}>{createdListing.title}</Text>
++          <Text style={styles.muted}>ID: {createdListing.id}</Text>
++          <Text style={styles.muted}>Precio: {formatMoney(createdListing.price)}</Text>
++          <Text style={styles.muted}>Cantidad: {createdListing.quantity}</Text>
++          <Text style={styles.muted}>Estado: {createdListing.status}</Text>
++        </View>
++      ) : null}
++
++      {listings.length > 0 ? (
++        <View>
++          <Text style={[styles.label, { marginBottom: 8 }]}>Publicaciones activas ({listings.length})</Text>
++          {listings.map((item) => (
++            <View key={item.id} style={[styles.card, { marginBottom: 10 }]}>
++              <View style={styles.cardTopLine}>
++                <Text style={styles.cardTitle}>{item.title}</Text>
++                <Text style={styles.price}>{formatMoney(item.price)}</Text>
++              </View>
++              <Text style={styles.muted}>Cantidad: {item.quantity}</Text>
++              <View style={styles.badgeRow}>
++                <Text style={styles.badge}>{item.status}</Text>
++                <Text style={styles.badge}>ID: {item.id.slice(0, 8)}…</Text>
++              </View>
++            </View>
++          ))}
++        </View>
++      ) : null}
++
++      {!listings.length && !busy ? <EmptyState text="No hay publicaciones aun." /> : null}
++      {busy ? <InlineLoader /> : null}
++    </ScrollView>
++  );
++}
++
+ type FieldProps = {
+   label: string;
+   value: string;
+   onChangeText: (value: string) => void;
+-  keyboardType?: "default" | "email-address";
++  keyboardType?: "default" | "email-address" | "decimal-pad" | "numeric";
+   secureTextEntry?: boolean;
+ };
+ 
+@@ -840,4 +987,30 @@ const styles = StyleSheet.create({
+     justifyContent: "center",
+     padding: 16,
+   },
++  sellButton: {
++    minHeight: 38,
++    borderRadius: 8,
++    borderWidth: 1,
++    borderColor: "#1F7A5A",
++    backgroundColor: "#E8F5F0",
++    alignItems: "center",
++    justifyContent: "center",
++    paddingHorizontal: 12,
++  },
++  sellButtonText: {
++    color: "#1F7A5A",
++    fontSize: 13,
++    lineHeight: 18,
++    fontWeight: "800",
++  },
++  successPanel: {
++    borderColor: "#86EFAC",
++    backgroundColor: "#F0FDF4",
++  },
++  successTitle: {
++    fontSize: 17,
++    lineHeight: 23,
++    fontWeight: "800",
++    color: "#14532D",
++  },
+ });
+diff --git a/apps/mobile/src/api.ts b/apps/mobile/src/api.ts
+index 81e48df..ce3e3e0 100644
+--- a/apps/mobile/src/api.ts
++++ b/apps/mobile/src/api.ts
+@@ -1,5 +1,5 @@
+ import { API_BASE_URL } from "./config";
+-import type { AuthResponse, Cart, CheckoutRequest, Product } from "./types";
++import type { AuthResponse, Cart, CheckoutRequest, Listing, Product } from "./types";
+ 
+ type Method = "GET" | "POST" | "PATCH" | "DELETE";
+ 
+@@ -108,4 +108,23 @@ export const api = {
+   getCheckout(token: string, requestId: string) {
+     return request<CheckoutRequest>(`/api/v1/checkout/${requestId}`, { token });
+   },
++
++  createListing(
++    token: string,
++    data: { title: string; description?: string; price: number; quantity: number },
++  ) {
++    return request<Listing>("/api/v1/listings", {
++      method: "POST",
++      token,
++      body: data,
++    });
++  },
++
++  getListings(token: string) {
++    return request<Listing[]>("/api/v1/listings", { token });
++  },
++
++  getListingById(token: string, listingId: string) {
++    return request<Listing>(`/api/v1/listings/${listingId}`, { token });
++  },
+ };
+diff --git a/apps/mobile/src/types.ts b/apps/mobile/src/types.ts
+index b87e38f..4697fdf 100644
+--- a/apps/mobile/src/types.ts
++++ b/apps/mobile/src/types.ts
+@@ -42,3 +42,15 @@ export type CheckoutRequest = {
+   totalAmount: number | string;
+   status: "PENDING" | "COMPLETED" | "FAILED" | string;
+ };
++
++export type Listing = {
++  id: string;
++  sellerId: string;
++  title: string;
++  description: string | null;
++  price: number | string;
++  quantity: number;
++  status: string;
++  createdAt: string;
++  updatedAt: string;
++};
