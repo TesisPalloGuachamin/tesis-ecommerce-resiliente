@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-05-06T19:39:47-05:00",
+  "apiBaseUrl": "http://44.195.21.215:8080",
+  "checkoutBaseUrl": "http://44.195.21.215:8082/api",
+  "health": {
+    "coreApi": "UP",
+    "checkoutService": "UP"
+  },
+  "login": {
+    "userEmail": "mobile-int-01@example.com",
+    "hasToken": true
+  },
+  "catalog": {
+    "productCount": 2,
+    "firstProduct": "Laptop Dell XPS 13"
+  },
+  "cart": {
+    "cartId": "4b1507d6-580e-4ccd-aadc-bb2d47cbaacc",
+    "total": "1299.99"
+  },
+  "checkout": {
+    "requestId": "845039f4-e5cf-41e5-99e1-79e221f13ae5",
+    "initialStatus": "PENDING",
+    "finalStatus": "COMPLETED",
+    "total": "1299.99"
+  }
+}

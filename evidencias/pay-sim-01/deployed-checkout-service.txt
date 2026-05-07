@@ -1,0 +1,2 @@
+NAME                     IMAGE                               COMMAND               SERVICE            CREATED              STATUS                        PORTS
+tesis-checkout-service   tesis-checkout-service:pay-sim-01   "java -jar app.jar"   checkout-service   About a minute ago   Up About a minute (healthy)   0.0.0.0:8082->8082/tcp, :::8082->8082/tcp

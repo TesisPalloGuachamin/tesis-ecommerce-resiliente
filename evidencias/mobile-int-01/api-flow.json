@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-05-05T22:57:03-05:00",
+  "apiBaseUrl": "http://32.197.47.40:8080",
+  "userEmail": "mobile-int-01@example.com",
+  "productCount": 2,
+  "detail": {
+    "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+    "productName": "Laptop Dell XPS 13"
+  },
+  "cart": {
+    "cartId": "4b1507d6-580e-4ccd-aadc-bb2d47cbaacc",
+    "total": "1299.99",
+    "items": [
+      {
+        "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+        "quantity": 1,
+        "total": 1299.99
+      }
+    ]
+  },
+  "checkout": {
+    "requestId": "388f7e69-d2b3-4a43-8194-d9c96cdb040b",
+    "initialStatus": "PENDING",
+    "finalStatus": "COMPLETED",
+    "total": "1299.99"
+  }
+}

@@ -1,0 +1,3 @@
+2026-05-07T00:39:46.915Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Executing Stripe simulated payment for order: 340c687d-ab9b-4bc7-b63d-0aa64c2139f8, amount: 1299.99
+2026-05-07T00:39:47.416Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Stripe simulated payment approved for order: 340c687d-ab9b-4bc7-b63d-0aa64c2139f8, transaction: stripe_sim_bf8e85e5-336e-427d-b883-fb8db503c060
+2026-05-07T00:39:47.421Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published payment.processed event for order: 340c687d-ab9b-4bc7-b63d-0aa64c2139f8, success: true
