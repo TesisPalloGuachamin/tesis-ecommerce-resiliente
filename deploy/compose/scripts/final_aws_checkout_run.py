@@ -173,7 +173,35 @@ def main() -> int:
     events_path = evidence_dir / "purchase-events.jsonl"
 
     started_at = utc_now()
-    products_status, products_payload, products_elapsed = request_json("GET", args.api_base_url, "/api/v1/products", timeout=args.http_timeout)
+    catalog_email = f"{args.run_id}-catalog@example.com"
+    catalog_status, catalog_auth, catalog_elapsed = request_json(
+        "POST",
+        args.api_base_url,
+        "/api/v1/auth/register",
+        body={"email": catalog_email, "password": args.password, "name": "Final AWS Drill Catalog Probe"},
+        timeout=args.http_timeout,
+    )
+    if catalog_status < 200 or catalog_status >= 300:
+        write_json(evidence_dir / "failed-catalog-auth-response.json", {
+            "httpStatus": catalog_status,
+            "payload": catalog_auth,
+            "elapsedMs": round(catalog_elapsed * 1000, 2),
+        })
+        print(f"Cannot start drill: catalog auth returned HTTP {catalog_status}", file=sys.stderr)
+        return 2
+
+    catalog_token = require_dict(catalog_auth, "catalog auth").get("token")
+    if not catalog_token:
+        print("Cannot start drill: catalog auth did not return a token", file=sys.stderr)
+        return 2
+
+    products_status, products_payload, products_elapsed = request_json(
+        "GET",
+        args.api_base_url,
+        "/api/v1/products",
+        token=catalog_token,
+        timeout=args.http_timeout,
+    )
     if products_status != 200 or not isinstance(products_payload, list) or not products_payload:
         write_json(evidence_dir / "failed-products-response.json", {
             "httpStatus": products_status,
@@ -213,6 +241,7 @@ def main() -> int:
         "requestedPurchases": args.purchases,
         "completedPurchases": completed,
         "failedPurchases": failed,
+        "catalogProbeEmail": catalog_email,
         "productId": product_id,
         "eventsFile": str(events_path),
         "checkoutIdsFile": str(evidence_dir / "checkout-ids.txt"),
