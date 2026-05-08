@@ -97,6 +97,12 @@ date -u +"%Y-%m-%dT%H:%M:%SZ" | tee "${EVIDENCE_DIR}/t_post_load_backup_end.txt"
 El punto exacto de caida es el timestamp inmediatamente anterior al comando
 destructivo.
 
+Advertencia metodologica: `down -v` elimina tambien el volumen local de
+Prometheus si se usa el compose completo. Por tanto, antes de ejecutar la caida
+se deben capturar las consultas PromQL post-carga como evidencia puntual. La
+disponibilidad de la ventana completa debe calcularse con timestamps externos
+del ensayo, salvo que Prometheus se preserve fuera del stack afectado.
+
 ```bash
 date -u +"%Y-%m-%dT%H:%M:%SZ" | tee "${EVIDENCE_DIR}/t_failure_command_start.txt"
 docker compose -f "${COMPOSE_DIR}/docker-compose.dev.yml" down -v
@@ -212,11 +218,37 @@ JVM heap:
 - MTTR: `t_recovered_confirmed - t_incident_detected`, donde
   `t_incident_detected` es el primer health fallido o target DOWN registrado
   despues de la caida.
-- Disponibilidad observada: porcentaje de muestras `up == 1` en la ventana real
-  del ensayo para `core-api` y `checkout-service`.
+- Disponibilidad observada con Prometheus continuo: porcentaje de muestras
+  `up == 1` en la ventana real del ensayo para `core-api` y `checkout-service`.
+- Disponibilidad observada con `down -v` sobre todo el stack: usar timestamps
+  externos del ensayo:
+  `(t_recovered_confirmed - t_baseline_start - RTO) / (t_recovered_confirmed - t_baseline_start) * 100`.
+  En este caso, las series Prometheus se reportan como snapshots post-carga y
+  post-recovery, no como serie historica continua.
 - Tasa de error: requests 5xx / requests totales en la ventana del ensayo.
 - Latencia p95: valor maximo o promedio observado del PromQL p95 durante carga,
   segun se declare antes de ejecutar.
+
+## Nota metodologica de Prometheus
+
+Si la caida incluye `docker compose down -v`, Prometheus deja de ser una fuente
+continua de disponibilidad porque su TSDB local se elimina junto con los demas
+volumenes. Esto no invalida la corrida si existen:
+
+- timestamps externos para linea base, caida, deteccion, recuperacion y
+  confirmacion;
+- snapshots PromQL capturados antes de la caida y despues de la recuperacion;
+- dumps post-carga validados antes de destruir volumenes;
+- smoke funcional post-recovery en `COMPLETED`.
+
+En la tesis, las metricas deben clasificarse asi:
+
+- RTO, RPO temporal, MTTR y smoke post-recovery: observados por timestamps y
+  evidencia funcional.
+- Disponibilidad: observada con limitacion, calculada por timestamps externos
+  cuando Prometheus no conserva continuidad historica.
+- Latencia y tasa de error: observadas por snapshots PromQL guardados antes de
+  la caida y tras la recuperacion.
 
 ## Riesgos antes de ejecutar
 
