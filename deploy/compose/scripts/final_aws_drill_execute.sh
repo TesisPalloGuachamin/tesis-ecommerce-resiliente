@@ -8,6 +8,8 @@ PROMETHEUS_BASE_URL="${PROMETHEUS_BASE_URL:-http://localhost:9090}"
 GRAFANA_BASE_URL="${GRAFANA_BASE_URL:-http://localhost:3000}"
 BASE_DIR="${BASE_DIR:-/home/ec2-user/tesis-ecommerce}"
 COMPOSE_DIR="${COMPOSE_DIR:-$BASE_DIR/deploy/compose}"
+FUNCTIONAL_COMPOSE_FILE="${FUNCTIONAL_COMPOSE_FILE:-$COMPOSE_DIR/docker-compose.functional.yml}"
+OBSERVABILITY_COMPOSE_FILE="${OBSERVABILITY_COMPOSE_FILE:-$COMPOSE_DIR/docker-compose.observability.yml}"
 RUN_ID="${RUN_ID:-final-aws-$(date -u +%Y%m%dT%H%M%SZ)}"
 EVIDENCE_DIR="${EVIDENCE_DIR:-$BASE_DIR/evidencias/final-aws-drill/$RUN_ID}"
 
@@ -116,8 +118,15 @@ PY
 }
 
 log "RUN_ID=$RUN_ID"
+docker network inspect tesis-ecommerce-network >/dev/null 2>&1 || docker network create tesis-ecommerce-network >/dev/null
+log "Ensuring observability and functional stacks are split and running"
+docker compose -f "$OBSERVABILITY_COMPOSE_FILE" up -d > "$EVIDENCE_DIR/observability-up.log" 2>&1
+docker compose -f "$FUNCTIONAL_COMPOSE_FILE" up -d core-db checkout-db rabbitmq core-api checkout-service \
+  > "$EVIDENCE_DIR/functional-up.log" 2>&1
 printf "%s\n" "$RUN_ID" > "$EVIDENCE_DIR/run-id.txt"
 printf "%s\n" "$AWS_HOST" > "$EVIDENCE_DIR/aws-host.txt"
+printf "%s\n" "$FUNCTIONAL_COMPOSE_FILE" > "$EVIDENCE_DIR/functional-compose-file.txt"
+printf "%s\n" "$OBSERVABILITY_COMPOSE_FILE" > "$EVIDENCE_DIR/observability-compose-file.txt"
 write_time t_baseline_start.txt
 write_epoch t_baseline_start.epoch
 BASELINE_EPOCH="$(cat "$EVIDENCE_DIR/t_baseline_start.epoch")"
@@ -128,7 +137,8 @@ curl -fsS "$CHECKOUT_BASE_URL/actuator/health" -o "$EVIDENCE_DIR/baseline-checko
 curl -fsS "$PROMETHEUS_BASE_URL/-/ready" -o "$EVIDENCE_DIR/baseline-prometheus-ready.txt"
 curl -fsS "$GRAFANA_BASE_URL/api/health" -o "$EVIDENCE_DIR/baseline-grafana-health.json"
 curl -fsS "$PROMETHEUS_BASE_URL/api/v1/targets" -o "$EVIDENCE_DIR/baseline-prometheus-targets.json"
-docker compose -f "$COMPOSE_DIR/docker-compose.dev.yml" ps > "$EVIDENCE_DIR/baseline-compose-ps.txt"
+docker compose -f "$FUNCTIONAL_COMPOSE_FILE" ps > "$EVIDENCE_DIR/baseline-functional-compose-ps.txt"
+docker compose -f "$OBSERVABILITY_COMPOSE_FILE" ps > "$EVIDENCE_DIR/baseline-observability-compose-ps.txt"
 curl -fsS -u admin:admin123 "$GRAFANA_BASE_URL/api/datasources/uid/prometheus" \
   -o "$EVIDENCE_DIR/grafana/baseline-datasource-prometheus.json"
 curl -fsS -u admin:admin123 "$GRAFANA_BASE_URL/api/dashboards/uid/services-overview" \
@@ -198,7 +208,8 @@ log "Post-load backups validated as readable"
 log "Inducing controlled destructive failure"
 write_time t_failure_command_start.txt
 write_epoch t_failure_command_start.epoch
-docker compose -f "$COMPOSE_DIR/docker-compose.dev.yml" down -v \
+curl -fsS "$PROMETHEUS_BASE_URL/api/v1/status/tsdb" -o "$EVIDENCE_DIR/prometheus-tsdb-before-functional-down.json"
+docker compose -f "$FUNCTIONAL_COMPOSE_FILE" down -v \
   > "$EVIDENCE_DIR/failure-down-v.log" 2>&1
 write_time t_failure_command_end.txt
 write_epoch t_failure_command_end.epoch
@@ -208,11 +219,15 @@ write_epoch t_failure_command_end.epoch
   > "$EVIDENCE_DIR/failure-checkout-health-code.txt"
 write_time t_incident_detected.txt
 write_epoch t_incident_detected.epoch
+curl -fsS "$PROMETHEUS_BASE_URL/-/ready" -o "$EVIDENCE_DIR/prometheus-ready-during-functional-down.txt"
+curl -fsS "$GRAFANA_BASE_URL/api/health" -o "$EVIDENCE_DIR/grafana-health-during-functional-down.json"
+curl -fsS "$PROMETHEUS_BASE_URL/api/v1/status/tsdb" -o "$EVIDENCE_DIR/prometheus-tsdb-during-functional-down.json"
+curl -fsS "$PROMETHEUS_BASE_URL/api/v1/targets" -o "$EVIDENCE_DIR/prometheus-targets-during-functional-down.json"
 
 log "Starting recovery: databases and broker"
 write_time t_recovery_start.txt
 write_epoch t_recovery_start.epoch
-docker compose -f "$COMPOSE_DIR/docker-compose.dev.yml" up -d core-db checkout-db rabbitmq \
+docker compose -f "$FUNCTIONAL_COMPOSE_FILE" up -d core-db checkout-db rabbitmq \
   > "$EVIDENCE_DIR/recovery/up-db-broker.log" 2>&1
 sleep 12
 log "Restoring post-load backups"
@@ -221,7 +236,7 @@ cat "$CORE_DUMP" | docker exec -i tesis-core-db pg_restore -U postgres -d core_d
 cat "$CHECKOUT_DUMP" | docker exec -i tesis-checkout-db pg_restore -U postgres -d checkout_db --clean --if-exists \
   > "$EVIDENCE_DIR/recovery/checkout-restore.log" 2>&1
 log "Starting application and observability services"
-docker compose -f "$COMPOSE_DIR/docker-compose.dev.yml" up -d core-api checkout-service prometheus grafana \
+docker compose -f "$FUNCTIONAL_COMPOSE_FILE" up -d core-api checkout-service \
   > "$EVIDENCE_DIR/recovery/up-services.log" 2>&1
 
 log "Waiting for service recovery"

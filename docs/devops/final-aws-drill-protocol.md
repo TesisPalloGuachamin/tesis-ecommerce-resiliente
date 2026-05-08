@@ -22,6 +22,8 @@ export GRAFANA_BASE_URL="http://${AWS_HOST}:3000"
 export RUN_ID="final-aws-$(date -u +%Y%m%dT%H%M%SZ)"
 export EVIDENCE_DIR="/home/ec2-user/tesis-ecommerce/evidencias/final-aws-drill/${RUN_ID}"
 export COMPOSE_DIR="/home/ec2-user/tesis-ecommerce/deploy/compose"
+export FUNCTIONAL_COMPOSE_FILE="${COMPOSE_DIR}/docker-compose.functional.yml"
+export OBSERVABILITY_COMPOSE_FILE="${COMPOSE_DIR}/docker-compose.observability.yml"
 ```
 
 Actualizar `AWS_HOST` si AWS Academy reinicia el laboratorio.
@@ -29,13 +31,16 @@ Actualizar `AWS_HOST` si AWS Academy reinicia el laboratorio.
 ## Fase 0 - precondiciones
 
 1. Confirmar rama y commit desplegado.
-2. Confirmar containers arriba.
-3. Confirmar health:
+2. Crear o confirmar la red compartida: `docker network create tesis-ecommerce-network || true`.
+3. Confirmar observabilidad arriba con `docker compose -f "${OBSERVABILITY_COMPOSE_FILE}" up -d`.
+4. Confirmar stack funcional arriba con `docker compose -f "${FUNCTIONAL_COMPOSE_FILE}" up -d`.
+5. Confirmar que Prometheus/Grafana no estan definidos dentro del compose funcional.
+6. Confirmar health:
    - `GET ${API_BASE_URL}/actuator/health`
    - `GET ${CHECKOUT_BASE_URL}/actuator/health`
-4. Confirmar targets Prometheus `UP`.
-5. Confirmar dashboard Grafana cargado desde provisioning.
-6. Ejecutar un smoke de checkout y exigir estado `COMPLETED`.
+7. Confirmar targets Prometheus `UP`.
+8. Confirmar dashboard Grafana cargado desde provisioning.
+9. Ejecutar un smoke de checkout y exigir estado `COMPLETED`.
 
 ## Fase 1 - linea base
 
@@ -97,16 +102,30 @@ date -u +"%Y-%m-%dT%H:%M:%SZ" | tee "${EVIDENCE_DIR}/t_post_load_backup_end.txt"
 El punto exacto de caida es el timestamp inmediatamente anterior al comando
 destructivo.
 
-Advertencia metodologica: `down -v` elimina tambien el volumen local de
-Prometheus si se usa el compose completo. Por tanto, antes de ejecutar la caida
-se deben capturar las consultas PromQL post-carga como evidencia puntual. La
-disponibilidad de la ventana completa debe calcularse con timestamps externos
-del ensayo, salvo que Prometheus se preserve fuera del stack afectado.
+Advertencia metodologica: la caida destructiva debe aplicarse solo al compose
+funcional. Prometheus y Grafana se ejecutan desde
+`docker-compose.observability.yml` y no deben estar presentes en
+`docker-compose.functional.yml`.
 
 ```bash
 date -u +"%Y-%m-%dT%H:%M:%SZ" | tee "${EVIDENCE_DIR}/t_failure_command_start.txt"
-docker compose -f "${COMPOSE_DIR}/docker-compose.dev.yml" down -v
+curl -fsS "${PROMETHEUS_BASE_URL}/api/v1/status/tsdb" \
+  -o "${EVIDENCE_DIR}/prometheus-tsdb-before-functional-down.json"
+docker compose -f "${FUNCTIONAL_COMPOSE_FILE}" down -v
 date -u +"%Y-%m-%dT%H:%M:%SZ" | tee "${EVIDENCE_DIR}/t_failure_command_end.txt"
+```
+
+Validar que observabilidad sobrevivio a la caida funcional:
+
+```bash
+curl -fsS "${PROMETHEUS_BASE_URL}/-/ready" \
+  -o "${EVIDENCE_DIR}/prometheus-ready-during-functional-down.txt"
+curl -fsS "${GRAFANA_BASE_URL}/api/health" \
+  -o "${EVIDENCE_DIR}/grafana-health-during-functional-down.json"
+curl -fsS "${PROMETHEUS_BASE_URL}/api/v1/status/tsdb" \
+  -o "${EVIDENCE_DIR}/prometheus-tsdb-during-functional-down.json"
+curl -fsS "${PROMETHEUS_BASE_URL}/api/v1/targets" \
+  -o "${EVIDENCE_DIR}/prometheus-targets-during-functional-down.json"
 ```
 
 Confirmar indisponibilidad:
@@ -122,8 +141,8 @@ curl -sS -o /dev/null -w "%{http_code}\n" "${CHECKOUT_BASE_URL}/actuator/health"
 
 ```bash
 date -u +"%Y-%m-%dT%H:%M:%SZ" | tee "${EVIDENCE_DIR}/t_recovery_start.txt"
-docker compose -f "${COMPOSE_DIR}/docker-compose.dev.yml" up -d core-db checkout-db rabbitmq
-docker compose -f "${COMPOSE_DIR}/docker-compose.dev.yml" up -d core-api checkout-service prometheus grafana
+docker compose -f "${FUNCTIONAL_COMPOSE_FILE}" up -d core-db checkout-db rabbitmq
+docker compose -f "${FUNCTIONAL_COMPOSE_FILE}" up -d core-api checkout-service
 ```
 
 Restaurar bases si la caida destruyo volumenes:
@@ -218,22 +237,22 @@ JVM heap:
 - MTTR: `t_recovered_confirmed - t_incident_detected`, donde
   `t_incident_detected` es el primer health fallido o target DOWN registrado
   despues de la caida.
-- Disponibilidad observada con Prometheus continuo: porcentaje de muestras
-  `up == 1` en la ventana real del ensayo para `core-api` y `checkout-service`.
-- Disponibilidad observada con `down -v` sobre todo el stack: usar timestamps
-  externos del ensayo:
-  `(t_recovered_confirmed - t_baseline_start - RTO) / (t_recovered_confirmed - t_baseline_start) * 100`.
-  En este caso, las series Prometheus se reportan como snapshots post-carga y
-  post-recovery, no como serie historica continua.
+- Disponibilidad observada: porcentaje de muestras `up == 1` en la ventana real
+  del ensayo para `core-api` y `checkout-service`, usando Prometheus continuo
+  del stack de observabilidad separado.
 - Tasa de error: requests 5xx / requests totales en la ventana del ensayo.
 - Latencia p95: valor maximo o promedio observado del PromQL p95 durante carga,
   segun se declare antes de ejecutar.
 
 ## Nota metodologica de Prometheus
 
-Si la caida incluye `docker compose down -v`, Prometheus deja de ser una fuente
-continua de disponibilidad porque su TSDB local se elimina junto con los demas
-volumenes. Esto no invalida la corrida si existen:
+Si la caida incluye `docker compose down -v` sobre el compose completo,
+Prometheus deja de ser una fuente continua de disponibilidad porque su TSDB
+local se elimina junto con los demas volumenes. Para la repeticion corregida,
+la caida debe usar solo `docker-compose.functional.yml`; Prometheus y Grafana
+quedan en `docker-compose.observability.yml` y conservan su TSDB.
+
+La corrida sigue siendo defendible si existen:
 
 - timestamps externos para linea base, caida, deteccion, recuperacion y
   confirmacion;
@@ -245,10 +264,10 @@ En la tesis, las metricas deben clasificarse asi:
 
 - RTO, RPO temporal, MTTR y smoke post-recovery: observados por timestamps y
   evidencia funcional.
-- Disponibilidad: observada con limitacion, calculada por timestamps externos
-  cuando Prometheus no conserva continuidad historica.
-- Latencia y tasa de error: observadas por snapshots PromQL guardados antes de
-  la caida y tras la recuperacion.
+- Disponibilidad: observada por Prometheus continuo cuando la observabilidad
+  esta fuera del dominio de falla; con el compose completo previo, solo con
+  limitacion por timestamps externos.
+- Latencia y tasa de error: observadas por PromQL continuo del stack separado.
 
 ## Riesgos antes de ejecutar
 

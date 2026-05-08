@@ -1,0 +1,52 @@
+# Observability stack for DRP drills.
+# Run separately from docker-compose.functional.yml so metrics history survives.
+
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: tesis-prometheus
+    ports:
+      - "${PROMETHEUS_PORT:-9090}:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    networks:
+      tesis-network:
+        aliases:
+          - prometheus
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: tesis-grafana
+    ports:
+      - "${GRAFANA_PORT:-3000}:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER:-admin}
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-admin123}
+      GF_USERS_ALLOW_SIGN_UP: 'false'
+      GF_LOG_LEVEL: ${GRAFANA_LOG_LEVEL:-info}
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources:ro
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+    networks:
+      tesis-network:
+        aliases:
+          - grafana
+    depends_on:
+      - prometheus
+
+volumes:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  tesis-network:
+    external: true
+    name: tesis-ecommerce-network

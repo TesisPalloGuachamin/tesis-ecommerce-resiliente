@@ -48,3 +48,20 @@ redaccion correcta es indicar que Prometheus y Grafana observaron el flujo antes
 y despues de la falla, mientras que la disponibilidad total del ensayo se
 calculo con timestamps externos debido a que la estrategia destructiva elimino
 el volumen local de Prometheus.
+
+## Correccion operativa para repeticion
+
+Para una repeticion completa del ensayo, Prometheus y Grafana deben ejecutarse
+desde `deploy/compose/docker-compose.observability.yml`, mientras que la caida
+destructiva debe aplicarse solo al stack funcional definido en
+`deploy/compose/docker-compose.functional.yml`.
+
+El comando destructivo corregido es:
+
+```bash
+docker compose -f deploy/compose/docker-compose.functional.yml down -v
+```
+
+Con esta separacion, el volumen `prometheus_data` ya no pertenece al compose que
+se destruye durante la falla funcional. Prometheus puede seguir registrando
+targets `DOWN` durante la caida y targets `UP` durante la recuperacion.
