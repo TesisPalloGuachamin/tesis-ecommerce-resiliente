@@ -1,0 +1,40 @@
+@startuml C4-02_Containers
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+LAYOUT_WITH_LEGEND()
+
+title C4-02: Diagrama de Contenedores\nPlataforma e-commerce — Sandbox
+
+Person(comprador, "Comprador / Vendedor", "Usuario de la app móvil")
+
+System_Boundary(plataforma, "Plataforma e-commerce (sandbox)") {
+
+    Container(mobile, "App Móvil", "React Native / Expo\n(TypeScript)", "Interfaz de usuario para compra\ny venta de productos.\nFlujos: login, catálogo, carrito,\ncheckout, publicar listing.")
+
+    Container(core_api, "core-api", "Spring Boot 3.2\n(Java 17, Puerto 8080)", "API pública REST.\nArquitectura hexagonal.\nAutenticación JWT.\nGestiona: auth, productos,\ncarrito, checkout, listings.")
+
+    Container(checkout_svc, "checkout-service", "Spring Boot 3.2\n(Java 17, Puerto 8082)", "Microservicio de checkout.\nArquitectura hexagonal.\nOrquesta: aceptar pedido,\npago simulado, completar pedido.\nIdempotencia via Inbox pattern.")
+
+    ContainerDb(core_db, "core_db", "PostgreSQL 15\n(Puerto 15432)", "Tablas: users, products,\ncarts, cart_items,\ncheckout_requests, listings,\noutbox_events.")
+
+    ContainerDb(checkout_db, "checkout_db", "PostgreSQL 15\n(Puerto 15433)", "Tablas: orders, order_items,\npayment_attempts,\ninbox_events,\ncheckout_requests.")
+
+    Container(rabbitmq, "RabbitMQ", "RabbitMQ 3.12\n(Puerto 5672 / 15672)", "Message broker.\nExchange: ecommerce.checkout.exchange\n(topic, durable).\nDLQ habilitado.\nMensajería asíncrona entre\ncore-api y checkout-service.")
+}
+
+Rel(comprador, mobile, "Usa", "Touch / UI")
+Rel(mobile, core_api, "Llama", "HTTPS/REST\nBearer JWT")
+Rel(core_api, core_db, "Lee/Escribe", "JDBC / JPA\n(Flyway migrations)")
+Rel(core_api, rabbitmq, "Publica\ncheckout.requested", "AMQP")
+Rel(core_api, rabbitmq, "Consume\ncheckout.completed\ncheckout.failed", "AMQP")
+Rel(checkout_svc, rabbitmq, "Consume\ncheckout.requested", "AMQP")
+Rel(checkout_svc, rabbitmq, "Publica\ncheckout.accepted\npayment.processed\ncheckout.completed\ncheckout.failed", "AMQP")
+Rel(checkout_svc, checkout_db, "Lee/Escribe", "JDBC / JPA\n(Flyway migrations)")
+
+note as N1
+  <b>Stripe</b>: adaptador in-process dentro de checkout-service.\n  No hay contenedor externo ni red de pago real.
+  <b>Health</b>: /actuator/health observable (db, rabbit, ping).
+  <b>Prometheus/Grafana</b>: configurados pero no scrapeando backend.\n  (Diseñado, no observado)
+end note
+
+@enduml

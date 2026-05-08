@@ -1,0 +1,90 @@
+{
+  "block": "ARQ-DIAG-01",
+  "fecha": "2026-05-07",
+  "ejecutor": "Claude Code — executor tecnico ARQ-DIAG-01",
+  "resultado_global": "PASS",
+
+  "contexto_previo": {
+    "DEVOPS-OBS-01": "PASS",
+    "DEVOPS-DRP-02": "PASS",
+    "BQ-QA-SL-01": "PASS",
+    "MOBILE-SELL-01": "PASS",
+    "PAY-SIM-01": "PASS"
+  },
+
+  "auditoria": {
+    "archivos_codigo_leidos": 18,
+    "runtime_verificado": true,
+    "evidencias_previas_leidas": ["devops-obs-01", "devops-drp-02", "pay-sim-01", "bq-qa-sl-01"],
+    "estado_inicial": "Sin diagramas formales existentes en el repositorio"
+  },
+
+  "diagramas_generados": [
+    {"id": "C4-01", "nombre": "Contexto", "formatos": ["puml", "mmd"]},
+    {"id": "C4-02", "nombre": "Contenedores", "formatos": ["puml", "mmd"]},
+    {"id": "C4-03", "nombre": "Componentes core-api", "formatos": ["puml"]},
+    {"id": "C4-04", "nombre": "Componentes checkout-service", "formatos": ["puml"]},
+    {"id": "INT-01", "nombre": "Comunicacion asincrona checkout", "formatos": ["puml", "mmd"]},
+    {"id": "INT-02", "nombre": "Stripe simulado", "formatos": ["puml", "mmd"]},
+    {"id": "DEP-01", "nombre": "Despliegue sandbox", "formatos": ["puml", "mmd"]},
+    {"id": "DRP-ARCH-01", "nombre": "Vista resiliencia observado/disenado/documental", "formatos": ["puml", "mmd"]}
+  ],
+
+  "artefactos_soporte": [
+    "TRAZABILIDAD_diagrama_componente_evidencia.md",
+    "ALCANCE_ARQUITECTONICO_resiliencia.md",
+    "ESTADO_ARQUITECTURA.txt",
+    "ESTADO_GLOBAL_suggestion.txt",
+    "BITACORA_ARQ_DIAG_01.md"
+  ],
+
+  "NO_ejecutado": [
+    "Modificacion de codigo backend o movil",
+    "Modificacion de infraestructura",
+    "Apertura de nueva implementacion",
+    "Inventar componentes no existentes"
+  ],
+
+  "restricciones_respetadas": {
+    "stripe_solo_simulado": true,
+    "aws_solo_infraestructura": true,
+    "prometheus_grafana_marcados_como_disenados": true,
+    "azure_gcp_no_observados": true,
+    "sin_componentes_inventados": true
+  },
+
+  "core_api_real": {
+    "endpoints": 14,
+    "controllers": 5,
+    "use_cases": 13,
+    "domain_ports_out": 9,
+    "domain_models": 7,
+    "db_tables": 8
+  },
+
+  "checkout_service_real": {
+    "consumer_queues": ["checkout.requested"],
+    "publisher_routing_keys": ["checkout.accepted", "payment.processed", "checkout.completed", "checkout.failed"],
+    "domain_models": 5,
+    "use_case": "ProcessCheckoutUseCase (10 pasos, idempotencia Inbox)",
+    "payment_adapter": "StripeSimulatedPaymentAdapter (in-process, sin red real)",
+    "db_tables": 6
+  },
+
+  "rabbitmq_real": {
+    "exchange": "ecommerce.checkout.exchange (topic, durable)",
+    "dlx": "checkout.dlx (direct, durable)",
+    "queues": 9,
+    "dlq": "checkout-service.dlq"
+  },
+
+  "rollback": "NO APLICADO — solo lectura y generacion de artefactos documentales",
+
+  "material_capitulo_4": {
+    "diagramas": "8 diagramas en 2 formatos c/u",
+    "trazabilidad": "TRAZABILIDAD_diagrama_componente_evidencia.md",
+    "nota_resiliencia": "ALCANCE_ARQUITECTONICO_resiliencia.md (redaccion lista para cap.4)",
+    "estado": "ESTADO_ARQUITECTURA.txt",
+    "todo_listo": true
+  }
+}

@@ -1,0 +1,25 @@
+---
+title: "INT-02: Integración de Pago Simulado — StripeSimulatedPaymentAdapter"
+---
+graph LR
+    uc["⚙️ ProcessCheckoutUseCase\n---\nexecutePayment(orderId, amount)"]
+
+    port["🔌 PaymentPort\n---\n«interface»"]
+
+    adapter["✅ StripeSimulatedPaymentAdapter\n---\nclase: infrastructure.adapter.out.payment\n---\n1. Thread.sleep(500ms)\n2. genera: stripe_sim_ + UUID\n3. retorna PaymentResult(success=true)\n---\n⚠️ SIN llamadas a api.stripe.com\n⚠️ SIN API keys reales"]
+
+    stripe_real["❌ Stripe API Real\n---\napi.stripe.com\n---\nNO UTILIZADA EN SANDBOX"]
+
+    uc --> port
+    port -.->|"implementa"| adapter
+    adapter -.->|"SIN LLAMADA REAL"| stripe_real
+
+    classDef usecase fill:#1168bd,color:white
+    classDef port fill:#444,color:white
+    classDef adapter fill:#2d882d,color:white
+    classDef external fill:#999,color:white,stroke-dasharray:5 5
+
+    class uc usecase
+    class port port
+    class adapter adapter
+    class stripe_real external

@@ -1,0 +1,27 @@
+---
+title: "C4-01: Diagrama de Contexto — Plataforma e-commerce sandbox"
+---
+graph TB
+    comprador["👤 Comprador / Vendedor\n---\nUsuario de la app móvil.\nCompra, gestiona carrito,\nincia checkout, publica listings."]
+
+    subgraph sistema["🖥️ Plataforma e-commerce (sandbox)"]
+        descripcion["Compra y venta de productos.\nArquitectura hexagonal.\nBackend REST + mensajería async.\nApp móvil React Native / Expo."]
+    end
+
+    stripe_sim["⚠️ Stripe (Simulado)\n---\nAdaptador interno.\nNO hay llamadas reales.\nPrefijo: stripe_sim_*"]
+
+    aws_infra["☁️ AWS EC2 (Infraestructura)\n---\nHost de despliegue sandbox.\nEC2 t2.micro — us-east-1.\nDocker Compose sobre Linux."]
+
+    comprador -- "HTTPS / REST (Bearer JWT)" --> sistema
+    sistema -- "In-process (sin red)" --> stripe_sim
+    sistema -- "Desplegado en" --> aws_infra
+
+    classDef person fill:#08427b,color:white,stroke:#052e56
+    classDef system fill:#1168bd,color:white,stroke:#0b4884
+    classDef external fill:#999999,color:white,stroke:#6b6b6b
+    classDef infra fill:#666666,color:white,stroke:#444444
+
+    class comprador person
+    class sistema system
+    class stripe_sim external
+    class aws_infra infra

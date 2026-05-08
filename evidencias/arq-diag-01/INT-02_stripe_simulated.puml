@@ -1,0 +1,49 @@
+@startuml INT-02_StripeSimulated
+title INT-02: Integración de Pago Simulado\nStripeSimulatedPaymentAdapter — dentro de checkout-service
+
+skinparam backgroundColor white
+skinparam roundcorner 10
+
+package "checkout-service" {
+    component "ProcessCheckoutUseCase" as uc
+    interface "PaymentPort" as port
+    component "StripeSimulatedPaymentAdapter\n[Adaptador simulado — SANDBOX]" as adapter
+}
+
+node "Stripe API Real\n[NO UTILIZADA]" as stripe_real #gray
+
+uc --> port : executePayment(orderId, amount)
+port <|.. adapter : implementa
+adapter --> adapter : Thread.sleep(500ms)\n— simula latencia de red
+adapter --> adapter : genera transactionId\n= \"stripe_sim_\" + UUID.randomUUID()
+adapter --> adapter : retorna PaymentResult\n{ transactionId, success: true }
+
+adapter -[#gray,dashed]-> stripe_real : [SIN LLAMADA REAL]
+
+note right of adapter
+  <b>StripeSimulatedPaymentAdapter</b>
+  ─────────────────────────────────
+  • Clase: infrastructure.adapter.out.payment
+  • Prefijo transacción: stripe_sim_
+  • Aprueba siempre en sandbox
+  • 500ms delay simulado
+  • No hay HTTP calls a api.stripe.com
+  • No hay API keys de Stripe
+  ─────────────────────────────────
+  <b>Evidencia observada</b>:
+  evidencias/pay-sim-01/
+  checkout-service-stripe-simulated-logs.txt
+  stripe_sim_8977603a-...-73
+  stripe_sim_bad44647-...-c5
+end note
+
+note bottom of stripe_real
+  <color:gray>Stripe API real está fuera del
+  alcance del sandbox.
+  En producción requeriría:
+  - API keys de Stripe
+  - Endpoint: api.stripe.com
+  - Manejo de webhooks</color>
+end note
+
+@enduml

@@ -1,0 +1,48 @@
+---
+title: "INT-01: Comunicación Asíncrona — core-api ↔ RabbitMQ ↔ checkout-service"
+---
+sequenceDiagram
+    actor Mobile as 📱 App Móvil
+    participant CoreAPI as ⚙️ core-api :8080
+    participant Exchange as 🐰 ecommerce.checkout.exchange
+    participant QReq as 📥 checkout-requested.q
+    participant CheckoutSvc as ⚙️ checkout-service :8082
+    participant QComp as 📤 checkout-completed.q
+
+    Note over Mobile,QComp: Flujo 1 — Inicio de Checkout
+
+    Mobile->>CoreAPI: POST /api/v1/checkout {cartId} [Bearer JWT]
+    activate CoreAPI
+    CoreAPI->>CoreAPI: CheckoutUseCase: valida carrito, crea CheckoutRequest PENDING
+    CoreAPI->>CoreAPI: Persiste en core_db
+    CoreAPI->>Exchange: PUBLISH checkout.requested {eventId, requestId, items, totalAmount}
+    CoreAPI-->>Mobile: 201 { requestId, status:PENDING, totalAmount }
+    deactivate CoreAPI
+
+    Note over Mobile,QComp: Flujo 2 — Procesamiento Asíncrono
+
+    Exchange->>QReq: enruta por routing key
+    QReq->>CheckoutSvc: entrega mensaje
+    activate CheckoutSvc
+    CheckoutSvc->>CheckoutSvc: Verifica idempotencia (InboxEvent)
+    CheckoutSvc->>CheckoutSvc: Crea Order en checkout_db
+    CheckoutSvc->>Exchange: PUBLISH checkout.accepted
+    CheckoutSvc->>CheckoutSvc: StripeSimulatedPaymentAdapter (in-process ~500ms)
+    CheckoutSvc->>Exchange: PUBLISH payment.processed {transactionId: stripe_sim_*, success:true}
+    CheckoutSvc->>CheckoutSvc: Order.status = COMPLETED
+    CheckoutSvc->>Exchange: PUBLISH checkout.completed {checkoutRequestId, orderId}
+    CheckoutSvc->>CheckoutSvc: InboxEvent.processed = true
+    deactivate CheckoutSvc
+
+    Note over Mobile,QComp: Flujo 3 — Actualización en core-api
+
+    Exchange->>QComp: enruta checkout.completed
+    QComp->>CoreAPI: entrega mensaje
+    activate CoreAPI
+    CoreAPI->>CoreAPI: CheckoutRequest.status = COMPLETED en core_db
+    deactivate CoreAPI
+
+    Note over Mobile,QComp: Flujo 4 — Polling de estado
+
+    Mobile->>CoreAPI: GET /api/v1/checkout/{requestId} [Bearer JWT]
+    CoreAPI-->>Mobile: 200 { status:COMPLETED, totalAmount }

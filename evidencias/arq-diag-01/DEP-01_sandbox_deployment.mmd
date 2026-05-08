@@ -1,0 +1,55 @@
+---
+title: "DEP-01: Despliegue Final Sandbox — Docker Compose sobre EC2 AWS / Local"
+---
+graph TB
+    mobile["📱 App Móvil\nReact Native / Expo\n(Dispositivo / Expo Go)"]
+
+    subgraph host["Host Linux — EC2 t2.micro AWS / Local"]
+        subgraph docker["Docker Engine"]
+            subgraph ctr_core["tesis-core-api · :18080"]
+                core_jar["core-api.jar (Spring Boot 3.2)"]
+                health_c["/actuator/health ✅"]
+            end
+
+            subgraph ctr_checkout["tesis-checkout-service · :18082"]
+                checkout_jar["checkout-service.jar (Spring Boot 3.2)"]
+                health_co["/actuator/health ✅"]
+            end
+
+            subgraph ctr_rabbit["tesis-rabbitmq · AMQP:5672 · Mgmt:15674"]
+                rabbit_proc["RabbitMQ 3.12-management-alpine"]
+                exchange["ecommerce.checkout.exchange (topic, durable)"]
+                queues["9 colas declaradas (durable)"]
+                dlx["checkout.dlx + DLQ"]
+            end
+
+            subgraph ctr_coredb["tesis-core-db · :15432"]
+                pg_core[("PostgreSQL 15\ncore_db\n7 tablas")]
+            end
+
+            subgraph ctr_checkdb["tesis-checkout-db · :15433"]
+                pg_check[("PostgreSQL 15\ncheckout_db\n6 tablas")]
+            end
+        end
+    end
+
+    prometheus["⚠️ tesis-prometheus\nConfigurado · NO corriendo\n(sin micrometer en pom.xml)"]
+    grafana["⚠️ tesis-grafana\nConfigurado · NO corriendo\n(sin datos de backend)"]
+
+    mobile -- "HTTPS REST :18080 [Bearer JWT]" --> ctr_core
+    ctr_core -- "AMQP :5672" --> ctr_rabbit
+    ctr_checkout -- "AMQP :5672" --> ctr_rabbit
+    ctr_core -- "JDBC :15432" --> ctr_coredb
+    ctr_checkout -- "JDBC :15433" --> ctr_checkdb
+    ctr_core -. "sin scraping activo" .-> prometheus
+    prometheus -. "sin datos backend" .-> grafana
+
+    classDef running fill:#1168bd,color:white
+    classDef db fill:#23a4d4,color:white
+    classDef broker fill:#ff6600,color:white
+    classDef designed fill:#999,color:white
+
+    class ctr_core,ctr_checkout running
+    class ctr_coredb,ctr_checkdb db
+    class ctr_rabbit broker
+    class prometheus,grafana designed

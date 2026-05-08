@@ -1,0 +1,28 @@
+@startuml C4-01_Context
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+title C4-01: Diagrama de Contexto del Sistema\nPlataforma Móvil de E-commerce — Sandbox
+
+Person(comprador, "Comprador / Vendedor", "Usuario de la aplicación móvil.\nPuede buscar productos, gestionar carrito,\niniciar checkout y publicar listings.")
+
+System(sistema, "Plataforma e-commerce\n(sandbox)", "Permite compra y venta de productos\nmediante arquitectura hexagonal.\nBackend REST + mensajería asíncrona.\nApp móvil React Native / Expo.")
+
+System_Ext(stripe_sim, "Stripe (Simulado)", "Adaptador interno que simula\npagos con tarjeta de crédito.\nNO realiza llamadas reales a Stripe.\nPrefijo: stripe_sim_*")
+
+System_Ext(aws_infra, "AWS EC2\n(Infraestructura sandbox)", "Host de despliegue real.\nEC2 t2.micro — us-east-1.\nDocker Compose sobre Linux.\nNo es plataforma en sí, es runtime.")
+
+Rel(comprador, sistema, "Usa", "HTTPS / REST (Bearer JWT)")
+Rel(sistema, stripe_sim, "Delega pago simulado", "In-process (no red)")
+Rel(sistema, aws_infra, "Desplegado en", "Docker Compose")
+
+note as N1
+  <b>Alcance sandbox</b>
+  - Sin pagos reales
+  - Sin stores (App Store / Play Store)
+  - Sin e-commerce integral
+  - Sin autenticación OAuth externa
+end note
+
+@enduml

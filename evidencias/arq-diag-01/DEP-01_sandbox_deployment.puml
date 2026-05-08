@@ -1,0 +1,68 @@
+@startuml DEP-01_SandboxDeployment
+title DEP-01: Diagrama de Despliegue Final — Sandbox\nDocker Compose sobre EC2 AWS / Local
+
+skinparam backgroundColor white
+skinparam roundcorner 8
+skinparam node {
+    BackgroundColor #f5f5f5
+    BorderColor #333333
+}
+
+node "Host Linux (EC2 t2.micro AWS / Local)" as host {
+
+    node "Docker Engine" as docker {
+
+        node "tesis-core-api\n(Puerto :18080→:8080)" as ctr_core {
+            component "core-api.jar\n(Spring Boot 3.2, Java 17)" as core_jar
+            component "/actuator/health\n[observado — público]" as health_core
+        }
+
+        node "tesis-checkout-service\n(Puerto :18082→:8082)" as ctr_checkout {
+            component "checkout-service.jar\n(Spring Boot 3.2, Java 17)" as checkout_jar
+            component "/actuator/health\n[observado]" as health_co
+        }
+
+        node "tesis-rabbitmq\n(AMQP :5672, Mgmt :15674→:15672)" as ctr_rabbit {
+            component "RabbitMQ 3.12\nmanagement-alpine" as rabbit_proc
+            component "ecommerce.checkout.exchange\n(topic, durable)" as exchange
+            component "9 colas declaradas\n(durable)" as queues
+            component "checkout.dlx + DLQ" as dlx
+        }
+
+        node "tesis-core-db\n(Puerto :15432→:5432)" as ctr_coredb {
+            database "PostgreSQL 15\ncore_db" as pg_core
+        }
+
+        node "tesis-checkout-db\n(Puerto :15433→:5432)" as ctr_checkdb {
+            database "PostgreSQL 15\ncheckout_db" as pg_check
+        }
+    }
+}
+
+node "App Móvil\n(React Native / Expo)\n[Dispositivo / Expo Go]" as mobile
+
+node "tesis-prometheus\n[CONFIGURADO — NO CORRIENDO]" as prometheus #gray
+node "tesis-grafana\n[CONFIGURADO — NO CORRIENDO]" as grafana #gray
+
+' Connections
+mobile --> ctr_core : HTTPS REST :18080\n[Bearer JWT]
+ctr_core --> ctr_rabbit : AMQP :5672
+ctr_checkout --> ctr_rabbit : AMQP :5672
+ctr_core --> ctr_coredb : JDBC :15432
+ctr_checkout --> ctr_checkdb : JDBC :15433
+
+ctr_core -[#gray,dashed]-> prometheus : [no scraping activo\nmicrometer no en pom.xml]
+prometheus -[#gray,dashed]-> grafana : [no datos de backend]
+
+note as N1
+  <b>Compose real utilizado</b>: docker-compose.yml (raíz del monorepo)
+  <b>EC2 AWS</b> (pay-sim-01): host 44.195.21.215, checkout validado
+  <b>Local</b>: puertos 18080/18082/15432/15433/15674
+
+  <b>Persistencia</b>: volúmenes Docker nombrados
+  <b>Imágenes</b>: construidas desde Dockerfile en cada servicio
+  <b>Healthcheck</b>: todos los servicios incluyen healthcheck configurado
+  <b>Reinicios observados</b>: 0 en sesión actual
+end note
+
+@enduml

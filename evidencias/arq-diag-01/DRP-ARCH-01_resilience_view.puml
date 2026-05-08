@@ -1,0 +1,101 @@
+@startuml DRP-ARCH-01_ResilienceView
+title DRP-ARCH-01: Vista Arquitectónica de Resiliencia y Recuperación\nObservado / Diseñado / Documental
+
+skinparam backgroundColor white
+skinparam roundcorner 10
+skinparam legend {
+    BackgroundColor #fafafa
+    BorderColor #333
+}
+
+' ==========================================
+' OBSERVED LAYER
+' ==========================================
+package "OBSERVADO — Ejecutado y evidenciado" #d4edda {
+
+    node "AWS EC2 us-east-1\n(Producción sandbox — PASS)" as aws_prod {
+        component "core-api\n(:8080)" as prod_core
+        component "checkout-service\n(:8082)" as prod_checkout
+        component "RabbitMQ\n(:5672)" as prod_rabbit
+        component "PostgreSQL\n(core_db + checkout_db)" as prod_db
+        component "Docker Compose\n(docker-compose.ec2.yml)" as prod_compose
+    }
+
+    note right of aws_prod
+      Evidencia: pay-sim-01/checkout-flow-aws.json
+      Host: 44.195.21.215
+      Checkout COMPLETED verificado
+      Health: coreApi UP, checkoutService UP
+      Prometheus self-monitoring: Ready
+      Bloques: DEVOPS-DRP-01, DEVOPS-F6-01
+    end note
+
+    component "Health Observable\n/actuator/health\n[db, rabbit, ping, diskSpace]" as health_obs
+    component "RabbitMQ Mgmt API\n[queues, message counts]" as rabbit_obs
+    component "Logs stdout\n[docker logs]" as logs_obs
+    component "DB state\n[psql directo]" as db_obs
+}
+
+' ==========================================
+' DESIGNED LAYER
+' ==========================================
+package "DISEÑADO — Runbook/IaC listo, sin apply observado" #fff3cd {
+
+    node "AWS Región Alterna\n[Terraform parametrizado]" as aws_alt {
+        component "infra/environments/demo\naws_region variable" as tf_aws
+        component "Runbook completo\n(drp-02-expanded-runbook.md)" as runbook_aws
+    }
+
+    node "Azure VM Recovery\n[Terraform validado]" as azure {
+        component "infra/environments/azure-drp\nterraform init ✓\nterraform validate ✓" as tf_azure
+        component "main.tf: Ubuntu VM\n+ Docker Cloud Init" as azure_vm
+    }
+
+    node "Prometheus + Grafana\n[Configurado, no activo]" as prom_design {
+        component "deploy/compose/prometheus\n(scrape jobs comentados)" as prom_conf
+        component "deploy/compose/grafana\n(dashboard versionado)" as graf_conf
+    }
+
+    note right of aws_alt
+      Sin apply ejecutado en región alterna.
+      Runbook: 10 pasos documentados.
+      Bloque: DEVOPS-DRP-02
+    end note
+
+    note right of azure
+      azure-terraform-validate: PASS
+      azureApply: not-executed
+      Bloque: DEVOPS-DRP-02
+    end note
+}
+
+' ==========================================
+' DOCUMENTAL LAYER
+' ==========================================
+package "DOCUMENTAL — Solo diseño/documentación" #f8d7da {
+
+    node "Google Cloud Platform\n[No implementado]" as gcp {
+        component "Mención en runbook\ncomo alternativa" as gcp_doc
+    }
+
+    node "Fallback Infra Propia\n[Manual, sin SLA]" as fallback {
+        component "Compose bundle portable\nManual operator recovery" as fallback_doc
+    }
+}
+
+' ==========================================
+' RECOVERY FLOW ARROW
+' ==========================================
+aws_prod -[#green,bold]-> aws_alt : "1er escalón\nrecuperación\n(diseñado)"
+aws_alt -[#orange,bold]-> azure : "2do escalón\nalternativo"
+azure -[#red,dashed]-> gcp : "3er escalón\n(documental)"
+gcp -[#red,dashed]-> fallback : "fallback último\nrecurso"
+
+legend right
+  |= Color |= Significado |
+  |<#d4edda> Verde | Observado y evidenciado |
+  |<#fff3cd> Amarillo | Diseñado / IaC listo |
+  |<#f8d7da> Rojo | Solo documental |
+endlegend
+
+@enduml

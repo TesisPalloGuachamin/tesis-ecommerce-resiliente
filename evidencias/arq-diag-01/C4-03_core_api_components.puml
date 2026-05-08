@@ -1,0 +1,85 @@
+@startuml C4-03_CoreAPI_Components
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+LAYOUT_LEFT_RIGHT()
+LAYOUT_WITH_LEGEND()
+
+title C4-03: Componentes de core-api\nArquitectura Hexagonal (Ports & Adapters)
+
+Container_Ext(mobile, "App Móvil", "React Native / Expo", "Cliente REST")
+ContainerDb_Ext(core_db, "core_db", "PostgreSQL 15")
+Container_Ext(rabbitmq, "RabbitMQ", "AMQP Broker")
+
+Container_Boundary(core_api, "core-api — Spring Boot 3.2") {
+
+    ' ===== ADAPTERS IN (Driving) =====
+    Component(auth_ctrl, "AuthController", "REST Controller", "POST /api/v1/auth/register\nPOST /api/v1/auth/login\nGET  /api/v1/auth/me")
+    Component(product_ctrl, "ProductController", "REST Controller", "GET /api/v1/products\nGET /api/v1/products/{id}")
+    Component(cart_ctrl, "CartController", "REST Controller", "GET /api/v1/cart\nPOST /api/v1/cart/items\nPATCH /api/v1/cart/items/{id}\nDELETE /api/v1/cart/items/{id}")
+    Component(checkout_ctrl, "CheckoutController", "REST Controller", "POST /api/v1/checkout\nGET  /api/v1/checkout/{requestId}")
+    Component(listing_ctrl, "ListingController", "REST Controller", "POST /api/v1/listings\nGET  /api/v1/listings\nGET  /api/v1/listings/{listingId}")
+    Component(checkout_consumer, "CheckoutEventConsumer", "RabbitMQ Listener", "Consume: checkout.completed\nConsume: checkout.failed\nActualiza CheckoutRequest status")
+
+    ' ===== APPLICATION USE CASES =====
+    Component(register_uc, "RegisterUseCase", "Use Case", "Registra usuario.\nBCrypt password.")
+    Component(login_uc, "LoginUseCase", "Use Case", "Autentica usuario.\nEmite JWT.")
+    Component(me_uc, "GetCurrentUserUseCase", "Use Case", "Retorna perfil del usuario.")
+    Component(product_uc, "GetProductsUseCase\nGetProductByIdUseCase", "Use Cases", "Listado y detalle de productos.")
+    Component(cart_uc, "AddCartItemUseCase\nUpdateCartItemUseCase\nDeleteCartItemUseCase\nGetCartUseCase", "Use Cases", "CRUD de ítems del carrito.")
+    Component(checkout_uc, "CheckoutUseCase\nGetCheckoutRequestUseCase", "Use Cases", "Inicia checkout (publica evento).\nConsulta estado del pedido.")
+    Component(listing_uc, "CreateListingUseCase\nGetListingsUseCase\nGetListingByIdUseCase", "Use Cases", "Gestión de publicaciones (venta).")
+
+    ' ===== DOMAIN MODELS =====
+    Component(domain, "Domain Models", "Plain Java", "User, Product, Cart, CartItem,\nCheckoutRequest, Listing, OutboxEvent")
+
+    ' ===== DOMAIN PORTS (OUT) =====
+    Component(ports_out, "Ports (Out)", "Interfaces Java", "UserRepository, ProductRepository,\nCartRepository, CartItemRepository,\nCheckoutRepository, ListingRepository,\nEventPublisher, JwtProvider, PasswordEncoder")
+
+    ' ===== ADAPTERS OUT (Driven) =====
+    Component(jpa_adapters, "JPA Repository Adapters", "Spring Data JPA", "UserRepositoryAdapter\nProductRepositoryAdapter\nCartRepositoryAdapter\nListingRepositoryAdapter\nCheckoutRepositoryAdapter")
+    Component(event_adapter, "EventPublisherAdapter", "RabbitMQ Adapter", "Publica checkout.requested\nal exchange ecommerce.checkout.exchange")
+    Component(jwt_adapter, "JwtProviderAdapter", "JJWT Adapter", "Genera y valida JWT.\nHS512, 24h expiry.")
+    Component(pwd_adapter, "PasswordEncoderAdapter", "BCrypt Adapter", "Hash y verificacion\nde contraseñas.")
+    Component(security, "Spring Security\n+ JwtAuthFilter", "Security Config", "Protege endpoints.\nValida JWT en cada request.\n/actuator/health: publico.")
+}
+
+' Connections in
+Rel(mobile, auth_ctrl, "HTTP REST", "JSON / Bearer JWT")
+Rel(mobile, product_ctrl, "HTTP REST", "Bearer JWT")
+Rel(mobile, cart_ctrl, "HTTP REST", "Bearer JWT")
+Rel(mobile, checkout_ctrl, "HTTP REST", "Bearer JWT")
+Rel(mobile, listing_ctrl, "HTTP REST", "Bearer JWT")
+Rel(rabbitmq, checkout_consumer, "AMQP consume", "checkout.completed / checkout.failed")
+
+' Controllers → Use Cases
+Rel(auth_ctrl, register_uc, "invoca")
+Rel(auth_ctrl, login_uc, "invoca")
+Rel(auth_ctrl, me_uc, "invoca")
+Rel(product_ctrl, product_uc, "invoca")
+Rel(cart_ctrl, cart_uc, "invoca")
+Rel(checkout_ctrl, checkout_uc, "invoca")
+Rel(listing_ctrl, listing_uc, "invoca")
+
+' Use Cases → Domain
+Rel(register_uc, domain, "usa")
+Rel(login_uc, domain, "usa")
+Rel(cart_uc, domain, "usa")
+Rel(checkout_uc, domain, "usa")
+Rel(listing_uc, domain, "usa")
+
+' Use Cases → Ports
+Rel(checkout_uc, ports_out, "via EventPublisher")
+Rel(register_uc, ports_out, "via UserRepository\n+ PasswordEncoder")
+Rel(login_uc, ports_out, "via UserRepository\n+ JwtProvider")
+
+' Ports → Adapters
+Rel(ports_out, jpa_adapters, "implementa")
+Rel(ports_out, event_adapter, "implementa")
+Rel(ports_out, jwt_adapter, "implementa")
+Rel(ports_out, pwd_adapter, "implementa")
+
+' Adapters → External
+Rel(jpa_adapters, core_db, "JDBC/JPA", "SQL")
+Rel(event_adapter, rabbitmq, "AMQP publish", "checkout.requested")
+
+@enduml

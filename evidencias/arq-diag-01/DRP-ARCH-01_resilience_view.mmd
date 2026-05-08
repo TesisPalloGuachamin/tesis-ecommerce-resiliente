@@ -1,0 +1,32 @@
+---
+title: "DRP-ARCH-01: Vista de Resiliencia — Observado / Diseñado / Documental"
+---
+graph LR
+    subgraph observado["✅ OBSERVADO — Ejecutado y evidenciado"]
+        aws_prod["☁️ AWS EC2 us-east-1\n---\ncore-api · checkout-service\nRabbitMQ · PostgreSQL\nDocker Compose ec2.yml\n---\nhost: 44.195.21.215\ncheckout: COMPLETED\nBloques: DRP-01 / F6-01"]
+        obs_tools["🔍 Observabilidad real\n---\n/actuator/health ✅\nRabbitMQ Mgmt API ✅\ndocker logs stdout ✅\npsql directo ✅"]
+    end
+
+    subgraph disenado["📐 DISEÑADO — Runbook / IaC listo"]
+        aws_alt["☁️ AWS Región Alterna\n---\nTerraform parametrizado\n(variable aws_region)\nRunbook 10 pasos\nBloque: DRP-02"]
+        azure["☁️ Azure VM Recovery\n---\nterraform init ✓\nterraform validate ✓\nazureApply: NOT executed\nBloque: DRP-02"]
+        prom_design["📊 Prometheus + Grafana\n---\nConfigurados en compose\nScraping: NO activo\n(falta micrometer-prometheus)\nDashboard: versionado"]
+    end
+
+    subgraph documental["📄 DOCUMENTAL — Solo diseño/doc"]
+        gcp["☁️ Google Cloud\n---\nMencionado en runbook\nSin IaC implementado"]
+        fallback["🏠 Fallback Infra Propia\n---\nCompose bundle portable\nManual · Sin SLA"]
+    end
+
+    aws_prod -- "1er escalón\n(diseñado)" --> aws_alt
+    aws_alt -- "2do escalón\n(alternativo)" --> azure
+    azure -. "3er escalón\n(documental)" .-> gcp
+    gcp -. "último recurso" .-> fallback
+
+    classDef observed fill:#28a745,color:white
+    classDef designed fill:#ffc107,color:black
+    classDef documental fill:#dc3545,color:white
+
+    class aws_prod,obs_tools observed
+    class aws_alt,azure,prom_design designed
+    class gcp,fallback documental

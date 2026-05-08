@@ -1,0 +1,37 @@
+---
+title: "C4-02: Diagrama de Contenedores — Plataforma e-commerce sandbox"
+---
+graph TD
+    comprador["👤 Comprador / Vendedor"]
+
+    subgraph plataforma["Plataforma e-commerce (sandbox)"]
+        mobile["📱 App Móvil\n---\nReact Native / Expo (TypeScript)\n---\nLogin · Catálogo · Carrito\nCheckout · Publicar listing"]
+
+        core_api["⚙️ core-api\n---\nSpring Boot 3.2 · Java 17 · :8080\n---\nAPI REST pública · JWT\nAuth · Productos · Carrito\nCheckout · Listings"]
+
+        rabbitmq["🐰 RabbitMQ 3.12\n---\n:5672 (AMQP) · :15672 (Mgmt)\n---\nexchange: ecommerce.checkout.exchange\n(topic, durable) · DLQ habilitado"]
+
+        checkout_svc["⚙️ checkout-service\n---\nSpring Boot 3.2 · Java 17 · :8082\n---\nOrquesta checkout:\naceptar · pago · completar\nInbox pattern (idempotencia)"]
+
+        core_db[("🗄️ core_db\n---\nPostgreSQL 15 · :15432\n---\nusers · products · carts\ncart_items · checkout_requests\nlistings · outbox_events")]
+
+        checkout_db[("🗄️ checkout_db\n---\nPostgreSQL 15 · :15433\n---\norders · order_items\npayment_attempts · inbox_events")]
+    end
+
+    comprador -- "Touch / UI" --> mobile
+    mobile -- "HTTPS REST · Bearer JWT" --> core_api
+    core_api -- "JDBC/JPA · Flyway" --> core_db
+    core_api -- "AMQP PUBLICA checkout.requested" --> rabbitmq
+    rabbitmq -- "AMQP CONSUME checkout.completed/failed" --> core_api
+    rabbitmq -- "AMQP CONSUME checkout.requested" --> checkout_svc
+    checkout_svc -- "AMQP PUBLICA accepted/processed/completed/failed" --> rabbitmq
+    checkout_svc -- "JDBC/JPA · Flyway" --> checkout_db
+
+    classDef person fill:#08427b,color:white
+    classDef container fill:#1168bd,color:white
+    classDef db fill:#23a4d4,color:white
+    classDef broker fill:#ff6600,color:white
+    class comprador person
+    class mobile,core_api,checkout_svc container
+    class core_db,checkout_db db
+    class rabbitmq broker

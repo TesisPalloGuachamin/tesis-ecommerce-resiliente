@@ -1,0 +1,60 @@
+@startuml C4-04_CheckoutService_Components
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+LAYOUT_LEFT_RIGHT()
+LAYOUT_WITH_LEGEND()
+
+title C4-04: Componentes de checkout-service\nArquitectura Hexagonal (Ports & Adapters)
+
+Container_Ext(rabbitmq, "RabbitMQ", "AMQP Broker")
+ContainerDb_Ext(checkout_db, "checkout_db", "PostgreSQL 15")
+
+Container_Boundary(checkout_svc, "checkout-service — Spring Boot 3.2") {
+
+    ' ===== ADAPTERS IN (Driving) =====
+    Component(event_consumer, "CheckoutEventConsumer", "RabbitMQ Listener", "Consume: checkout.requested\n(checkout-service.checkout-requested.q)\nDLX habilitado con TTL 86400s")
+    Component(health_ctrl, "HealthController", "REST Controller", "GET /actuator/health\n(db, rabbit, ping)")
+
+    ' ===== APPLICATION USE CASE =====
+    Component(process_checkout, "ProcessCheckoutUseCase", "Use Case (Orquestador)", "1. Verifica idempotencia (InboxEvent)\n2. Registra InboxEvent\n3. Crea Order\n4. Publica checkout.accepted\n5. Crea PaymentAttempt\n6. Ejecuta pago (PaymentPort)\n7. Publica payment.processed\n8. Actualiza Order status\n9. Publica checkout.completed o failed\n10. Marca InboxEvent processed")
+
+    ' ===== DOMAIN MODELS =====
+    Component(domain, "Domain Models", "Plain Java", "Order (ORD-XXXXXXXX)\nOrderItem\nPaymentAttempt\nInboxEvent (idempotencia)\nCheckoutRequest")
+
+    ' ===== DOMAIN PORTS (OUT) =====
+    Component(ports_out, "Ports (Out)", "Interfaces Java", "OrderRepository\nPaymentAttemptRepository\nInboxEventRepository\nPaymentPort\nEventPublisherPort")
+
+    ' ===== ADAPTERS OUT (Driven) =====
+    Component(stripe_sim, "StripeSimulatedPaymentAdapter", "Payment Adapter\n[SIMULADO]", "Implementa PaymentPort.\nSin llamadas reales a Stripe.\n500ms delay simulado.\nSiempre aprueba en sandbox.\ntransactionId: stripe_sim_<uuid>")
+    Component(rabbit_publisher, "RabbitEventPublisher", "RabbitMQ Adapter", "Publica eventos al exchange:\necommerce.checkout.exchange\n- checkout.accepted\n- payment.processed\n- checkout.completed\n- checkout.failed")
+    Component(jpa_adapters, "JPA Repository Adapters", "Spring Data JPA", "JpaOrderRepository\nJpaPaymentAttemptRepository\nJpaInboxEventRepository")
+}
+
+' Connections in
+Rel(rabbitmq, event_consumer, "AMQP consume", "checkout.requested\n(routing key: checkout.requested)")
+
+' Consumer → Use Case
+Rel(event_consumer, process_checkout, "invoca")
+
+' Use Case → Domain
+Rel(process_checkout, domain, "crea/actualiza modelos")
+
+' Use Case → Ports
+Rel(process_checkout, ports_out, "via puertos")
+
+' Ports → Adapters
+Rel(ports_out, stripe_sim, "implementa PaymentPort")
+Rel(ports_out, rabbit_publisher, "implementa EventPublisherPort")
+Rel(ports_out, jpa_adapters, "implementa Repositories")
+
+' Adapters → External
+Rel(rabbit_publisher, rabbitmq, "AMQP publish", "accepted/processed/completed/failed")
+Rel(jpa_adapters, checkout_db, "JDBC/JPA", "SQL")
+
+note as N1
+  <b>Stripe simulado</b>: sin red externa, in-process.
+  <b>Idempotencia</b>: InboxEvent previene doble procesamiento.
+  <b>DLX</b>: mensajes rechazados van a checkout-service.dlq.
+end note
+
+@enduml

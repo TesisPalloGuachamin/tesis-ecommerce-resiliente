@@ -1,0 +1,75 @@
+@startuml INT-01_AsyncMessaging
+title INT-01: Comunicación Asíncrona\ncore-api ↔ RabbitMQ ↔ checkout-service\n(Flujo de Checkout Completo)
+
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 10
+skinparam maxmessagesize 200
+skinparam backgroundColor white
+
+actor "App Móvil\n(Usuario)" as mobile
+participant "core-api\n(:8080)" as core
+participant "ecommerce.checkout\n.exchange\n(topic, durable)" as exchange
+queue "checkout-service\n.checkout-requested.q\n(durable, DLX)" as q_req
+participant "checkout-service\n(:8082)" as checkout
+queue "core-api\n.checkout-completed.q\n(durable)" as q_comp
+
+== 1. Inicio de Checkout (POST /api/v1/checkout) ==
+
+mobile -> core : POST /api/v1/checkout\n{ cartId }\n[Bearer JWT]
+activate core
+core -> core : CheckoutUseCase.execute()\n· valida usuario y carrito\n· calcula totalAmount\n· crea CheckoutRequest (PENDING)
+core -> core : Persiste CheckoutRequest\nen core_db
+core -> exchange : AMQP publish\nrouting key: checkout.requested\n{ eventId, requestId, userId, items, totalAmount }
+core -> mobile : 201 Created\n{ requestId, status: PENDING, totalAmount }
+deactivate core
+
+== 2. Procesamiento en checkout-service ==
+
+exchange -> q_req : enruta por routing key\ncheckout.requested
+q_req -> checkout : entrega mensaje
+activate checkout
+checkout -> checkout : CheckoutEventConsumer\n.handleCheckoutRequested()
+
+checkout -> checkout : ProcessCheckoutUseCase.execute()\n· verifica idempotencia (InboxEvent)\n· registra InboxEvent
+checkout -> checkout : crea Order (ORD-XXXXXXXX)\nen checkout_db
+checkout -> exchange : publish checkout.accepted\n{ checkoutRequestId, orderId }
+checkout -> checkout : crea PaymentAttempt (PENDING)
+checkout -> checkout : StripeSimulatedPaymentAdapter\n.executePayment()\n[in-process, ~500ms]\ntransactionId: stripe_sim_*
+
+alt Pago aprobado (sandbox: siempre true)
+    checkout -> checkout : PaymentAttempt.status = SUCCESS
+    checkout -> exchange : publish payment.processed\n{ orderId, transactionId, success: true }
+    checkout -> checkout : Order.status = COMPLETED
+    checkout -> exchange : publish checkout.completed\n{ checkoutRequestId, orderId }
+else Pago fallido (no ocurre en sandbox)
+    checkout -> exchange : publish payment.processed\n{ orderId, success: false }
+    checkout -> checkout : Order.status = FAILED
+    checkout -> exchange : publish checkout.failed\n{ checkoutRequestId, reason }
+end
+
+checkout -> checkout : marca InboxEvent.processed = true
+deactivate checkout
+
+== 3. Actualización de estado en core-api ==
+
+exchange -> q_comp : enruta checkout.completed
+q_comp -> core : entrega mensaje
+activate core
+core -> core : CheckoutEventConsumer\n.handleCheckoutCompleted()\n· CheckoutRequest.status = COMPLETED\n· persiste en core_db
+deactivate core
+
+== 4. Polling del estado por la app móvil ==
+
+mobile -> core : GET /api/v1/checkout/{requestId}\n[Bearer JWT]
+activate core
+core -> mobile : 200 OK\n{ requestId, status: COMPLETED, totalAmount }
+deactivate core
+
+note over exchange
+  Exchange: ecommerce.checkout.exchange (topic, durable)
+  DLX: checkout.dlx (direct) → checkout-service.dlq
+  TTL mensaje en q_req: 86400s (24h)
+  Observado: 2 checkout flows completos en sesión actual
+end note
+
+@enduml
