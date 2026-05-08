@@ -90,7 +90,7 @@ services:
       JWT_SECRET: ${CORE_API_JWT_SECRET:-my-super-secret-key-that-should-be-at-least-32-characters-long-in-production}
       JWT_EXPIRATION: ${CORE_API_JWT_EXPIRATION:-86400000}
       CORS_ALLOWED_ORIGINS: http://localhost:3000,http://localhost:8000
-      MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: health,info,metrics
+      MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: health,info,prometheus
       LOGGING_LEVEL_ROOT: INFO
       LOGGING_LEVEL_COM_TESIS_ECOMMERCE: ${CORE_API_LOG_LEVEL:-DEBUG}
     deploy:
@@ -129,7 +129,7 @@ services:
       SPRING_RABBITMQ_PORT: ${RABBITMQ_PORT:-5672}
       SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER:-guest}
       SPRING_RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD:-guest}
-      MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: health,info,metrics
+      MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: health,info,prometheus
       LOGGING_LEVEL_ROOT: WARN
       LOGGING_LEVEL_COM_TESIS_ECOMMERCE: ${CHECKOUT_SERVICE_LOG_LEVEL:-INFO}
     deploy:
@@ -188,6 +188,7 @@ services:
       - grafana_data:/var/lib/grafana
       - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources:ro
       - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
     networks:
       - tesis-network
     depends_on:

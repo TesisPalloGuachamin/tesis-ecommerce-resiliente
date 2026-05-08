@@ -105,23 +105,21 @@ docker compose -f docker-compose.dev.yml build --no-cache
 ## Observabilidad
 
 ### Métricas (Prometheus)
-**Estado Actual:** Deshabilitado (ver `PROMETHEUS_SETUP.md`)
+**Estado Actual:** Habilitado para `core-api` y `checkout-service` (ver `PROMETHEUS_SETUP.md`)
 
-Para habilitar scraping de métricas de Core API y Checkout Service:
-1. Agregar dependencia `micrometer-registry-prometheus` a ambos `pom.xml`
-2. Recompilar servicios: `mvn clean package`
-3. Descomentar jobs en `prometheus/prometheus.yml`
-4. Reiniciar Prometheus
+Para verificar scraping de métricas:
+1. Levantar Prometheus: `docker compose -f docker-compose.dev.yml up -d prometheus`
+2. Abrir `http://localhost:9090/targets`
+3. Confirmar targets `core-api` y `checkout-service` en estado `UP`
 
 ### Dashboards (Grafana)
 Grafana está pre-configurado con:
 - Datasource Prometheus auto-provisioned
-- Dashboard "Services Overview" con paneles básicos
+- Dashboard "Tesis Backend Services Overview" con paneles backend mínimos
 
 Para agregar más dashboards:
 1. Crear archivo JSON en `grafana/dashboards/`
-2. Referenciarlo en `grafana/provisioning/dashboards/dashboards.yml`
-3. Reiniciar Grafana
+2. Reiniciar Grafana para recargar provisioning
 
 ## Troubleshooting
 
@@ -180,4 +178,3 @@ docker compose -f docker-compose.dev.yml logs -f rabbitmq
 
 - [foundation-notes.md](../devops/foundation-notes.md) - Contexto general DevOps
 - [PROMETHEUS_SETUP.md](./PROMETHEUS_SETUP.md) - Habilitar métricas Prometheus
-

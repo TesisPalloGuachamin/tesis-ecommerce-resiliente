@@ -7,7 +7,7 @@ Esta validación verifica la compatibilidad entre:
 - `.env.example`
 - Dockerfiles de apps/
 - `application.yml` de cada servicio
-- Endpoints `/actuator/health` y `/actuator/metrics`
+- Endpoints `/actuator/health` y `/actuator/prometheus`
 
 ---
 
@@ -53,16 +53,16 @@ Esta validación verifica la compatibilidad entre:
 | Servicio | Endpoint | Disponibilidad | Reason |
 |----------|----------|-----------------|--------|
 | Core API | `/actuator/health` | ✓ Sí | `spring-boot-starter-actuator` en pom.xml |
-| Core API | `/actuator/metrics` | ✓ Sí | Incluido en Actuator por defecto |
-| Core API | `/actuator/prometheus` | ✗ No | Requiere `micrometer-registry-prometheus` |
+| Core API | `/actuator/metrics` | No expuesto | El scrape oficial usa formato Prometheus |
+| Core API | `/actuator/prometheus` | ✓ Sí | `micrometer-registry-prometheus` en pom.xml |
 | Checkout Service | `/api/actuator/health` | ✓ Sí | `spring-boot-starter-actuator` + context-path |
-| Checkout Service | `/api/actuator/metrics` | ✓ Sí | Incluido en Actuator |
-| Checkout Service | `/api/actuator/prometheus` | ✗ No | Requiere `micrometer-registry-prometheus` |
+| Checkout Service | `/api/actuator/metrics` | No expuesto | El scrape oficial usa formato Prometheus |
+| Checkout Service | `/api/actuator/prometheus` | ✓ Sí | `micrometer-registry-prometheus` en pom.xml |
 
 **Ajuste Aplicado**:
-- Cambiar `MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE` de `health,info,prometheus` a `health,info,metrics`
-- `prometheus` endpoint no está disponible sin la dependencia
-- Scraping de Prometheus comentado en `prometheus.yml` hasta que se agregue la dependencia
+- Mantener `MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE` en `health,info,prometheus`
+- Scraping de Prometheus activo para `core-api` y `checkout-service`
+- Checkout Service usa `metrics_path: /api/actuator/prometheus` por su `context-path`
 
 ---
 
@@ -122,9 +122,9 @@ docker compose -f docker-compose.dev.yml restart grafana
    - **Resuelto**: ✓ Cambiar a `wget`
 
 2. **Prometheus endpoint no disponible**
-   - **Problema**: `MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: prometheus` pero no hay `micrometer-prometheus`
+   - **Problema**: faltaba `micrometer-registry-prometheus` y el scrape estaba comentado
    - **Detectado**: ✓ Sí
-   - **Resuelto**: ✓ Cambiar a `metrics`, comentar scraping jobs
+   - **Resuelto**: ✓ Agregar dependencia, exponer `prometheus` y activar scraping jobs
 
 3. **Context-path incorrecto en healthcheck de checkout**
    - **Problema**: Healthcheck a `/actuator/health` pero servicio está en `/api/actuator/health`
@@ -137,9 +137,9 @@ docker compose -f docker-compose.dev.yml restart grafana
    - No definidas en compose (por diseño)
    - Requieren alineación con backend
 
-2. **Métricas Prometheus**
-   - Deshabilitadas hasta agregar dependencia Maven
-   - Instrucciones claras en `PROMETHEUS_SETUP.md`
+2. **Métricas custom**
+   - No se agregan todavía métricas custom de checkout/mensajería
+   - La fase actual queda limitada a métricas JVM/HTTP/Actuator
 
 ---
 
@@ -191,4 +191,3 @@ cp deploy/compose/.env.example deploy/compose/.env
 docker compose -f deploy/compose/docker-compose.dev.yml up -d
 docker compose -f deploy/compose/docker-compose.dev.yml ps
 ```
-

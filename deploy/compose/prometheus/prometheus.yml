@@ -18,30 +18,22 @@ scrape_configs:
     static_configs:
       - targets: ['prometheus:9090']
 
-  # NOTE: Core API y Checkout Service metrics requieren dependencia micrometer-prometheus en pom.xml
-  # Scrape jobs comentados hasta que la dependencia esté disponible en el backend
-  # Descomenta estas líneas después de:
-  #   1. Agregar <artifactId>micrometer-registry-prometheus</artifactId> a pom.xml
-  #   2. Recompilar los servicios
-  #   3. Reiniciar Prometheus
-  
-  # - job_name: 'core-api'
-  #   metrics_path: '/actuator/prometheus'
-  #   scrape_interval: 15s
-  #   scrape_timeout: 10s
-  #   static_configs:
-  #     - targets: ['core-api:8080']
-  #   relabel_configs:
-  #     - source_labels: [__address__]
-  #       target_label: instance
+  - job_name: 'core-api'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 15s
+    scrape_timeout: 10s
+    static_configs:
+      - targets: ['core-api:8080']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
 
-  # - job_name: 'checkout-service'
-  #   metrics_path: '/actuator/prometheus'
-  #   scrape_interval: 15s
-  #   scrape_timeout: 10s
-  #   static_configs:
-  #     - targets: ['checkout-service:8082']
-  #   relabel_configs:
-  #     - source_labels: [__address__]
-  #       target_label: instance
-
+  - job_name: 'checkout-service'
+    metrics_path: '/api/actuator/prometheus'
+    scrape_interval: 15s
+    scrape_timeout: 10s
+    static_configs:
+      - targets: ['checkout-service:8082']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
