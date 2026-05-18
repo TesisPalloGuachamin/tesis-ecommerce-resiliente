@@ -1,0 +1,40 @@
+module.ec2_demo.aws_security_group.demo_sg: Creating...
+module.ec2_demo.aws_security_group.demo_sg: Creation complete after 5s [id=sg-0e7955367df17fd05]
+module.ec2_demo.aws_instance.demo_ec2: Creating...
+module.ec2_demo.aws_instance.demo_ec2: Still creating... [10s elapsed]
+module.ec2_demo.aws_instance.demo_ec2: Creation complete after 15s [id=i-0e027fc65e3bd1871]
+null_resource.upload_assets: Creating...
+null_resource.upload_assets: Provisioning with 'remote-exec'...
+null_resource.upload_assets (remote-exec): Connecting to remote host via SSH...
+null_resource.upload_assets (remote-exec):   Host: 35.94.246.106
+null_resource.upload_assets (remote-exec):   User: ec2-user
+null_resource.upload_assets (remote-exec):   Password: false
+null_resource.upload_assets (remote-exec):   Private key: true
+null_resource.upload_assets (remote-exec):   Certificate: false
+null_resource.upload_assets (remote-exec):   SSH Agent: true
+null_resource.upload_assets (remote-exec):   Checking Host Key: false
+null_resource.upload_assets (remote-exec):   Target Platform: unix
+null_resource.upload_assets (remote-exec): Connecting to remote host via SSH...
+null_resource.upload_assets (remote-exec):   Host: 35.94.246.106
+null_resource.upload_assets (remote-exec):   User: ec2-user
+null_resource.upload_assets (remote-exec):   Password: false
+null_resource.upload_assets (remote-exec):   Private key: true
+null_resource.upload_assets (remote-exec):   Certificate: false
+null_resource.upload_assets (remote-exec):   SSH Agent: true
+null_resource.upload_assets (remote-exec):   Checking Host Key: false
+null_resource.upload_assets (remote-exec):   Target Platform: unix
+null_resource.upload_assets (remote-exec): Connected!
+null_resource.upload_assets: Provisioning with 'local-exec'...
+null_resource.upload_assets (local-exec): Executing: ["/bin/sh" "-c" "scp -i ~/.ssh/vockey.pem -o StrictHostKeyChecking=no -r ../../../deploy/compose/* ec2-user@35.94.246.106:/home/ec2-user/tesis-ecommerce/deploy/compose/\nscp -i ~/.ssh/vockey.pem -o StrictHostKeyChecking=no ../../../deploy/compose/.env* ec2-user@35.94.246.106:/home/ec2-user/tesis-ecommerce/deploy/compose/\n"]
+null_resource.upload_assets (local-exec): Warning: Permanently added '35.94.246.106' (ED25519) to the list of known hosts.
+null_resource.upload_assets: Still creating... [10s elapsed]
+null_resource.upload_assets: Still creating... [20s elapsed]
+null_resource.upload_assets: Still creating... [30s elapsed]
+null_resource.upload_assets: Creation complete after 31s [id=995582032919988589]
+
+Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+demo_instance_id = "i-0e027fc65e3bd1871"
+demo_instance_public_ip = "35.94.246.106"

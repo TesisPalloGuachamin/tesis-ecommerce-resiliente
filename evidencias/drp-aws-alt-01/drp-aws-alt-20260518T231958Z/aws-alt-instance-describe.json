@@ -1,0 +1,29 @@
+{
+    "InstanceId": "i-0e027fc65e3bd1871",
+    "PublicIp": "35.94.246.106",
+    "InstanceType": "t3.small",
+    "State": "running",
+    "Placement": "us-west-2d",
+    "SubnetId": "subnet-06e5bcf2cc8fb8764",
+    "VpcId": "vpc-0998a210da1133f63",
+    "KeyName": "vockey",
+    "LaunchTime": "2026-05-18T23:22:15+00:00",
+    "Tags": [
+        {
+            "Key": "Name",
+            "Value": "tesis-ecommerce-drp-aws-alt-ec2"
+        },
+        {
+            "Key": "ManagedBy",
+            "Value": "Terraform"
+        },
+        {
+            "Key": "Environment",
+            "Value": "drp-aws-alt"
+        },
+        {
+            "Key": "Project",
+            "Value": "tesis-ecommerce"
+        }
+    ]
+}

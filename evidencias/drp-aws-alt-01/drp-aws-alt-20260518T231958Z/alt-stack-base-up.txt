@@ -1,0 +1,8 @@
+db_wait 1 core=starting checkout=starting rabbitmq=starting
+db_wait 2 core=starting checkout=starting rabbitmq=starting
+db_wait 3 core=healthy checkout=healthy rabbitmq=starting
+db_wait 4 core=healthy checkout=healthy rabbitmq=starting
+db_wait 5 core=healthy checkout=healthy rabbitmq=starting
+db_wait 6 core=healthy checkout=healthy rabbitmq=starting
+db_wait 7 core=healthy checkout=healthy rabbitmq=starting
+db_wait 8 core=healthy checkout=healthy rabbitmq=healthy

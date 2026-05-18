@@ -1,0 +1,13 @@
+{
+  "apiBaseUrl": "http://localhost:8080",
+  "catalogProbeEmail": "final-aws-20260518T222928Z-catalog@example.com",
+  "checkoutIdsFile": "/home/ec2-user/tesis-ecommerce/evidencias/final-aws-drill/final-aws-20260518T222928Z/purchase-run/checkout-ids.txt",
+  "completedPurchases": 1000,
+  "eventsFile": "/home/ec2-user/tesis-ecommerce/evidencias/final-aws-drill/final-aws-20260518T222928Z/purchase-run/purchase-events.jsonl",
+  "failedPurchases": 0,
+  "finishedAt": "2026-05-18T22:48:28.388136+00:00",
+  "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+  "requestedPurchases": 1000,
+  "runId": "final-aws-20260518T222928Z",
+  "startedAt": "2026-05-18T22:29:34.845114+00:00"
+}

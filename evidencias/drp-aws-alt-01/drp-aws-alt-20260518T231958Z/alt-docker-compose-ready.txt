@@ -1,0 +1,3 @@
+status: done
+Docker version 25.0.14, build 0bab007
+Docker Compose version v2.24.5

@@ -1,0 +1,110 @@
+--- smoke summary ---
+{
+  "apiBaseUrl": "http://localhost:8080",
+  "catalogProbeEmail": "drp-aws-alt-20260518T231958Z-smoke-catalog@example.com",
+  "checkoutIdsFile": "/home/ec2-user/tesis-ecommerce/evidencias/drp-aws-alt-01/drp-aws-alt-20260518T231958Z/smoke/checkout-ids.txt",
+  "completedPurchases": 1,
+  "eventsFile": "/home/ec2-user/tesis-ecommerce/evidencias/drp-aws-alt-01/drp-aws-alt-20260518T231958Z/smoke/purchase-events.jsonl",
+  "failedPurchases": 0,
+  "finishedAt": "2026-05-18T23:29:39.608153+00:00",
+  "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+  "requestedPurchases": 1,
+  "runId": "drp-aws-alt-20260518T231958Z-smoke",
+  "startedAt": "2026-05-18T23:29:36.031368+00:00"
+}
+--- promql up ---
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "up",
+                    "instance": "core-api:8080",
+                    "job": "core-api"
+                },
+                "value": [
+                    1779147008.611,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "instance": "prometheus:9090",
+                    "job": "prometheus"
+                },
+                "value": [
+                    1779147008.611,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "instance": "checkout-service:8082",
+                    "job": "checkout-service"
+                },
+                "value": [
+                    1779147008.611,
+                    "1"
+                ]
+            }
+        ]
+    }
+}
+--- promql http request rate ---
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "job": "checkout-service"
+                },
+                "value": [
+                    1779147008.68,
+                    "0.029727555555555556"
+                ]
+            },
+            {
+                "metric": {
+                    "job": "core-api"
+                },
+                "value": [
+                    1779147008.68,
+                    "0.0318519146528221"
+                ]
+            }
+        ]
+    }
+}
+--- promql p95 ---
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "job": "checkout-service"
+                },
+                "value": [
+                    1779147008.731,
+                    "0.45701076661426654"
+                ]
+            },
+            {
+                "metric": {
+                    "job": "core-api"
+                },
+                "value": [
+                    1779147008.731,
+                    "0.08796203973299693"
+                ]
+            }
+        ]
+    }
+}

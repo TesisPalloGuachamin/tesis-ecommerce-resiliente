@@ -1,0 +1,9 @@
+core_dump=/home/ec2-user/tesis-ecommerce/backups/core_db_post_load_final-aws-20260518T222928Z_20260518T224838Z.dump
+checkout_dump=/home/ec2-user/tesis-ecommerce/backups/checkout_db_post_load_final-aws-20260518T222928Z_20260518T224838Z.dump
+core_tables=8
+checkout_tables=6
+ checkout_requests | first_checkout | last_checkout 
+-------------------+----------------+---------------
+                 0 |                | 
+(1 row)
+

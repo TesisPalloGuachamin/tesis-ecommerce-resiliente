@@ -1,0 +1,32 @@
+===== tesis-core-db / core_db tables =====
+cart_items
+carts
+checkout_requests
+flyway_schema_history
+listings
+outbox_events
+products
+users
+===== counts =====
+cart_items=2016
+carts=2016
+checkout_requests=2027
+flyway_schema_history=3
+listings=0
+outbox_events=2027
+products=2
+users=2020
+===== tesis-checkout-db / checkout_db tables =====
+checkout_requests
+flyway_schema_history
+inbox_events
+order_items
+orders
+payment_attempts
+===== counts =====
+checkout_requests=0
+flyway_schema_history=1
+inbox_events=2027
+order_items=2027
+orders=2027
+payment_attempts=2027

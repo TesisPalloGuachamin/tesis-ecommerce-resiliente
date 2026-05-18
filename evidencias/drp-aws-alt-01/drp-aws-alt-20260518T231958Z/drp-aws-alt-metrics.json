@@ -1,0 +1,15 @@
+{
+  "backup_timestamp_utc": "2026-05-18T22:48:38Z",
+  "mttr_seconds": 452,
+  "recovery_start_utc": "2026-05-18T23:22:07Z",
+  "restored_matching_checkout_ids": 1000,
+  "rpo_functional_missing_checkout_ids": 0,
+  "rpo_temporal_seconds": 2009,
+  "rto_seconds": 452,
+  "run_id": "drp-aws-alt-20260518T231958Z",
+  "smoke_completed": 1,
+  "smoke_completed_utc": "2026-05-18T23:29:39.608153Z",
+  "smoke_failed": 0,
+  "smoke_requested": 1,
+  "source_checkout_ids": 1000
+}

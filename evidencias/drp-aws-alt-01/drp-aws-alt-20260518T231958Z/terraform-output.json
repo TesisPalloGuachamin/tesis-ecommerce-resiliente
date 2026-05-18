@@ -1,0 +1,12 @@
+{
+  "demo_instance_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "i-0e027fc65e3bd1871"
+  },
+  "demo_instance_public_ip": {
+    "sensitive": false,
+    "type": "string",
+    "value": "35.94.246.106"
+  }
+}

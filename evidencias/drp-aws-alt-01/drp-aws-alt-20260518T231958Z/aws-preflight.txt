@@ -1,0 +1,90 @@
+## sts
+{
+    "UserId": "AROAUVJTAMSZ7QDANIPK5:user4914261=ttt",
+    "Account": "320618914995",
+    "Arn": "arn:aws:sts::320618914995:assumed-role/voclabs/user4914261=ttt"
+}
+## regions
+{
+    "Regions": [
+        {
+            "OptInStatus": "opt-in-not-required",
+            "Geography": [
+                {
+                    "Name": "United States of America"
+                }
+            ],
+            "RegionName": "us-west-2",
+            "Endpoint": "ec2.us-west-2.amazonaws.com"
+        }
+    ]
+}
+## keypair
+{
+    "KeyPairs": [
+        {
+            "KeyPairId": "key-056ab729656b4bc8b",
+            "KeyType": "rsa",
+            "Tags": [],
+            "CreateTime": "2026-05-18T23:19:40.567000+00:00",
+            "KeyName": "vockey",
+            "KeyFingerprint": "c0:e9:72:fe:af:c7:f6:72:17:8d:f9:a8:c6:82:49:b0"
+        }
+    ]
+}
+## default vpc
+{
+    "Vpcs": [
+        {
+            "OwnerId": "320618914995",
+            "InstanceTenancy": "default",
+            "CidrBlockAssociationSet": [
+                {
+                    "AssociationId": "vpc-cidr-assoc-0e4794264bdfd86e5",
+                    "CidrBlock": "172.31.0.0/16",
+                    "CidrBlockState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "IsDefault": true,
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "VpcId": "vpc-0998a210da1133f63",
+            "State": "available",
+            "CidrBlock": "172.31.0.0/16",
+            "DhcpOptionsId": "dopt-001708678ee1ad134"
+        }
+    ]
+}
+## subnets
+[
+    {
+        "SubnetId": "subnet-06e5bcf2cc8fb8764",
+        "AvailabilityZone": "us-west-2d",
+        "VpcId": "vpc-0998a210da1133f63"
+    },
+    {
+        "SubnetId": "subnet-0104a629ab8ac4bcd",
+        "AvailabilityZone": "us-west-2c",
+        "VpcId": "vpc-0998a210da1133f63"
+    },
+    {
+        "SubnetId": "subnet-065fec2237f540022",
+        "AvailabilityZone": "us-west-2b",
+        "VpcId": "vpc-0998a210da1133f63"
+    },
+    {
+        "SubnetId": "subnet-01a237aba14a4b12a",
+        "AvailabilityZone": "us-west-2a",
+        "VpcId": "vpc-0998a210da1133f63"
+    }
+]
+## offerings
+[
+    "t2.small",
+    "t3.medium",
+    "t2.medium",
+    "t3.small"
+]
