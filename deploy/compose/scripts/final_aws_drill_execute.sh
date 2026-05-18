@@ -117,12 +117,28 @@ raise SystemExit(0 if final.get("status") == "COMPLETED" else 1)
 PY
 }
 
+wait_for_initial_health() {
+  log "Waiting for initial split stack health"
+  for i in $(seq 1 120); do
+    if curl -fsS "$API_BASE_URL/actuator/health" >/dev/null 2>&1 \
+      && curl -fsS "$CHECKOUT_BASE_URL/actuator/health" >/dev/null 2>&1 \
+      && curl -fsS "$PROMETHEUS_BASE_URL/-/ready" >/dev/null 2>&1 \
+      && curl -fsS "$GRAFANA_BASE_URL/api/health" >/dev/null 2>&1; then
+      return 0
+    fi
+    sleep 5
+  done
+  log "Initial split stack health gate failed"
+  return 1
+}
+
 log "RUN_ID=$RUN_ID"
 docker network inspect tesis-ecommerce-network >/dev/null 2>&1 || docker network create tesis-ecommerce-network >/dev/null
 log "Ensuring observability and functional stacks are split and running"
 docker compose -f "$OBSERVABILITY_COMPOSE_FILE" up -d > "$EVIDENCE_DIR/observability-up.log" 2>&1
 docker compose -f "$FUNCTIONAL_COMPOSE_FILE" up -d core-db checkout-db rabbitmq core-api checkout-service \
   > "$EVIDENCE_DIR/functional-up.log" 2>&1
+wait_for_initial_health
 printf "%s\n" "$RUN_ID" > "$EVIDENCE_DIR/run-id.txt"
 printf "%s\n" "$AWS_HOST" > "$EVIDENCE_DIR/aws-host.txt"
 printf "%s\n" "$FUNCTIONAL_COMPOSE_FILE" > "$EVIDENCE_DIR/functional-compose-file.txt"
