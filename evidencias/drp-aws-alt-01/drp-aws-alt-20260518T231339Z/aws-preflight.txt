@@ -1,0 +1,29 @@
+## aws configure list
+NAME       : VALUE                    : TYPE             : LOCATION
+profile    : <not set>                : None             : None
+access_key : ****************YZI4     : shared-credentials-file : 
+secret_key : ****************+gEW     : shared-credentials-file : 
+region     : us-east-1                : config-file      : ~/.aws/config
+
+## aws sts get-caller-identity
+
+aws: [ERROR]: An error occurred (ExpiredToken) when calling the GetCallerIdentity operation: The security token included in the request is expired
+
+Additional error details:
+Type: Sender
+
+## aws ec2 describe-regions us-west-2 preflight
+
+aws: [ERROR]: An error occurred (RequestExpired) when calling the DescribeRegions operation: Request has expired.
+
+## aws ec2 describe-key-pairs vockey us-west-2
+
+aws: [ERROR]: An error occurred (RequestExpired) when calling the DescribeKeyPairs operation: Request has expired.
+
+## aws ec2 describe default vpc us-west-2
+
+aws: [ERROR]: An error occurred (RequestExpired) when calling the DescribeVpcs operation: Request has expired.
+
+## aws ec2 describe instance offerings t3.small/t3.medium us-west-2
+
+aws: [ERROR]: An error occurred (RequestExpired) when calling the DescribeInstanceTypeOfferings operation: Request has expired.
