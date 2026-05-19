@@ -1,0 +1,9 @@
+{
+  "source_checkout_ids": 1000,
+  "source_unique_checkout_ids": 1000,
+  "core_db_checkout_requests": 2028,
+  "missing_checkout_ids": 0,
+  "not_completed_checkout_ids": 0,
+  "sample_missing": [],
+  "sample_not_completed": []
+}

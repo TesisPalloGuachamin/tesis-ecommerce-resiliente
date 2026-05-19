@@ -1,0 +1,100 @@
+# health checks
+2026-05-19T00:19:19Z
+core-api health
+{"status":"UP","components":{"db":{"status":"UP","details":{"database":"PostgreSQL","validationQuery":"isValid()"}},"diskSpace":{"status":"UP","details":{"total":31025332224,"free":23091638272,"threshold":10485760,"path":"/app/.","exists":true}},"ping":{"status":"UP"},"rabbit":{"status":"UP","details":{"version":"3.12.14"}}}}
+checkout-service health
+{"status":"UP","components":{"db":{"status":"UP","details":{"database":"PostgreSQL","validationQuery":"isValid()"}},"diskSpace":{"status":"UP","details":{"total":31025332224,"free":23091638272,"threshold":10485760,"path":"/app/.","exists":true}},"ping":{"status":"UP"},"rabbit":{"status":"UP","details":{"version":"3.12.14"}}}}
+prometheus ready
+Prometheus Server is Ready.
+
+grafana health
+{
+  "database": "ok",
+  "version": "13.0.1+security-01",
+  "commit": "9bbe672d"
+}
+prometheus targets
+{
+    "status": "success",
+    "data": {
+        "activeTargets": [
+            {
+                "discoveredLabels": {
+                    "__address__": "checkout-service:8082",
+                    "__metrics_path__": "/api/actuator/prometheus",
+                    "__scheme__": "http",
+                    "__scrape_interval__": "15s",
+                    "__scrape_timeout__": "10s",
+                    "job": "checkout-service"
+                },
+                "labels": {
+                    "instance": "checkout-service:8082",
+                    "job": "checkout-service"
+                },
+                "scrapePool": "checkout-service",
+                "scrapeUrl": "http://checkout-service:8082/api/actuator/prometheus",
+                "globalUrl": "http://checkout-service:8082/api/actuator/prometheus",
+                "lastError": "",
+                "lastScrape": "2026-05-19T00:19:15.189794102Z",
+                "lastScrapeDuration": 0.031422141,
+                "health": "up",
+                "scrapeInterval": "15s",
+                "scrapeTimeout": "10s"
+            },
+            {
+                "discoveredLabels": {
+                    "__address__": "core-api:8080",
+                    "__metrics_path__": "/actuator/prometheus",
+                    "__scheme__": "http",
+                    "__scrape_interval__": "15s",
+                    "__scrape_timeout__": "10s",
+                    "job": "core-api"
+                },
+                "labels": {
+                    "instance": "core-api:8080",
+                    "job": "core-api"
+                },
+                "scrapePool": "core-api",
+                "scrapeUrl": "http://core-api:8080/actuator/prometheus",
+                "globalUrl": "http://core-api:8080/actuator/prometheus",
+                "lastError": "",
+                "lastScrape": "2026-05-19T00:19:13.937235447Z",
+                "lastScrapeDuration": 0.038682051,
+                "health": "up",
+                "scrapeInterval": "15s",
+                "scrapeTimeout": "10s"
+            },
+            {
+                "discoveredLabels": {
+                    "__address__": "prometheus:9090",
+                    "__metrics_path__": "/metrics",
+                    "__scheme__": "http",
+                    "__scrape_interval__": "15s",
+                    "__scrape_timeout__": "10s",
+                    "job": "prometheus"
+                },
+                "labels": {
+                    "instance": "prometheus:9090",
+                    "job": "prometheus"
+                },
+                "scrapePool": "prometheus",
+                "scrapeUrl": "http://prometheus:9090/metrics",
+                "globalUrl": "http://prometheus:9090/metrics",
+                "lastError": "",
+                "lastScrape": "2026-05-19T00:19:14.303382582Z",
+                "lastScrapeDuration": 0.006344071,
+                "health": "up",
+                "scrapeInterval": "15s",
+                "scrapeTimeout": "10s"
+            }
+        ],
+        "droppedTargets": [],
+        "droppedTargetCounts": {
+            "checkout-service": 0,
+            "core-api": 0,
+            "prometheus": 0
+        }
+    }
+}
+python3 /opt/tesis-ecommerce/deploy/compose/scripts/final_aws_checkout_run.py --api-base-url http://localhost:8080 --run-id drp-azure-20260518T233644Z-smoke --purchases 1 --evidence-dir /opt/tesis-ecommerce/evidencias/drp-azure-01/drp-azure-20260518T233644Z/smoke --poll-timeout-seconds 90
+1/1 COMPLETED d00fa824-9979-4456-9dfb-e2c10b40567b

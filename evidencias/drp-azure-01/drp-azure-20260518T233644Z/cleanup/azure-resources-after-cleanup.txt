@@ -1,0 +1,3 @@
+# Azure resources after Terraform destroy
+2026-05-19T03:34:10Z
+# Resource list after cleanup

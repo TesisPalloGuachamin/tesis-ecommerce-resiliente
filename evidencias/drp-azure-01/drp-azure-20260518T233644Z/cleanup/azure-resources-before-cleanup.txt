@@ -1,0 +1,18 @@
+# Azure resources before cleanup
+2026-05-19T03:31:52Z
+Name                                                                 ResourceGroup                 Location       Type                                     Status
+-------------------------------------------------------------------  ----------------------------  -------------  ---------------------------------------  ---------
+tesis-ecommerce-drp-azure-vnet                                       tesis-ecommerce-drp-azure-rg  canadacentral  Microsoft.Network/virtualNetworks        Succeeded
+tesis-ecommerce-drp-azure-pip                                        tesis-ecommerce-drp-azure-rg  canadacentral  Microsoft.Network/publicIPAddresses      Succeeded
+tesis-ecommerce-drp-azure-nsg                                        tesis-ecommerce-drp-azure-rg  canadacentral  Microsoft.Network/networkSecurityGroups  Succeeded
+tesis-ecommerce-drp-azure-nic                                        tesis-ecommerce-drp-azure-rg  canadacentral  Microsoft.Network/networkInterfaces      Succeeded
+tesis-ecommerce-drp-azure-vm                                         tesis-ecommerce-drp-azure-rg  canadacentral  Microsoft.Compute/virtualMachines        Succeeded
+tesis-ecommerce-drp-azure-vm_disk1_6fff470f929b4212bffe0828c97ed180  TESIS-ECOMMERCE-DRP-AZURE-RG  canadacentral  Microsoft.Compute/disks                  Succeeded
+# VM status before cleanup
+{
+  "location": "canadacentral",
+  "name": "tesis-ecommerce-drp-azure-vm",
+  "powerState": "VM running",
+  "publicIps": "20.151.15.73",
+  "vmSize": "Standard_D2s_v3"
+}

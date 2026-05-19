@@ -1,0 +1,13 @@
+--- centralus usage selected families ---
+Name                LocalName                       Current    Limit
+------------------  ------------------------------  ---------  -------
+cores               Total Regional vCPUs            0          6
+virtualMachines     Virtual Machines                0          25000
+standardDSv3Family  Standard DSv3 Family vCPUs      0          4
+standardDv3Family   Standard Dv3 Family vCPUs       0          4
+StandardDiskCount   Standard Storage Managed Disks  0          50000
+--- provider Microsoft.Resources ---
+{
+  "namespace": "Microsoft.Resources",
+  "registrationState": "Registered"
+}

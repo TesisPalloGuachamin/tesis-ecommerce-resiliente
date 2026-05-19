@@ -1,0 +1,13 @@
+{
+  "apiBaseUrl": "http://localhost:8080",
+  "catalogProbeEmail": "drp-azure-20260518T233644Z-smoke-catalog@example.com",
+  "checkoutIdsFile": "/opt/tesis-ecommerce/evidencias/drp-azure-01/drp-azure-20260518T233644Z/smoke/checkout-ids.txt",
+  "completedPurchases": 1,
+  "eventsFile": "/opt/tesis-ecommerce/evidencias/drp-azure-01/drp-azure-20260518T233644Z/smoke/purchase-events.jsonl",
+  "failedPurchases": 0,
+  "finishedAt": "2026-05-19T00:19:23.517453+00:00",
+  "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+  "requestedPurchases": 1,
+  "runId": "drp-azure-20260518T233644Z-smoke",
+  "startedAt": "2026-05-19T00:19:19.602130+00:00"
+}

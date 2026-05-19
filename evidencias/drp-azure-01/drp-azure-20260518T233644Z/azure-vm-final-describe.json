@@ -1,0 +1,8 @@
+{
+  "location": "canadacentral",
+  "name": "tesis-ecommerce-drp-azure-vm",
+  "powerState": "VM running",
+  "privateIps": "10.42.1.4",
+  "publicIps": "20.151.15.73",
+  "vmSize": "Standard_D2s_v3"
+}

@@ -1,0 +1,8 @@
+# Azure final name-based cleanup verification
+2026-05-19T03:34:27Z
+## Resource groups matching tesis-ecommerce-drp-azure
+
+## Resources matching tesis-ecommerce-drp-azure
+
+## VMs matching tesis-ecommerce-drp-azure
+

@@ -1,0 +1,24 @@
+{
+  "run_id": "drp-azure-20260518T233644Z",
+  "region": "canadacentral",
+  "vm_size": "Standard_D2s_v3",
+  "vm_public_ip": "20.151.15.73",
+  "recovery_start_effective": "2026-05-19T00:10:29Z",
+  "recovery_start_initial_with_blocked_attempts": "2026-05-18T23:58:43Z",
+  "smoke_completed_at": "2026-05-19T00:19:23.517453Z",
+  "source_backup_timestamp": "2026-05-18T22:48:38Z",
+  "rto_seconds_effective_successful_region": 534.517,
+  "rto_seconds_wall_clock_including_policy_blocked_attempts": 1240.517,
+  "rpo_temporal_seconds_effective": 4911.0,
+  "rpo_functional_missing_checkout_ids": 0,
+  "rpo_functional_not_completed_checkout_ids": 0,
+  "mttr_seconds_effective_successful_region": 534.517,
+  "smoke_requested": 1,
+  "smoke_completed": 1,
+  "smoke_failed": 0,
+  "prometheus_targets_observed_up": [
+    "core-api",
+    "checkout-service",
+    "prometheus"
+  ]
+}

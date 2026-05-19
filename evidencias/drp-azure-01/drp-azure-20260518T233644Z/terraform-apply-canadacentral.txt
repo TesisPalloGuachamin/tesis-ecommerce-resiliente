@@ -1,0 +1,47 @@
+terraform_apply_canadacentral_start_utc=2026-05-19T00:10:29Z
+azurerm_resource_group.drp: Creating...
+azurerm_resource_group.drp: Still creating... [10s elapsed]
+azurerm_resource_group.drp: Creation complete after 14s [id=/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg]
+azurerm_virtual_network.drp: Creating...
+azurerm_public_ip.drp: Creating...
+azurerm_network_security_group.drp: Creating...
+azurerm_public_ip.drp: Creation complete after 8s [id=/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg/providers/Microsoft.Network/publicIPAddresses/tesis-ecommerce-drp-azure-pip]
+azurerm_virtual_network.drp: Still creating... [10s elapsed]
+azurerm_network_security_group.drp: Still creating... [10s elapsed]
+azurerm_virtual_network.drp: Creation complete after 10s [id=/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg/providers/Microsoft.Network/virtualNetworks/tesis-ecommerce-drp-azure-vnet]
+azurerm_subnet.drp: Creating...
+azurerm_network_security_group.drp: Creation complete after 12s [id=/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg/providers/Microsoft.Network/networkSecurityGroups/tesis-ecommerce-drp-azure-nsg]
+azurerm_subnet.drp: Creation complete after 8s [id=/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg/providers/Microsoft.Network/virtualNetworks/tesis-ecommerce-drp-azure-vnet/subnets/tesis-ecommerce-drp-azure-subnet]
+azurerm_network_interface.drp: Creating...
+azurerm_network_interface.drp: Creation complete after 4s [id=/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg/providers/Microsoft.Network/networkInterfaces/tesis-ecommerce-drp-azure-nic]
+azurerm_network_interface_security_group_association.drp: Creating...
+azurerm_linux_virtual_machine.drp: Creating...
+azurerm_network_interface_security_group_association.drp: Creation complete after 5s [id=/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg/providers/Microsoft.Network/networkInterfaces/tesis-ecommerce-drp-azure-nic|/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg/providers/Microsoft.Network/networkSecurityGroups/tesis-ecommerce-drp-azure-nsg]
+azurerm_linux_virtual_machine.drp: Still creating... [10s elapsed]
+azurerm_linux_virtual_machine.drp: Creation complete after 17s [id=/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg/providers/Microsoft.Compute/virtualMachines/tesis-ecommerce-drp-azure-vm]
+
+Apply complete! Resources: 8 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+azure_drp_public_ip = "20.151.15.73"
+azure_drp_resource_group = "tesis-ecommerce-drp-azure-rg"
+azure_drp_vm_name = "tesis-ecommerce-drp-azure-vm"
+terraform_apply_canadacentral_end_utc=2026-05-19T00:11:31Z
+{
+  "azure_drp_public_ip": {
+    "sensitive": false,
+    "type": "string",
+    "value": "20.151.15.73"
+  },
+  "azure_drp_resource_group": {
+    "sensitive": false,
+    "type": "string",
+    "value": "tesis-ecommerce-drp-azure-rg"
+  },
+  "azure_drp_vm_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "tesis-ecommerce-drp-azure-vm"
+  }
+}

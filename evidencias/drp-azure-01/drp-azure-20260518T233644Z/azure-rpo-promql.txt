@@ -1,0 +1,146 @@
+{
+  "source_checkout_ids": 1000,
+  "source_unique_checkout_ids": 1000,
+  "core_db_checkout_requests": 2028,
+  "missing_checkout_ids": 0,
+  "not_completed_checkout_ids": 0,
+  "sample_missing": [],
+  "sample_not_completed": []
+}
+# PromQL smoke after Azure restore
+2026-05-19T00:19:44Z
+## up
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "up",
+                    "instance": "prometheus:9090",
+                    "job": "prometheus"
+                },
+                "value": [
+                    1779149984.802,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "instance": "checkout-service:8082",
+                    "job": "checkout-service"
+                },
+                "value": [
+                    1779149984.802,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "instance": "core-api:8080",
+                    "job": "core-api"
+                },
+                "value": [
+                    1779149984.802,
+                    "1"
+                ]
+            }
+        ]
+    }
+}
+## sum(rate(http_server_requests_seconds_count[5m])) by (job)
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "job": "checkout-service"
+                },
+                "value": [
+                    1779149984.848,
+                    "0.026515328295960473"
+                ]
+            },
+            {
+                "metric": {
+                    "job": "core-api"
+                },
+                "value": [
+                    1779149984.848,
+                    "0.02040488888888889"
+                ]
+            }
+        ]
+    }
+}
+## histogram_quantile(0.95, sum(rate(http_server_requests_seconds_bucket[5m])) by (le, job))
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "job": "checkout-service"
+                },
+                "value": [
+                    1779149984.896,
+                    "0.9130295257045931"
+                ]
+            },
+            {
+                "metric": {
+                    "job": "core-api"
+                },
+                "value": [
+                    1779149984.896,
+                    "0.3030827184384666"
+                ]
+            }
+        ]
+    }
+}
+## process_uptime_seconds
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "process_uptime_seconds",
+                    "instance": "checkout-service:8082",
+                    "job": "checkout-service"
+                },
+                "value": [
+                    1779149984.946,
+                    "89.654"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "process_uptime_seconds",
+                    "instance": "core-api:8080",
+                    "job": "core-api"
+                },
+                "value": [
+                    1779149984.946,
+                    "103.491"
+                ]
+            }
+        ]
+    }
+}
+NAMES                    STATUS                        PORTS
+tesis-checkout-service   Up About a minute (healthy)   0.0.0.0:8082->8082/tcp, [::]:8082->8082/tcp
+tesis-core-api           Up About a minute (healthy)   0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp
+tesis-core-db            Up 4 minutes (healthy)        0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+tesis-rabbitmq           Up 4 minutes (healthy)        4369/tcp, 5671/tcp, 0.0.0.0:5672->5672/tcp, [::]:5672->5672/tcp, 15671/tcp, 15691-15692/tcp, 25672/tcp, 0.0.0.0:15672->15672/tcp, [::]:15672->15672/tcp
+tesis-checkout-db        Up 4 minutes (healthy)        0.0.0.0:5433->5432/tcp, [::]:5433->5432/tcp
+tesis-grafana            Up 5 minutes                  0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+tesis-prometheus         Up 5 minutes                  0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp

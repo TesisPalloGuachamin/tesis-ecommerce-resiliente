@@ -1,0 +1,22 @@
+--- policy assignments ---
+[
+  {
+    "displayName": "Allowed resource deployment regions",
+    "name": "sys.regionrestriction",
+    "params": {
+      "listOfAllowedLocations": {
+        "value": [
+          "eastus",
+          "westus3",
+          "brazilsouth",
+          "southcentralus",
+          "canadacentral"
+        ]
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/b86dabb9-b578-4d7b-b842-3b45e95769a1",
+    "scope": "/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b"
+  }
+]
+--- policy states recent denied if permitted ---
+[]

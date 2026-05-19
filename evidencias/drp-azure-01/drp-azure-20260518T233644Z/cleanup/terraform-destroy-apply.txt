@@ -1,0 +1,28 @@
+[0m[1mazurerm_network_interface_security_group_association.drp: Destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg/providers/Microsoft.Network/networkInterfaces/tesis-ecommerce-drp-azure-nic|/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg/providers/Microsoft.Network/networkSecurityGroups/tesis-ecommerce-drp-azure-nsg][0m[0m
+[0m[1mazurerm_linux_virtual_machine.drp: Destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg/providers/Microsoft.Compute/virtualMachines/tesis-ecommerce-drp-azure-vm][0m[0m
+[0m[1mazurerm_network_interface_security_group_association.drp: Destruction complete after 4s[0m
+[0m[1mazurerm_network_security_group.drp: Destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg/providers/Microsoft.Network/networkSecurityGroups/tesis-ecommerce-drp-azure-nsg][0m[0m
+[0m[1mazurerm_linux_virtual_machine.drp: Still destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-...lMachines/tesis-ecommerce-drp-azure-vm, 10s elapsed][0m[0m
+[0m[1mazurerm_network_security_group.drp: Still destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-...tyGroups/tesis-ecommerce-drp-azure-nsg, 10s elapsed][0m[0m
+[0m[1mazurerm_network_security_group.drp: Destruction complete after 11s[0m
+[0m[1mazurerm_linux_virtual_machine.drp: Still destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-...lMachines/tesis-ecommerce-drp-azure-vm, 20s elapsed][0m[0m
+[0m[1mazurerm_linux_virtual_machine.drp: Still destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-...lMachines/tesis-ecommerce-drp-azure-vm, 30s elapsed][0m[0m
+[0m[1mazurerm_linux_virtual_machine.drp: Destruction complete after 31s[0m
+[0m[1mazurerm_network_interface.drp: Destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg/providers/Microsoft.Network/networkInterfaces/tesis-ecommerce-drp-azure-nic][0m[0m
+[0m[1mazurerm_network_interface.drp: Still destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-...terfaces/tesis-ecommerce-drp-azure-nic, 10s elapsed][0m[0m
+[0m[1mazurerm_network_interface.drp: Destruction complete after 12s[0m
+[0m[1mazurerm_public_ip.drp: Destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg/providers/Microsoft.Network/publicIPAddresses/tesis-ecommerce-drp-azure-pip][0m[0m
+[0m[1mazurerm_subnet.drp: Destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg/providers/Microsoft.Network/virtualNetworks/tesis-ecommerce-drp-azure-vnet/subnets/tesis-ecommerce-drp-azure-subnet][0m[0m
+[0m[1mazurerm_public_ip.drp: Still destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-...ddresses/tesis-ecommerce-drp-azure-pip, 10s elapsed][0m[0m
+[0m[1mazurerm_subnet.drp: Still destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-...bnets/tesis-ecommerce-drp-azure-subnet, 10s elapsed][0m[0m
+[0m[1mazurerm_public_ip.drp: Destruction complete after 11s[0m
+[0m[1mazurerm_subnet.drp: Destruction complete after 12s[0m
+[0m[1mazurerm_virtual_network.drp: Destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg/providers/Microsoft.Network/virtualNetworks/tesis-ecommerce-drp-azure-vnet][0m[0m
+[0m[1mazurerm_virtual_network.drp: Still destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-...etworks/tesis-ecommerce-drp-azure-vnet, 10s elapsed][0m[0m
+[0m[1mazurerm_virtual_network.drp: Destruction complete after 11s[0m
+[0m[1mazurerm_resource_group.drp: Destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg][0m[0m
+[0m[1mazurerm_resource_group.drp: Still destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-...rceGroups/tesis-ecommerce-drp-azure-rg, 10s elapsed][0m[0m
+[0m[1mazurerm_resource_group.drp: Destruction complete after 17s[0m
+[0m[1m[32m
+Apply complete! Resources: 0 added, 0 changed, 8 destroyed.
+[0m

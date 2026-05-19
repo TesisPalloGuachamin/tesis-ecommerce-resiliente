@@ -1,0 +1,125 @@
+--- centralindia location ---
+Name          DisplayName    RegionalDisplayName
+------------  -------------  ----------------------------
+centralindia  Central India  (Asia Pacific) Central India
+--- centralindia usage selected families ---
+Name                LocalName                       Current    Limit
+------------------  ------------------------------  ---------  -------
+cores               Total Regional vCPUs            0          6
+virtualMachines     Virtual Machines                0          25000
+standardAv2Family   Standard Av2 Family vCPUs       0          4
+standardBSFamily    Standard BS Family vCPUs        0          4
+standardDSv3Family  Standard DSv3 Family vCPUs      0          4
+standardDv3Family   Standard Dv3 Family vCPUs       0          4
+StandardDiskCount   Standard Storage Managed Disks  0          50000
+--- centralindia selected sku restrictions ---
+[
+  {
+    "name": "Standard_A2_v2",
+    "restrictions": [
+      {
+        "reasonCode": "NotAvailableForSubscription",
+        "restrictionInfo": {
+          "locations": [
+            "CentralIndia"
+          ]
+        },
+        "type": "Location",
+        "values": [
+          "CentralIndia"
+        ]
+      },
+      {
+        "reasonCode": "NotAvailableForSubscription",
+        "restrictionInfo": {
+          "locations": [
+            "CentralIndia"
+          ],
+          "zones": [
+            "1",
+            "2",
+            "3"
+          ]
+        },
+        "type": "Zone",
+        "values": [
+          "CentralIndia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Standard_B2s",
+    "restrictions": [
+      {
+        "reasonCode": "NotAvailableForSubscription",
+        "restrictionInfo": {
+          "locations": [
+            "CentralIndia"
+          ]
+        },
+        "type": "Location",
+        "values": [
+          "CentralIndia"
+        ]
+      },
+      {
+        "reasonCode": "NotAvailableForSubscription",
+        "restrictionInfo": {
+          "locations": [
+            "CentralIndia"
+          ],
+          "zones": [
+            "1",
+            "2",
+            "3"
+          ]
+        },
+        "type": "Zone",
+        "values": [
+          "CentralIndia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Standard_D2s_v3",
+    "restrictions": [
+      {
+        "reasonCode": "NotAvailableForSubscription",
+        "restrictionInfo": {
+          "locations": [
+            "CentralIndia"
+          ],
+          "zones": [
+            "1"
+          ]
+        },
+        "type": "Zone",
+        "values": [
+          "CentralIndia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Standard_D2_v3",
+    "restrictions": [
+      {
+        "reasonCode": "NotAvailableForSubscription",
+        "restrictionInfo": {
+          "locations": [
+            "CentralIndia"
+          ],
+          "zones": [
+            "1"
+          ]
+        },
+        "type": "Zone",
+        "values": [
+          "CentralIndia"
+        ]
+      }
+    ]
+  }
+]

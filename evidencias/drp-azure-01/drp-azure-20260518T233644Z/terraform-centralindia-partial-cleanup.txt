@@ -1,0 +1,57 @@
+partial_cleanup_centralindia_start_utc=2026-05-19T00:03:13Z
+--- terraform state list before cleanup ---
+azurerm_resource_group.drp
+--- destroy partial resource group only ---
+azurerm_resource_group.drp: Refreshing state... [id=/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # azurerm_resource_group.drp will be destroyed
+  - resource "azurerm_resource_group" "drp" {
+      - id         = "/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg" -> null
+      - location   = "centralindia" -> null
+      - name       = "tesis-ecommerce-drp-azure-rg" -> null
+      - tags       = {
+          - "Environment" = "drp-azure"
+          - "ManagedBy"   = "Terraform"
+          - "Project"     = "tesis-ecommerce"
+          - "Purpose"     = "DRP designed recovery target"
+        } -> null
+        # (1 unchanged attribute hidden)
+    }
+
+Plan: 0 to add, 0 to change, 1 to destroy.
+azurerm_resource_group.drp: Destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-0dc6eadaa66b/resourceGroups/tesis-ecommerce-drp-azure-rg]
+azurerm_resource_group.drp: Still destroying... [id=/subscriptions/910a2917-92d2-4f73-a400-...rceGroups/tesis-ecommerce-drp-azure-rg, 10s elapsed]
+azurerm_resource_group.drp: Destruction complete after 19s
+
+Warning: Resource targeting is in effect
+
+You are creating a plan with the -target option, which means that the result
+of this plan may not represent all of the changes requested by the current
+configuration.
+
+The -target option is not for routine use, and is provided only for
+exceptional situations such as recovering from errors or mistakes, or when
+Terraform specifically suggests to use it as part of an error message.
+
+Warning: Applied changes may be incomplete
+
+The plan was created with the -target option in effect, so some changes
+requested in the configuration may have been ignored and the output values
+may not be fully updated. Run the following command to verify that no other
+changes are pending:
+    terraform plan
+
+Note that the -target option is not suitable for routine use, and is provided
+only for exceptional situations such as recovering from errors or mistakes,
+or when Terraform specifically suggests to use it as part of an error
+message.
+
+Destroy complete! Resources: 1 destroyed.
+--- azure rg check after cleanup ---
+partial_cleanup_centralindia_end_utc=2026-05-19T00:04:04Z

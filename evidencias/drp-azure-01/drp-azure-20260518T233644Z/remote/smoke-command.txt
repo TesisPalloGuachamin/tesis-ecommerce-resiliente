@@ -1,0 +1,2 @@
+python3 /opt/tesis-ecommerce/deploy/compose/scripts/final_aws_checkout_run.py --api-base-url http://localhost:8080 --run-id drp-azure-20260518T233644Z-smoke --purchases 1 --evidence-dir /opt/tesis-ecommerce/evidencias/drp-azure-01/drp-azure-20260518T233644Z/smoke --poll-timeout-seconds 90
+1/1 COMPLETED d00fa824-9979-4456-9dfb-e2c10b40567b

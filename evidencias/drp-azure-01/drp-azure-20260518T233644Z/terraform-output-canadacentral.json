@@ -1,0 +1,17 @@
+{
+  "azure_drp_public_ip": {
+    "sensitive": false,
+    "type": "string",
+    "value": "20.151.15.73"
+  },
+  "azure_drp_resource_group": {
+    "sensitive": false,
+    "type": "string",
+    "value": "tesis-ecommerce-drp-azure-rg"
+  },
+  "azure_drp_vm_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "tesis-ecommerce-drp-azure-vm"
+  }
+}

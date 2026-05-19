@@ -1,0 +1,291 @@
+tfvars=/media/christopher/CHRISDDE1/TESIS APP/evidencias/drp-azure-01/drp-azure-20260518T233644Z/azure-drp-centralindia.tfvars
+terraform_plan_centralindia_start_utc=2026-05-19T00:02:10Z
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # azurerm_linux_virtual_machine.drp will be created
+  + resource "azurerm_linux_virtual_machine" "drp" {
+      + admin_username                                         = "azureuser"
+      + allow_extension_operations                             = true
+      + bypass_platform_safety_checks_on_user_schedule_enabled = false
+      + computer_name                                          = (known after apply)
+      + custom_data                                            = (sensitive value)
+      + disable_password_authentication                        = true
+      + disk_controller_type                                   = (known after apply)
+      + extensions_time_budget                                 = "PT1H30M"
+      + id                                                     = (known after apply)
+      + location                                               = "centralindia"
+      + max_bid_price                                          = -1
+      + name                                                   = "tesis-ecommerce-drp-azure-vm"
+      + network_interface_ids                                  = (known after apply)
+      + patch_assessment_mode                                  = "ImageDefault"
+      + patch_mode                                             = "ImageDefault"
+      + platform_fault_domain                                  = -1
+      + priority                                               = "Regular"
+      + private_ip_address                                     = (known after apply)
+      + private_ip_addresses                                   = (known after apply)
+      + provision_vm_agent                                     = true
+      + public_ip_address                                      = (known after apply)
+      + public_ip_addresses                                    = (known after apply)
+      + resource_group_name                                    = "tesis-ecommerce-drp-azure-rg"
+      + size                                                   = "Standard_D2s_v3"
+      + tags                                                   = {
+          + "Environment" = "drp-azure"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "tesis-ecommerce"
+          + "Purpose"     = "DRP designed recovery target"
+        }
+      + virtual_machine_id                                     = (known after apply)
+      + vm_agent_platform_updates_enabled                      = false
+
+      + admin_ssh_key {
+          + public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKdLx2/kUaW69MCeXpm6HPwNrXR96Y7tgWbE2IfhSz+TSuwDv21Mk4Ypq89tzVik7N5N6ZDf5H6Xd3amu1w85G1uNXKeoiI0kKNzkG5Q8GYwOUkd4h4d0gC/sXFXhn0Zycq+FZwUfcbyVA56L0hkSwv5cVowOQ4ngBenxPf+X9QpcRyCJHAFyVYUwPRWPiG40xIVfubvNarMG3cjB9fEJx7OdVyXNt+iuLvni9BoOIwVvnrDGwf7uMhz//ljX9LihWHvovI340LquMrz6cqL3Oxa66yI4+IrKxkabNsBy9kyyIFXUqlIKPgY6Z2OEJfvvixp2Ck95ZMKsYwHGU455f"
+          + username   = "azureuser"
+        }
+
+      + os_disk {
+          + caching                   = "ReadWrite"
+          + disk_size_gb              = 30
+          + name                      = (known after apply)
+          + storage_account_type      = "Standard_LRS"
+          + write_accelerator_enabled = false
+        }
+
+      + source_image_reference {
+          + offer     = "0001-com-ubuntu-server-jammy"
+          + publisher = "Canonical"
+          + sku       = "22_04-lts"
+          + version   = "latest"
+        }
+    }
+
+  # azurerm_network_interface.drp will be created
+  + resource "azurerm_network_interface" "drp" {
+      + accelerated_networking_enabled = (known after apply)
+      + applied_dns_servers            = (known after apply)
+      + dns_servers                    = (known after apply)
+      + enable_accelerated_networking  = (known after apply)
+      + enable_ip_forwarding           = (known after apply)
+      + id                             = (known after apply)
+      + internal_domain_name_suffix    = (known after apply)
+      + ip_forwarding_enabled          = (known after apply)
+      + location                       = "centralindia"
+      + mac_address                    = (known after apply)
+      + name                           = "tesis-ecommerce-drp-azure-nic"
+      + private_ip_address             = (known after apply)
+      + private_ip_addresses           = (known after apply)
+      + resource_group_name            = "tesis-ecommerce-drp-azure-rg"
+      + virtual_machine_id             = (known after apply)
+
+      + ip_configuration {
+          + gateway_load_balancer_frontend_ip_configuration_id = (known after apply)
+          + name                                               = "primary"
+          + primary                                            = (known after apply)
+          + private_ip_address                                 = (known after apply)
+          + private_ip_address_allocation                      = "Dynamic"
+          + private_ip_address_version                         = "IPv4"
+          + public_ip_address_id                               = (known after apply)
+          + subnet_id                                          = (known after apply)
+        }
+    }
+
+  # azurerm_network_interface_security_group_association.drp will be created
+  + resource "azurerm_network_interface_security_group_association" "drp" {
+      + id                        = (known after apply)
+      + network_interface_id      = (known after apply)
+      + network_security_group_id = (known after apply)
+    }
+
+  # azurerm_network_security_group.drp will be created
+  + resource "azurerm_network_security_group" "drp" {
+      + id                  = (known after apply)
+      + location            = "centralindia"
+      + name                = "tesis-ecommerce-drp-azure-nsg"
+      + resource_group_name = "tesis-ecommerce-drp-azure-rg"
+      + security_rule       = [
+          + {
+              + access                                     = "Allow"
+              + destination_address_prefix                 = "*"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "15672"
+              + destination_port_ranges                    = []
+              + direction                                  = "Inbound"
+              + name                                       = "rabbitmq_management"
+              + priority                                   = 150
+              + protocol                                   = "Tcp"
+              + source_address_prefix                      = "181.211.106.25/32"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+                # (1 unchanged attribute hidden)
+            },
+          + {
+              + access                                     = "Allow"
+              + destination_address_prefix                 = "*"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "22"
+              + destination_port_ranges                    = []
+              + direction                                  = "Inbound"
+              + name                                       = "ssh"
+              + priority                                   = 100
+              + protocol                                   = "Tcp"
+              + source_address_prefix                      = "181.211.106.25/32"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+                # (1 unchanged attribute hidden)
+            },
+          + {
+              + access                                     = "Allow"
+              + destination_address_prefix                 = "*"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "3000"
+              + destination_port_ranges                    = []
+              + direction                                  = "Inbound"
+              + name                                       = "grafana"
+              + priority                                   = 130
+              + protocol                                   = "Tcp"
+              + source_address_prefix                      = "181.211.106.25/32"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+                # (1 unchanged attribute hidden)
+            },
+          + {
+              + access                                     = "Allow"
+              + destination_address_prefix                 = "*"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "8080"
+              + destination_port_ranges                    = []
+              + direction                                  = "Inbound"
+              + name                                       = "core_api"
+              + priority                                   = 110
+              + protocol                                   = "Tcp"
+              + source_address_prefix                      = "181.211.106.25/32"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+                # (1 unchanged attribute hidden)
+            },
+          + {
+              + access                                     = "Allow"
+              + destination_address_prefix                 = "*"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "8082"
+              + destination_port_ranges                    = []
+              + direction                                  = "Inbound"
+              + name                                       = "checkout_service"
+              + priority                                   = 120
+              + protocol                                   = "Tcp"
+              + source_address_prefix                      = "181.211.106.25/32"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+                # (1 unchanged attribute hidden)
+            },
+          + {
+              + access                                     = "Allow"
+              + destination_address_prefix                 = "*"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "9090"
+              + destination_port_ranges                    = []
+              + direction                                  = "Inbound"
+              + name                                       = "prometheus"
+              + priority                                   = 140
+              + protocol                                   = "Tcp"
+              + source_address_prefix                      = "181.211.106.25/32"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+                # (1 unchanged attribute hidden)
+            },
+        ]
+    }
+
+  # azurerm_public_ip.drp will be created
+  + resource "azurerm_public_ip" "drp" {
+      + allocation_method       = "Static"
+      + ddos_protection_mode    = "VirtualNetworkInherited"
+      + fqdn                    = (known after apply)
+      + id                      = (known after apply)
+      + idle_timeout_in_minutes = 4
+      + ip_address              = (known after apply)
+      + ip_version              = "IPv4"
+      + location                = "centralindia"
+      + name                    = "tesis-ecommerce-drp-azure-pip"
+      + resource_group_name     = "tesis-ecommerce-drp-azure-rg"
+      + sku                     = "Standard"
+      + sku_tier                = "Regional"
+    }
+
+  # azurerm_resource_group.drp will be created
+  + resource "azurerm_resource_group" "drp" {
+      + id       = (known after apply)
+      + location = "centralindia"
+      + name     = "tesis-ecommerce-drp-azure-rg"
+      + tags     = {
+          + "Environment" = "drp-azure"
+          + "ManagedBy"   = "Terraform"
+          + "Project"     = "tesis-ecommerce"
+          + "Purpose"     = "DRP designed recovery target"
+        }
+    }
+
+  # azurerm_subnet.drp will be created
+  + resource "azurerm_subnet" "drp" {
+      + address_prefixes                               = [
+          + "10.42.1.0/24",
+        ]
+      + default_outbound_access_enabled                = true
+      + enforce_private_link_endpoint_network_policies = (known after apply)
+      + enforce_private_link_service_network_policies  = (known after apply)
+      + id                                             = (known after apply)
+      + name                                           = "tesis-ecommerce-drp-azure-subnet"
+      + private_endpoint_network_policies              = (known after apply)
+      + private_endpoint_network_policies_enabled      = (known after apply)
+      + private_link_service_network_policies_enabled  = (known after apply)
+      + resource_group_name                            = "tesis-ecommerce-drp-azure-rg"
+      + virtual_network_name                           = "tesis-ecommerce-drp-azure-vnet"
+    }
+
+  # azurerm_virtual_network.drp will be created
+  + resource "azurerm_virtual_network" "drp" {
+      + address_space       = [
+          + "10.42.0.0/16",
+        ]
+      + dns_servers         = (known after apply)
+      + guid                = (known after apply)
+      + id                  = (known after apply)
+      + location            = "centralindia"
+      + name                = "tesis-ecommerce-drp-azure-vnet"
+      + resource_group_name = "tesis-ecommerce-drp-azure-rg"
+      + subnet              = (known after apply)
+    }
+
+Plan: 8 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + azure_drp_public_ip      = (known after apply)
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to: /tmp/tfplan-azure-drp-centralindia
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/tmp/tfplan-azure-drp-centralindia"
