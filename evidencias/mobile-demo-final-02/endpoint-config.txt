@@ -1,0 +1,4 @@
+# Mobile demo final evidence
+2026-05-20T02:12:51Z
+EXPO_PUBLIC_API_BASE_URL=http://35.169.116.179:8080
+EXPO_PUBLIC_BACKEND_ENV=AWS principal

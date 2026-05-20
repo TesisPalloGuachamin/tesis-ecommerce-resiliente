@@ -12,7 +12,12 @@ import {
 } from "react-native";
 
 import { api } from "./src/api";
-import { API_BASE_URL, DEMO_EMAIL, DEMO_PASSWORD } from "./src/config";
+import {
+  API_BASE_URL,
+  BACKEND_ENVIRONMENT_LABEL,
+  DEMO_EMAIL,
+  DEMO_PASSWORD,
+} from "./src/config";
 import type { Cart, CartItem, CheckoutRequest, Listing, Product, User } from "./src/types";
 
 type Screen = "login" | "catalog" | "detail" | "cart" | "confirmation" | "sell";
@@ -199,16 +204,23 @@ export default function App() {
     });
 
   const title =
-    screen === "login" ? "Tesis Mobile" : screen === "sell" ? "Venta sandbox" : "Compra sandbox";
+    screen === "login" ? "Tesis Commerce" : screen === "sell" ? "Venta sandbox" : "Compra sandbox";
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <StatusBar style="dark" />
+      <StatusBar style="light" />
       <View style={styles.shell}>
         <View style={styles.header}>
-          <View>
+          <View style={styles.headerCopy}>
             <Text style={styles.headerTitle}>{title}</Text>
-            <Text style={styles.headerMeta}>{API_BASE_URL}</Text>
+            <View style={styles.environmentLine}>
+              <Text style={styles.environmentPill}>
+                Entorno backend: {BACKEND_ENVIRONMENT_LABEL}
+              </Text>
+            </View>
+            <Text style={styles.headerMeta} numberOfLines={1}>
+              {API_BASE_URL}
+            </Text>
           </View>
           {token ? (
             <View style={styles.headerActions}>
@@ -308,10 +320,26 @@ type LoginProps = {
 function LoginScreen({ email, password, busy, onEmail, onPassword, onLogin }: LoginProps) {
   return (
     <ScrollView contentContainerStyle={styles.content}>
-      <View style={styles.panel}>
+      <View style={[styles.panel, styles.loginPanel]}>
+        <Text style={styles.kicker}>Sandbox academico</Text>
         <Text style={styles.screenTitle}>Ingreso</Text>
-        <Field label="Email" value={email} onChangeText={onEmail} keyboardType="email-address" />
-        <Field label="Password" value={password} onChangeText={onPassword} secureTextEntry />
+        <Text style={styles.bodyText}>
+          Acceso de demostracion para ejecutar compra y publicacion con backend real.
+        </Text>
+        <Field
+          label="Email"
+          value={email}
+          onChangeText={onEmail}
+          keyboardType="email-address"
+          placeholder="usuario@demo.local"
+        />
+        <Field
+          label="Password"
+          value={password}
+          onChangeText={onPassword}
+          secureTextEntry
+          placeholder="password"
+        />
         <PrimaryButton label="Ingresar" busy={busy} onPress={onLogin} />
       </View>
     </ScrollView>
@@ -332,7 +360,7 @@ function CatalogScreen({ products, busy, user, onRefresh, onOpen }: CatalogProps
       <View style={styles.sectionHeader}>
         <View>
           <Text style={styles.screenTitle}>Catalogo</Text>
-          <Text style={styles.muted}>{user?.name ?? user?.email}</Text>
+          <Text style={styles.muted}>Sesion: {user?.name ?? user?.email}</Text>
         </View>
         <Pressable style={styles.secondaryButton} onPress={onRefresh} disabled={busy}>
           <Text style={styles.secondaryButtonText}>Actualizar</Text>
@@ -349,6 +377,7 @@ function CatalogScreen({ products, busy, user, onRefresh, onOpen }: CatalogProps
           <View style={styles.badgeRow}>
             <Text style={styles.badge}>{product.sku}</Text>
             <Text style={styles.badge}>Stock {product.stock}</Text>
+            <Text style={styles.badge}>Sandbox</Text>
           </View>
         </Pressable>
       ))}
@@ -377,6 +406,7 @@ function DetailScreen({ product, busy, onBack, onAdd }: DetailProps) {
       </View>
 
       <View style={styles.panel}>
+        <Text style={styles.kicker}>Producto activo</Text>
         <Text style={styles.detailTitle}>{product.name}</Text>
         <Text style={styles.detailPrice}>{formatMoney(product.price)}</Text>
         <Text style={styles.bodyText}>{product.description}</Text>
@@ -463,8 +493,11 @@ function CartScreen({
 
       {!items.length ? <EmptyState text="Carrito vacio." /> : null}
 
-      <View style={styles.totalBar}>
-        <Text style={styles.totalLabel}>Total</Text>
+      <View style={styles.totalCard}>
+        <View>
+          <Text style={styles.totalLabel}>Total del carrito</Text>
+          <Text style={styles.muted}>Pago simulado en sandbox</Text>
+        </View>
         <Text style={styles.totalValue}>{formatMoney(cart?.total)}</Text>
       </View>
       <PrimaryButton
@@ -492,12 +525,15 @@ function ConfirmationScreen({ checkout, busy, onCatalog, onCart }: ConfirmationP
   return (
     <ScrollView contentContainerStyle={styles.content}>
       <View style={styles.panel}>
+        <Text style={styles.kicker}>Checkout simulado</Text>
         <Text style={styles.screenTitle}>Confirmacion</Text>
-        <Text style={[styles.statusText, failed ? styles.failedText : styles.completedText]}>
-          {status}
-        </Text>
-        <Text style={styles.bodyText}>Solicitud: {checkout?.requestId ?? "pendiente"}</Text>
-        <Text style={styles.bodyText}>Total: {formatMoney(checkout?.totalAmount)}</Text>
+        <View style={[styles.statusBadge, failed ? styles.failedBadge : styles.completedBadge]}>
+          <Text style={[styles.statusText, failed ? styles.failedText : styles.completedText]}>
+            {status}
+          </Text>
+        </View>
+        <SummaryRow label="Solicitud" value={checkout?.requestId ?? "pendiente"} />
+        <SummaryRow label="Total" value={formatMoney(checkout?.totalAmount)} />
         {busy && !completed && !failed ? <InlineLoader /> : null}
         <View style={styles.confirmActions}>
           <Pressable style={styles.secondaryButton} onPress={onCatalog}>
@@ -556,20 +592,33 @@ function SellScreen({ listings, createdListing, busy, onBack, onSubmit }: SellPr
       </View>
 
       <View style={styles.panel}>
-        <Text style={styles.label}>Nueva publicacion</Text>
-        <Field label="Titulo *" value={title} onChangeText={setTitle} />
-        <Field label="Descripcion (opcional)" value={description} onChangeText={setDescription} />
+        <Text style={styles.kicker}>Flujo minimo de venta</Text>
+        <Text style={styles.panelTitle}>Nueva publicacion</Text>
+        <Field
+          label="Titulo *"
+          value={title}
+          onChangeText={setTitle}
+          placeholder="Nombre del producto"
+        />
+        <Field
+          label="Descripcion (opcional)"
+          value={description}
+          onChangeText={setDescription}
+          placeholder="Detalle breve para la demo"
+        />
         <Field
           label="Precio *"
           value={priceText}
           onChangeText={setPriceText}
           keyboardType="decimal-pad"
+          placeholder="0.00"
         />
         <Field
           label="Cantidad *"
           value={quantityText}
           onChangeText={setQuantityText}
           keyboardType="numeric"
+          placeholder="1"
         />
         {formError ? (
           <Text style={styles.errorText}>{formError}</Text>
@@ -580,11 +629,11 @@ function SellScreen({ listings, createdListing, busy, onBack, onSubmit }: SellPr
       {createdListing ? (
         <View style={[styles.panel, styles.successPanel]}>
           <Text style={styles.successTitle}>Publicacion creada</Text>
-          <Text style={styles.bodyText}>{createdListing.title}</Text>
-          <Text style={styles.muted}>ID: {createdListing.id}</Text>
-          <Text style={styles.muted}>Precio: {formatMoney(createdListing.price)}</Text>
-          <Text style={styles.muted}>Cantidad: {createdListing.quantity}</Text>
-          <Text style={styles.muted}>Estado: {createdListing.status}</Text>
+          <SummaryRow label="Titulo" value={createdListing.title} />
+          <SummaryRow label="ID" value={createdListing.id} />
+          <SummaryRow label="Precio" value={formatMoney(createdListing.price)} />
+          <SummaryRow label="Cantidad" value={String(createdListing.quantity)} />
+          <SummaryRow label="Estado" value={createdListing.status} />
         </View>
       ) : null}
 
@@ -619,15 +668,25 @@ type FieldProps = {
   onChangeText: (value: string) => void;
   keyboardType?: "default" | "email-address" | "decimal-pad" | "numeric";
   secureTextEntry?: boolean;
+  placeholder?: string;
 };
 
-function Field({ label, value, onChangeText, keyboardType, secureTextEntry }: FieldProps) {
+function Field({
+  label,
+  value,
+  onChangeText,
+  keyboardType,
+  secureTextEntry,
+  placeholder,
+}: FieldProps) {
   return (
     <View style={styles.field}>
       <Text style={styles.label}>{label}</Text>
       <TextInput
         style={styles.input}
         value={value}
+        placeholder={placeholder}
+        placeholderTextColor="#94A3B8"
         autoCapitalize="none"
         autoCorrect={false}
         keyboardType={keyboardType}
@@ -676,43 +735,74 @@ function EmptyState({ text }: { text: string }) {
   );
 }
 
+function SummaryRow({ label, value }: { label: string; value: string }) {
+  return (
+    <View style={styles.summaryRow}>
+      <Text style={styles.summaryLabel}>{label}</Text>
+      <Text style={styles.summaryValue}>{value}</Text>
+    </View>
+  );
+}
+
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#F6F7F9",
+    backgroundColor: "#F4F6F8",
   },
   shell: {
     flex: 1,
   },
   header: {
-    minHeight: 86,
+    minHeight: 108,
     paddingHorizontal: 18,
     paddingTop: 14,
     paddingBottom: 12,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#123044",
     borderBottomWidth: 1,
-    borderBottomColor: "#DDE3EA",
+    borderBottomColor: "#0B2233",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
     gap: 12,
   },
-  headerTitle: {
-    fontSize: 22,
-    lineHeight: 27,
-    fontWeight: "800",
-    color: "#17212B",
+  headerCopy: {
+    flex: 1,
+    minWidth: 0,
+    gap: 5,
   },
-  headerMeta: {
-    marginTop: 3,
+  headerTitle: {
+    fontSize: 23,
+    lineHeight: 29,
+    fontWeight: "800",
+    color: "#FFFFFF",
+  },
+  environmentLine: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+  },
+  environmentPill: {
+    backgroundColor: "#EAF7F0",
+    color: "#176349",
+    paddingHorizontal: 9,
+    paddingVertical: 4,
+    borderRadius: 8,
+    overflow: "hidden",
     fontSize: 11,
     lineHeight: 15,
-    color: "#64748B",
+    fontWeight: "800",
+  },
+  headerMeta: {
+    fontSize: 11,
+    lineHeight: 15,
+    color: "#BFD0DD",
   },
   headerActions: {
     flexDirection: "row",
     gap: 8,
     alignItems: "center",
+    flexWrap: "wrap",
+    justifyContent: "flex-end",
+    maxWidth: 190,
   },
   content: {
     padding: 18,
@@ -726,6 +816,27 @@ const styles = StyleSheet.create({
     borderColor: "#DDE3EA",
     padding: 18,
     gap: 14,
+    shadowColor: "#0F172A",
+    shadowOpacity: 0.06,
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 2,
+  },
+  loginPanel: {
+    marginTop: 8,
+  },
+  panelTitle: {
+    fontSize: 19,
+    lineHeight: 25,
+    fontWeight: "800",
+    color: "#17212B",
+  },
+  kicker: {
+    fontSize: 12,
+    lineHeight: 16,
+    fontWeight: "800",
+    color: "#176349",
+    textTransform: "uppercase",
   },
   sectionHeader: {
     minHeight: 46,
@@ -769,6 +880,11 @@ const styles = StyleSheet.create({
     borderColor: "#DDE3EA",
     padding: 16,
     gap: 10,
+    shadowColor: "#0F172A",
+    shadowOpacity: 0.04,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 3 },
+    elevation: 1,
   },
   cardTopLine: {
     flexDirection: "row",
@@ -818,7 +934,7 @@ const styles = StyleSheet.create({
     height: 48,
     borderWidth: 1,
     borderColor: "#CBD5E1",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#F8FAFC",
     borderRadius: 8,
     paddingHorizontal: 12,
     color: "#17212B",
@@ -845,8 +961,8 @@ const styles = StyleSheet.create({
     minHeight: 38,
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: "#9AB8CE",
-    backgroundColor: "#F4FAFF",
+    borderColor: "#94A3B8",
+    backgroundColor: "#FFFFFF",
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 12,
@@ -863,7 +979,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 12,
-    backgroundColor: "#EEF2F7",
+    backgroundColor: "#E8EEF6",
   },
   ghostButtonText: {
     color: "#334155",
@@ -939,15 +1055,17 @@ const styles = StyleSheet.create({
     gap: 8,
     alignItems: "center",
   },
-  totalBar: {
-    minHeight: 54,
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: "#DDE3EA",
+  totalCard: {
+    minHeight: 70,
+    borderWidth: 1,
+    borderColor: "#C8D5E1",
+    backgroundColor: "#FFFFFF",
+    borderRadius: 8,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingVertical: 10,
+    padding: 14,
+    gap: 12,
   },
   totalLabel: {
     fontSize: 16,
@@ -962,9 +1080,24 @@ const styles = StyleSheet.create({
     color: "#17212B",
   },
   statusText: {
-    fontSize: 30,
-    lineHeight: 37,
+    fontSize: 22,
+    lineHeight: 28,
     fontWeight: "900",
+  },
+  statusBadge: {
+    alignSelf: "flex-start",
+    borderRadius: 8,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderWidth: 1,
+  },
+  completedBadge: {
+    backgroundColor: "#ECFDF3",
+    borderColor: "#86EFAC",
+  },
+  failedBadge: {
+    backgroundColor: "#FEF3F2",
+    borderColor: "#FDA29B",
   },
   completedText: {
     color: "#1F7A5A",
@@ -986,6 +1119,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 16,
+    backgroundColor: "#FFFFFF",
   },
   sellButton: {
     minHeight: 38,
@@ -1012,5 +1146,23 @@ const styles = StyleSheet.create({
     lineHeight: 23,
     fontWeight: "800",
     color: "#14532D",
+  },
+  summaryRow: {
+    borderTopWidth: 1,
+    borderTopColor: "#E2E8F0",
+    paddingTop: 10,
+    gap: 4,
+  },
+  summaryLabel: {
+    fontSize: 12,
+    lineHeight: 16,
+    fontWeight: "800",
+    color: "#64748B",
+  },
+  summaryValue: {
+    fontSize: 14,
+    lineHeight: 20,
+    fontWeight: "700",
+    color: "#17212B",
   },
 });

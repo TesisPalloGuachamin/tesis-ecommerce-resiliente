@@ -1,0 +1,5 @@
+# core-api health via current AWS public IP
+http_code=000
+
+# checkout-service health via current AWS public IP
+http_code=000
