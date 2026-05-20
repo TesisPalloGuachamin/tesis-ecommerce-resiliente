@@ -1,0 +1,291 @@
+{
+  "runId": "mobile-tunnel-20260520T024014Z",
+  "baseUrl": "http://192.168.100.17:18080",
+  "steps": [
+    {
+      "name": "health",
+      "result": {
+        "status": "UP",
+        "components": {
+          "db": {
+            "status": "UP",
+            "details": {
+              "database": "PostgreSQL",
+              "validationQuery": "isValid()"
+            }
+          },
+          "diskSpace": {
+            "status": "UP",
+            "details": {
+              "total": 21395124224,
+              "free": 13708263424,
+              "threshold": 10485760,
+              "path": "/app/.",
+              "exists": true
+            }
+          },
+          "ping": {
+            "status": "UP"
+          },
+          "rabbit": {
+            "status": "UP",
+            "details": {
+              "version": "3.12.14"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "login",
+      "result": {
+        "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4NjFkYWFjMC1mYmQyLTQ5ODgtOWI3OS04M2M4NmFjYTMwNTIiLCJlbWFpbCI6Im1vYmlsZS1pbnQtMDFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NzkyNDQ4MTUsImV4cCI6MTc3OTMzMTIxNX0.L0mZ7jsxbq-aGEXzvrGntvHhNJ32WZPiK-OPjtAC-ACcA0JifH2Za9EUqV3zaVPp1LVGPodPOtqd5k7YVbh65A",
+        "user": {
+          "id": "861daac0-fbd2-4988-9b79-83c86aca3052",
+          "email": "mobile-int-01@example.com",
+          "name": "Mobile INT 01",
+          "enabled": true
+        }
+      }
+    },
+    {
+      "name": "catalog",
+      "result": [
+        {
+          "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+          "sku": "PROD001",
+          "name": "Laptop Dell XPS 13",
+          "description": "High-performance laptop with Intel i7 processor",
+          "price": 1299.99,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "b025f43f-65e0-4162-bbf9-fd4b63088c04",
+          "sku": "PROD002",
+          "name": "Wireless Mouse Logitech",
+          "description": "Ergonomic wireless mouse with USB receiver",
+          "price": 29.99,
+          "stock": 50,
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "detail",
+      "result": {
+        "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+        "sku": "PROD001",
+        "name": "Laptop Dell XPS 13",
+        "description": "High-performance laptop with Intel i7 processor",
+        "price": 1299.99,
+        "stock": 10,
+        "active": true
+      }
+    },
+    {
+      "name": "cart",
+      "result": {
+        "id": "4b1507d6-580e-4ccd-aadc-bb2d47cbaacc",
+        "userId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+        "items": [
+          {
+            "id": "2f5a3baa-eeff-43c9-9800-e6e7942cf941",
+            "productId": "b025f43f-65e0-4162-bbf9-fd4b63088c04",
+            "product": {
+              "id": "b025f43f-65e0-4162-bbf9-fd4b63088c04",
+              "sku": "PROD002",
+              "name": "Wireless Mouse Logitech",
+              "description": "Ergonomic wireless mouse with USB receiver",
+              "price": 29.99,
+              "stock": 50,
+              "active": true
+            },
+            "quantity": 1,
+            "unitPrice": 29.99,
+            "total": 29.99
+          },
+          {
+            "id": "79294278-0394-4ddd-889c-48a305d9178a",
+            "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+            "product": {
+              "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+              "sku": "PROD001",
+              "name": "Laptop Dell XPS 13",
+              "description": "High-performance laptop with Intel i7 processor",
+              "price": 1299.99,
+              "stock": 10,
+              "active": true
+            },
+            "quantity": 1,
+            "unitPrice": 1299.99,
+            "total": 1299.99
+          },
+          {
+            "id": "a0a82a7e-4503-4062-9826-e137ed0d0816",
+            "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+            "product": {
+              "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+              "sku": "PROD001",
+              "name": "Laptop Dell XPS 13",
+              "description": "High-performance laptop with Intel i7 processor",
+              "price": 1299.99,
+              "stock": 10,
+              "active": true
+            },
+            "quantity": 1,
+            "unitPrice": 1299.99,
+            "total": 1299.99
+          }
+        ],
+        "total": 2629.97
+      }
+    },
+    {
+      "name": "cart add item",
+      "result": {
+        "id": "4b1507d6-580e-4ccd-aadc-bb2d47cbaacc",
+        "userId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+        "items": [
+          {
+            "id": "2f5a3baa-eeff-43c9-9800-e6e7942cf941",
+            "productId": "b025f43f-65e0-4162-bbf9-fd4b63088c04",
+            "product": {
+              "id": "b025f43f-65e0-4162-bbf9-fd4b63088c04",
+              "sku": "PROD002",
+              "name": "Wireless Mouse Logitech",
+              "description": "Ergonomic wireless mouse with USB receiver",
+              "price": 29.99,
+              "stock": 50,
+              "active": true
+            },
+            "quantity": 1,
+            "unitPrice": 29.99,
+            "total": 29.99
+          },
+          {
+            "id": "79294278-0394-4ddd-889c-48a305d9178a",
+            "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+            "product": {
+              "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+              "sku": "PROD001",
+              "name": "Laptop Dell XPS 13",
+              "description": "High-performance laptop with Intel i7 processor",
+              "price": 1299.99,
+              "stock": 10,
+              "active": true
+            },
+            "quantity": 1,
+            "unitPrice": 1299.99,
+            "total": 1299.99
+          },
+          {
+            "id": "a0a82a7e-4503-4062-9826-e137ed0d0816",
+            "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+            "product": {
+              "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+              "sku": "PROD001",
+              "name": "Laptop Dell XPS 13",
+              "description": "High-performance laptop with Intel i7 processor",
+              "price": 1299.99,
+              "stock": 10,
+              "active": true
+            },
+            "quantity": 1,
+            "unitPrice": 1299.99,
+            "total": 1299.99
+          },
+          {
+            "id": "26bb7024-5117-4dd7-9120-276eb5b5e218",
+            "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+            "product": {
+              "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+              "sku": "PROD001",
+              "name": "Laptop Dell XPS 13",
+              "description": "High-performance laptop with Intel i7 processor",
+              "price": 1299.99,
+              "stock": 10,
+              "active": true
+            },
+            "quantity": 1,
+            "unitPrice": 1299.99,
+            "total": 1299.99
+          }
+        ],
+        "total": 3929.96
+      }
+    },
+    {
+      "name": "checkout",
+      "result": {
+        "requestId": "e62e723c-af07-4fb2-b098-ce59b1d22c59",
+        "userId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+        "totalAmount": 3929.96,
+        "status": "PENDING"
+      }
+    },
+    {
+      "name": "create listing",
+      "result": {
+        "id": "b93f25c2-e24b-472c-9bcb-0ea975385b2e",
+        "sellerId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+        "title": "Demo tunnel mobile-tunnel-20260520T024014Z",
+        "description": "Validacion Expo Go via tunel SSH",
+        "price": 15.75,
+        "quantity": 1,
+        "status": "ACTIVE",
+        "createdAt": "2026-05-20T02:40:19.227299960",
+        "updatedAt": "2026-05-20T02:40:19.227306856"
+      }
+    },
+    {
+      "name": "list listings",
+      "result": [
+        {
+          "id": "b93f25c2-e24b-472c-9bcb-0ea975385b2e",
+          "sellerId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+          "title": "Demo tunnel mobile-tunnel-20260520T024014Z",
+          "description": "Validacion Expo Go via tunel SSH",
+          "price": 15.75,
+          "quantity": 1,
+          "status": "ACTIVE",
+          "createdAt": "2026-05-20T02:40:19.227300",
+          "updatedAt": "2026-05-20T02:40:19.227307"
+        },
+        {
+          "id": "8062b04f-6b90-47c5-b2fa-b7ba6ee42e3b",
+          "sellerId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+          "title": "Demo listing mobile-demo-20260520T022017Z",
+          "description": "Publicacion creada desde validacion movil final",
+          "price": 12.5,
+          "quantity": 2,
+          "status": "ACTIVE",
+          "createdAt": "2026-05-20T02:20:19.315276",
+          "updatedAt": "2026-05-20T02:20:19.315318"
+        }
+      ]
+    },
+    {
+      "name": "listing detail",
+      "result": {
+        "id": "b93f25c2-e24b-472c-9bcb-0ea975385b2e",
+        "sellerId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+        "title": "Demo tunnel mobile-tunnel-20260520T024014Z",
+        "description": "Validacion Expo Go via tunel SSH",
+        "price": 15.75,
+        "quantity": 1,
+        "status": "ACTIVE",
+        "createdAt": "2026-05-20T02:40:19.227300",
+        "updatedAt": "2026-05-20T02:40:19.227307"
+      }
+    }
+  ],
+  "summary": {
+    "login": "PASS",
+    "catalogCount": 2,
+    "checkoutId": "e62e723c-af07-4fb2-b098-ce59b1d22c59",
+    "checkoutStatus": "COMPLETED",
+    "listingId": "b93f25c2-e24b-472c-9bcb-0ea975385b2e",
+    "listingsCount": 2
+  }
+}

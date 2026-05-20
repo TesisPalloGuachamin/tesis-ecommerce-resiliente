@@ -1,0 +1,17 @@
+# EC2 internal backend status
+2026-05-20T02:57:10Z
+public_ip=35.169.116.179
+instance_id=i-04af7377cba6b0480
+sg_ids=sg-060c10d445aab1fef
+NAMES                    STATUS                    PORTS
+tesis-core-api           Up 38 minutes (healthy)   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp
+tesis-checkout-service   Up 38 minutes (healthy)   0.0.0.0:8082->8082/tcp, :::8082->8082/tcp
+tesis-checkout-db        Up 39 minutes (healthy)   0.0.0.0:5433->5432/tcp, :::5433->5432/tcp
+tesis-core-db            Up 39 minutes (healthy)   0.0.0.0:5432->5432/tcp, :::5432->5432/tcp
+tesis-rabbitmq           Up 39 minutes (healthy)   4369/tcp, 5671/tcp, 0.0.0.0:5672->5672/tcp, :::5672->5672/tcp, 15671/tcp, 15691-15692/tcp, 25672/tcp, 0.0.0.0:15672->15672/tcp, :::15672->15672/tcp
+tesis-grafana            Up 39 minutes             0.0.0.0:3000->3000/tcp, :::3000->3000/tcp
+tesis-prometheus         Up 39 minutes             0.0.0.0:9090->9090/tcp, :::9090->9090/tcp
+LISTEN 0      4096         0.0.0.0:8080       0.0.0.0:*          
+LISTEN 0      4096            [::]:8080          [::]:*          
+core_internal_http=200
+{"status":"UP","components":{"db":{"status":"UP","details":{"database":"PostgreSQL","validationQuery":"isValid()"}},"diskSpace":{"status":"UP","details":{"total":21395124224,"free":13689262080,"threshold":10485760,"path":"/app/.","exists":true}},"ping":{"status":"UP"},"rabbit":{"status":"UP","details":{"version":"3.12.14"}}}}

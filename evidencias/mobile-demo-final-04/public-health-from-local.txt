@@ -1,0 +1,4 @@
+# public health after EC2 stack start
+2026-05-20T02:20:50Z
+public_core_http=000
+public_checkout_http=000

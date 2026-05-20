@@ -1,0 +1,24 @@
+# Mobile final validation closure
+2026-05-20T02:16:04Z
+
+## Configured endpoint
+EXPO_PUBLIC_API_BASE_URL=http://35.169.116.179:8080
+EXPO_PUBLIC_BACKEND_ENV=AWS principal
+
+## AWS current candidate health
+curl: (28) Connection timed out after 6001 milliseconds
+core_api_http=000
+curl: (28) Connection timed out after 6001 milliseconds
+checkout_service_http=000
+
+## Previous AWS candidate health
+curl: (28) Connection timed out after 6001 milliseconds
+core_api_44_http=000
+
+## Local backend health
+curl: (7) Failed to connect to localhost port 8080 after 0 ms: Couldn't connect to server
+local_core_http=000
+curl: (7) Failed to connect to localhost port 8082 after 0 ms: Couldn't connect to server
+local_checkout_http=000
+
+## Docker containers

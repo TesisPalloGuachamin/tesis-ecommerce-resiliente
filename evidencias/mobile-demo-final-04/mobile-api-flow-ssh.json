@@ -1,0 +1,266 @@
+{
+  "runId": "mobile-demo-20260520T022017Z",
+  "baseUrl": "http://localhost:8080",
+  "steps": [
+    {
+      "name": "core-api health",
+      "startedAt": "2026-05-20T02:20:17.913309+00:00",
+      "result": {
+        "status": "UP",
+        "components": {
+          "db": {
+            "status": "UP",
+            "details": {
+              "database": "PostgreSQL",
+              "validationQuery": "isValid()"
+            }
+          },
+          "diskSpace": {
+            "status": "UP",
+            "details": {
+              "total": 21395124224,
+              "free": 13709266944,
+              "threshold": 10485760,
+              "path": "/app/.",
+              "exists": true
+            }
+          },
+          "ping": {
+            "status": "UP"
+          },
+          "rabbit": {
+            "status": "UP",
+            "details": {
+              "version": "3.12.14"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "login",
+      "startedAt": "2026-05-20T02:20:17.927735+00:00",
+      "result": {
+        "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4NjFkYWFjMC1mYmQyLTQ5ODgtOWI3OS04M2M4NmFjYTMwNTIiLCJlbWFpbCI6Im1vYmlsZS1pbnQtMDFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NzkyNDM2MTgsImV4cCI6MTc3OTMzMDAxOH0.0b0RfitC1sryHs55qp-AYvVrfhTtah_ybgvTeZbuj4oGHfvxlsXrMWO3ir8ja7MR6Mji0sV4RXtWUZs15Garuw",
+        "user": {
+          "id": "861daac0-fbd2-4988-9b79-83c86aca3052",
+          "email": "mobile-int-01@example.com",
+          "name": "Mobile INT 01",
+          "enabled": true
+        }
+      }
+    },
+    {
+      "name": "catalog",
+      "startedAt": "2026-05-20T02:20:18.045532+00:00",
+      "result": [
+        {
+          "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+          "sku": "PROD001",
+          "name": "Laptop Dell XPS 13",
+          "description": "High-performance laptop with Intel i7 processor",
+          "price": 1299.99,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "b025f43f-65e0-4162-bbf9-fd4b63088c04",
+          "sku": "PROD002",
+          "name": "Wireless Mouse Logitech",
+          "description": "Ergonomic wireless mouse with USB receiver",
+          "price": 29.99,
+          "stock": 50,
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "detail",
+      "startedAt": "2026-05-20T02:20:18.062574+00:00",
+      "result": {
+        "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+        "sku": "PROD001",
+        "name": "Laptop Dell XPS 13",
+        "description": "High-performance laptop with Intel i7 processor",
+        "price": 1299.99,
+        "stock": 10,
+        "active": true
+      }
+    },
+    {
+      "name": "cart before add",
+      "startedAt": "2026-05-20T02:20:18.084792+00:00",
+      "result": {
+        "id": "4b1507d6-580e-4ccd-aadc-bb2d47cbaacc",
+        "userId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+        "items": [
+          {
+            "id": "2f5a3baa-eeff-43c9-9800-e6e7942cf941",
+            "productId": "b025f43f-65e0-4162-bbf9-fd4b63088c04",
+            "product": {
+              "id": "b025f43f-65e0-4162-bbf9-fd4b63088c04",
+              "sku": "PROD002",
+              "name": "Wireless Mouse Logitech",
+              "description": "Ergonomic wireless mouse with USB receiver",
+              "price": 29.99,
+              "stock": 50,
+              "active": true
+            },
+            "quantity": 1,
+            "unitPrice": 29.99,
+            "total": 29.99
+          },
+          {
+            "id": "79294278-0394-4ddd-889c-48a305d9178a",
+            "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+            "product": {
+              "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+              "sku": "PROD001",
+              "name": "Laptop Dell XPS 13",
+              "description": "High-performance laptop with Intel i7 processor",
+              "price": 1299.99,
+              "stock": 10,
+              "active": true
+            },
+            "quantity": 1,
+            "unitPrice": 1299.99,
+            "total": 1299.99
+          }
+        ],
+        "total": 1329.98
+      }
+    },
+    {
+      "name": "cart add item",
+      "startedAt": "2026-05-20T02:20:18.109951+00:00",
+      "result": {
+        "id": "4b1507d6-580e-4ccd-aadc-bb2d47cbaacc",
+        "userId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+        "items": [
+          {
+            "id": "2f5a3baa-eeff-43c9-9800-e6e7942cf941",
+            "productId": "b025f43f-65e0-4162-bbf9-fd4b63088c04",
+            "product": {
+              "id": "b025f43f-65e0-4162-bbf9-fd4b63088c04",
+              "sku": "PROD002",
+              "name": "Wireless Mouse Logitech",
+              "description": "Ergonomic wireless mouse with USB receiver",
+              "price": 29.99,
+              "stock": 50,
+              "active": true
+            },
+            "quantity": 1,
+            "unitPrice": 29.99,
+            "total": 29.99
+          },
+          {
+            "id": "79294278-0394-4ddd-889c-48a305d9178a",
+            "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+            "product": {
+              "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+              "sku": "PROD001",
+              "name": "Laptop Dell XPS 13",
+              "description": "High-performance laptop with Intel i7 processor",
+              "price": 1299.99,
+              "stock": 10,
+              "active": true
+            },
+            "quantity": 1,
+            "unitPrice": 1299.99,
+            "total": 1299.99
+          },
+          {
+            "id": "a0a82a7e-4503-4062-9826-e137ed0d0816",
+            "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+            "product": {
+              "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+              "sku": "PROD001",
+              "name": "Laptop Dell XPS 13",
+              "description": "High-performance laptop with Intel i7 processor",
+              "price": 1299.99,
+              "stock": 10,
+              "active": true
+            },
+            "quantity": 1,
+            "unitPrice": 1299.99,
+            "total": 1299.99
+          }
+        ],
+        "total": 2629.97
+      }
+    },
+    {
+      "name": "checkout request",
+      "startedAt": "2026-05-20T02:20:18.148956+00:00",
+      "result": {
+        "requestId": "791c5e96-1866-4d30-98a4-dc236232d00b",
+        "userId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+        "totalAmount": 2629.97,
+        "status": "PENDING"
+      }
+    },
+    {
+      "name": "create listing",
+      "startedAt": "2026-05-20T02:20:19.240676+00:00",
+      "result": {
+        "id": "8062b04f-6b90-47c5-b2fa-b7ba6ee42e3b",
+        "sellerId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+        "title": "Demo listing mobile-demo-20260520T022017Z",
+        "description": "Publicacion creada desde validacion movil final",
+        "price": 12.5,
+        "quantity": 2,
+        "status": "ACTIVE",
+        "createdAt": "2026-05-20T02:20:19.315276393",
+        "updatedAt": "2026-05-20T02:20:19.315318053"
+      }
+    },
+    {
+      "name": "list listings",
+      "startedAt": "2026-05-20T02:20:19.349054+00:00",
+      "result": [
+        {
+          "id": "8062b04f-6b90-47c5-b2fa-b7ba6ee42e3b",
+          "sellerId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+          "title": "Demo listing mobile-demo-20260520T022017Z",
+          "description": "Publicacion creada desde validacion movil final",
+          "price": 12.5,
+          "quantity": 2,
+          "status": "ACTIVE",
+          "createdAt": "2026-05-20T02:20:19.315276",
+          "updatedAt": "2026-05-20T02:20:19.315318"
+        }
+      ]
+    },
+    {
+      "name": "listing detail",
+      "startedAt": "2026-05-20T02:20:19.383969+00:00",
+      "result": {
+        "id": "8062b04f-6b90-47c5-b2fa-b7ba6ee42e3b",
+        "sellerId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+        "title": "Demo listing mobile-demo-20260520T022017Z",
+        "description": "Publicacion creada desde validacion movil final",
+        "price": 12.5,
+        "quantity": 2,
+        "status": "ACTIVE",
+        "createdAt": "2026-05-20T02:20:19.315276",
+        "updatedAt": "2026-05-20T02:20:19.315318"
+      }
+    }
+  ],
+  "checkoutFinal": {
+    "attempts": 1,
+    "requestId": "791c5e96-1866-4d30-98a4-dc236232d00b",
+    "status": "COMPLETED",
+    "totalAmount": 2629.97
+  },
+  "summary": {
+    "login": "PASS",
+    "catalogCount": 2,
+    "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+    "cartId": "4b1507d6-580e-4ccd-aadc-bb2d47cbaacc",
+    "checkoutStatus": "COMPLETED",
+    "checkoutId": "791c5e96-1866-4d30-98a4-dc236232d00b",
+    "listingCreatedId": "8062b04f-6b90-47c5-b2fa-b7ba6ee42e3b",
+    "listingsCount": 1
+  }
+}
