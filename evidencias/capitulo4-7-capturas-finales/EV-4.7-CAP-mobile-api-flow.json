@@ -1,0 +1,270 @@
+{
+  "summary": {
+    "runId": "ev47-20260530T071822Z",
+    "baseUrl": "http://3.236.180.30:8080",
+    "generatedAt": "2026-05-30T07:18:28.066051+00:00",
+    "login": "PASS",
+    "catalogCount": 2,
+    "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+    "cartId": "aad89d59-afb2-4991-9053-9c66529e2d59",
+    "checkoutId": "d1b722bf-8a10-4ddd-8307-ebedd9850bc4",
+    "checkoutStatus": "COMPLETED",
+    "listingId": "314fb1db-fe69-4aab-b24b-987a9ef8a255",
+    "listingStatus": "ACTIVE",
+    "listingsCount": 4
+  },
+  "steps": [
+    {
+      "name": "health",
+      "status": 200,
+      "body": {
+        "status": "UP",
+        "components": {
+          "db": {
+            "status": "UP",
+            "details": {
+              "database": "PostgreSQL",
+              "validationQuery": "isValid()"
+            }
+          },
+          "diskSpace": {
+            "status": "UP",
+            "details": {
+              "total": 21395124224,
+              "free": 13680021504,
+              "threshold": 10485760,
+              "path": "/app/.",
+              "exists": true
+            }
+          },
+          "ping": {
+            "status": "UP"
+          },
+          "rabbit": {
+            "status": "UP",
+            "details": {
+              "version": "3.12.14"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "register",
+      "status": 201,
+      "body": {
+        "user": {
+          "id": "818d7fd4-f258-45ce-850b-d6a853c944ac",
+          "email": "ev47-20260530T071822Z@example.com",
+          "name": "Evidencia 4.7",
+          "enabled": true
+        }
+      }
+    },
+    {
+      "name": "login",
+      "status": 200,
+      "body": {
+        "token": "<redacted>",
+        "user": {
+          "id": "818d7fd4-f258-45ce-850b-d6a853c944ac",
+          "email": "ev47-20260530T071822Z@example.com",
+          "name": "Evidencia 4.7",
+          "enabled": true
+        }
+      }
+    },
+    {
+      "name": "catalog",
+      "status": 200,
+      "body": [
+        {
+          "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+          "sku": "PROD001",
+          "name": "Laptop Dell XPS 13",
+          "description": "High-performance laptop with Intel i7 processor",
+          "price": 1299.99,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "b025f43f-65e0-4162-bbf9-fd4b63088c04",
+          "sku": "PROD002",
+          "name": "Wireless Mouse Logitech",
+          "description": "Ergonomic wireless mouse with USB receiver",
+          "price": 29.99,
+          "stock": 50,
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "product detail",
+      "status": 200,
+      "body": {
+        "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+        "sku": "PROD001",
+        "name": "Laptop Dell XPS 13",
+        "description": "High-performance laptop with Intel i7 processor",
+        "price": 1299.99,
+        "stock": 10,
+        "active": true
+      }
+    },
+    {
+      "name": "cart add item",
+      "status": 201,
+      "body": {
+        "id": "aad89d59-afb2-4991-9053-9c66529e2d59",
+        "userId": "818d7fd4-f258-45ce-850b-d6a853c944ac",
+        "items": [
+          {
+            "id": "5d32999f-618f-4a08-aad3-db8a5ac958ca",
+            "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+            "product": {
+              "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+              "sku": "PROD001",
+              "name": "Laptop Dell XPS 13",
+              "description": "High-performance laptop with Intel i7 processor",
+              "price": 1299.99,
+              "stock": 10,
+              "active": true
+            },
+            "quantity": 1,
+            "unitPrice": 1299.99,
+            "total": 1299.99
+          }
+        ],
+        "total": 1299.99
+      }
+    },
+    {
+      "name": "cart get",
+      "status": 200,
+      "body": {
+        "id": "aad89d59-afb2-4991-9053-9c66529e2d59",
+        "userId": "818d7fd4-f258-45ce-850b-d6a853c944ac",
+        "items": [
+          {
+            "id": "5d32999f-618f-4a08-aad3-db8a5ac958ca",
+            "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+            "product": {
+              "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+              "sku": "PROD001",
+              "name": "Laptop Dell XPS 13",
+              "description": "High-performance laptop with Intel i7 processor",
+              "price": 1299.99,
+              "stock": 10,
+              "active": true
+            },
+            "quantity": 1,
+            "unitPrice": 1299.99,
+            "total": 1299.99
+          }
+        ],
+        "total": 1299.99
+      }
+    },
+    {
+      "name": "checkout create",
+      "status": 202,
+      "body": {
+        "requestId": "d1b722bf-8a10-4ddd-8307-ebedd9850bc4",
+        "userId": "818d7fd4-f258-45ce-850b-d6a853c944ac",
+        "totalAmount": 1299.99,
+        "status": "PENDING"
+      }
+    },
+    {
+      "name": "checkout final",
+      "attempts": 2,
+      "status": 200,
+      "body": {
+        "requestId": "d1b722bf-8a10-4ddd-8307-ebedd9850bc4",
+        "userId": "818d7fd4-f258-45ce-850b-d6a853c944ac",
+        "totalAmount": 1299.99,
+        "status": "COMPLETED"
+      }
+    },
+    {
+      "name": "listing create",
+      "status": 201,
+      "body": {
+        "id": "314fb1db-fe69-4aab-b24b-987a9ef8a255",
+        "sellerId": "818d7fd4-f258-45ce-850b-d6a853c944ac",
+        "title": "Evidencia 4.7 listing ev47-20260530T071822Z",
+        "description": "Publicacion fresca para evidencias de implementacion 4.7",
+        "price": 21.47,
+        "quantity": 1,
+        "status": "ACTIVE",
+        "createdAt": "2026-05-30T07:18:27.595660823",
+        "updatedAt": "2026-05-30T07:18:27.595763398"
+      }
+    },
+    {
+      "name": "listing list",
+      "status": 200,
+      "body": [
+        {
+          "id": "314fb1db-fe69-4aab-b24b-987a9ef8a255",
+          "sellerId": "818d7fd4-f258-45ce-850b-d6a853c944ac",
+          "title": "Evidencia 4.7 listing ev47-20260530T071822Z",
+          "description": "Publicacion fresca para evidencias de implementacion 4.7",
+          "price": 21.47,
+          "quantity": 1,
+          "status": "ACTIVE",
+          "createdAt": "2026-05-30T07:18:27.595661",
+          "updatedAt": "2026-05-30T07:18:27.595763"
+        },
+        {
+          "id": "6734ea69-1eaf-4ef1-ba0c-e70b4c421ab7",
+          "sellerId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+          "title": "Demo directo mobile-direct-20260520T031056Z",
+          "description": "Validacion Expo Go directa contra AWS core-api",
+          "price": 18.25,
+          "quantity": 1,
+          "status": "ACTIVE",
+          "createdAt": "2026-05-20T03:10:59.650422",
+          "updatedAt": "2026-05-20T03:10:59.650431"
+        },
+        {
+          "id": "b93f25c2-e24b-472c-9bcb-0ea975385b2e",
+          "sellerId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+          "title": "Demo tunnel mobile-tunnel-20260520T024014Z",
+          "description": "Validacion Expo Go via tunel SSH",
+          "price": 15.75,
+          "quantity": 1,
+          "status": "ACTIVE",
+          "createdAt": "2026-05-20T02:40:19.227300",
+          "updatedAt": "2026-05-20T02:40:19.227307"
+        },
+        {
+          "id": "8062b04f-6b90-47c5-b2fa-b7ba6ee42e3b",
+          "sellerId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+          "title": "Demo listing mobile-demo-20260520T022017Z",
+          "description": "Publicacion creada desde validacion movil final",
+          "price": 12.5,
+          "quantity": 2,
+          "status": "ACTIVE",
+          "createdAt": "2026-05-20T02:20:19.315276",
+          "updatedAt": "2026-05-20T02:20:19.315318"
+        }
+      ]
+    },
+    {
+      "name": "listing detail",
+      "status": 200,
+      "body": {
+        "id": "314fb1db-fe69-4aab-b24b-987a9ef8a255",
+        "sellerId": "818d7fd4-f258-45ce-850b-d6a853c944ac",
+        "title": "Evidencia 4.7 listing ev47-20260530T071822Z",
+        "description": "Publicacion fresca para evidencias de implementacion 4.7",
+        "price": 21.47,
+        "quantity": 1,
+        "status": "ACTIVE",
+        "createdAt": "2026-05-30T07:18:27.595661",
+        "updatedAt": "2026-05-30T07:18:27.595763"
+      }
+    }
+  ]
+}

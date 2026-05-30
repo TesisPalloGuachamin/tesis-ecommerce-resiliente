@@ -1,0 +1,8 @@
+NAMES                    STATUS                        PORTS
+tesis-core-api           Up About a minute (healthy)   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp
+tesis-checkout-service   Up About a minute (healthy)   0.0.0.0:8082->8082/tcp, :::8082->8082/tcp
+tesis-checkout-db        Up About a minute (healthy)   0.0.0.0:5433->5432/tcp, :::5433->5432/tcp
+tesis-core-db            Up About a minute (healthy)   0.0.0.0:5432->5432/tcp, :::5432->5432/tcp
+tesis-rabbitmq           Up About a minute (healthy)   4369/tcp, 5671/tcp, 0.0.0.0:5672->5672/tcp, :::5672->5672/tcp, 15671/tcp, 15691-15692/tcp, 25672/tcp, 0.0.0.0:15672->15672/tcp, :::15672->15672/tcp
+tesis-grafana            Up About a minute             0.0.0.0:3000->3000/tcp, :::3000->3000/tcp
+tesis-prometheus         Up About a minute             0.0.0.0:9090->9090/tcp, :::9090->9090/tcp

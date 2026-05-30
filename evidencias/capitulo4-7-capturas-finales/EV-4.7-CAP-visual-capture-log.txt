@@ -1,0 +1,5 @@
+generated_at=2026-05-30T07:42:06.855Z
+method=Expo web/navegador con Chrome headless y CORS deshabilitado solo para captura visual local
+backend=http://3.236.180.30:8080
+checkout=COMPLETED
+listing=ACTIVE

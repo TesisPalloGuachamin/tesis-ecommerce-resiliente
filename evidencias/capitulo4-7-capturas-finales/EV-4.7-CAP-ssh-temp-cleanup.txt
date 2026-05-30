@@ -1,0 +1,36 @@
+timestamp=2026-05-30T02:29:10-05:00
+action=revoke temporary SSH ingress
+sg=sg-060c10d445aab1fef
+cidr=181.211.104.33/32
+{
+    "Return": true,
+    "RevokedSecurityGroupRules": [
+        {
+            "SecurityGroupRuleId": "sgr-06acf7704155f02f5",
+            "GroupId": "sg-060c10d445aab1fef",
+            "IsEgress": false,
+            "IpProtocol": "tcp",
+            "FromPort": 22,
+            "ToPort": 22,
+            "CidrIpv4": "181.211.104.33/32",
+            "Description": "SSH temporary Codex evidence capture"
+        }
+    ]
+}
+remaining_ssh_rules=
+[
+    {
+        "IpProtocol": "tcp",
+        "FromPort": 22,
+        "ToPort": 22,
+        "UserIdGroupPairs": [],
+        "IpRanges": [
+            {
+                "Description": "SSH",
+                "CidrIp": "157.100.143.203/32"
+            }
+        ],
+        "Ipv6Ranges": [],
+        "PrefixListIds": []
+    }
+]

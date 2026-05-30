@@ -1,0 +1,4 @@
+timestamp=2026-05-30T02:17:38-05:00
+query=up{job=~"core-api|checkout-service"}
+{"status":"success","data":{"resultType":"vector","result":[{"metric":{"__name__":"up","instance":"checkout-service:8082","job":"checkout-service"},"value":[1780125458.778,"1"]},{"metric":{"__name__":"up","instance":"core-api:8080","job":"core-api"},"value":[1780125458.778,"1"]}]}}
+HTTP_CODE=200

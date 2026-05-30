@@ -1,0 +1,7 @@
+timestamp=2026-05-30T02:17:38-05:00
+{
+  "database": "ok",
+  "version": "13.0.1",
+  "commit": "a100054f"
+}
+HTTP_CODE=200

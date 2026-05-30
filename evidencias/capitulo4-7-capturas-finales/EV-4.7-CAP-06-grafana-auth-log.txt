@@ -1,0 +1,63 @@
+generated_at=2026-05-30T07:44:31.314Z
+login_status=200
+text_sample=Skip to main content
+Grafana
+
+Home
+
+Bookmarks
+
+Starred
+
+Dashboards
+
+Explore
+
+Drilldown
+
+Alerting
+
+Connections
+
+Administration
+
+Dashboards
+Tesis Backend Services Overview
+Search...
+ctrl+k
+Last 15 minutes
+Refresh
+10s
+Share
+Make editable
+Request rate by service
+Name
+
+checkout-service
+
+
+core-api
+5xx error rate
+Name
+
+checkout-service
+
+
+core-api
+HTTP latency p95
+Name
+
+checkout-service p95
+
+
+core-api p95
+JVM heap usage
+Name
+
+checkout-service heap
+
+
+core-api heap
+Prometheus targets up
+checkout-service
+1

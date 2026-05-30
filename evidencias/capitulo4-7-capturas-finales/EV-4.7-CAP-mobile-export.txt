@@ -1,0 +1,19 @@
+
+> mobile@1.0.0 expo
+> npx -y -p node@20 node ./node_modules/expo/bin/cli export --platform web --output-dir ../../evidencias/capitulo4-7-capturas-finales/mobile-web-export
+
+env: load .env.local
+env: export EXPO_PUBLIC_API_BASE_URL EXPO_PUBLIC_BACKEND_ENV
+Starting Metro Bundler
+Web ./index.ts ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 72.5% ( 88/119)
+Web Bundled 3974ms index.ts (200 modules)
+
+› web bundles (1):
+_expo/static/js/web/index-9992987e7f5d7049aad7251ee1301698.js (383 kB)
+
+› Files (3):
+favicon.ico (14.5 kB)
+index.html (1.23 kB)
+metadata.json (49 B)
+
+Exported: ../../evidencias/capitulo4-7-capturas-finales/mobile-web-export
