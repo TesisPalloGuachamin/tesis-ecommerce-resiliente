@@ -2,6 +2,16 @@
 
 RUN_ID: `cap4-obs-20260614-152854`
 
+## Referencia de versionamiento
+
+Las evidencias de observabilidad quedaron versionadas en el commit:
+
+- Commit completo: `4198dac811bedd2059a38d796943c5b9227b8fcc`
+- Commit corto: `4198dac`
+- Fecha/hora: `2026-06-14T18:03:37-05:00`
+- Rama: `cap4-cierre-tecnico`
+- RUN_ID: `cap4-obs-20260614-152854`
+
 | Elemento | Evidencia principal | Resultado observado | Estado | Observacion |
 |---|---|---|---|---|
 | Prometheus health | `07_observabilidad/prometheus_targets_after.json`; `07_observabilidad/prometheus_status_config.json` | API Prometheus responde HTTP 200 | CERRADO | Contenedor existente levantado |
