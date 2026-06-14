@@ -1,0 +1,66 @@
+{
+  "runId": "cap4-mobile-backend-20260614-183132",
+  "executedAt": "2026-06-14T18:33:25.695580-05:00",
+  "baseUrl": "http://AWS_PRINCIPAL_HOST:8080",
+  "cases": [
+    {
+      "label": "error_invalid_credentials",
+      "method": "POST",
+      "endpoint": "/api/v1/auth/login",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/auth/login",
+      "expectedStatus": "4xx/5xx controlled",
+      "observedStatus": 400,
+      "elapsedMs": 280.08,
+      "request": {
+        "email": "mobile-int-20260614-183132@example.com",
+        "password": "[MASKED]"
+      },
+      "response": {
+        "message": "Invalid credentials",
+        "status": 400,
+        "timestamp": 1781480011082
+      }
+    },
+    {
+      "label": "error_protected_without_token",
+      "method": "GET",
+      "endpoint": "/api/v1/cart",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/cart",
+      "expectedStatus": 403,
+      "observedStatus": 403,
+      "elapsedMs": 176.51,
+      "request": {},
+      "response": null
+    },
+    {
+      "label": "error_missing_product",
+      "method": "GET",
+      "endpoint": "/api/v1/products/96b92f98-dec6-4d2e-8fcb-4810884865b3",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/products/96b92f98-dec6-4d2e-8fcb-4810884865b3",
+      "expectedStatus": "4xx/5xx controlled",
+      "observedStatus": 400,
+      "elapsedMs": 186.24,
+      "request": {},
+      "response": {
+        "message": "Product not found",
+        "status": 400,
+        "timestamp": 1781480011447
+      }
+    },
+    {
+      "label": "error_missing_checkout",
+      "method": "GET",
+      "endpoint": "/api/v1/checkout/63bdb171-e92b-4d72-a8b0-a1cbc68c9fd4",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/checkout/63bdb171-e92b-4d72-a8b0-a1cbc68c9fd4",
+      "expectedStatus": "4xx/5xx controlled",
+      "observedStatus": 400,
+      "elapsedMs": 218.1,
+      "request": {},
+      "response": {
+        "message": "Checkout request not found",
+        "status": 400,
+        "timestamp": 1781480011659
+      }
+    }
+  ]
+}

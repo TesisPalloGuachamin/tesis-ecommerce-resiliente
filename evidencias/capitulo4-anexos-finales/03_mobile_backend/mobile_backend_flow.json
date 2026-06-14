@@ -1,0 +1,415 @@
+{
+  "runId": "cap4-mobile-backend-20260614-183132",
+  "executedAt": "2026-06-14T18:33:25.695380-05:00",
+  "baseUrl": "http://AWS_PRINCIPAL_HOST:8080",
+  "validationType": "validacion HTTP equivalente a consumo mobile",
+  "preconditions": [
+    {
+      "label": "precondition_register_user",
+      "method": "POST",
+      "endpoint": "/api/v1/auth/register",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/auth/register",
+      "expectedStatus": 201,
+      "observedStatus": 201,
+      "elapsedMs": 1162.59,
+      "request": {
+        "email": "mobile-int-20260614-183132@example.com",
+        "password": "[MASKED]",
+        "name": "Mobile Integration User"
+      },
+      "response": {
+        "token": "eyJhbGciOiJI...[MASKED]...R_ExtgYw",
+        "user": {
+          "id": "396b618f-07cd-46a8-83a1-6457833a8646",
+          "email": "mobile-int-20260614-183132@example.com",
+          "name": "Mobile Integration User",
+          "enabled": true
+        }
+      }
+    }
+  ],
+  "steps": [
+    {
+      "label": "mobile_login",
+      "method": "POST",
+      "endpoint": "/api/v1/auth/login",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/auth/login",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "elapsedMs": 317.38,
+      "request": {
+        "email": "mobile-int-20260614-183132@example.com",
+        "password": "[MASKED]"
+      },
+      "response": {
+        "token": "eyJhbGciOiJI...[MASKED]...wG9XCklw",
+        "user": {
+          "id": "396b618f-07cd-46a8-83a1-6457833a8646",
+          "email": "mobile-int-20260614-183132@example.com",
+          "name": "Mobile Integration User",
+          "enabled": true
+        }
+      }
+    },
+    {
+      "label": "mobile_catalog_products",
+      "method": "GET",
+      "endpoint": "/api/v1/products",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/products",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "elapsedMs": 317.54,
+      "request": {},
+      "response": [
+        {
+          "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+          "sku": "PROD001",
+          "name": "Laptop Dell XPS 13",
+          "description": "High-performance laptop with Intel i7 processor",
+          "price": 1299.99,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "b025f43f-65e0-4162-bbf9-fd4b63088c04",
+          "sku": "PROD002",
+          "name": "Wireless Mouse Logitech",
+          "description": "Ergonomic wireless mouse with USB receiver",
+          "price": 29.99,
+          "stock": 50,
+          "active": true
+        }
+      ]
+    },
+    {
+      "label": "mobile_product_detail",
+      "method": "GET",
+      "endpoint": "/api/v1/products/3521ffba-1fac-4988-b9be-02216bd3360f",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/products/3521ffba-1fac-4988-b9be-02216bd3360f",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "elapsedMs": 216.33,
+      "request": {},
+      "response": {
+        "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+        "sku": "PROD001",
+        "name": "Laptop Dell XPS 13",
+        "description": "High-performance laptop with Intel i7 processor",
+        "price": 1299.99,
+        "stock": 10,
+        "active": true
+      }
+    },
+    {
+      "label": "mobile_get_cart",
+      "method": "GET",
+      "endpoint": "/api/v1/cart",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/cart",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "elapsedMs": 260.01,
+      "request": {},
+      "response": {
+        "id": "5e4dc026-8ea3-4b57-b662-0a2573bd33e3",
+        "userId": "396b618f-07cd-46a8-83a1-6457833a8646",
+        "items": [],
+        "total": 0
+      }
+    },
+    {
+      "label": "mobile_add_cart_item",
+      "method": "POST",
+      "endpoint": "/api/v1/cart/items",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/cart/items",
+      "expectedStatus": 201,
+      "observedStatus": 201,
+      "elapsedMs": 288.63,
+      "request": {
+        "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+        "quantity": 1
+      },
+      "response": {
+        "id": "edc17d06-2407-4ad8-b402-045ebbd2082d",
+        "userId": "396b618f-07cd-46a8-83a1-6457833a8646",
+        "items": [
+          {
+            "id": "19c61e8a-bba4-4def-9d3d-530507d39d52",
+            "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+            "product": {
+              "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+              "sku": "PROD001",
+              "name": "Laptop Dell XPS 13",
+              "description": "High-performance laptop with Intel i7 processor",
+              "price": 1299.99,
+              "stock": 10,
+              "active": true
+            },
+            "quantity": 1,
+            "unitPrice": 1299.99,
+            "total": 1299.99
+          }
+        ],
+        "total": 1299.99
+      }
+    },
+    {
+      "label": "mobile_checkout",
+      "method": "POST",
+      "endpoint": "/api/v1/checkout",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/checkout",
+      "expectedStatus": 202,
+      "observedStatus": 202,
+      "elapsedMs": 348.74,
+      "request": {
+        "cartId": "edc17d06-2407-4ad8-b402-045ebbd2082d"
+      },
+      "response": {
+        "requestId": "7d83b058-5065-4780-9a31-842ec8e17253",
+        "userId": "396b618f-07cd-46a8-83a1-6457833a8646",
+        "totalAmount": 1299.99,
+        "status": "PENDING"
+      }
+    },
+    {
+      "label": "mobile_checkout_poll_1",
+      "method": "GET",
+      "endpoint": "/api/v1/checkout/7d83b058-5065-4780-9a31-842ec8e17253",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/checkout/7d83b058-5065-4780-9a31-842ec8e17253",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "elapsedMs": 210.58,
+      "request": {},
+      "response": {
+        "requestId": "7d83b058-5065-4780-9a31-842ec8e17253",
+        "userId": "396b618f-07cd-46a8-83a1-6457833a8646",
+        "totalAmount": 1299.99,
+        "status": "PENDING"
+      },
+      "attempt": 1
+    },
+    {
+      "label": "mobile_checkout_poll_2",
+      "method": "GET",
+      "endpoint": "/api/v1/checkout/7d83b058-5065-4780-9a31-842ec8e17253",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/checkout/7d83b058-5065-4780-9a31-842ec8e17253",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "elapsedMs": 205.09,
+      "request": {},
+      "response": {
+        "requestId": "7d83b058-5065-4780-9a31-842ec8e17253",
+        "userId": "396b618f-07cd-46a8-83a1-6457833a8646",
+        "totalAmount": 1299.99,
+        "status": "PENDING"
+      },
+      "attempt": 2
+    },
+    {
+      "label": "mobile_checkout_poll_3",
+      "method": "GET",
+      "endpoint": "/api/v1/checkout/7d83b058-5065-4780-9a31-842ec8e17253",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/checkout/7d83b058-5065-4780-9a31-842ec8e17253",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "elapsedMs": 213.36,
+      "request": {},
+      "response": {
+        "requestId": "7d83b058-5065-4780-9a31-842ec8e17253",
+        "userId": "396b618f-07cd-46a8-83a1-6457833a8646",
+        "totalAmount": 1299.99,
+        "status": "COMPLETED"
+      },
+      "attempt": 3
+    },
+    {
+      "label": "mobile_create_listing",
+      "method": "POST",
+      "endpoint": "/api/v1/listings",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/listings",
+      "expectedStatus": 201,
+      "observedStatus": 201,
+      "elapsedMs": 231.65,
+      "request": {
+        "title": "Listing mobile backend validacion",
+        "description": "Evidencia HTTP equivalente generada desde bloque mobile-backend",
+        "price": 19.99,
+        "quantity": 1
+      },
+      "response": {
+        "id": "6269307a-c8c4-438a-ad76-aeb3c67045ff",
+        "sellerId": "396b618f-07cd-46a8-83a1-6457833a8646",
+        "title": "Listing mobile backend validacion",
+        "description": "Evidencia HTTP equivalente generada desde bloque mobile-backend",
+        "price": 19.99,
+        "quantity": 1,
+        "status": "ACTIVE",
+        "createdAt": "2026-06-14T23:33:30.392230633",
+        "updatedAt": "2026-06-14T23:33:30.392260076"
+      }
+    },
+    {
+      "label": "mobile_get_listings",
+      "method": "GET",
+      "endpoint": "/api/v1/listings",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/listings",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "elapsedMs": 219.06,
+      "request": {},
+      "response": [
+        {
+          "id": "6269307a-c8c4-438a-ad76-aeb3c67045ff",
+          "sellerId": "396b618f-07cd-46a8-83a1-6457833a8646",
+          "title": "Listing mobile backend validacion",
+          "description": "Evidencia HTTP equivalente generada desde bloque mobile-backend",
+          "price": 19.99,
+          "quantity": 1,
+          "status": "ACTIVE",
+          "createdAt": "2026-06-14T23:33:30.392231",
+          "updatedAt": "2026-06-14T23:33:30.392260"
+        },
+        {
+          "id": "bf2dc1b6-99e8-4121-ad79-f8780aba1e7f",
+          "sellerId": "6c834557-2138-4f02-8590-5db9bb40f3ac",
+          "title": "cap4-core4-20260614-162647 Listing ACTIVE",
+          "description": "Evidencia limpia de listing ACTIVE para cierre tecnico Capitulo 4.",
+          "price": 64.25,
+          "quantity": 1,
+          "status": "ACTIVE",
+          "createdAt": "2026-06-14T16:57:06.875728",
+          "updatedAt": "2026-06-14T16:57:06.875749"
+        },
+        {
+          "id": "ee4d44b3-0a5a-4cc3-846f-990275f45dc7",
+          "sellerId": "1ec8829a-2fd3-49f8-b55a-e9b2876c3690",
+          "title": "cap4-core4-20260614-162647 Listing ACTIVE",
+          "description": "Evidencia limpia de listing ACTIVE para cierre tecnico Capitulo 4.",
+          "price": 64.25,
+          "quantity": 1,
+          "status": "ACTIVE",
+          "createdAt": "2026-06-14T16:29:47.247723",
+          "updatedAt": "2026-06-14T16:29:47.247766"
+        },
+        {
+          "id": "2c3428fe-2b22-47e5-baa6-400b1ad9882c",
+          "sellerId": "6c8a5eeb-c815-440e-a788-5a042a53025d",
+          "title": "Listing final cap4 1781410431",
+          "description": "Evidencia final limpia de publicacion ACTIVE.",
+          "price": 64.25,
+          "quantity": 1,
+          "status": "ACTIVE",
+          "createdAt": "2026-06-14T04:13:51.977084",
+          "updatedAt": "2026-06-14T04:13:51.977099"
+        },
+        {
+          "id": "6c0ea023-09a2-498a-b172-01cdd8d81b59",
+          "sellerId": "30bc1436-f30e-43cc-92b6-878e30d60672",
+          "title": "Listing saneado cap4 1781409792",
+          "description": "Evidencia limpia de publicacion ACTIVE saneada.",
+          "price": 42.5,
+          "quantity": 1,
+          "status": "ACTIVE",
+          "createdAt": "2026-06-14T04:03:13.113069",
+          "updatedAt": "2026-06-14T04:03:13.113097"
+        },
+        {
+          "id": "b954e80b-ef63-4e5b-b174-4c473d8a7175",
+          "sellerId": "3a172f32-7b53-4f4e-b3e4-75424abb89dd",
+          "title": "Listing saneado cap4 1781409765",
+          "description": "Evidencia limpia de publicacion ACTIVE saneada.",
+          "price": 42.5,
+          "quantity": 1,
+          "status": "ACTIVE",
+          "createdAt": "2026-06-14T04:02:46.885336",
+          "updatedAt": "2026-06-14T04:02:46.885387"
+        },
+        {
+          "id": "ed6918a0-3b95-4b15-921f-68064eeb34be",
+          "sellerId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+          "title": "Evidencia visual 4.7 final",
+          "description": "Listing ACTIVE para captura final 4.7",
+          "price": 47.7,
+          "quantity": 1,
+          "status": "ACTIVE",
+          "createdAt": "2026-05-30T07:42:05.155061",
+          "updatedAt": "2026-05-30T07:42:05.155071"
+        },
+        {
+          "id": "314fb1db-fe69-4aab-b24b-987a9ef8a255",
+          "sellerId": "818d7fd4-f258-45ce-850b-d6a853c944ac",
+          "title": "Evidencia 4.7 listing ev47-20260530T071822Z",
+          "description": "Publicacion fresca para evidencias de implementacion 4.7",
+          "price": 21.47,
+          "quantity": 1,
+          "status": "ACTIVE",
+          "createdAt": "2026-05-30T07:18:27.595661",
+          "updatedAt": "2026-05-30T07:18:27.595763"
+        },
+        {
+          "id": "6734ea69-1eaf-4ef1-ba0c-e70b4c421ab7",
+          "sellerId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+          "title": "Demo directo mobile-direct-20260520T031056Z",
+          "description": "Validacion Expo Go directa contra AWS core-api",
+          "price": 18.25,
+          "quantity": 1,
+          "status": "ACTIVE",
+          "createdAt": "2026-05-20T03:10:59.650422",
+          "updatedAt": "2026-05-20T03:10:59.650431"
+        },
+        {
+          "id": "b93f25c2-e24b-472c-9bcb-0ea975385b2e",
+          "sellerId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+          "title": "Demo tunnel mobile-tunnel-20260520T024014Z",
+          "description": "Validacion Expo Go via tunel SSH",
+          "price": 15.75,
+          "quantity": 1,
+          "status": "ACTIVE",
+          "createdAt": "2026-05-20T02:40:19.227300",
+          "updatedAt": "2026-05-20T02:40:19.227307"
+        },
+        {
+          "id": "8062b04f-6b90-47c5-b2fa-b7ba6ee42e3b",
+          "sellerId": "861daac0-fbd2-4988-9b79-83c86aca3052",
+          "title": "Demo listing mobile-demo-20260520T022017Z",
+          "description": "Publicacion creada desde validacion movil final",
+          "price": 12.5,
+          "quantity": 2,
+          "status": "ACTIVE",
+          "createdAt": "2026-05-20T02:20:19.315276",
+          "updatedAt": "2026-05-20T02:20:19.315318"
+        }
+      ]
+    },
+    {
+      "label": "mobile_get_listing_by_id",
+      "method": "GET",
+      "endpoint": "/api/v1/listings/6269307a-c8c4-438a-ad76-aeb3c67045ff",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/listings/6269307a-c8c4-438a-ad76-aeb3c67045ff",
+      "expectedStatus": 200,
+      "observedStatus": 200,
+      "elapsedMs": 182.61,
+      "request": {},
+      "response": {
+        "id": "6269307a-c8c4-438a-ad76-aeb3c67045ff",
+        "sellerId": "396b618f-07cd-46a8-83a1-6457833a8646",
+        "title": "Listing mobile backend validacion",
+        "description": "Evidencia HTTP equivalente generada desde bloque mobile-backend",
+        "price": 19.99,
+        "quantity": 1,
+        "status": "ACTIVE",
+        "createdAt": "2026-06-14T23:33:30.392231",
+        "updatedAt": "2026-06-14T23:33:30.392260"
+      }
+    }
+  ],
+  "summary": {
+    "status": "CERRADO",
+    "loginStatus": 200,
+    "productsCount": 2,
+    "selectedProductId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+    "cartId": "edc17d06-2407-4ad8-b402-045ebbd2082d",
+    "checkoutRequestId": "7d83b058-5065-4780-9a31-842ec8e17253",
+    "checkoutFinalStatus": "COMPLETED",
+    "listingId": "6269307a-c8c4-438a-ad76-aeb3c67045ff"
+  }
+}

@@ -1,0 +1,119 @@
+RUN_ID: cap4-mobile-backend-20260614-183132
+Fecha/hora: 2026-06-14T18:31:43-05:00
+Directorio: apps/mobile
+
+## package scripts
+{
+  "expo": "npx -y -p node@20 node ./node_modules/expo/bin/cli",
+  "start": "npm run expo -- start",
+  "android": "npm run expo -- start --android",
+  "ios": "npm run expo -- start --ios",
+  "web": "npm run expo -- start --web"
+}
+
+## npm run typecheck
+npm ERR! Missing script: "typecheck"
+npm ERR!
+npm ERR! To see a list of scripts, run:
+npm ERR!   npm run
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/christopher/.npm/_logs/2026-06-14T23_31_43_564Z-debug-0.log
+
+## npx tsc --noEmit
+tsc_exit=0
+
+## npm run lint
+npm ERR! Missing script: "lint"
+npm ERR!
+npm ERR! Did you mean this?
+npm ERR!     npm link # Symlink a package folder
+npm ERR!
+npm ERR! To see a list of scripts, run:
+npm ERR!   npm run
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/christopher/.npm/_logs/2026-06-14T23_31_46_522Z-debug-0.log
+
+## npm test
+npm ERR! Missing script: "test"
+npm ERR!
+npm ERR! To see a list of scripts, run:
+npm ERR!   npm run
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/christopher/.npm/_logs/2026-06-14T23_31_46_776Z-debug-0.log
+
+## npx expo-doctor
+npm WARN exec The following package was not found and will be installed: expo-doctor@1.19.10
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'expo-doctor@1.19.10',
+npm WARN EBADENGINE   required: { node: '^20.19.4 || ^22.13.0 || ^24.3.0 || >= 25.0.0' },
+npm WARN EBADENGINE   current: { node: 'v18.20.4', npm: '9.2.0' }
+npm WARN EBADENGINE }
+Node.js (v18.20.4) is outdated and unsupported. Please update to a newer Node.js LTS version (required: >=20.19.4)
+Go to: https://nodejs.org/en/download
+
+Running 18 checks on your project...
+16/18 checks passed. 2 checks failed. Possible issues detected:
+Use the --verbose flag to see more details about passed checks.
+
+✖ Check package.json for common issues
+The following scripts in package.json conflict with the contents of node_modules/.bin: expo. This will cause conflicts with the Expo CLI and likely lead to build failures.
+Advice:
+Update your package.json to remove conflicts.
+
+✖ Check that packages match versions required by installed Expo SDK
+
+🔧 Patch version mismatches
+package  expected  found
+expo     ~54.0.35  54.0.34
+
+
+
+1 package out of date.
+Advice:
+Use 'npx expo install --check' to review and upgrade your dependencies.
+To ignore specific packages, add them to "expo.install.exclude" in package.json. Learn more: https://expo.fyi/dependency-validation
+
+2 checks failed, indicating possible issues with the project.
+
+## npx expo config --type public
+env: load .env.local
+env: export EXPO_PUBLIC_API_BASE_URL EXPO_PUBLIC_BACKEND_ENV
+
+{
+  name: 'Tesis Mobile Sandbox',
+  slug: 'tesis-mobile-sandbox',
+  version: '1.0.0',
+  orientation: 'portrait',
+  icon: './assets/icon.png',
+  userInterfaceStyle: 'light',
+  newArchEnabled: true,
+  description: undefined,
+  sdkVersion: '54.0.0',
+  platforms: [
+    'ios',
+    'android',
+    'web'
+  ],
+  splash: {
+    image: './assets/splash-icon.png',
+    resizeMode: 'contain',
+    backgroundColor: '#ffffff'
+  },
+  ios: {
+    supportsTablet: true
+  },
+  android: {
+    edgeToEdgeEnabled: true,
+    predictiveBackGestureEnabled: false,
+    adaptiveIcon: {
+      foregroundImage: './assets/adaptive-icon.png',
+      backgroundColor: '#ffffff'
+    }
+  },
+  web: {
+    favicon: './assets/favicon.png'
+  }
+}
