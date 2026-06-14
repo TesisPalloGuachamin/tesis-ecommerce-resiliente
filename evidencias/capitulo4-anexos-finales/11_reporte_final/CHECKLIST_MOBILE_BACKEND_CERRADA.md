@@ -2,6 +2,16 @@
 
 RUN_ID: `cap4-mobile-backend-20260614-183132`
 
+## Referencia de versionamiento
+
+Las evidencias de integración mobile-backend quedaron versionadas en el commit:
+
+- Commit completo: `40bf682f6a732cbafbfd09325d251590f116cb56`
+- Commit corto: `40bf682`
+- Fecha/hora: `2026-06-14T18:46:12-05:00`
+- Rama: `cap4-cierre-tecnico`
+- RUN_ID: `cap4-mobile-backend-20260614-183132`
+
 | Criterio | Evidencia principal | Resultado observado | Estado | Observacion |
 |---|---|---|---|---|
 | Inventario endpoints | `03_mobile_backend/inventario_endpoints_mobile.md` | Endpoints de login, productos, carrito, checkout y listings inventariados desde `apps/mobile/src/api.ts` | CERRADO | Incluye metodos, request, response y errores |
