@@ -6,6 +6,7 @@ import com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.dto.AuthLoginRe
 import com.tesis.ecommerce.coreapi.infrastructure.adapter.in.web.dto.AuthRegisterRequest;
 import com.tesis.ecommerce.coreapi.domain.port.out.UserRepository;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -17,7 +18,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @AutoConfigureMockMvc
+@Tag("integration")
 class AuthControllerIntegrationTest extends AbstractIntegrationTest {
+    private static final String TEST_PASSWORD = "test-password-fixture";
 
     @Autowired
     private MockMvc mockMvc;
@@ -32,7 +35,7 @@ class AuthControllerIntegrationTest extends AbstractIntegrationTest {
     void testRegisterSuccess() throws Exception {
         AuthRegisterRequest request = AuthRegisterRequest.builder()
             .email("newuser@example.com")
-            .password("password123")
+            .password(TEST_PASSWORD)
             .name("New User")
             .build();
 
@@ -49,7 +52,7 @@ class AuthControllerIntegrationTest extends AbstractIntegrationTest {
         // First register a user
         AuthRegisterRequest registerRequest = AuthRegisterRequest.builder()
             .email("testuser@example.com")
-            .password("password123")
+            .password(TEST_PASSWORD)
             .name("Test User")
             .build();
 
@@ -61,7 +64,7 @@ class AuthControllerIntegrationTest extends AbstractIntegrationTest {
         // Then login
         AuthLoginRequest loginRequest = AuthLoginRequest.builder()
             .email("testuser@example.com")
-            .password("password123")
+            .password(TEST_PASSWORD)
             .build();
 
         mockMvc.perform(post("/api/v1/auth/login")
@@ -71,4 +74,3 @@ class AuthControllerIntegrationTest extends AbstractIntegrationTest {
             .andExpect(jsonPath("$.token", notNullValue()));
     }
 }
-

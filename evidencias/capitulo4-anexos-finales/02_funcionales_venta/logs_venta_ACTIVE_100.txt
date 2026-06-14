@@ -1,0 +1,34 @@
+SECTION=core-api logs filtered
+2026-06-14T16:29:46.303Z  INFO 1 --- [core-api] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.completed event: 0e1cb3e1-c9f4-451a-b23d-69a0d6c53f65
+2026-06-14T16:29:47.215Z DEBUG 1 --- [core-api] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/listings
+2026-06-14T16:29:47.221Z DEBUG 1 --- [core-api] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/listings
+2026-06-14T16:29:47.435Z DEBUG 1 --- [core-api] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/listings/ee4d44b3-0a5a-4cc3-846f-990275f45dc7
+2026-06-14T16:29:47.447Z DEBUG 1 --- [core-api] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/listings/ee4d44b3-0a5a-4cc3-846f-990275f45dc7
+2026-06-14T16:31:57.466Z  INFO 1 --- [core-api] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.completed event: 9ec99b46-8322-4853-89ae-36c3497efec4
+2026-06-14T16:57:05.575Z  INFO 1 --- [core-api] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.completed event: c8c92058-d1e9-4beb-92a0-a3ad021f2388
+2026-06-14T16:57:05.579Z  INFO 1 --- [core-api] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Checkout completed for request: bf08ff9a-ed24-4baf-8643-1d8c740107ee
+2026-06-14T16:57:06.225Z DEBUG 1 --- [core-api] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/checkout/bf08ff9a-ed24-4baf-8643-1d8c740107ee
+2026-06-14T16:57:06.229Z DEBUG 1 --- [core-api] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/checkout/bf08ff9a-ed24-4baf-8643-1d8c740107ee
+2026-06-14T16:57:06.868Z DEBUG 1 --- [core-api] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/listings
+2026-06-14T16:57:06.872Z DEBUG 1 --- [core-api] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/listings
+2026-06-14T16:57:07.061Z DEBUG 1 --- [core-api] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/listings/bf2dc1b6-99e8-4121-ad79-f8780aba1e7f
+2026-06-14T16:57:07.066Z DEBUG 1 --- [core-api] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/listings/bf2dc1b6-99e8-4121-ad79-f8780aba1e7f
+SECTION=checkout-service logs filtered
+2026-06-14T16:29:45.426Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.requested event: 6616b7f3-6a66-44ed-a111-7e937ccad7a3
+2026-06-14T16:29:45.746Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.accepted event for checkout request: 9e6f8f52-2bbc-45bd-95b7-c735d3371c0f
+2026-06-14T16:29:45.757Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Executing Stripe simulated payment for order: 9586edcb-9ca2-4287-b01e-36b3d0cdb75f, amount: 1299.99
+2026-06-14T16:29:46.258Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Stripe simulated payment approved for order: 9586edcb-9ca2-4287-b01e-36b3d0cdb75f, transaction: stripe_sim_982aa1d2-e2dd-4e0d-a62b-b432ccb6f47d
+2026-06-14T16:29:46.263Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published payment.processed event for order: 9586edcb-9ca2-4287-b01e-36b3d0cdb75f, success: true
+2026-06-14T16:29:46.268Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.completed event for checkout request: 9e6f8f52-2bbc-45bd-95b7-c735d3371c0f
+2026-06-14T16:31:56.924Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.requested event: b4eff731-4bd7-4afc-9397-545cf3030038
+2026-06-14T16:31:56.952Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.accepted event for checkout request: 0b87f038-bc52-4a84-86d5-fd1a437dce6d
+2026-06-14T16:31:56.956Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Executing Stripe simulated payment for order: a48df4a5-547b-4737-83cc-190aba9281af, amount: 1299.99
+2026-06-14T16:31:57.456Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Stripe simulated payment approved for order: a48df4a5-547b-4737-83cc-190aba9281af, transaction: stripe_sim_ab34df2a-778e-4802-80bd-e7c26e2e757e
+2026-06-14T16:31:57.458Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published payment.processed event for order: a48df4a5-547b-4737-83cc-190aba9281af, success: true
+2026-06-14T16:31:57.459Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.completed event for checkout request: 0b87f038-bc52-4a84-86d5-fd1a437dce6d
+2026-06-14T16:57:05.048Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.requested event: 4fa97ea7-2d41-4950-a598-adc833f972e0
+2026-06-14T16:57:05.066Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.accepted event for checkout request: bf08ff9a-ed24-4baf-8643-1d8c740107ee
+2026-06-14T16:57:05.069Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Executing Stripe simulated payment for order: 43abeb10-c105-4814-888a-4d84ca570194, amount: 1299.99
+2026-06-14T16:57:05.569Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Stripe simulated payment approved for order: 43abeb10-c105-4814-888a-4d84ca570194, transaction: stripe_sim_c456da75-6645-45ff-b0e7-4f52e4ab2b84
+2026-06-14T16:57:05.570Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published payment.processed event for order: 43abeb10-c105-4814-888a-4d84ca570194, success: true
+2026-06-14T16:57:05.572Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.completed event for checkout request: bf08ff9a-ed24-4baf-8643-1d8c740107ee

@@ -13,14 +13,14 @@ public class ListingMapper {
         }
         return ListingDTO.builder()
             .id(listing.getId())
-            .sellerId(listing.getSeller().getId())
+            .sellerId(listing.getSeller() != null ? listing.getSeller().getId() : null)
             .title(listing.getTitle())
             .description(listing.getDescription())
             .price(listing.getPrice())
             .quantity(listing.getQuantity())
-            .status(listing.getStatus().name())
-            .createdAt(listing.getCreatedAt().toString())
-            .updatedAt(listing.getUpdatedAt().toString())
+            .status(listing.getStatus() != null ? listing.getStatus().name() : null)
+            .createdAt(listing.getCreatedAt() != null ? listing.getCreatedAt().toString() : null)
+            .updatedAt(listing.getUpdatedAt() != null ? listing.getUpdatedAt().toString() : null)
             .build();
     }
 }

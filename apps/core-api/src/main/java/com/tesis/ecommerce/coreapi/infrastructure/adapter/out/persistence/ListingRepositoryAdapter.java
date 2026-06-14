@@ -20,7 +20,11 @@ public class ListingRepositoryAdapter implements ListingRepository {
 
     @Override
     public Listing save(Listing listing) {
-        listing.setUpdatedAt(LocalDateTime.now());
+        LocalDateTime now = LocalDateTime.now();
+        if (listing.getCreatedAt() == null) {
+            listing.setCreatedAt(now);
+        }
+        listing.setUpdatedAt(now);
         return jpaRepository.save(listing);
     }
 
