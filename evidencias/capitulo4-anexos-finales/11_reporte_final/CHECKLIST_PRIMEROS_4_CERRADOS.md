@@ -2,6 +2,16 @@
 
 RUN_ID: `cap4-core4-20260614-162647`
 
+## Referencia de versionamiento
+
+Las evidencias de este checklist quedaron versionadas en el commit:
+
+- Commit completo: `228f1604766cff30d15f8523fe9fa3986f8e1ddc`
+- Commit corto: `228f160`
+- Fecha/hora: `2026-06-14T12:00:04-05:00`
+- Rama: `cap4-cierre-tecnico`
+- RUN_ID: `cap4-core4-20260614-162647`
+
 | Bloque | Criterio de cierre | Archivos de evidencia | Resultado observado | Estado | Observacion |
 |---|---|---|---|---|---|
 | 1. Compra hasta `COMPLETED` | Autenticacion, catalogo, carrito, checkout, DB y logs trazables por el mismo `requestId` | `01_funcionales_compra/reporte_compra_COMPLETED_100.md`; `01_funcionales_compra/compra_COMPLETED_100_flow.json`; `01_funcionales_compra/db_compra_COMPLETED_100.txt`; `01_funcionales_compra/logs_compra_COMPLETED_100.txt` | Checkout `bf08ff9a-ed24-4baf-8643-1d8c740107ee` queda `COMPLETED` | CERRADO | Token y password enmascarados; host normalizado como `AWS_PRINCIPAL_HOST` |
