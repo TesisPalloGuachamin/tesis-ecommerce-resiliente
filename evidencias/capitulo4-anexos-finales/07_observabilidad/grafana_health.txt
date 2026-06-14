@@ -1,0 +1,22 @@
+# Grafana health/API
+RUN_ID: cap4-obs-20260614-152854
+Endpoint: http://AWS_PRINCIPAL_HOST:3000/api/health
+HTTP_STATUS=200
+{
+  "database": "ok",
+  "version": "13.0.1",
+  "commit": "a100054f"
+}
+
+## Provisioned datasource files
+/home/ec2-user/tesis-ecommerce/deploy/compose/grafana/provisioning/datasources/prometheus.yml
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    uid: prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+    editable: false

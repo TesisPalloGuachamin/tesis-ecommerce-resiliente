@@ -1,0 +1,41 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "core-api:8080",
+          "job": "core-api"
+        },
+        "value": [
+          1781469053.07,
+          "1"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "checkout-service:8082",
+          "job": "checkout-service"
+        },
+        "value": [
+          1781469053.07,
+          "1"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "prometheus:9090",
+          "job": "prometheus"
+        },
+        "value": [
+          1781469053.07,
+          "1"
+        ]
+      }
+    ]
+  }
+}

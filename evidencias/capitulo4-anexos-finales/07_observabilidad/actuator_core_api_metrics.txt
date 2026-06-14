@@ -1,0 +1,85 @@
+# core-api actuator metrics sample
+RUN_ID: cap4-obs-20260614-152854
+Endpoint: http://AWS_PRINCIPAL_HOST:8080/actuator/prometheus
+HTTP_STATUS=200
+
+# HELP jvm_threads_started_threads_total The total number of application threads started in the JVM
+# TYPE jvm_threads_started_threads_total counter
+# HELP jdbc_connections_active Current number of active connections that have been allocated from the data source.
+# TYPE jdbc_connections_active gauge
+# HELP rabbitmq_unrouted_published_total
+# TYPE rabbitmq_unrouted_published_total counter
+# HELP spring_security_filterchains_authentication_anonymous_after_total
+# TYPE spring_security_filterchains_authentication_anonymous_after_total counter
+# HELP jvm_gc_max_data_size_bytes Max size of long-lived heap memory pool
+# TYPE jvm_gc_max_data_size_bytes gauge
+# HELP hikaricp_connections_pending Pending threads
+# TYPE hikaricp_connections_pending gauge
+# HELP jvm_info JVM version info
+# TYPE jvm_info gauge
+# HELP jvm_gc_memory_allocated_bytes_total Incremented for an increase in the size of the (young) heap memory pool after one GC to before the next
+# TYPE jvm_gc_memory_allocated_bytes_total counter
+# HELP system_cpu_usage The "recent cpu usage" of the system the application is running in
+# TYPE system_cpu_usage gauge
+system_cpu_usage 0.028829907276832704
+# HELP disk_free_bytes Usable space for path
+# TYPE disk_free_bytes gauge
+# HELP hikaricp_connections_acquire_seconds Connection acquire time
+# TYPE hikaricp_connections_acquire_seconds summary
+# HELP hikaricp_connections_acquire_seconds_max Connection acquire time
+# TYPE hikaricp_connections_acquire_seconds_max gauge
+# HELP spring_security_filterchains_context_async_after_total
+# TYPE spring_security_filterchains_context_async_after_total counter
+# HELP tomcat_sessions_active_current_sessions
+# TYPE tomcat_sessions_active_current_sessions gauge
+# HELP spring_security_filterchains_context_holder_before_total
+# TYPE spring_security_filterchains_context_holder_before_total counter
+# HELP jvm_classes_loaded_classes The number of classes that are currently loaded in the Java virtual machine
+# TYPE jvm_classes_loaded_classes gauge
+# HELP process_uptime_seconds The uptime of the Java virtual machine
+# TYPE process_uptime_seconds gauge
+# HELP spring_security_filterchains_JwtAuthenticationFilter_after_total
+# TYPE spring_security_filterchains_JwtAuthenticationFilter_after_total counter
+# HELP hikaricp_connections_idle Idle connections
+# TYPE hikaricp_connections_idle gauge
+# HELP application_started_time_seconds Time taken to start the application
+# TYPE application_started_time_seconds gauge
+# HELP hikaricp_connections_max Max connections
+# TYPE hikaricp_connections_max gauge
+# HELP hikaricp_connections_usage_seconds Connection usage time
+# TYPE hikaricp_connections_usage_seconds summary
+# HELP hikaricp_connections_usage_seconds_max Connection usage time
+# TYPE hikaricp_connections_usage_seconds_max gauge
+# HELP spring_security_filterchains_JwtAuthenticationFilter_before_total
+# TYPE spring_security_filterchains_JwtAuthenticationFilter_before_total counter
+# HELP spring_data_repository_invocations_seconds_max Duration of repository invocations
+# TYPE spring_data_repository_invocations_seconds_max gauge
+# HELP spring_data_repository_invocations_seconds Duration of repository invocations
+# TYPE spring_data_repository_invocations_seconds summary
+# HELP hikaricp_connections_timeout_total Connection timeout total count
+# TYPE hikaricp_connections_timeout_total counter
+# HELP hikaricp_connections_creation_seconds_max Connection creation time
+# TYPE hikaricp_connections_creation_seconds_max gauge
+# HELP hikaricp_connections_creation_seconds Connection creation time
+# TYPE hikaricp_connections_creation_seconds summary
+# HELP jvm_memory_used_bytes The amount of used memory
+# TYPE jvm_memory_used_bytes gauge
+jvm_memory_used_bytes{area="heap",id="Tenured Gen",} 3.7795984E7
+jvm_memory_used_bytes{area="nonheap",id="CodeHeap 'profiled nmethods'",} 1.3396864E7
+jvm_memory_used_bytes{area="heap",id="Eden Space",} 3.6390648E7
+jvm_memory_used_bytes{area="nonheap",id="Metaspace",} 8.9430792E7
+jvm_memory_used_bytes{area="nonheap",id="CodeHeap 'non-nmethods'",} 1418752.0
+jvm_memory_used_bytes{area="heap",id="Survivor Space",} 5869600.0
+jvm_memory_used_bytes{area="nonheap",id="Compressed Class Space",} 1.2357216E7
+jvm_memory_used_bytes{area="nonheap",id="CodeHeap 'non-profiled nmethods'",} 3632256.0
+# HELP jvm_buffer_memory_used_bytes An estimate of the memory that the Java virtual machine is using for this buffer pool
+# TYPE jvm_buffer_memory_used_bytes gauge
+# HELP spring_security_filterchains_cors_after_total
+# TYPE spring_security_filterchains_cors_after_total counter
+# HELP rabbitmq_rejected_total
+# TYPE rabbitmq_rejected_total counter
+# HELP rabbitmq_acknowledged_published_total
+# TYPE rabbitmq_acknowledged_published_total counter
+# HELP process_start_time_seconds Start time of the process since unix epoch.
+# TYPE process_start_time_seconds gauge
+# HELP hikaricp_connections_min Min connections

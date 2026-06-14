@@ -1,0 +1,76 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {
+          "__name__": "http_server_requests_seconds_count",
+          "error": "none",
+          "exception": "none",
+          "instance": "checkout-service:8082",
+          "job": "checkout-service",
+          "method": "GET",
+          "outcome": "SUCCESS",
+          "status": "200",
+          "uri": "/actuator/health"
+        },
+        "value": [
+          1781469053.467,
+          "12"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "http_server_requests_seconds_count",
+          "error": "none",
+          "exception": "none",
+          "instance": "core-api:8080",
+          "job": "core-api",
+          "method": "GET",
+          "outcome": "SUCCESS",
+          "status": "200",
+          "uri": "/actuator/prometheus"
+        },
+        "value": [
+          1781469053.467,
+          "4"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "http_server_requests_seconds_count",
+          "error": "none",
+          "exception": "none",
+          "instance": "checkout-service:8082",
+          "job": "checkout-service",
+          "method": "GET",
+          "outcome": "SUCCESS",
+          "status": "200",
+          "uri": "/actuator/prometheus"
+        },
+        "value": [
+          1781469053.467,
+          "4"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "http_server_requests_seconds_count",
+          "error": "none",
+          "exception": "none",
+          "instance": "core-api:8080",
+          "job": "core-api",
+          "method": "GET",
+          "outcome": "SUCCESS",
+          "status": "200",
+          "uri": "/actuator/health"
+        },
+        "value": [
+          1781469053.467,
+          "12"
+        ]
+      }
+    ]
+  }
+}
