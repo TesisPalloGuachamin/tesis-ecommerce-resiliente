@@ -1,0 +1,75 @@
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ---------------------< com.tesis:checkout-service >---------------------
+[INFO] Building checkout-service 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:3.3.2:clean (default-clean) @ checkout-service ---
+[INFO] Deleting /media/christopher/CHRISDDE1/TESIS APP/apps/checkout-service/target
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.12:prepare-agent (default) @ checkout-service ---
+[INFO] argLine set to "-javaagent:/home/christopher/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/media/christopher/CHRISDDE1/TESIS APP/apps/checkout-service/target/jacoco.exec"
+[INFO]
+[INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ checkout-service ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO]
+[INFO] --- maven-compiler-plugin:3.11.0:compile (default-compile) @ checkout-service ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 26 source files with javac [debug release 17] to target/classes
+[INFO]
+[INFO] --- maven-resources-plugin:3.3.1:testResources (default-testResources) @ checkout-service ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO]
+[INFO] --- maven-compiler-plugin:3.11.0:testCompile (default-testCompile) @ checkout-service ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 4 source files with javac [debug release 17] to target/test-classes
+[INFO]
+[INFO] --- maven-surefire-plugin:3.1.2:test (default-test) @ checkout-service ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.tesis.ecommerce.checkoutservice.application.dto.CheckoutEventDtoTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.156 s -- in com.tesis.ecommerce.checkoutservice.application.dto.CheckoutEventDtoTest
+[INFO] Running com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCaseTest
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+18:23:33.459 [main] INFO com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Processing checkout for request: 21c345d0-899c-4534-ae35-fc9f78526430
+18:23:33.468 [main] INFO com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Checkout request 21c345d0-899c-4534-ae35-fc9f78526430 already processed
+18:23:33.506 [main] INFO com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Processing checkout for request: df913288-5661-4bb8-b303-675e82930ab5
+18:23:33.526 [main] INFO com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Checkout completed successfully for order: ORD-12345678
+18:23:33.539 [main] INFO com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Processing checkout for request: 5c2cca61-0522-4e9e-a06a-ad27f0d16e7d
+18:23:33.540 [main] ERROR com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Checkout failed for order: ORD-FAILED, reason: simulated decline
+18:23:33.547 [main] INFO com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Processing checkout for request: dc664a92-fa90-45e7-ad73-eaf3309ca68a
+18:23:33.548 [main] INFO com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Checkout request dc664a92-fa90-45e7-ad73-eaf3309ca68a already processed
+18:23:33.553 [main] INFO com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Processing checkout for request: ddc60a34-412a-45ef-bcaa-7344dad90ca9
+18:23:33.555 [main] INFO com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Checkout completed successfully for order: ORD-E52A02B7
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.277 s -- in com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCaseTest
+[INFO] Running com.tesis.ecommerce.checkoutservice.domain.model.CheckoutDomainModelTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in com.tesis.ecommerce.checkoutservice.domain.model.CheckoutDomainModelTest
+[INFO] Running com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment.StripeSimulatedPaymentAdapterTest
+18:23:33.579 [main] INFO com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment.StripeSimulatedPaymentAdapter -- Executing Stripe simulated payment for order: 269c74af-3e98-474f-8e66-3e9969e5930f, amount: 100.00
+18:23:34.079 [main] INFO com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment.StripeSimulatedPaymentAdapter -- Stripe simulated payment approved for order: 269c74af-3e98-474f-8e66-3e9969e5930f, transaction: stripe_sim_e0689e7f-965b-4fd2-a1df-6365329d2ad8
+18:23:34.083 [main] INFO com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment.StripeSimulatedPaymentAdapter -- Executing Stripe simulated payment for order: 2b01f2f0-fd7d-4ca5-9131-9eef0806b787, amount: 50.00
+18:23:34.583 [main] INFO com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment.StripeSimulatedPaymentAdapter -- Stripe simulated payment approved for order: 2b01f2f0-fd7d-4ca5-9131-9eef0806b787, transaction: stripe_sim_44c52db2-525a-42cf-a30b-3f6c528870b7
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.010 s -- in com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment.StripeSimulatedPaymentAdapterTest
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.12:report (report) @ checkout-service ---
+[INFO] Loading execution data file /media/christopher/CHRISDDE1/TESIS APP/apps/checkout-service/target/jacoco.exec
+[INFO] Analyzed bundle 'checkout-service' with 31 classes
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.12:report (default-cli) @ checkout-service ---
+[INFO] Loading execution data file /media/christopher/CHRISDDE1/TESIS APP/apps/checkout-service/target/jacoco.exec
+[INFO] Analyzed bundle 'checkout-service' with 31 classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.164 s
+[INFO] Finished at: 2026-06-14T18:23:35-05:00
+[INFO] ------------------------------------------------------------------------
