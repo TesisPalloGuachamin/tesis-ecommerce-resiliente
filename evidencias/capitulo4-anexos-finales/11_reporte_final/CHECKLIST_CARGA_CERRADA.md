@@ -2,6 +2,16 @@
 
 RUN_ID: `cap4-load-20260614-124116`
 
+## Referencia de versionamiento
+
+Las evidencias de carga/rendimiento quedaron versionadas en el commit:
+
+- Commit completo: `04665551ca2f91bb47df98f2d2ee1eae8d7a98d1`
+- Commit corto: `0466555`
+- Fecha/hora: `2026-06-14T14:24:50-05:00`
+- Rama: `cap4-cierre-tecnico`
+- RUN_ID: `cap4-load-20260614-124116`
+
 ## Referencia del bloque
 
 - Reporte principal: `evidencias/capitulo4-anexos-finales/06_carga/REPORTE_CARGA_ESCALONADA_200_500_1000.md`
