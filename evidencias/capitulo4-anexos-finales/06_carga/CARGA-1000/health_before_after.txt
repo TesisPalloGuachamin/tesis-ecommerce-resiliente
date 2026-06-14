@@ -1,0 +1,21 @@
+## BEFORE
+timestamp=2026-06-14T12:57:41-05:00
+environment=AWS principal observado
+base_url=http://AWS_PRINCIPAL_HOST:8080
+core_api_health_http=200
+core_api_health_body={"status":"UP","components":{"db":{"status":"UP","details":{"database":"PostgreSQL","validationQuery":"isValid()"}},"diskSpace":{"status":"UP","details":{"total":21395124224,"free":13394993152,"threshold":10485760,"path":"/app/.","exists":true}},"ping":{"status":"UP"},"rabbit":{"status":"UP","details":{"version":"3.12.14"}}}}
+checkout_service_health_http=200
+checkout_service_health_body={"status":"UP","components":{"db":{"status":"UP","details":{"database":"PostgreSQL","validationQuery":"isValid()"}},"diskSpace":{"status":"UP","details":{"total":21395124224,"free":13394993152,"threshold":10485760,"path":"/app/.","exists":true}},"ping":{"status":"UP"},"rabbit":{"status":"UP","details":{"version":"3.12.14"}}}}
+prometheus_targets_http=200
+{"prometheus_targets_summary":{"status":"success","activeTargets":3,"droppedTargets":0,"targetHealth":[{"job":"checkout-service","health":"up"},{"job":"core-api","health":"up"},{"job":"prometheus","health":"up"}]}}
+
+## AFTER
+timestamp=2026-06-14T13:06:29-05:00
+environment=AWS principal observado
+base_url=http://AWS_PRINCIPAL_HOST:8080
+core_api_health_http=200
+core_api_health_body={"status":"UP","components":{"db":{"status":"UP","details":{"database":"PostgreSQL","validationQuery":"isValid()"}},"diskSpace":{"status":"UP","details":{"total":21395124224,"free":13351997440,"threshold":10485760,"path":"/app/.","exists":true}},"ping":{"status":"UP"},"rabbit":{"status":"UP","details":{"version":"3.12.14"}}}}
+checkout_service_health_http=200
+checkout_service_health_body={"status":"UP","components":{"db":{"status":"UP","details":{"database":"PostgreSQL","validationQuery":"isValid()"}},"diskSpace":{"status":"UP","details":{"total":21395124224,"free":13351997440,"threshold":10485760,"path":"/app/.","exists":true}},"ping":{"status":"UP"},"rabbit":{"status":"UP","details":{"version":"3.12.14"}}}}
+prometheus_targets_http=200
+{"prometheus_targets_summary":{"status":"success","activeTargets":3,"droppedTargets":0,"targetHealth":[{"job":"checkout-service","health":"up"},{"job":"core-api","health":"up"},{"job":"prometheus","health":"up"}]}}

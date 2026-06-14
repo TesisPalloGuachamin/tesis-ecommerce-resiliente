@@ -1,0 +1,585 @@
+
+         /\      Grafana   /‾‾/
+    /\  /  \     |\  __   /  /
+   /  \/    \    | |/ /  /   ‾‾\
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/
+
+
+     execution: local
+        script: evidencias/capitulo4-anexos-finales/06_carga/scripts/cap4_k6_load_200_500_1000.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 10 max VUs, 30m30s max duration (incl. graceful stop):
+              * checkout_load: 200 iterations shared among 10 VUs (maxDuration: 30m0s, gracefulStop: 30s)
+
+
+running (00m01.0s), 10/10 VUs, 0 complete and 0 interrupted iterations
+checkout_load   [   0% ] 10 VUs  00m00.6s/30m0s  000/200 shared iters
+
+running (00m02.0s), 10/10 VUs, 0 complete and 0 interrupted iterations
+checkout_load   [   0% ] 10 VUs  00m01.6s/30m0s  000/200 shared iters
+time="2026-06-14T12:42:40-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"fb1f82a4-706f-4be1-8ba3-5970e0cf5dc4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:42:40-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"b7dd7a82-1edb-4992-9c4b-0c0171ec69e0\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m03.0s), 10/10 VUs, 2 complete and 0 interrupted iterations
+checkout_load   [   1% ] 10 VUs  00m02.6s/30m0s  002/200 shared iters
+time="2026-06-14T12:42:41-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"dff15f25-d000-4a28-ad17-fad6b178513f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:42:42-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"60a68c5c-afe0-450b-9b23-23f25813d879\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m04.0s), 10/10 VUs, 4 complete and 0 interrupted iterations
+checkout_load   [   2% ] 10 VUs  00m03.6s/30m0s  004/200 shared iters
+time="2026-06-14T12:42:42-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"de526295-da2e-4ee5-ac0c-f9e59a11460a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m05.0s), 10/10 VUs, 5 complete and 0 interrupted iterations
+checkout_load   [   2% ] 10 VUs  00m04.6s/30m0s  005/200 shared iters
+time="2026-06-14T12:42:43-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"19d5828b-c1df-4390-b5df-d8699033c9d9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:42:43-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"013607f2-2dfb-40ab-9980-7981053d4d8b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:42:43-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"71a9fbe7-4f66-4c4d-8a73-7517b41e6e2a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m06.0s), 10/10 VUs, 8 complete and 0 interrupted iterations
+checkout_load   [   4% ] 10 VUs  00m05.6s/30m0s  008/200 shared iters
+time="2026-06-14T12:42:44-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"f69dd7ae-2641-44a6-9a5f-05056048a8ae\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m07.0s), 10/10 VUs, 9 complete and 0 interrupted iterations
+checkout_load   [   4% ] 10 VUs  00m06.6s/30m0s  009/200 shared iters
+time="2026-06-14T12:42:45-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"8562d5a0-fe43-4bed-b9a6-a78ec5249ee8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:42:45-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"7d0bf1b3-d3fa-4420-bddc-bb25866624c0\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m08.0s), 10/10 VUs, 11 complete and 0 interrupted iterations
+checkout_load   [   6% ] 10 VUs  00m07.6s/30m0s  011/200 shared iters
+time="2026-06-14T12:42:46-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"6f38067a-8050-4a22-b48a-7cc2937c2954\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:42:46-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"8242cb34-0fa6-4798-b74c-9acfbb1f89a6\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m09.0s), 10/10 VUs, 13 complete and 0 interrupted iterations
+checkout_load   [   6% ] 10 VUs  00m08.6s/30m0s  013/200 shared iters
+time="2026-06-14T12:42:47-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"ceab2556-b7df-4300-8efa-0e071bbb8f1b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m10.0s), 10/10 VUs, 14 complete and 0 interrupted iterations
+checkout_load   [   7% ] 10 VUs  00m09.6s/30m0s  014/200 shared iters
+time="2026-06-14T12:42:48-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"b07b2e60-67fe-4b8b-bd7f-534b7fcb3da0\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:42:48-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"9529cb68-baca-4d38-bd1d-400456c1efe4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:42:48-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"e8c3297e-983b-404d-bc06-985952214f27\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m11.0s), 10/10 VUs, 17 complete and 0 interrupted iterations
+checkout_load   [   8% ] 10 VUs  00m10.6s/30m0s  017/200 shared iters
+time="2026-06-14T12:42:49-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"6ae16fd5-05c0-4291-8e2f-ac3afa7157d2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:42:49-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"63d04902-776f-454a-94de-4746f6978260\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m12.0s), 10/10 VUs, 19 complete and 0 interrupted iterations
+checkout_load   [  10% ] 10 VUs  00m11.6s/30m0s  019/200 shared iters
+time="2026-06-14T12:42:50-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"005ec526-b8ec-464f-8aca-1603685d3a5f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m13.0s), 10/10 VUs, 20 complete and 0 interrupted iterations
+checkout_load   [  10% ] 10 VUs  00m12.6s/30m0s  020/200 shared iters
+time="2026-06-14T12:42:51-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"c562d5c4-71cb-4ca9-9ed0-1e57626c4b7c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:42:51-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"29462e94-017e-40fb-a478-c34496b46df7\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m14.0s), 10/10 VUs, 22 complete and 0 interrupted iterations
+checkout_load   [  11% ] 10 VUs  00m13.6s/30m0s  022/200 shared iters
+time="2026-06-14T12:42:52-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"123878c1-462b-4083-95dd-e7bba22f3f82\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:42:52-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"e49809f6-cbf6-4796-b542-7531a6678df8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:42:52-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"c66fcd4d-1add-4550-9b9b-cddd424932d6\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m15.0s), 10/10 VUs, 25 complete and 0 interrupted iterations
+checkout_load   [  12% ] 10 VUs  00m14.6s/30m0s  025/200 shared iters
+time="2026-06-14T12:42:53-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"f4486f7a-ebb9-48a7-8284-e1c8809c314f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:42:53-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"195e4989-8b87-4a1b-bae0-3eb2a45cd958\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m16.0s), 10/10 VUs, 27 complete and 0 interrupted iterations
+checkout_load   [  14% ] 10 VUs  00m15.6s/30m0s  027/200 shared iters
+time="2026-06-14T12:42:54-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"d4332b21-eaf3-4d86-9a0d-5d0434a58b59\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m17.0s), 10/10 VUs, 28 complete and 0 interrupted iterations
+checkout_load   [  14% ] 10 VUs  00m16.6s/30m0s  028/200 shared iters
+time="2026-06-14T12:42:55-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"47133f77-ced1-43de-994a-4bbc5676363b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:42:55-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"94e28628-e039-45be-b0f9-4ed44a153d9e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m18.0s), 10/10 VUs, 30 complete and 0 interrupted iterations
+checkout_load   [  15% ] 10 VUs  00m17.6s/30m0s  030/200 shared iters
+time="2026-06-14T12:42:56-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"323d20b2-94d4-4b9b-9003-73511d42d263\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:42:56-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"cb51e4e3-044a-4914-8dc3-1a3be56d92b0\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m19.0s), 10/10 VUs, 32 complete and 0 interrupted iterations
+checkout_load   [  16% ] 10 VUs  00m18.6s/30m0s  032/200 shared iters
+time="2026-06-14T12:42:57-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"b3db34d8-67fc-4d39-ae71-a2ba181a0585\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:42:57-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"335ca50b-c096-4494-94c1-c8a9c7d722c3\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m20.0s), 10/10 VUs, 34 complete and 0 interrupted iterations
+checkout_load   [  17% ] 10 VUs  00m19.6s/30m0s  034/200 shared iters
+time="2026-06-14T12:42:58-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"9c920872-9110-4144-a753-4dc477ad9eae\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m21.0s), 10/10 VUs, 35 complete and 0 interrupted iterations
+checkout_load   [  18% ] 10 VUs  00m20.6s/30m0s  035/200 shared iters
+time="2026-06-14T12:42:59-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"db038291-ac9d-4cb6-8708-cff2a7762202\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:42:59-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"e9476e09-9930-404a-91be-a28cd695d716\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:42:59-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"24cb7182-3ecd-4355-9ddb-5a493e0e1d64\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m22.0s), 10/10 VUs, 38 complete and 0 interrupted iterations
+checkout_load   [  19% ] 10 VUs  00m21.6s/30m0s  038/200 shared iters
+time="2026-06-14T12:43:00-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"2fedde6a-0b0e-482b-954a-0d523a5112a6\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m23.0s), 10/10 VUs, 39 complete and 0 interrupted iterations
+checkout_load   [  20% ] 10 VUs  00m22.6s/30m0s  039/200 shared iters
+time="2026-06-14T12:43:01-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"9b4c2af6-f479-4064-a292-7f6a270c1ce3\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:01-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"abcd0852-398b-436c-9b8f-344fe47ac7ac\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:01-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"a2f0657c-f3f9-40e6-b3fd-fe22e1efdf54\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m24.0s), 10/10 VUs, 42 complete and 0 interrupted iterations
+checkout_load   [  21% ] 10 VUs  00m23.6s/30m0s  042/200 shared iters
+time="2026-06-14T12:43:02-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"58dc9b7d-f16c-4a4c-8200-bc3c5526b6ac\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m25.0s), 10/10 VUs, 43 complete and 0 interrupted iterations
+checkout_load   [  22% ] 10 VUs  00m24.6s/30m0s  043/200 shared iters
+time="2026-06-14T12:43:03-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"108677a2-d536-4c88-b922-69d246d64bda\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:03-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"ed14512c-2ed7-4144-9643-b2b7ca4b0066\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m26.0s), 10/10 VUs, 45 complete and 0 interrupted iterations
+checkout_load   [  22% ] 10 VUs  00m25.6s/30m0s  045/200 shared iters
+time="2026-06-14T12:43:04-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"6ceff970-dff3-40e7-a4df-e61b7a4b4f50\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:04-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"ff52a009-2402-4e04-9218-d8b152d7fb4b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m27.0s), 10/10 VUs, 47 complete and 0 interrupted iterations
+checkout_load   [  24% ] 10 VUs  00m26.6s/30m0s  047/200 shared iters
+time="2026-06-14T12:43:05-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"88e0dcfd-716e-4705-b202-aab89adad257\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:05-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"bbbaff6d-f849-48c6-b87a-99fb87ea51c4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m28.0s), 10/10 VUs, 49 complete and 0 interrupted iterations
+checkout_load   [  24% ] 10 VUs  00m27.6s/30m0s  049/200 shared iters
+time="2026-06-14T12:43:06-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"be4f6167-747f-4dbb-9035-f72618c8ee24\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m29.0s), 10/10 VUs, 50 complete and 0 interrupted iterations
+checkout_load   [  25% ] 10 VUs  00m28.6s/30m0s  050/200 shared iters
+time="2026-06-14T12:43:07-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"f41049bf-2489-49ea-968f-0b0db65bb1db\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:07-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"9ada9b39-8ffe-4898-85e1-48369718bd1e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:07-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"0c2f4bce-0131-4103-89c7-e6a36fcf260e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m30.0s), 10/10 VUs, 53 complete and 0 interrupted iterations
+checkout_load   [  26% ] 10 VUs  00m29.6s/30m0s  053/200 shared iters
+time="2026-06-14T12:43:08-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"fe8b749b-0e6c-4225-b8e5-a12fc8b24b8c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m31.0s), 10/10 VUs, 54 complete and 0 interrupted iterations
+checkout_load   [  27% ] 10 VUs  00m30.6s/30m0s  054/200 shared iters
+time="2026-06-14T12:43:09-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"0b18f36c-fc3e-4df9-8c48-765dea6b4799\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:09-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"c1a363bb-b55c-43c1-a70d-36d3c6f6ed0c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:09-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"c1d83168-3284-4bdc-b490-70bf96bce8f0\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m32.0s), 10/10 VUs, 57 complete and 0 interrupted iterations
+checkout_load   [  28% ] 10 VUs  00m31.6s/30m0s  057/200 shared iters
+time="2026-06-14T12:43:10-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"63bd987e-c25b-45b0-b64b-b747d56854b3\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m33.0s), 10/10 VUs, 58 complete and 0 interrupted iterations
+checkout_load   [  29% ] 10 VUs  00m32.6s/30m0s  058/200 shared iters
+time="2026-06-14T12:43:11-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"67579108-9526-491f-b5ee-667bd2585301\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:11-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"78e01e3e-2ebf-40c6-97e2-a83b067b326e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m34.0s), 10/10 VUs, 60 complete and 0 interrupted iterations
+checkout_load   [  30% ] 10 VUs  00m33.6s/30m0s  060/200 shared iters
+time="2026-06-14T12:43:12-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"3f691cba-0e58-48dd-acec-9f5944d79b0f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:12-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"ff0c30e3-f1af-4e4c-9daa-11d4a1080e1c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m35.0s), 10/10 VUs, 62 complete and 0 interrupted iterations
+checkout_load   [  31% ] 10 VUs  00m34.6s/30m0s  062/200 shared iters
+time="2026-06-14T12:43:13-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"e260c490-7177-4279-9944-792152ef16f9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:13-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"89fc01c6-14e1-49f0-ae13-7083ce299a79\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m36.0s), 10/10 VUs, 64 complete and 0 interrupted iterations
+checkout_load   [  32% ] 10 VUs  00m35.6s/30m0s  064/200 shared iters
+time="2026-06-14T12:43:14-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"78e94828-9c44-4a29-bcc7-1b2fceb77c60\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m37.0s), 10/10 VUs, 65 complete and 0 interrupted iterations
+checkout_load   [  32% ] 10 VUs  00m36.6s/30m0s  065/200 shared iters
+time="2026-06-14T12:43:15-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"7351b068-aa64-43a0-b16b-f93876487e16\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:15-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"e315cacc-27eb-4f42-bb35-6c120a8306a4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:15-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"04826740-6529-410b-8f11-5a93b388048b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m38.0s), 10/10 VUs, 68 complete and 0 interrupted iterations
+checkout_load   [  34% ] 10 VUs  00m37.6s/30m0s  068/200 shared iters
+time="2026-06-14T12:43:16-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"66930f11-1972-448d-aaec-456d217f3666\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:16-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"d9182785-a4c2-4390-951e-ab5b56e18fa9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m39.0s), 10/10 VUs, 70 complete and 0 interrupted iterations
+checkout_load   [  35% ] 10 VUs  00m38.6s/30m0s  070/200 shared iters
+time="2026-06-14T12:43:17-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"f7a7b15b-9c3e-4854-9e43-93f4cebe32da\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:17-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"15ab0dc5-1b67-4c49-8d80-bf82492a6983\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m40.0s), 10/10 VUs, 72 complete and 0 interrupted iterations
+checkout_load   [  36% ] 10 VUs  00m39.6s/30m0s  072/200 shared iters
+time="2026-06-14T12:43:18-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"3d428661-f2be-464a-9869-9a0e21340c09\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:18-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"e8a6ba9e-fb27-452a-b1d6-f5663c4fdd24\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m41.0s), 10/10 VUs, 74 complete and 0 interrupted iterations
+checkout_load   [  37% ] 10 VUs  00m40.6s/30m0s  074/200 shared iters
+time="2026-06-14T12:43:19-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"c0686261-65f6-4d1b-a809-d2125a5fac9e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:19-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"906f0461-21f2-465d-96e1-d6fefb7ad19f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m42.0s), 10/10 VUs, 76 complete and 0 interrupted iterations
+checkout_load   [  38% ] 10 VUs  00m41.6s/30m0s  076/200 shared iters
+time="2026-06-14T12:43:20-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"ceddb856-70d3-4eeb-b368-ebe3a5d402ba\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:20-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"10a4e4ac-c805-4c14-b7e0-fe6e6e3715b8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m43.0s), 10/10 VUs, 78 complete and 0 interrupted iterations
+checkout_load   [  39% ] 10 VUs  00m42.6s/30m0s  078/200 shared iters
+time="2026-06-14T12:43:21-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"33e6ca73-f1bb-4135-9980-d1df372ba408\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m44.0s), 10/10 VUs, 79 complete and 0 interrupted iterations
+checkout_load   [  40% ] 10 VUs  00m43.6s/30m0s  079/200 shared iters
+time="2026-06-14T12:43:22-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"4bb0341e-c232-4a4b-9d5d-bb012f8552ed\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:22-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"ab1efeb9-ff6b-4a05-92f4-89e1c1ac10cb\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m45.0s), 10/10 VUs, 81 complete and 0 interrupted iterations
+checkout_load   [  40% ] 10 VUs  00m44.6s/30m0s  081/200 shared iters
+time="2026-06-14T12:43:23-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"1f02687d-5175-4912-b0ae-c765eafddf74\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:23-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"516bad66-c544-40e4-a75f-cd721e977990\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m46.0s), 10/10 VUs, 83 complete and 0 interrupted iterations
+checkout_load   [  42% ] 10 VUs  00m45.6s/30m0s  083/200 shared iters
+time="2026-06-14T12:43:24-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"afdf58b6-e893-4459-922a-0d03d1f199f4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:24-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"26cdf836-23b1-41bd-b039-7c2be18bd677\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m47.0s), 10/10 VUs, 85 complete and 0 interrupted iterations
+checkout_load   [  42% ] 10 VUs  00m46.6s/30m0s  085/200 shared iters
+time="2026-06-14T12:43:25-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"58c75c65-645d-476b-bcc1-17c9583ca528\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:25-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"9a3f0172-9fe0-4f2b-9b30-e1a968ef9199\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m48.0s), 10/10 VUs, 87 complete and 0 interrupted iterations
+checkout_load   [  44% ] 10 VUs  00m47.6s/30m0s  087/200 shared iters
+time="2026-06-14T12:43:26-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"f2bd5fcb-1a8e-43e9-981b-5c4b5bc30e69\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:26-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"efcfc355-74bc-476e-99a1-debfcfdfe49c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m49.0s), 10/10 VUs, 89 complete and 0 interrupted iterations
+checkout_load   [  44% ] 10 VUs  00m48.6s/30m0s  089/200 shared iters
+time="2026-06-14T12:43:27-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"5a39eaa6-20c0-4a3c-81e3-5bbef0208212\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:28-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"0dc47789-c2c5-4787-a92e-61d049864ea2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m50.0s), 10/10 VUs, 91 complete and 0 interrupted iterations
+checkout_load   [  46% ] 10 VUs  00m49.6s/30m0s  091/200 shared iters
+time="2026-06-14T12:43:28-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"5480a380-185d-4e68-a408-90b8f03b2c6c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m51.0s), 10/10 VUs, 92 complete and 0 interrupted iterations
+checkout_load   [  46% ] 10 VUs  00m50.6s/30m0s  092/200 shared iters
+time="2026-06-14T12:43:29-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"c467c458-1b3a-4b62-b47d-60db19343130\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:29-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"aa816254-2f99-4189-8da1-3ce894240da9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:29-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"cacca6f7-8579-46e1-9167-6912eed9ea37\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m52.0s), 10/10 VUs, 95 complete and 0 interrupted iterations
+checkout_load   [  48% ] 10 VUs  00m51.6s/30m0s  095/200 shared iters
+time="2026-06-14T12:43:30-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"6fccb0be-8c5b-4a1a-bbc7-53fe266632cc\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:30-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"78d9c06b-c446-42f8-8cc2-7f562ca46a83\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m53.0s), 10/10 VUs, 97 complete and 0 interrupted iterations
+checkout_load   [  48% ] 10 VUs  00m52.6s/30m0s  097/200 shared iters
+time="2026-06-14T12:43:31-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"7c6d4d05-73b9-48c5-ac99-31f12c2c7fd8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m54.0s), 10/10 VUs, 98 complete and 0 interrupted iterations
+checkout_load   [  49% ] 10 VUs  00m53.6s/30m0s  098/200 shared iters
+time="2026-06-14T12:43:32-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"21423c12-d6eb-4b9b-ba5e-73d61fd7252c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:32-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"da619dfe-b7bb-444e-a4a8-ac7af1d354fd\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m55.0s), 10/10 VUs, 100 complete and 0 interrupted iterations
+checkout_load   [  50% ] 10 VUs  00m54.6s/30m0s  100/200 shared iters
+time="2026-06-14T12:43:33-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"f3e3d646-413f-44f1-b168-9bbcf3e4fc6a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:33-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"8f3b708b-8d1d-48bd-97ab-de23128fab9e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m56.0s), 10/10 VUs, 102 complete and 0 interrupted iterations
+checkout_load   [  51% ] 10 VUs  00m55.6s/30m0s  102/200 shared iters
+time="2026-06-14T12:43:34-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"a7ba4db3-0ce5-4dfd-965a-ee8807800dbf\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:34-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"ff5753d6-27e8-44ae-8864-1cf36b23d8cc\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:35-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"017060a8-74fe-428c-852a-7314f3658fc7\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m57.0s), 10/10 VUs, 105 complete and 0 interrupted iterations
+checkout_load   [  52% ] 10 VUs  00m56.6s/30m0s  105/200 shared iters
+time="2026-06-14T12:43:35-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"102b4eb1-cf07-4778-8325-9d20a9d9bad3\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:36-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"5c041b01-7586-4a6f-9e0a-a7febe7082be\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m58.0s), 10/10 VUs, 107 complete and 0 interrupted iterations
+checkout_load   [  54% ] 10 VUs  00m57.6s/30m0s  107/200 shared iters
+time="2026-06-14T12:43:36-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"d4f484f5-b300-4fea-b45b-3c486235631e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (00m59.0s), 10/10 VUs, 108 complete and 0 interrupted iterations
+checkout_load   [  54% ] 10 VUs  00m58.6s/30m0s  108/200 shared iters
+time="2026-06-14T12:43:37-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"3149e80a-87f8-4ca9-98ef-592f58043203\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:37-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"ab17b512-9f1c-4d2d-920e-079282911601\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m00.0s), 10/10 VUs, 110 complete and 0 interrupted iterations
+checkout_load   [  55% ] 10 VUs  00m59.6s/30m0s  110/200 shared iters
+time="2026-06-14T12:43:38-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"d5c2cfd8-6e9c-4c73-be0b-facecb36b895\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:38-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"79ba3d2d-e9a9-4c38-9467-d777d9ae2c69\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m01.0s), 10/10 VUs, 112 complete and 0 interrupted iterations
+checkout_load   [  56% ] 10 VUs  01m00.6s/30m0s  112/200 shared iters
+time="2026-06-14T12:43:39-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"5461c79c-c49e-45dc-a93f-fbd14b8d5517\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:39-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"8679edb8-f4fb-495b-9145-b1399951f86d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m02.0s), 10/10 VUs, 114 complete and 0 interrupted iterations
+checkout_load   [  57% ] 10 VUs  01m01.6s/30m0s  114/200 shared iters
+time="2026-06-14T12:43:40-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"f063143c-a528-42cc-bac3-9aba9cef1900\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:40-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"1d6aa127-5416-4069-9814-9e30fed11559\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m03.0s), 10/10 VUs, 116 complete and 0 interrupted iterations
+checkout_load   [  58% ] 10 VUs  01m02.6s/30m0s  116/200 shared iters
+time="2026-06-14T12:43:41-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"e268b8fd-f12d-43c8-a790-13372acc6de1\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m04.0s), 10/10 VUs, 117 complete and 0 interrupted iterations
+checkout_load   [  58% ] 10 VUs  01m03.6s/30m0s  117/200 shared iters
+time="2026-06-14T12:43:42-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"05d48c1f-7a9f-45e0-bbd9-0757110a60e1\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:42-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"c5e1197e-f3ea-4f7b-a0eb-4f2ace8d1527\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m05.0s), 10/10 VUs, 119 complete and 0 interrupted iterations
+checkout_load   [  60% ] 10 VUs  01m04.6s/30m0s  119/200 shared iters
+time="2026-06-14T12:43:43-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"5b3831ef-baf6-4b70-9c0e-c01e149a6323\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:43-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"3a626bf3-f5ae-4f2e-82d6-ea0e4202518c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m06.0s), 10/10 VUs, 121 complete and 0 interrupted iterations
+checkout_load   [  60% ] 10 VUs  01m05.6s/30m0s  121/200 shared iters
+time="2026-06-14T12:43:44-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"f6705d3c-4088-46e2-942d-e9cc436e6e56\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:44-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"29ecb40b-bfb2-4b52-87fe-bb7cca818a9a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m07.0s), 10/10 VUs, 123 complete and 0 interrupted iterations
+checkout_load   [  62% ] 10 VUs  01m06.6s/30m0s  123/200 shared iters
+time="2026-06-14T12:43:45-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"a95cb501-8c7b-4618-a8eb-ed1886255eb2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:45-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"a95ffd73-901c-4df3-9a16-c56b2899bfde\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m08.0s), 10/10 VUs, 125 complete and 0 interrupted iterations
+checkout_load   [  62% ] 10 VUs  01m07.6s/30m0s  125/200 shared iters
+time="2026-06-14T12:43:46-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"7d42afb2-68ae-4ed0-a2f2-898574676f26\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:46-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"89306e8e-529d-45f9-8daa-3ab6e0439257\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m09.0s), 10/10 VUs, 127 complete and 0 interrupted iterations
+checkout_load   [  64% ] 10 VUs  01m08.6s/30m0s  127/200 shared iters
+time="2026-06-14T12:43:47-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"c3cdb6f2-a52b-4b3c-885a-26d2d925a4cc\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:48-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"adee2c40-f066-4409-ab77-e62b7a2ffca2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m10.0s), 10/10 VUs, 129 complete and 0 interrupted iterations
+checkout_load   [  64% ] 10 VUs  01m09.6s/30m0s  129/200 shared iters
+time="2026-06-14T12:43:48-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"6781161c-5604-4788-81fd-d55faa60da63\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:48-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"e5f2b17d-3367-4b68-b7bb-791b8ae95e8e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m11.0s), 10/10 VUs, 131 complete and 0 interrupted iterations
+checkout_load   [  66% ] 10 VUs  01m10.6s/30m0s  131/200 shared iters
+time="2026-06-14T12:43:49-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"a5629a19-e5c3-451c-b388-a82b801edabf\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:49-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"1a3f6792-b8de-4a00-bdba-82c42f8c69e6\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m12.0s), 10/10 VUs, 133 complete and 0 interrupted iterations
+checkout_load   [  66% ] 10 VUs  01m11.6s/30m0s  133/200 shared iters
+time="2026-06-14T12:43:50-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"de9a38d2-940d-45e4-b1ce-868e5ddaca10\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:50-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"cff6dc64-56a2-454a-9409-c64f8cbe4f73\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m13.0s), 10/10 VUs, 135 complete and 0 interrupted iterations
+checkout_load   [  68% ] 10 VUs  01m12.6s/30m0s  135/200 shared iters
+time="2026-06-14T12:43:51-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"4a355c07-7930-4e60-bbc5-797adb331c8f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:51-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"eee2ba89-3eaf-49d6-a987-74ad74bd0f85\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m14.0s), 10/10 VUs, 137 complete and 0 interrupted iterations
+checkout_load   [  68% ] 10 VUs  01m13.6s/30m0s  137/200 shared iters
+time="2026-06-14T12:43:52-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"ceff7244-16a8-44c8-80e6-9ac6060fea9d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m15.0s), 10/10 VUs, 138 complete and 0 interrupted iterations
+checkout_load   [  69% ] 10 VUs  01m14.6s/30m0s  138/200 shared iters
+time="2026-06-14T12:43:53-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"3d859fda-f0f0-43c5-8b68-e4433750a347\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:53-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"316e4462-3631-414a-a349-d66dc7979e48\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m16.0s), 10/10 VUs, 140 complete and 0 interrupted iterations
+checkout_load   [  70% ] 10 VUs  01m15.6s/30m0s  140/200 shared iters
+time="2026-06-14T12:43:54-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"ca267191-1ef4-4eff-be90-12df56c528d5\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m17.0s), 10/10 VUs, 141 complete and 0 interrupted iterations
+checkout_load   [  70% ] 10 VUs  01m16.6s/30m0s  141/200 shared iters
+time="2026-06-14T12:43:55-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"309f8d10-86da-4b29-bc48-077d148f0b37\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:55-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"f1ca0cad-c7af-47df-9c38-7a1c617de8aa\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:55-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"b2e17cc0-807d-4916-a25f-6d60f677eded\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m18.0s), 10/10 VUs, 144 complete and 0 interrupted iterations
+checkout_load   [  72% ] 10 VUs  01m17.6s/30m0s  144/200 shared iters
+time="2026-06-14T12:43:56-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"54c54c82-e52c-42f1-9829-4273f93ef26d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:56-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"14aab5da-62bf-473b-ae4c-e64f38597bda\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:56-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"cacebf1f-56ee-4ea3-8327-6565d21db02a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m19.0s), 10/10 VUs, 147 complete and 0 interrupted iterations
+checkout_load   [  74% ] 10 VUs  01m18.6s/30m0s  147/200 shared iters
+time="2026-06-14T12:43:57-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"7620e8d4-9efd-4e47-a07a-6d53fec1c6a4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m20.0s), 10/10 VUs, 148 complete and 0 interrupted iterations
+checkout_load   [  74% ] 10 VUs  01m19.6s/30m0s  148/200 shared iters
+time="2026-06-14T12:43:58-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"5e07425c-c5c3-48c9-8c17-aab9f7b46672\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:58-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"05a650df-1c29-47a8-9365-bc86b3ed979d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m21.0s), 10/10 VUs, 150 complete and 0 interrupted iterations
+checkout_load   [  75% ] 10 VUs  01m20.6s/30m0s  150/200 shared iters
+time="2026-06-14T12:43:59-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"1a00a3c1-a2b2-435b-99d4-0f90495c0851\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:43:59-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"31915de7-78c3-44f1-9846-ef9d05fb9f4a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m22.0s), 10/10 VUs, 152 complete and 0 interrupted iterations
+checkout_load   [  76% ] 10 VUs  01m21.6s/30m0s  152/200 shared iters
+time="2026-06-14T12:44:00-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"fc82c7f1-7334-4db7-82fa-f5d65636a034\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:00-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"6807a274-d1b8-4c04-8b72-3bd6c4f0190c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m23.0s), 10/10 VUs, 154 complete and 0 interrupted iterations
+checkout_load   [  77% ] 10 VUs  01m22.6s/30m0s  154/200 shared iters
+time="2026-06-14T12:44:01-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"e3d92418-75b1-4f86-b358-37ddf2735f4a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:01-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"0569561e-afa2-499d-8714-5915733f54b3\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m24.0s), 10/10 VUs, 156 complete and 0 interrupted iterations
+checkout_load   [  78% ] 10 VUs  01m23.6s/30m0s  156/200 shared iters
+time="2026-06-14T12:44:02-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"517f44bc-114d-4a81-86af-5fe496b8c2c4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:02-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"ada6f0eb-7435-445a-8013-f9871cf91ca7\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m25.0s), 10/10 VUs, 158 complete and 0 interrupted iterations
+checkout_load   [  79% ] 10 VUs  01m24.6s/30m0s  158/200 shared iters
+time="2026-06-14T12:44:03-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"999bbb45-31b8-4f44-87a0-4562477259f2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:03-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"f215c273-341d-4f03-bb38-6ae5a666360e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m26.0s), 10/10 VUs, 160 complete and 0 interrupted iterations
+checkout_load   [  80% ] 10 VUs  01m25.6s/30m0s  160/200 shared iters
+time="2026-06-14T12:44:04-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"a760fb13-593e-45c5-a708-5ae56402c58d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:04-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"5183f6f6-7c55-48fd-8d52-ae61e5a35152\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m27.0s), 10/10 VUs, 162 complete and 0 interrupted iterations
+checkout_load   [  81% ] 10 VUs  01m26.6s/30m0s  162/200 shared iters
+time="2026-06-14T12:44:05-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"a6652f1f-d442-472d-a2fe-5f0346be5fbe\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:05-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"16911b92-2662-4248-a4aa-f51f84386b8a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m28.0s), 10/10 VUs, 164 complete and 0 interrupted iterations
+checkout_load   [  82% ] 10 VUs  01m27.6s/30m0s  164/200 shared iters
+time="2026-06-14T12:44:06-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"bda67d85-b7c0-454e-9003-5be05e518bac\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:06-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"50ed8aa5-5a47-48a8-8918-9479d6ce2e30\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m29.0s), 10/10 VUs, 166 complete and 0 interrupted iterations
+checkout_load   [  83% ] 10 VUs  01m28.6s/30m0s  166/200 shared iters
+time="2026-06-14T12:44:07-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"8030aa76-978a-45a9-8f08-0fb493b44787\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m30.0s), 10/10 VUs, 167 complete and 0 interrupted iterations
+checkout_load   [  84% ] 10 VUs  01m29.6s/30m0s  167/200 shared iters
+time="2026-06-14T12:44:08-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"bef456ab-fe20-40db-956c-3553d4549911\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:08-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"2b8bb5c7-7641-4627-a1c9-c12c975d53e1\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:08-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"4fd2135e-d677-4efa-88e1-70d37d4710c7\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m31.0s), 10/10 VUs, 170 complete and 0 interrupted iterations
+checkout_load   [  85% ] 10 VUs  01m30.6s/30m0s  170/200 shared iters
+time="2026-06-14T12:44:09-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"5370e271-32f1-47d4-bb99-f60a75382660\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:09-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"cfd36029-4d0e-46bd-b79d-49030fb33ecd\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m32.0s), 10/10 VUs, 172 complete and 0 interrupted iterations
+checkout_load   [  86% ] 10 VUs  01m31.6s/30m0s  172/200 shared iters
+time="2026-06-14T12:44:10-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"dd533903-1da6-472e-bc67-8d90992800e4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:10-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"bd3bb811-3b34-4d95-92e9-210c4411429f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m33.0s), 10/10 VUs, 174 complete and 0 interrupted iterations
+checkout_load   [  87% ] 10 VUs  01m32.6s/30m0s  174/200 shared iters
+time="2026-06-14T12:44:11-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"51221ef3-1e40-4ea2-b0df-639c71d17fe8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:11-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"ab510564-6a0f-45f9-9077-95cd24c06236\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m34.0s), 10/10 VUs, 176 complete and 0 interrupted iterations
+checkout_load   [  88% ] 10 VUs  01m33.6s/30m0s  176/200 shared iters
+time="2026-06-14T12:44:12-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"4a72def0-0d5e-446b-a402-d2839991e456\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m35.0s), 10/10 VUs, 177 complete and 0 interrupted iterations
+checkout_load   [  88% ] 10 VUs  01m34.6s/30m0s  177/200 shared iters
+time="2026-06-14T12:44:13-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"e61d0515-7bb1-48fe-8958-8fc2d3ecf8f1\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:13-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"1f70e928-fd16-4497-99a8-684c7cb0d4c4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m36.0s), 10/10 VUs, 179 complete and 0 interrupted iterations
+checkout_load   [  90% ] 10 VUs  01m35.6s/30m0s  179/200 shared iters
+time="2026-06-14T12:44:14-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"a59ff974-c964-41e4-ad9c-0eff611e85a4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:14-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"d56cf0fc-2cb5-437b-bb81-cfe58d78cf94\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m37.0s), 10/10 VUs, 181 complete and 0 interrupted iterations
+checkout_load   [  90% ] 10 VUs  01m36.6s/30m0s  181/200 shared iters
+time="2026-06-14T12:44:15-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"4ecb3e40-e84c-4f53-96fc-bcb8ce1564cd\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:15-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"0e7c63da-4c96-43ab-abec-b5b3aaee5422\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m38.0s), 10/10 VUs, 183 complete and 0 interrupted iterations
+checkout_load   [  92% ] 10 VUs  01m37.6s/30m0s  183/200 shared iters
+time="2026-06-14T12:44:16-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"e1028ee8-2f54-46bd-99c8-8a72fd309ee6\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:16-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"78bf6e3c-0269-4e63-bbad-ceee27fdfec6\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m39.0s), 10/10 VUs, 185 complete and 0 interrupted iterations
+checkout_load   [  92% ] 10 VUs  01m38.6s/30m0s  185/200 shared iters
+time="2026-06-14T12:44:17-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"b6d302eb-3cfe-458f-bc92-cae76f102582\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:17-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"6710b526-3117-4541-833d-6fd4f25a6780\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:17-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"e134173d-ea46-4478-8ad5-790117698766\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m40.0s), 10/10 VUs, 188 complete and 0 interrupted iterations
+checkout_load   [  94% ] 10 VUs  01m39.6s/30m0s  188/200 shared iters
+time="2026-06-14T12:44:18-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"af2a8898-4e84-47e8-860b-19e3b147943f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m41.0s), 10/10 VUs, 189 complete and 0 interrupted iterations
+checkout_load   [  94% ] 10 VUs  01m40.6s/30m0s  189/200 shared iters
+time="2026-06-14T12:44:19-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"653db4cb-c48d-43ed-9e52-c163168d0306\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:19-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"7dcc1083-e02b-44e3-99f6-838c411a33f8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m42.0s), 09/10 VUs, 191 complete and 0 interrupted iterations
+checkout_load   [  96% ] 10 VUs  01m41.6s/30m0s  191/200 shared iters
+time="2026-06-14T12:44:20-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"1abe6c92-46e9-4c9f-9f46-40ff7177aaf5\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m43.0s), 08/10 VUs, 192 complete and 0 interrupted iterations
+checkout_load   [  96% ] 10 VUs  01m42.6s/30m0s  192/200 shared iters
+time="2026-06-14T12:44:21-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"8c9f8580-7054-4964-bce8-0b90c23ab1a3\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:21-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"c8a07e51-92f5-4606-be1d-28af14bb6d03\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:21-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"272a6da1-a5d2-4d57-bba6-7f56839fec03\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m44.0s), 05/10 VUs, 195 complete and 0 interrupted iterations
+checkout_load   [  98% ] 10 VUs  01m43.6s/30m0s  195/200 shared iters
+time="2026-06-14T12:44:22-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"1a033702-f2da-47bd-9d2e-d6b3e38b0a72\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:22-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"dfcbbdbd-8486-4c36-a107-bc310f357f42\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m45.0s), 03/10 VUs, 197 complete and 0 interrupted iterations
+checkout_load   [  98% ] 10 VUs  01m44.6s/30m0s  197/200 shared iters
+time="2026-06-14T12:44:23-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"8c346c6d-32ce-44ae-9238-e268e0a09a07\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:44:23-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"34024482-4fbb-4f4f-8142-ed2edd241f40\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (01m46.0s), 01/10 VUs, 199 complete and 0 interrupted iterations
+checkout_load   [ 100% ] 10 VUs  01m45.6s/30m0s  199/200 shared iters
+time="2026-06-14T12:44:24-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-200\",\"checkoutId\":\"853fd6bc-4a81-426e-a4d4-0c59914bbdc8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+
+  █ THRESHOLDS
+
+    functional_checkout_error_rate
+    ✓ 'rate<=0.05' rate=0.00%
+
+    http_req_failed
+    ✓ 'rate<=0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS
+
+    checks_total.......: 2523    23.68288/s
+    checks_succeeded...: 100.00% 2523 out of 2523
+    checks_failed......: 0.00%   0 out of 2523
+
+    ✓ setup register status 201
+    ✓ setup products status 200
+    ✓ register status 201
+    ✓ products status 200
+    ✓ cart add status 201
+    ✓ checkout status 202
+    ✓ checkout status poll 200
+
+    CUSTOM
+    checkout_final_latency_ms........: avg=5.18s    min=1.74s   med=5.26s   p(90)=5.39s    p(95)=5.49s    p(99)=5.9s     max=6.74s
+    checkouts_attempted..............: 200    1.877359/s
+    checkouts_completed..............: 200    1.877359/s
+    functional_checkout_error_rate...: 0.00%  0 out of 200
+
+    HTTP
+    http_req_duration................: avg=108.01ms min=81.48ms med=91.52ms p(90)=169.08ms p(95)=184.61ms p(99)=429.27ms max=972.55ms
+      { expected_response:true }.....: avg=108.01ms min=81.48ms med=91.52ms p(90)=169.08ms p(95)=184.61ms p(99)=429.27ms max=972.55ms
+    http_req_failed..................: 0.00%  0 out of 2523
+    http_reqs........................: 2523   23.68288/s
+
+    EXECUTION
+    iteration_duration...............: avg=5.18s    min=1.74s   med=5.26s   p(90)=5.39s    p(95)=5.49s    p(99)=5.9s     max=6.74s
+    iterations.......................: 200    1.877359/s
+    vus..............................: 1      min=1         max=10
+    vus_max..........................: 10     min=10        max=10
+
+    NETWORK
+    data_received....................: 1.5 MB 14 kB/s
+    data_sent........................: 1.2 MB 12 kB/s
+
+
+
+
+running (01m46.5s), 00/10 VUs, 200 complete and 0 interrupted iterations
+checkout_load ✓ [ 100% ] 10 VUs  01m46.1s/30m0s  200/200 shared iters

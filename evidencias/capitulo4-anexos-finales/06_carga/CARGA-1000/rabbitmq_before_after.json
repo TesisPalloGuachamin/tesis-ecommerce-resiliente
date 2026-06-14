@@ -1,0 +1,226 @@
+{
+  "run_id": "cap4-load-20260614-124116",
+  "scenario": "CARGA-1000",
+  "configured_vus": 50,
+  "configured_iterations": 1000,
+  "poll_attempts": 300,
+  "poll_delay_seconds": 1,
+  "started_epoch": 1781459866,
+  "ended_epoch": 1781460378,
+  "before": [
+    {
+      "name": "checkout-service.checkout-accepted.q",
+      "state": "running",
+      "messages": 2116,
+      "messages_ready": 2116,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": {
+        "publish": 1203,
+        "publish_details": {
+          "rate": 0
+        }
+      }
+    },
+    {
+      "name": "checkout-service.checkout-completed.q",
+      "state": "running",
+      "messages": 2116,
+      "messages_ready": 2116,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": {
+        "publish": 1203,
+        "publish_details": {
+          "rate": 0
+        }
+      }
+    },
+    {
+      "name": "checkout-service.checkout-failed.q",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": null
+    },
+    {
+      "name": "checkout-service.checkout-requested.q",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 1,
+      "message_stats": {
+        "ack": 1203,
+        "ack_details": {
+          "rate": 0
+        },
+        "deliver": 1203,
+        "deliver_details": {
+          "rate": 0
+        },
+        "deliver_get": 1203,
+        "deliver_get_details": {
+          "rate": 0
+        },
+        "deliver_no_ack": 0,
+        "deliver_no_ack_details": {
+          "rate": 0
+        },
+        "get": 0,
+        "get_details": {
+          "rate": 0
+        },
+        "get_empty": 0,
+        "get_empty_details": {
+          "rate": 0
+        },
+        "get_no_ack": 0,
+        "get_no_ack_details": {
+          "rate": 0
+        },
+        "publish": 1203,
+        "publish_details": {
+          "rate": 0
+        },
+        "redeliver": 0,
+        "redeliver_details": {
+          "rate": 0
+        }
+      }
+    },
+    {
+      "name": "checkout-service.dlq",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": null
+    },
+    {
+      "name": "checkout-service.payment-processed.q",
+      "state": "running",
+      "messages": 2116,
+      "messages_ready": 2116,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": {
+        "publish": 1203,
+        "publish_details": {
+          "rate": 0
+        }
+      }
+    }
+  ],
+  "after": [
+    {
+      "name": "checkout-service.checkout-accepted.q",
+      "state": "running",
+      "messages": 3116,
+      "messages_ready": 3116,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": {
+        "publish": 2203,
+        "publish_details": {
+          "rate": 0
+        }
+      }
+    },
+    {
+      "name": "checkout-service.checkout-completed.q",
+      "state": "running",
+      "messages": 3116,
+      "messages_ready": 3116,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": {
+        "publish": 2203,
+        "publish_details": {
+          "rate": 0
+        }
+      }
+    },
+    {
+      "name": "checkout-service.checkout-failed.q",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": null
+    },
+    {
+      "name": "checkout-service.checkout-requested.q",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 1,
+      "message_stats": {
+        "ack": 2203,
+        "ack_details": {
+          "rate": 0
+        },
+        "deliver": 2203,
+        "deliver_details": {
+          "rate": 0
+        },
+        "deliver_get": 2203,
+        "deliver_get_details": {
+          "rate": 0
+        },
+        "deliver_no_ack": 0,
+        "deliver_no_ack_details": {
+          "rate": 0
+        },
+        "get": 0,
+        "get_details": {
+          "rate": 0
+        },
+        "get_empty": 0,
+        "get_empty_details": {
+          "rate": 0
+        },
+        "get_no_ack": 0,
+        "get_no_ack_details": {
+          "rate": 0
+        },
+        "publish": 2203,
+        "publish_details": {
+          "rate": 0
+        },
+        "redeliver": 0,
+        "redeliver_details": {
+          "rate": 0
+        }
+      }
+    },
+    {
+      "name": "checkout-service.dlq",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": null
+    },
+    {
+      "name": "checkout-service.payment-processed.q",
+      "state": "running",
+      "messages": 3116,
+      "messages_ready": 3116,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": {
+        "publish": 2203,
+        "publish_details": {
+          "rate": 0
+        }
+      }
+    }
+  ]
+}

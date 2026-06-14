@@ -1,0 +1,38 @@
+# Logs resumidos de errores - CARGA-500
+RUN_ID: cap4-load-20260614-124116
+Host: AWS_PRINCIPAL_HOST
+
+## core-api
+2026-06-14T16:13:09.518Z  WARN 1 --- [core-api] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-14T16:13:19.064Z  WARN 1 --- [core-api] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-14T16:13:19.313Z  WARN 1 --- [core-api] [           main] .s.s.UserDetailsServiceAutoConfiguration :
+2026-06-14T16:13:20.902Z  INFO 1 --- [core-api] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@36573ec5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@10c26161, org.springframework.security.web.context.SecurityContextHolderFilter@4a0934a8, org.springframework.security.web.header.HeaderWriterFilter@4877731d, org.springframework.web.filter.CorsFilter@1ef6977b, org.springframework.security.web.authentication.logout.LogoutFilter@1129775, com.tesis.ecommerce.coreapi.infrastructure.config.JwtAuthenticationFilter@7adae08e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@79753f20, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@79d31e24, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@674cd2da, org.springframework.security.web.session.SessionManagementFilter@2e5cd959, org.springframework.security.web.access.ExceptionTranslationFilter@4b5dd040, org.springframework.security.web.access.intercept.AuthorizationFilter@4867e76b]
+2026-06-14T16:13:44.091Z  WARN 1 --- [core-api] [nio-8080-exec-2] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/actuator/health' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2026-06-14T17:02:17.417Z DEBUG 1 --- [core-api] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-06-14T17:35:15.109Z DEBUG 1 --- [core-api] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-06-14T17:36:19.104Z  INFO 1 --- [core-api] [nio-8080-exec-6] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000xfd0x010x000x000xf90x030x030xe20xf3L0xc6Y0x9aBF0x990xabv0x160x0aT0xa6V0xc60xf1 ]. HTTP method names must be tokens
+2026-06-14T17:36:25.067Z DEBUG 1 --- [core-api] [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-06-14T17:36:25.118Z DEBUG 1 --- [core-api] [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-06-14T17:36:25.345Z DEBUG 1 --- [core-api] [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-06-14T17:36:25.539Z DEBUG 1 --- [core-api] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-06-14T17:36:25.616Z DEBUG 1 --- [core-api] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-06-14T17:36:25.756Z DEBUG 1 --- [core-api] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-06-14T17:36:25.809Z DEBUG 1 --- [core-api] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-06-14T17:36:25.828Z DEBUG 1 --- [core-api] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-06-14T17:36:25.854Z DEBUG 1 --- [core-api] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-06-14T17:36:25.868Z DEBUG 1 --- [core-api] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-06-14T17:36:26.006Z DEBUG 1 --- [core-api] [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-06-14T17:36:26.021Z DEBUG 1 --- [core-api] [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-06-14T17:36:26.031Z DEBUG 1 --- [core-api] [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-06-14T17:36:26.086Z DEBUG 1 --- [core-api] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-06-14T17:36:26.267Z DEBUG 1 --- [core-api] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-06-14T17:36:26.275Z DEBUG 1 --- [core-api] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-06-14T17:37:09.059Z DEBUG 1 --- [core-api] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /error
+
+## checkout-service
+2026-06-14T16:13:08.958Z  WARN 1 --- [checkout-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-14T16:13:17.094Z  WARN 1 --- [checkout-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+
+Nota: salida acotada a coincidencias ERROR/Exception/WARN recientes; ausencia de lineas indica que no se encontraron coincidencias en el rango consultado.

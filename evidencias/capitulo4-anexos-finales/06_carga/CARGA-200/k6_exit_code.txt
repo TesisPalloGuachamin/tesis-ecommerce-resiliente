@@ -1,0 +1,2 @@
+K6_EXIT=0
+NOTE=La ejecucion k6 completo; el comando contenedor aborto despues por Prometheus detenido durante captura auxiliar.

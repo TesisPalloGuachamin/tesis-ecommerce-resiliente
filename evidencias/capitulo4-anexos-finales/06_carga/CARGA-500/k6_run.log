@@ -1,0 +1,1338 @@
+
+         /\      Grafana   /‾‾/
+    /\  /  \     |\  __   /  /
+   /  \/    \    | |/ /  /   ‾‾\
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/
+
+
+     execution: local
+        script: evidencias/capitulo4-anexos-finales/06_carga/scripts/cap4_k6_load_200_500_1000.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 25 max VUs, 1h0m30s max duration (incl. graceful stop):
+              * checkout_load: 500 iterations shared among 25 VUs (maxDuration: 1h0m0s, gracefulStop: 30s)
+
+
+running (0h00m01.0s), 25/25 VUs, 0 complete and 0 interrupted iterations
+checkout_load   [   0% ] 25 VUs  0h00m00.6s/1h0m0s  000/500 shared iters
+
+running (0h00m02.0s), 25/25 VUs, 0 complete and 0 interrupted iterations
+checkout_load   [   0% ] 25 VUs  0h00m01.6s/1h0m0s  000/500 shared iters
+time="2026-06-14T12:52:37-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"aae33f36-c89f-4094-9a82-71c845586606\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:37-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"6e9ab527-e06d-466e-a0af-a4c9dcbfd543\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m03.0s), 25/25 VUs, 2 complete and 0 interrupted iterations
+checkout_load   [   0% ] 25 VUs  0h00m02.6s/1h0m0s  002/500 shared iters
+
+running (0h00m04.0s), 25/25 VUs, 2 complete and 0 interrupted iterations
+checkout_load   [   0% ] 25 VUs  0h00m03.6s/1h0m0s  002/500 shared iters
+time="2026-06-14T12:52:38-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"dbd3137c-d777-4d0b-8185-701f10e9b0f0\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:38-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b0c3ede5-fcfe-4d28-947e-2e8bcd985a54\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m05.0s), 25/25 VUs, 4 complete and 0 interrupted iterations
+checkout_load   [   1% ] 25 VUs  0h00m04.6s/1h0m0s  004/500 shared iters
+time="2026-06-14T12:52:39-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"9dded539-6e57-4126-9224-237602121aba\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:40-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"2de5d01b-81be-4dfd-ab21-b0e79cb5ba73\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m06.0s), 25/25 VUs, 6 complete and 0 interrupted iterations
+checkout_load   [   1% ] 25 VUs  0h00m05.6s/1h0m0s  006/500 shared iters
+time="2026-06-14T12:52:41-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"a5cdc18b-d2a7-45b5-963c-6f17a20597e4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:41-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ab084d53-5145-4590-9be9-0c275eb18d8f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m07.0s), 25/25 VUs, 8 complete and 0 interrupted iterations
+checkout_load   [   2% ] 25 VUs  0h00m06.6s/1h0m0s  008/500 shared iters
+time="2026-06-14T12:52:42-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b57bf148-f77c-4099-a387-5d19eec74324\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:42-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b187ec2f-0f21-42c7-951b-8145f8ffee7f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:42-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f86d05ab-dfc8-47bb-877d-e43e31b380cf\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m08.0s), 25/25 VUs, 11 complete and 0 interrupted iterations
+checkout_load   [   2% ] 25 VUs  0h00m07.6s/1h0m0s  011/500 shared iters
+time="2026-06-14T12:52:43-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"faabf47a-1d31-45ab-b174-ecb87c422b7a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:43-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e40c30d9-eb79-4953-b87f-3bb8a86f9a27\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m09.0s), 25/25 VUs, 13 complete and 0 interrupted iterations
+checkout_load   [   3% ] 25 VUs  0h00m08.6s/1h0m0s  013/500 shared iters
+time="2026-06-14T12:52:44-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"10f316b3-54a6-4cd4-8ec3-45e198dfafae\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:44-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"65fe33c5-8110-4866-b1b7-6c384463edd0\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m10.0s), 25/25 VUs, 15 complete and 0 interrupted iterations
+checkout_load   [   3% ] 25 VUs  0h00m09.6s/1h0m0s  015/500 shared iters
+time="2026-06-14T12:52:45-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b3a1de53-bf37-4820-95f2-09f97dba15e2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:45-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"1c69f697-ab7f-4396-864b-085332484f47\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m11.0s), 25/25 VUs, 17 complete and 0 interrupted iterations
+checkout_load   [   3% ] 25 VUs  0h00m10.6s/1h0m0s  017/500 shared iters
+time="2026-06-14T12:52:46-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"353495bf-7c26-49d4-878e-1f1864f655d7\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:46-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"61b2abf4-20fb-441d-9779-e299998ef85a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m12.0s), 25/25 VUs, 19 complete and 0 interrupted iterations
+checkout_load   [   4% ] 25 VUs  0h00m11.6s/1h0m0s  019/500 shared iters
+
+running (0h00m13.0s), 25/25 VUs, 19 complete and 0 interrupted iterations
+checkout_load   [   4% ] 25 VUs  0h00m12.6s/1h0m0s  019/500 shared iters
+time="2026-06-14T12:52:47-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"22439223-b4b2-41fc-ad84-314881984106\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:48-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"6d068a2c-7cb5-4100-a889-c44d35b6e802\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:48-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4fbe293b-e44e-4ba2-87ea-06c5d51a7258\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m14.0s), 25/25 VUs, 22 complete and 0 interrupted iterations
+checkout_load   [   4% ] 25 VUs  0h00m13.6s/1h0m0s  022/500 shared iters
+time="2026-06-14T12:52:49-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"036ffd5e-ac1c-4b9e-8657-a74f2b097bf5\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:49-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"801920b5-1c07-4fce-851a-442daddf6e01\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m15.0s), 25/25 VUs, 24 complete and 0 interrupted iterations
+checkout_load   [   5% ] 25 VUs  0h00m14.6s/1h0m0s  024/500 shared iters
+time="2026-06-14T12:52:50-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"20206c83-6947-4c6c-844c-2c812ac9d00e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:50-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4ba29e5b-c191-4dac-886f-44aa7130bef7\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m16.0s), 25/25 VUs, 26 complete and 0 interrupted iterations
+checkout_load   [   5% ] 25 VUs  0h00m15.6s/1h0m0s  026/500 shared iters
+time="2026-06-14T12:52:51-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ef2a3b83-3067-4496-87e0-235dba8c62cd\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:51-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4fa50f4e-a06f-401d-b490-84b336c37676\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:51-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"a788843e-67ee-48b5-95cc-eb0b5406640b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m17.0s), 25/25 VUs, 29 complete and 0 interrupted iterations
+checkout_load   [   6% ] 25 VUs  0h00m16.6s/1h0m0s  029/500 shared iters
+time="2026-06-14T12:52:52-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"94b5369c-8509-46e6-bf50-64fd1f8139e8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:52-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ee2d27cd-7fe2-47c3-ba4f-5754222a3a4c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m18.0s), 25/25 VUs, 31 complete and 0 interrupted iterations
+checkout_load   [   6% ] 25 VUs  0h00m17.6s/1h0m0s  031/500 shared iters
+time="2026-06-14T12:52:53-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"83bd84f8-cae1-4ca6-b2c5-6094693d48e9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m19.0s), 25/25 VUs, 32 complete and 0 interrupted iterations
+checkout_load   [   6% ] 25 VUs  0h00m18.6s/1h0m0s  032/500 shared iters
+time="2026-06-14T12:52:53-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"70fe0480-b021-480e-90e8-23c848873254\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:54-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"c3f56ff8-8da9-4051-a5a9-e031a2fddb71\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:54-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5064895d-81f9-44a3-b37b-b038419ff6c5\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m20.0s), 25/25 VUs, 35 complete and 0 interrupted iterations
+checkout_load   [   7% ] 25 VUs  0h00m19.6s/1h0m0s  035/500 shared iters
+time="2026-06-14T12:52:55-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e620b783-29ce-451f-bf5d-1f668fc147e1\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m21.0s), 25/25 VUs, 36 complete and 0 interrupted iterations
+checkout_load   [   7% ] 25 VUs  0h00m20.6s/1h0m0s  036/500 shared iters
+time="2026-06-14T12:52:55-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"3c749daa-2501-4a88-8c4c-8b5fb93468d1\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m22.0s), 25/25 VUs, 37 complete and 0 interrupted iterations
+checkout_load   [   7% ] 25 VUs  0h00m21.6s/1h0m0s  037/500 shared iters
+time="2026-06-14T12:52:56-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"511219e3-b902-4282-89a2-e338f4af216f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:57-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"bfb3822b-8a66-4319-be87-8a1d89592d18\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:57-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"97ee4772-1471-4489-ab32-6bfca5d5535f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m23.0s), 25/25 VUs, 40 complete and 0 interrupted iterations
+checkout_load   [   8% ] 25 VUs  0h00m22.6s/1h0m0s  040/500 shared iters
+time="2026-06-14T12:52:58-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f7527259-f551-49a6-bb3b-562117a87301\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:58-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b93982ed-474f-48c7-87a0-1cdfa68fd606\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m24.0s), 25/25 VUs, 42 complete and 0 interrupted iterations
+checkout_load   [   8% ] 25 VUs  0h00m23.6s/1h0m0s  042/500 shared iters
+time="2026-06-14T12:52:59-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"82c29e62-1bc8-4468-9f2b-2c5e79858dbc\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:52:59-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"a6b1d413-0952-46c8-b9d4-2083a1695419\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m25.0s), 25/25 VUs, 44 complete and 0 interrupted iterations
+checkout_load   [   9% ] 25 VUs  0h00m24.6s/1h0m0s  044/500 shared iters
+time="2026-06-14T12:53:00-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"62132f23-678f-41cd-b5b9-2fb88b1ff0b7\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:00-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"6605c56f-627c-47d7-8964-30c8ff01c9e9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:00-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"cbe28ce9-0639-47c7-8c61-dcdff424c769\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m26.0s), 25/25 VUs, 47 complete and 0 interrupted iterations
+checkout_load   [   9% ] 25 VUs  0h00m25.6s/1h0m0s  047/500 shared iters
+time="2026-06-14T12:53:01-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"fb897c24-9b2c-4d38-a141-78ab897bcb44\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m27.0s), 25/25 VUs, 48 complete and 0 interrupted iterations
+checkout_load   [  10% ] 25 VUs  0h00m26.6s/1h0m0s  048/500 shared iters
+time="2026-06-14T12:53:01-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"73436f4d-bb8c-4415-931b-3570a1877e0e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:02-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e7725616-69e1-4f3c-855a-4d274de089db\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:02-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b03a61ab-4b52-48fb-975e-39d76e98a8ed\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m28.0s), 25/25 VUs, 51 complete and 0 interrupted iterations
+checkout_load   [  10% ] 25 VUs  0h00m27.6s/1h0m0s  051/500 shared iters
+time="2026-06-14T12:53:03-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"fcb20986-8407-41d2-8636-25c863e190d7\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m29.0s), 25/25 VUs, 52 complete and 0 interrupted iterations
+checkout_load   [  10% ] 25 VUs  0h00m28.6s/1h0m0s  052/500 shared iters
+time="2026-06-14T12:53:03-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"7def8c1f-3da4-4708-bd38-f108d00feb7a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:04-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"0e2e38ca-fff8-4927-afee-c014578b76ff\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m30.0s), 25/25 VUs, 54 complete and 0 interrupted iterations
+checkout_load   [  11% ] 25 VUs  0h00m29.6s/1h0m0s  054/500 shared iters
+time="2026-06-14T12:53:04-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ef105c08-8047-404e-9429-00e1d777a0b3\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m31.0s), 25/25 VUs, 55 complete and 0 interrupted iterations
+checkout_load   [  11% ] 25 VUs  0h00m30.6s/1h0m0s  055/500 shared iters
+time="2026-06-14T12:53:05-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"a3c05c2f-679e-410f-abb2-0c4adea86c46\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:06-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ae84af89-6060-4a4f-9382-389af0a12493\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:06-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"455efb70-dba9-42a0-826a-522ed68a30ae\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m32.0s), 25/25 VUs, 58 complete and 0 interrupted iterations
+checkout_load   [  12% ] 25 VUs  0h00m31.6s/1h0m0s  058/500 shared iters
+time="2026-06-14T12:53:07-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b2b749b0-af6b-43fb-93ef-d895f1d6791d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:07-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"96328f99-6991-4b34-8fdb-8e831f27b32f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m33.0s), 25/25 VUs, 60 complete and 0 interrupted iterations
+checkout_load   [  12% ] 25 VUs  0h00m32.6s/1h0m0s  060/500 shared iters
+time="2026-06-14T12:53:08-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5a8c05a0-eb71-4385-9153-157bb9cf1905\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m34.0s), 25/25 VUs, 61 complete and 0 interrupted iterations
+checkout_load   [  12% ] 25 VUs  0h00m33.6s/1h0m0s  061/500 shared iters
+time="2026-06-14T12:53:08-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"d63c7c2e-0421-474e-bf41-e866edeff64a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:09-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"42bf9928-4e2c-4d8a-8d24-80e73a86d5bf\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m35.0s), 25/25 VUs, 63 complete and 0 interrupted iterations
+checkout_load   [  13% ] 25 VUs  0h00m34.6s/1h0m0s  063/500 shared iters
+time="2026-06-14T12:53:10-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"c72bc814-c76b-4093-8d70-de91a7c63676\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:10-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"eefe20bd-879f-45df-89bd-108956165dc0\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:10-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f3db5bbc-427d-4ae3-9e56-85ef6b8456b0\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m36.0s), 25/25 VUs, 66 complete and 0 interrupted iterations
+checkout_load   [  13% ] 25 VUs  0h00m35.6s/1h0m0s  066/500 shared iters
+time="2026-06-14T12:53:11-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"3b4d92ea-41d7-4743-9836-b657b61dee83\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:11-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e3b7aa67-2358-4ca1-832c-4098e8692170\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m37.0s), 25/25 VUs, 68 complete and 0 interrupted iterations
+checkout_load   [  14% ] 25 VUs  0h00m36.6s/1h0m0s  068/500 shared iters
+time="2026-06-14T12:53:12-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"627e187a-cefe-4ecc-a6db-57f2574aa037\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:12-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"54e3bc34-8319-455f-8d67-10c7c8b9e70d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m38.0s), 25/25 VUs, 70 complete and 0 interrupted iterations
+checkout_load   [  14% ] 25 VUs  0h00m37.6s/1h0m0s  070/500 shared iters
+time="2026-06-14T12:53:13-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"a1252f37-4b81-42d7-a266-86812dc6871a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:13-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e36bf1e1-32d3-4704-97ee-88a414cf46cf\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m39.0s), 25/25 VUs, 72 complete and 0 interrupted iterations
+checkout_load   [  14% ] 25 VUs  0h00m38.6s/1h0m0s  072/500 shared iters
+time="2026-06-14T12:53:14-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"42c796a3-3ee1-4339-ade7-978e4e5d7fb0\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:14-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"d20ba101-5097-4af3-9acd-41b0e957e2e9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m40.0s), 25/25 VUs, 74 complete and 0 interrupted iterations
+checkout_load   [  15% ] 25 VUs  0h00m39.6s/1h0m0s  074/500 shared iters
+time="2026-06-14T12:53:15-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"62a39ba4-106c-44f2-8d5a-dd15b78f18b1\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m41.0s), 25/25 VUs, 75 complete and 0 interrupted iterations
+checkout_load   [  15% ] 25 VUs  0h00m40.6s/1h0m0s  075/500 shared iters
+time="2026-06-14T12:53:16-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"3965ebf4-54c5-498b-9883-58332558b6a8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:16-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"616bfd72-a096-4980-945c-1579411e9d30\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m42.0s), 25/25 VUs, 77 complete and 0 interrupted iterations
+checkout_load   [  15% ] 25 VUs  0h00m41.6s/1h0m0s  077/500 shared iters
+time="2026-06-14T12:53:17-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"0ee4ceb0-79b0-44f2-a9c5-91befd8e0096\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m43.0s), 25/25 VUs, 78 complete and 0 interrupted iterations
+checkout_load   [  16% ] 25 VUs  0h00m42.6s/1h0m0s  078/500 shared iters
+time="2026-06-14T12:53:17-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"a6bd2899-04b8-44bf-b7e0-5ca3c8ba801b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:18-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4c9fc055-3d64-4268-90e5-23fac9a0269c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:18-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"2d5148ce-7891-4a4a-a813-2fb63654792e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m44.0s), 25/25 VUs, 81 complete and 0 interrupted iterations
+checkout_load   [  16% ] 25 VUs  0h00m43.6s/1h0m0s  081/500 shared iters
+time="2026-06-14T12:53:19-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5fc9087b-53c5-4efe-8d38-47409268197b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:19-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"58b4fdd5-f8da-4e42-b4a0-6d70bd383fd9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m45.0s), 25/25 VUs, 83 complete and 0 interrupted iterations
+checkout_load   [  17% ] 25 VUs  0h00m44.6s/1h0m0s  083/500 shared iters
+time="2026-06-14T12:53:19-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"c8b7e4e0-0d3d-4f21-a928-9c93188a4291\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:20-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"eb37a850-ff4d-4445-a1c4-036b3542a98b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m46.0s), 25/25 VUs, 85 complete and 0 interrupted iterations
+checkout_load   [  17% ] 25 VUs  0h00m45.6s/1h0m0s  085/500 shared iters
+time="2026-06-14T12:53:20-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ea2303f7-2c23-41e1-91b9-d5db4c7e7533\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:21-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"35de7ae2-633b-4a36-953b-7acddcc8a74e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m47.0s), 25/25 VUs, 87 complete and 0 interrupted iterations
+checkout_load   [  17% ] 25 VUs  0h00m46.6s/1h0m0s  087/500 shared iters
+time="2026-06-14T12:53:21-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"d69281c1-0d09-4d43-bfbd-c322e4629c4e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:22-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"50c093fd-1003-4b28-ad9f-37266f71d925\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:22-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"0dc760b3-3314-4aab-81b8-e5c79e25f3ea\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m48.0s), 25/25 VUs, 90 complete and 0 interrupted iterations
+checkout_load   [  18% ] 25 VUs  0h00m47.6s/1h0m0s  090/500 shared iters
+
+running (0h00m49.0s), 25/25 VUs, 90 complete and 0 interrupted iterations
+checkout_load   [  18% ] 25 VUs  0h00m48.6s/1h0m0s  090/500 shared iters
+time="2026-06-14T12:53:23-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"cb009066-f6a1-48fc-a1fb-e49c969594d2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:24-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ee4563fd-db25-42ec-b78d-d9dcaaeea3fa\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:24-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"8bedfb0d-c807-4338-bb93-6620b98c8129\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:24-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"26c52dee-e086-453d-8f17-4b1e2c0fbf89\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m50.0s), 25/25 VUs, 94 complete and 0 interrupted iterations
+checkout_load   [  19% ] 25 VUs  0h00m49.6s/1h0m0s  094/500 shared iters
+time="2026-06-14T12:53:25-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"7d23087c-cd1e-4f5e-808c-57f845fb0adb\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m51.0s), 25/25 VUs, 95 complete and 0 interrupted iterations
+checkout_load   [  19% ] 25 VUs  0h00m50.6s/1h0m0s  095/500 shared iters
+time="2026-06-14T12:53:26-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"0f5d5b2b-244b-44ec-8179-91cb9c5dcea1\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:26-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"99ba3ff3-ba9c-4596-bfb6-46e726e50468\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m52.0s), 25/25 VUs, 97 complete and 0 interrupted iterations
+checkout_load   [  19% ] 25 VUs  0h00m51.6s/1h0m0s  097/500 shared iters
+time="2026-06-14T12:53:27-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ea1f55be-c369-4298-950f-d39bc86dad81\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:27-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"7611270b-af9f-4bc5-abf0-be91a232e382\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m53.0s), 25/25 VUs, 99 complete and 0 interrupted iterations
+checkout_load   [  20% ] 25 VUs  0h00m52.6s/1h0m0s  099/500 shared iters
+time="2026-06-14T12:53:28-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5581b394-ed51-4595-8a3f-7cc1e68e2e61\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:28-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e90e8b5d-0e1b-4d1f-b23d-ef611cc5db18\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m54.0s), 25/25 VUs, 101 complete and 0 interrupted iterations
+checkout_load   [  20% ] 25 VUs  0h00m53.6s/1h0m0s  101/500 shared iters
+time="2026-06-14T12:53:28-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"1324aa67-d25b-47fe-9abb-e9c30681a286\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m55.0s), 25/25 VUs, 102 complete and 0 interrupted iterations
+checkout_load   [  20% ] 25 VUs  0h00m54.6s/1h0m0s  102/500 shared iters
+time="2026-06-14T12:53:29-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"96c7ca28-5a3d-4c8e-b230-b761215e6784\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:30-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b9cd7d9d-8019-4dc1-ac00-f1a83ac810c4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m56.0s), 25/25 VUs, 104 complete and 0 interrupted iterations
+checkout_load   [  21% ] 25 VUs  0h00m55.6s/1h0m0s  104/500 shared iters
+time="2026-06-14T12:53:30-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"d921f1d1-bbf0-4190-bf2e-fe6c850fd1a6\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:30-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"695c5cde-2239-45b4-95ec-fc529b4ab755\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m57.0s), 25/25 VUs, 106 complete and 0 interrupted iterations
+checkout_load   [  21% ] 25 VUs  0h00m56.6s/1h0m0s  106/500 shared iters
+time="2026-06-14T12:53:32-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5fa14743-910b-43dc-a5bd-d321a0697495\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:32-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4ea57dfe-c48c-4d41-b873-b597a26a8125\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:32-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f16910b3-c75d-404d-8bf2-8413cc12c885\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m58.0s), 25/25 VUs, 109 complete and 0 interrupted iterations
+checkout_load   [  22% ] 25 VUs  0h00m57.6s/1h0m0s  109/500 shared iters
+time="2026-06-14T12:53:33-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5bf3bd98-4074-481a-a032-ef334e279b08\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:33-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"27ab6ea0-0be5-4524-b938-dda7ed65da82\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h00m59.0s), 25/25 VUs, 111 complete and 0 interrupted iterations
+checkout_load   [  22% ] 25 VUs  0h00m58.6s/1h0m0s  111/500 shared iters
+time="2026-06-14T12:53:33-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"bfb0be7a-7fb6-4bb1-9f95-8d47b8efafe2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:34-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f62f8f6f-f02a-4bd8-9541-31b0dc4dc784\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m00.0s), 25/25 VUs, 113 complete and 0 interrupted iterations
+checkout_load   [  23% ] 25 VUs  0h00m59.6s/1h0m0s  113/500 shared iters
+time="2026-06-14T12:53:35-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"13bf446b-7789-490c-9de8-338d32243112\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:35-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"124cf6ff-9241-4ed8-ab6f-a97ff71cf965\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m01.0s), 25/25 VUs, 115 complete and 0 interrupted iterations
+checkout_load   [  23% ] 25 VUs  0h01m00.6s/1h0m0s  115/500 shared iters
+time="2026-06-14T12:53:36-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f4459f78-5f7e-40b4-9d16-2e63ae26c22d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:36-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"cf8948fd-4210-48ce-9bdf-0fc2ab0bd4a3\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m02.0s), 25/25 VUs, 117 complete and 0 interrupted iterations
+checkout_load   [  23% ] 25 VUs  0h01m01.6s/1h0m0s  117/500 shared iters
+time="2026-06-14T12:53:37-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"73a05c0c-71be-42ed-9b52-c30f1f699388\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:37-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"a8e7d945-8b51-4d85-a1d7-d1539b63af91\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m03.0s), 25/25 VUs, 119 complete and 0 interrupted iterations
+checkout_load   [  24% ] 25 VUs  0h01m02.6s/1h0m0s  119/500 shared iters
+
+running (0h01m04.0s), 25/25 VUs, 119 complete and 0 interrupted iterations
+checkout_load   [  24% ] 25 VUs  0h01m03.6s/1h0m0s  119/500 shared iters
+time="2026-06-14T12:53:38-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"7b59761f-3cdc-4e0b-a5bd-53af9ef60a59\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:39-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b39f3bf3-8a81-4f5d-b93a-8568b82b6648\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:39-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f726258e-3c3e-4c26-8e8b-dc6c85da7f76\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:39-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e88f30f4-0d8b-4696-b26a-b35e91102b8e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m05.0s), 25/25 VUs, 123 complete and 0 interrupted iterations
+checkout_load   [  25% ] 25 VUs  0h01m04.6s/1h0m0s  123/500 shared iters
+time="2026-06-14T12:53:40-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"71c2de0f-7fa2-467d-829e-3e823b7f2d06\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:40-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"432e1da7-a7c9-42aa-b353-f13c4047a612\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m06.0s), 25/25 VUs, 125 complete and 0 interrupted iterations
+checkout_load   [  25% ] 25 VUs  0h01m05.6s/1h0m0s  125/500 shared iters
+time="2026-06-14T12:53:41-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"2182fa80-8b74-4d14-bce7-be9e49e8d714\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m07.0s), 25/25 VUs, 126 complete and 0 interrupted iterations
+checkout_load   [  25% ] 25 VUs  0h01m06.6s/1h0m0s  126/500 shared iters
+time="2026-06-14T12:53:42-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"6a1571b1-c82b-4f0b-b3ed-9e778cdfd800\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:42-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"46fac2f2-ee54-4617-845a-1ea8abe77d36\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m08.0s), 25/25 VUs, 128 complete and 0 interrupted iterations
+checkout_load   [  26% ] 25 VUs  0h01m07.6s/1h0m0s  128/500 shared iters
+time="2026-06-14T12:53:43-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"2efe8095-e9e4-44bc-b7a7-2437862c5692\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:43-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ee224740-f1b0-4d21-a140-89a7cc3783ca\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m09.0s), 25/25 VUs, 130 complete and 0 interrupted iterations
+checkout_load   [  26% ] 25 VUs  0h01m08.6s/1h0m0s  130/500 shared iters
+time="2026-06-14T12:53:44-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"94cdb442-b911-44d5-acac-5ddce67931cb\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:44-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"04391567-8305-429e-af40-e2bf7b8ed1de\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m10.0s), 25/25 VUs, 132 complete and 0 interrupted iterations
+checkout_load   [  26% ] 25 VUs  0h01m09.6s/1h0m0s  132/500 shared iters
+time="2026-06-14T12:53:45-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"8292e56c-b7fb-4d01-aa24-848359de1103\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:45-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"bde1ad1f-560d-4efc-8fb0-4da42dbe82e9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m11.0s), 25/25 VUs, 134 complete and 0 interrupted iterations
+checkout_load   [  27% ] 25 VUs  0h01m10.6s/1h0m0s  134/500 shared iters
+time="2026-06-14T12:53:45-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"62a74a00-7f4e-4f6b-8a99-5dee277740e9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m12.0s), 25/25 VUs, 135 complete and 0 interrupted iterations
+checkout_load   [  27% ] 25 VUs  0h01m11.6s/1h0m0s  135/500 shared iters
+time="2026-06-14T12:53:46-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4c4227fb-ef90-48ed-8793-00fe9a0d4464\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:47-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"7f3df47d-4853-4820-89f3-b3801598d10b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m13.0s), 25/25 VUs, 137 complete and 0 interrupted iterations
+checkout_load   [  27% ] 25 VUs  0h01m12.6s/1h0m0s  137/500 shared iters
+time="2026-06-14T12:53:47-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"95183081-9712-4328-855e-cf2ebc0b897d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:48-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"c1d7698a-6c09-4620-bc7c-13c3f4f76c33\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:48-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"69a79659-fa1f-4444-ae63-ec7e85e376f2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m14.0s), 25/25 VUs, 140 complete and 0 interrupted iterations
+checkout_load   [  28% ] 25 VUs  0h01m13.6s/1h0m0s  140/500 shared iters
+time="2026-06-14T12:53:49-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"98952ea6-6990-45d9-9538-ca179d22776a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:49-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4fefe50c-fe52-43c1-ae47-0152aee75282\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m15.0s), 25/25 VUs, 142 complete and 0 interrupted iterations
+checkout_load   [  28% ] 25 VUs  0h01m14.6s/1h0m0s  142/500 shared iters
+time="2026-06-14T12:53:50-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e472e7d2-9729-47c1-8829-3927178cc6d8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:50-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"d2a91ced-45b4-4654-b0a5-b7d6562cc6fb\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m16.0s), 25/25 VUs, 144 complete and 0 interrupted iterations
+checkout_load   [  29% ] 25 VUs  0h01m15.6s/1h0m0s  144/500 shared iters
+time="2026-06-14T12:53:51-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"445794bf-7e37-4d21-ae12-e7f75af19ae9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:51-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"07ad8ea4-7362-4d99-b230-38209d1f64d8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:51-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5d3d40fa-f5e4-490d-9a7c-8fbd1cc48af4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m17.0s), 25/25 VUs, 147 complete and 0 interrupted iterations
+checkout_load   [  29% ] 25 VUs  0h01m16.6s/1h0m0s  147/500 shared iters
+time="2026-06-14T12:53:52-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"8a40b5e7-9e32-4ca2-a835-c077e62a9548\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:52-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"6653a702-cf1d-444b-a839-58456f39f459\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m18.0s), 25/25 VUs, 149 complete and 0 interrupted iterations
+checkout_load   [  30% ] 25 VUs  0h01m17.6s/1h0m0s  149/500 shared iters
+time="2026-06-14T12:53:53-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"fd9ffa91-8925-4c44-aef7-37f335fc084a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:53-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"6e0c6577-78c0-4953-a5a3-10ae90b87301\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m19.0s), 25/25 VUs, 151 complete and 0 interrupted iterations
+checkout_load   [  30% ] 25 VUs  0h01m18.6s/1h0m0s  151/500 shared iters
+
+running (0h01m20.0s), 25/25 VUs, 151 complete and 0 interrupted iterations
+checkout_load   [  30% ] 25 VUs  0h01m19.6s/1h0m0s  151/500 shared iters
+time="2026-06-14T12:53:54-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"12af60d9-a0f5-4b48-90e3-fde6b21a61b2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:55-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"019099f2-3d14-4ca5-bad7-c9ab2bcd7980\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:55-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"2a58f212-a0fe-4fd2-a867-83733ce3059e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:55-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"59cea71f-ce8e-41da-b1c2-2ee374ad68e9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m21.0s), 25/25 VUs, 155 complete and 0 interrupted iterations
+checkout_load   [  31% ] 25 VUs  0h01m20.6s/1h0m0s  155/500 shared iters
+
+running (0h01m22.0s), 25/25 VUs, 155 complete and 0 interrupted iterations
+checkout_load   [  31% ] 25 VUs  0h01m21.6s/1h0m0s  155/500 shared iters
+time="2026-06-14T12:53:57-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"9653ea65-1826-46c3-b070-322b211c532c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:57-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"64df78eb-e2dd-473e-88fa-e3fece75bee9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m23.0s), 25/25 VUs, 157 complete and 0 interrupted iterations
+checkout_load   [  31% ] 25 VUs  0h01m22.6s/1h0m0s  157/500 shared iters
+time="2026-06-14T12:53:58-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"75986d0c-cbac-492a-8e80-8b818af25a7d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:58-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f3627d72-9277-4ef1-a07f-b0d8b2e8ec72\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:53:58-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"a869df58-993f-4b21-9e5f-4667fbc7e5b2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m24.0s), 25/25 VUs, 160 complete and 0 interrupted iterations
+checkout_load   [  32% ] 25 VUs  0h01m23.6s/1h0m0s  160/500 shared iters
+time="2026-06-14T12:53:59-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ceadf5ef-9663-4d3e-8e3a-ef5de0498bfc\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m25.0s), 25/25 VUs, 161 complete and 0 interrupted iterations
+checkout_load   [  32% ] 25 VUs  0h01m24.6s/1h0m0s  161/500 shared iters
+time="2026-06-14T12:54:00-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"dd1b4476-1b8f-4c86-a618-d7fa7dee1b41\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:00-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"2a184caa-27f8-45fb-8e88-9d2ab8a79573\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:00-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"d69435ff-7631-46ca-a7c1-133dc38e05f6\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m26.0s), 25/25 VUs, 164 complete and 0 interrupted iterations
+checkout_load   [  33% ] 25 VUs  0h01m25.6s/1h0m0s  164/500 shared iters
+time="2026-06-14T12:54:01-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e986abfe-991e-4a0c-8a39-ebc27d41e3c7\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:01-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"03006cc7-21e3-457c-8fab-0687d0f9f8fe\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m27.0s), 25/25 VUs, 166 complete and 0 interrupted iterations
+checkout_load   [  33% ] 25 VUs  0h01m26.6s/1h0m0s  166/500 shared iters
+time="2026-06-14T12:54:02-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"2f44a299-66a1-45c1-9391-cfb28eaf5a0f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:02-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"dc45a71e-9d31-436a-9556-cebde447e832\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m28.0s), 25/25 VUs, 168 complete and 0 interrupted iterations
+checkout_load   [  34% ] 25 VUs  0h01m27.6s/1h0m0s  168/500 shared iters
+time="2026-06-14T12:54:02-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f8f77de1-2af2-45a8-9389-b1e1e96a8185\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m29.0s), 25/25 VUs, 169 complete and 0 interrupted iterations
+checkout_load   [  34% ] 25 VUs  0h01m28.6s/1h0m0s  169/500 shared iters
+time="2026-06-14T12:54:04-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ef4c2aab-ea78-46ed-8900-c6aff9e7e138\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:04-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"9a3fb6a4-b2ce-4712-abe4-9cdb4d5504fb\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m30.0s), 25/25 VUs, 171 complete and 0 interrupted iterations
+checkout_load   [  34% ] 25 VUs  0h01m29.6s/1h0m0s  171/500 shared iters
+time="2026-06-14T12:54:04-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"dadf82bd-0e07-4c7b-b7a9-dd675e12d09d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:05-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"301a63c7-2697-4315-a44a-44ac05c11c43\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m31.0s), 25/25 VUs, 173 complete and 0 interrupted iterations
+checkout_load   [  35% ] 25 VUs  0h01m30.6s/1h0m0s  173/500 shared iters
+time="2026-06-14T12:54:06-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"adc06175-4300-4f74-bf2e-a0d9f9ab8d90\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:06-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"c6e9b729-b13f-4fe4-8fb0-2dab1bb9cb4b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m32.0s), 25/25 VUs, 175 complete and 0 interrupted iterations
+checkout_load   [  35% ] 25 VUs  0h01m31.6s/1h0m0s  175/500 shared iters
+time="2026-06-14T12:54:07-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5dff970a-ab9c-4c1f-9c17-a462adace3dc\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:07-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"417e5c4d-a288-4af4-833a-c9bd18b80098\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:07-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"12cc6605-dea8-43fe-b334-4846f6599d1f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m33.0s), 25/25 VUs, 178 complete and 0 interrupted iterations
+checkout_load   [  36% ] 25 VUs  0h01m32.6s/1h0m0s  178/500 shared iters
+time="2026-06-14T12:54:08-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"a946b991-ba56-466f-a972-0cfed8d4154f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m34.0s), 25/25 VUs, 179 complete and 0 interrupted iterations
+checkout_load   [  36% ] 25 VUs  0h01m33.6s/1h0m0s  179/500 shared iters
+time="2026-06-14T12:54:09-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"052d5bc3-7185-4663-8b85-a4a964818e36\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:09-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"9272a74d-77fd-4019-849e-6d97e3445272\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:09-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"7a4f9724-f7d1-4cf5-b0c7-009bb1e17286\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m35.0s), 25/25 VUs, 182 complete and 0 interrupted iterations
+checkout_load   [  36% ] 25 VUs  0h01m34.6s/1h0m0s  182/500 shared iters
+
+running (0h01m36.0s), 25/25 VUs, 182 complete and 0 interrupted iterations
+checkout_load   [  36% ] 25 VUs  0h01m35.6s/1h0m0s  182/500 shared iters
+time="2026-06-14T12:54:11-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"65702fc5-4b98-4548-b37f-1d5e3b35a4c6\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:11-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4ce2019e-8485-4d1f-93cd-545f4d42f305\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:11-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"534b28b6-46d1-4b5d-962d-773be6bbd632\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m37.0s), 25/25 VUs, 185 complete and 0 interrupted iterations
+checkout_load   [  37% ] 25 VUs  0h01m36.6s/1h0m0s  185/500 shared iters
+time="2026-06-14T12:54:12-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"a71cba5b-9974-4fb1-9bdc-2975048e32bb\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m38.0s), 25/25 VUs, 186 complete and 0 interrupted iterations
+checkout_load   [  37% ] 25 VUs  0h01m37.6s/1h0m0s  186/500 shared iters
+time="2026-06-14T12:54:12-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"385036b9-bb9a-4c69-bfed-cf3a9de63390\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:13-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4e4193ea-5035-49ac-a664-8d6b30a604f5\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:13-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"0442eefb-4c05-4da5-b615-c2f98fb8a70f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m39.0s), 25/25 VUs, 189 complete and 0 interrupted iterations
+checkout_load   [  38% ] 25 VUs  0h01m38.6s/1h0m0s  189/500 shared iters
+time="2026-06-14T12:54:14-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"616fc3ff-d611-4d20-a6e6-e7ef41e0fac4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:14-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"831fc533-60a5-4e36-b561-b7f8358ad49b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m40.0s), 25/25 VUs, 191 complete and 0 interrupted iterations
+checkout_load   [  38% ] 25 VUs  0h01m39.6s/1h0m0s  191/500 shared iters
+time="2026-06-14T12:54:15-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"244e6f58-a0bf-46ae-ae98-0bb37771f8ae\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:15-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"69008d72-e5a0-4443-a2e4-a310d26a7222\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m41.0s), 25/25 VUs, 193 complete and 0 interrupted iterations
+checkout_load   [  39% ] 25 VUs  0h01m40.6s/1h0m0s  193/500 shared iters
+time="2026-06-14T12:54:16-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"7d2a26c9-a5db-47b0-93f0-126361c35ce4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:16-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f244c973-ac68-4d32-8273-0e34c82ec333\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m42.0s), 25/25 VUs, 195 complete and 0 interrupted iterations
+checkout_load   [  39% ] 25 VUs  0h01m41.6s/1h0m0s  195/500 shared iters
+time="2026-06-14T12:54:17-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"d608379c-5be7-47e7-887d-82eface4b168\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m43.0s), 25/25 VUs, 196 complete and 0 interrupted iterations
+checkout_load   [  39% ] 25 VUs  0h01m42.6s/1h0m0s  196/500 shared iters
+time="2026-06-14T12:54:17-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ad0bf709-d7f8-4f71-976d-65eeace30d31\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:18-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"2db247ea-6c77-436d-88b0-27c1056683eb\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m44.0s), 25/25 VUs, 198 complete and 0 interrupted iterations
+checkout_load   [  40% ] 25 VUs  0h01m43.6s/1h0m0s  198/500 shared iters
+time="2026-06-14T12:54:19-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"689cf42e-20c3-4c83-bc2f-a33c5938c1ac\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:19-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4ba0fd04-1e64-4789-8c52-26af5923f841\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:19-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"2d8ed5e1-3c17-4b27-90be-28b160d4d2bb\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m45.0s), 25/25 VUs, 201 complete and 0 interrupted iterations
+checkout_load   [  40% ] 25 VUs  0h01m44.6s/1h0m0s  201/500 shared iters
+time="2026-06-14T12:54:20-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"7e2d5631-944c-4668-8ba3-ec0a422a000f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:20-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"912dba1a-c87c-4a28-b345-a413011c0b4f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m46.0s), 25/25 VUs, 203 complete and 0 interrupted iterations
+checkout_load   [  41% ] 25 VUs  0h01m45.6s/1h0m0s  203/500 shared iters
+time="2026-06-14T12:54:21-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"fffe3368-04f1-43ba-bea2-02e0eba522ef\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:21-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4982c370-7aaf-4d00-8a9b-6bbbaf7e28ba\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m47.0s), 25/25 VUs, 205 complete and 0 interrupted iterations
+checkout_load   [  41% ] 25 VUs  0h01m46.6s/1h0m0s  205/500 shared iters
+time="2026-06-14T12:54:22-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"719e6c9e-deda-4793-8634-b723d13312d2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:22-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"bc237298-6503-47c3-a45b-2376f057514a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:22-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5672db04-2caf-4c18-bee9-00d620e1572c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m48.0s), 25/25 VUs, 208 complete and 0 interrupted iterations
+checkout_load   [  42% ] 25 VUs  0h01m47.6s/1h0m0s  208/500 shared iters
+
+running (0h01m49.0s), 25/25 VUs, 208 complete and 0 interrupted iterations
+checkout_load   [  42% ] 25 VUs  0h01m48.6s/1h0m0s  208/500 shared iters
+time="2026-06-14T12:54:24-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b4ef7ac5-c7f4-40cd-b11f-eea413575ac2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:24-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"07c1cf25-4b15-43b2-81b6-734fbfc85663\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m50.0s), 25/25 VUs, 210 complete and 0 interrupted iterations
+checkout_load   [  42% ] 25 VUs  0h01m49.6s/1h0m0s  210/500 shared iters
+time="2026-06-14T12:54:25-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"9f45be40-d265-47a0-afd0-fb03a1abb5bc\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:25-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"04b2b812-0a29-4181-a34b-fd6f9f83e58f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m51.0s), 25/25 VUs, 212 complete and 0 interrupted iterations
+checkout_load   [  42% ] 25 VUs  0h01m50.6s/1h0m0s  212/500 shared iters
+time="2026-06-14T12:54:26-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"481cf7f6-a80e-4d93-b2d5-84bf052e0feb\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:26-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"31c1c839-e0d9-4c8f-b864-5a7d463feda8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m52.0s), 25/25 VUs, 214 complete and 0 interrupted iterations
+checkout_load   [  43% ] 25 VUs  0h01m51.6s/1h0m0s  214/500 shared iters
+time="2026-06-14T12:54:27-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"0473aabc-0777-420a-bff5-d48f4073f362\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:27-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"71e0f5ff-18c8-4ce0-9d98-2364571af3f8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m53.0s), 25/25 VUs, 216 complete and 0 interrupted iterations
+checkout_load   [  43% ] 25 VUs  0h01m52.6s/1h0m0s  216/500 shared iters
+time="2026-06-14T12:54:27-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"1432a0bc-02a2-4ca7-a6de-887bd5811374\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:28-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"d6cb4b51-71a1-4cd7-9a32-6aa6d8a5ab1b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:28-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"32ed73c7-90ae-40fa-b928-97adcbb4dd8b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m54.0s), 25/25 VUs, 219 complete and 0 interrupted iterations
+checkout_load   [  44% ] 25 VUs  0h01m53.6s/1h0m0s  219/500 shared iters
+time="2026-06-14T12:54:29-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"3298b57c-72f3-41c2-9827-a587d37de90b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m55.0s), 25/25 VUs, 220 complete and 0 interrupted iterations
+checkout_load   [  44% ] 25 VUs  0h01m54.6s/1h0m0s  220/500 shared iters
+time="2026-06-14T12:54:29-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"19bad568-dcaf-44ca-a644-4990e4a5ebec\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:30-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"403dd30d-71ea-4f5c-9bcf-29750b79669f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:30-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"766f0549-d455-4f61-b458-1d0df1918f3b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m56.0s), 25/25 VUs, 223 complete and 0 interrupted iterations
+checkout_load   [  45% ] 25 VUs  0h01m55.6s/1h0m0s  223/500 shared iters
+time="2026-06-14T12:54:31-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"453a6507-d36e-4c99-83c3-6fb5ada1b0da\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:31-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"94c17b22-4803-4bb2-b3c1-982bdde2434d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m57.0s), 25/25 VUs, 225 complete and 0 interrupted iterations
+checkout_load   [  45% ] 25 VUs  0h01m56.6s/1h0m0s  225/500 shared iters
+time="2026-06-14T12:54:32-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b41c2ad5-99a7-429f-bb31-144762b52531\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m58.0s), 25/25 VUs, 226 complete and 0 interrupted iterations
+checkout_load   [  45% ] 25 VUs  0h01m57.6s/1h0m0s  226/500 shared iters
+time="2026-06-14T12:54:32-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"600f94df-c3ca-47de-ac6a-8be10edebd64\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:33-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"32ec3e02-3feb-4172-8d4e-495bd5a2e527\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h01m59.0s), 25/25 VUs, 228 complete and 0 interrupted iterations
+checkout_load   [  46% ] 25 VUs  0h01m58.6s/1h0m0s  228/500 shared iters
+time="2026-06-14T12:54:33-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4424d93c-7bb4-4598-8bb2-399d1c1c5371\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:34-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b1f59c2a-904a-4c45-9903-ab37200d615b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m00.0s), 25/25 VUs, 230 complete and 0 interrupted iterations
+checkout_load   [  46% ] 25 VUs  0h01m59.6s/1h0m0s  230/500 shared iters
+time="2026-06-14T12:54:35-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e3f9db9c-624b-4526-8a2e-6b7e3ce29dba\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:35-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"79360938-0ba7-4fef-ad51-c40d683e3355\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m01.0s), 25/25 VUs, 232 complete and 0 interrupted iterations
+checkout_load   [  46% ] 25 VUs  0h02m00.6s/1h0m0s  232/500 shared iters
+time="2026-06-14T12:54:36-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"48057c6a-8f3e-40fa-b7d7-bc2cc9059b64\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:36-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"18b488bc-9580-4b55-bb90-b23e2e32c8e1\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:36-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"76ffef9c-d481-4e95-9575-4ff2eea522ed\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m02.0s), 25/25 VUs, 235 complete and 0 interrupted iterations
+checkout_load   [  47% ] 25 VUs  0h02m01.6s/1h0m0s  235/500 shared iters
+
+running (0h02m03.0s), 25/25 VUs, 235 complete and 0 interrupted iterations
+checkout_load   [  47% ] 25 VUs  0h02m02.6s/1h0m0s  235/500 shared iters
+time="2026-06-14T12:54:37-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b7a6a737-810e-4a5b-b14f-65e67b6fa97f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:38-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"9cb08ff0-b072-48ed-b247-1dd6ae8d83f0\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:38-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"368c39c1-a396-4044-9115-a89dde9856db\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:38-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"1d45559f-b959-41cd-b361-66f56363ef1a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m04.0s), 25/25 VUs, 239 complete and 0 interrupted iterations
+checkout_load   [  48% ] 25 VUs  0h02m03.6s/1h0m0s  239/500 shared iters
+
+running (0h02m05.0s), 25/25 VUs, 239 complete and 0 interrupted iterations
+checkout_load   [  48% ] 25 VUs  0h02m04.6s/1h0m0s  239/500 shared iters
+time="2026-06-14T12:54:39-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"6f0fae31-fa46-495d-a00f-2bf21cc8869f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:40-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"882df801-7e4a-44e4-85fe-6efef61009f7\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:40-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"cd826157-18e7-4557-9050-4132136ca3e8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m06.0s), 25/25 VUs, 242 complete and 0 interrupted iterations
+checkout_load   [  48% ] 25 VUs  0h02m05.6s/1h0m0s  242/500 shared iters
+time="2026-06-14T12:54:40-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ba91c89f-fe42-448f-a1bc-9a74f12f7101\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:41-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f52947a3-e005-4ca2-a32d-e00bae95905a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m07.0s), 25/25 VUs, 244 complete and 0 interrupted iterations
+checkout_load   [  49% ] 25 VUs  0h02m06.6s/1h0m0s  244/500 shared iters
+time="2026-06-14T12:54:42-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"be580f22-451b-424d-9bf1-1e931c7a1710\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:42-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"94939fd8-02c0-470b-850c-42852062128e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:42-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"c6217cc8-6fba-4f1f-a9ec-8584c0b4d172\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m08.0s), 25/25 VUs, 247 complete and 0 interrupted iterations
+checkout_load   [  49% ] 25 VUs  0h02m07.6s/1h0m0s  247/500 shared iters
+time="2026-06-14T12:54:43-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"6a5b80ac-c11e-43fe-8edf-09574f85372c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m09.0s), 25/25 VUs, 248 complete and 0 interrupted iterations
+checkout_load   [  50% ] 25 VUs  0h02m08.6s/1h0m0s  248/500 shared iters
+time="2026-06-14T12:54:43-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"16215711-0e45-4f79-897c-0943da730d91\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:44-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"93f32471-c194-4a7a-b823-ce090f924130\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:44-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"206a30cc-ad5e-4a56-8b88-1a3d334e7d70\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m10.0s), 25/25 VUs, 251 complete and 0 interrupted iterations
+checkout_load   [  50% ] 25 VUs  0h02m09.6s/1h0m0s  251/500 shared iters
+time="2026-06-14T12:54:45-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"758d07bc-6764-467b-87db-d16efd74c383\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m11.0s), 25/25 VUs, 252 complete and 0 interrupted iterations
+checkout_load   [  50% ] 25 VUs  0h02m10.6s/1h0m0s  252/500 shared iters
+time="2026-06-14T12:54:46-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"d2b77ee2-6ad6-413c-b270-31f4d9483d9d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:46-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"805892fe-0b44-4cee-8860-be764ca14caf\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m12.0s), 25/25 VUs, 254 complete and 0 interrupted iterations
+checkout_load   [  51% ] 25 VUs  0h02m11.6s/1h0m0s  254/500 shared iters
+time="2026-06-14T12:54:47-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"747cfeab-a89c-4fcf-907c-164589850dcb\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:47-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"609876fa-c9ef-4a38-ae76-6191648fc5c4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m13.0s), 25/25 VUs, 256 complete and 0 interrupted iterations
+checkout_load   [  51% ] 25 VUs  0h02m12.6s/1h0m0s  256/500 shared iters
+time="2026-06-14T12:54:48-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4ef72b8f-0ed0-4dda-9f59-1a6e7a55dcba\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m14.0s), 25/25 VUs, 257 complete and 0 interrupted iterations
+checkout_load   [  51% ] 25 VUs  0h02m13.6s/1h0m0s  257/500 shared iters
+time="2026-06-14T12:54:48-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"3a7e21d5-6629-47bd-bbe3-e9f2e373b930\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:49-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5dc8d3cf-7ad5-45db-b66e-9b98c307a48e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:49-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"6b2def52-ce32-4a91-903c-09f4637cd516\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m15.0s), 25/25 VUs, 260 complete and 0 interrupted iterations
+checkout_load   [  52% ] 25 VUs  0h02m14.6s/1h0m0s  260/500 shared iters
+time="2026-06-14T12:54:50-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"bbff8a40-5a94-4429-b5b2-0ba494e3dbbf\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:50-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5503b4e3-a3aa-4b71-bdf0-81fbf7acb2b4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m16.0s), 25/25 VUs, 262 complete and 0 interrupted iterations
+checkout_load   [  52% ] 25 VUs  0h02m15.6s/1h0m0s  262/500 shared iters
+time="2026-06-14T12:54:51-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"59237c7f-b3aa-47c2-a703-af182bf7d9df\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m17.0s), 25/25 VUs, 263 complete and 0 interrupted iterations
+checkout_load   [  53% ] 25 VUs  0h02m16.6s/1h0m0s  263/500 shared iters
+time="2026-06-14T12:54:52-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"dbfc89e7-43dc-49a4-b594-034bccb426a4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:52-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"07581c4c-c908-453e-97d8-8e83a4ae30db\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:52-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4f5bd3b1-b1f5-4187-a892-3f0f4e2d5228\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m18.0s), 25/25 VUs, 266 complete and 0 interrupted iterations
+checkout_load   [  53% ] 25 VUs  0h02m17.6s/1h0m0s  266/500 shared iters
+time="2026-06-14T12:54:53-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"3ba2a256-7b06-4a95-a965-017a8edd8096\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m19.0s), 25/25 VUs, 267 complete and 0 interrupted iterations
+checkout_load   [  53% ] 25 VUs  0h02m18.6s/1h0m0s  267/500 shared iters
+time="2026-06-14T12:54:53-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"7a33dd02-545f-478d-93dd-f79212f58efc\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:53-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5c93f052-7044-4ddb-9278-748147c1a3f2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:54-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4d795e5e-79e7-435a-9c23-8694004dabb3\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m20.0s), 25/25 VUs, 270 complete and 0 interrupted iterations
+checkout_load   [  54% ] 25 VUs  0h02m19.6s/1h0m0s  270/500 shared iters
+time="2026-06-14T12:54:55-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"946b9eb8-2db1-4c4b-9f24-4241bd06bb5a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m21.0s), 25/25 VUs, 271 complete and 0 interrupted iterations
+checkout_load   [  54% ] 25 VUs  0h02m20.6s/1h0m0s  271/500 shared iters
+time="2026-06-14T12:54:56-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"6ec4c91e-4d32-4a4a-bf84-55ec87fea7c7\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m22.0s), 25/25 VUs, 272 complete and 0 interrupted iterations
+checkout_load   [  54% ] 25 VUs  0h02m21.6s/1h0m0s  272/500 shared iters
+time="2026-06-14T12:54:56-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e2aadf13-2018-43b1-b95c-aec1bb1e7fa1\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:57-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"fcbb920c-5179-49b0-ba0d-1bdf4f8299c4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m23.0s), 25/25 VUs, 274 complete and 0 interrupted iterations
+checkout_load   [  55% ] 25 VUs  0h02m22.6s/1h0m0s  274/500 shared iters
+time="2026-06-14T12:54:57-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"36b67ca0-a928-47d4-892c-2ddc0f20a694\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:58-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5115a8a9-d20b-47a9-bb37-abff0826d071\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:54:58-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"bba7b871-b26a-4802-8773-5d7f5bab3d7a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m24.0s), 25/25 VUs, 277 complete and 0 interrupted iterations
+checkout_load   [  55% ] 25 VUs  0h02m23.6s/1h0m0s  277/500 shared iters
+time="2026-06-14T12:54:59-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"cf5efc4e-ca16-4804-9568-9dc8b97c50d2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m25.0s), 25/25 VUs, 278 complete and 0 interrupted iterations
+checkout_load   [  56% ] 25 VUs  0h02m24.6s/1h0m0s  278/500 shared iters
+time="2026-06-14T12:54:59-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f592dc52-39fe-40e4-8f58-b20af1735cd4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:00-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"47694e3a-025d-4b00-a16c-3e6f3038c523\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:00-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"adfdad17-653b-43b6-bc50-8d4bb7257bd8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m26.0s), 25/25 VUs, 281 complete and 0 interrupted iterations
+checkout_load   [  56% ] 25 VUs  0h02m25.6s/1h0m0s  281/500 shared iters
+time="2026-06-14T12:55:01-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"1650a888-29cb-497c-b580-4c0614165d2d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:01-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"8349d789-9ee7-4779-a034-c91811ed0f18\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:01-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"53c64f28-5d73-46bc-87ea-39df1c51606c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m27.0s), 25/25 VUs, 284 complete and 0 interrupted iterations
+checkout_load   [  57% ] 25 VUs  0h02m26.6s/1h0m0s  284/500 shared iters
+
+running (0h02m28.0s), 25/25 VUs, 284 complete and 0 interrupted iterations
+checkout_load   [  57% ] 25 VUs  0h02m27.6s/1h0m0s  284/500 shared iters
+time="2026-06-14T12:55:03-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"19fa0bc9-91e2-4b06-9761-f503e439c41c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:03-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"54119977-74a3-45d2-8d8b-a88fb0cb9d1c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:03-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5d91b9f1-3344-43b9-931f-b9bba58ada13\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:03-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b8c478f0-a6ad-416f-87f7-99bb5e7cf5b5\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m29.0s), 25/25 VUs, 288 complete and 0 interrupted iterations
+checkout_load   [  58% ] 25 VUs  0h02m28.6s/1h0m0s  288/500 shared iters
+time="2026-06-14T12:55:04-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f217f7d8-7a56-4e89-90d3-07bef55dc28e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m30.0s), 25/25 VUs, 289 complete and 0 interrupted iterations
+checkout_load   [  58% ] 25 VUs  0h02m29.6s/1h0m0s  289/500 shared iters
+time="2026-06-14T12:55:05-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e673b3a7-51a9-409b-9ba1-fdc781b6dcbc\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:05-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"012cc073-6a73-4337-92e3-cbc3586a2f7a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m31.0s), 25/25 VUs, 291 complete and 0 interrupted iterations
+checkout_load   [  58% ] 25 VUs  0h02m30.6s/1h0m0s  291/500 shared iters
+time="2026-06-14T12:55:05-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"477e1fdd-3ff9-47a6-a2fd-e944460fe612\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:06-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"3ca74ff8-c728-4960-99b8-066dd78f4a55\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m32.0s), 25/25 VUs, 293 complete and 0 interrupted iterations
+checkout_load   [  59% ] 25 VUs  0h02m31.6s/1h0m0s  293/500 shared iters
+time="2026-06-14T12:55:07-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4d9d6d9e-ddb4-4bed-9d05-6586d7475639\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:07-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f37675b1-42eb-4ab0-bc68-87f5e9c258c3\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:07-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ff418fb2-3df7-4037-bc6c-082d4269a419\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m33.0s), 25/25 VUs, 296 complete and 0 interrupted iterations
+checkout_load   [  59% ] 25 VUs  0h02m32.6s/1h0m0s  296/500 shared iters
+time="2026-06-14T12:55:08-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"c60bde1c-a11e-4efb-8338-ca1e5c5a4d49\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m34.0s), 25/25 VUs, 297 complete and 0 interrupted iterations
+checkout_load   [  59% ] 25 VUs  0h02m33.6s/1h0m0s  297/500 shared iters
+time="2026-06-14T12:55:09-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"0d34d982-be58-4106-9f8a-92db6a29ad7a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m35.0s), 25/25 VUs, 298 complete and 0 interrupted iterations
+checkout_load   [  60% ] 25 VUs  0h02m34.6s/1h0m0s  298/500 shared iters
+time="2026-06-14T12:55:09-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"27134f43-1fd9-4cba-be26-e635ba0cc6c1\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:10-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f8e1e0cf-aef3-4496-982e-084c421a0307\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m36.0s), 25/25 VUs, 300 complete and 0 interrupted iterations
+checkout_load   [  60% ] 25 VUs  0h02m35.6s/1h0m0s  300/500 shared iters
+time="2026-06-14T12:55:10-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e6ddbbe1-7d49-4bc3-8d13-8207463ab41b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:11-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"d67468fd-4b3a-48ed-9c28-fe6422e89557\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:11-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"465204f9-27d7-46ca-a556-5574f012280a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m37.0s), 25/25 VUs, 303 complete and 0 interrupted iterations
+checkout_load   [  61% ] 25 VUs  0h02m36.6s/1h0m0s  303/500 shared iters
+time="2026-06-14T12:55:12-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"c436ff08-e958-4d22-904a-8d3f659ee7e3\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:12-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f96cde40-9de2-42c3-94e6-63bcdc209dbb\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:12-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"8705871c-8f09-4651-8d8a-913ac696dcf7\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m38.0s), 25/25 VUs, 306 complete and 0 interrupted iterations
+checkout_load   [  61% ] 25 VUs  0h02m37.6s/1h0m0s  306/500 shared iters
+time="2026-06-14T12:55:13-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ca630687-59eb-4bcc-aec9-6fbe0f038e08\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m39.0s), 25/25 VUs, 307 complete and 0 interrupted iterations
+checkout_load   [  61% ] 25 VUs  0h02m38.6s/1h0m0s  307/500 shared iters
+time="2026-06-14T12:55:13-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b108d51c-a6ae-458e-8a2a-f668b033ff92\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m40.0s), 25/25 VUs, 308 complete and 0 interrupted iterations
+checkout_load   [  62% ] 25 VUs  0h02m39.6s/1h0m0s  308/500 shared iters
+time="2026-06-14T12:55:15-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"49ed1c72-4efb-4d3e-b882-327a1ac38f6b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:15-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4309bf4e-47a2-4f60-8ec9-38f77d4c7b56\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:15-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"98ba5008-6e41-4f83-89ad-07da6dfdf75f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m41.0s), 25/25 VUs, 311 complete and 0 interrupted iterations
+checkout_load   [  62% ] 25 VUs  0h02m40.6s/1h0m0s  311/500 shared iters
+time="2026-06-14T12:55:15-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"c4549d12-de64-4dbb-b493-acfc7f6afbab\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m42.0s), 25/25 VUs, 312 complete and 0 interrupted iterations
+checkout_load   [  62% ] 25 VUs  0h02m41.6s/1h0m0s  312/500 shared iters
+time="2026-06-14T12:55:17-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"d7e41a4f-0b95-4b21-ae2d-011d3734a212\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:17-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"fa5c1bfa-58df-4ef7-b0a4-e4ad5d56bb66\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m43.0s), 25/25 VUs, 314 complete and 0 interrupted iterations
+checkout_load   [  63% ] 25 VUs  0h02m42.6s/1h0m0s  314/500 shared iters
+time="2026-06-14T12:55:17-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"1dc9bc16-5e8b-40a6-a4d2-ba39a85c99e7\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:17-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f27343b7-8529-42fe-b81f-c2473a6feba4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:18-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"055998d2-a414-4794-a760-6dd3961aa2fd\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m44.0s), 25/25 VUs, 317 complete and 0 interrupted iterations
+checkout_load   [  63% ] 25 VUs  0h02m43.6s/1h0m0s  317/500 shared iters
+time="2026-06-14T12:55:18-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"7cf4d7a7-ec14-4698-98ab-d845f8b71362\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:19-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"9deaf2ed-6e40-443c-b7e9-8c9fb4f25fb8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m45.0s), 25/25 VUs, 319 complete and 0 interrupted iterations
+checkout_load   [  64% ] 25 VUs  0h02m44.6s/1h0m0s  319/500 shared iters
+time="2026-06-14T12:55:20-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"7c59ec12-863e-4eef-b2fe-39acf0f3e087\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:20-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ab4908c1-06a9-4a87-aac9-3f9bb40fdd61\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m46.0s), 25/25 VUs, 321 complete and 0 interrupted iterations
+checkout_load   [  64% ] 25 VUs  0h02m45.6s/1h0m0s  321/500 shared iters
+time="2026-06-14T12:55:21-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"88a9a64a-e24a-460f-a026-7ffd945c1f1a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m47.0s), 25/25 VUs, 322 complete and 0 interrupted iterations
+checkout_load   [  64% ] 25 VUs  0h02m46.6s/1h0m0s  322/500 shared iters
+time="2026-06-14T12:55:21-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"83b8f191-8642-4508-a075-c3c0f03a34d1\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:22-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"9392673f-0a20-4be5-88e7-c3897bd83218\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m48.0s), 25/25 VUs, 324 complete and 0 interrupted iterations
+checkout_load   [  65% ] 25 VUs  0h02m47.6s/1h0m0s  324/500 shared iters
+time="2026-06-14T12:55:22-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"adb0fb1d-bb87-4ca8-bd5e-a007df2e1ce0\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:23-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"239e9914-5e05-4313-a9a9-0b8676b85886\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:23-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"fe8e2ede-9631-4d74-95b1-9197a63e991e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m49.0s), 25/25 VUs, 327 complete and 0 interrupted iterations
+checkout_load   [  65% ] 25 VUs  0h02m48.6s/1h0m0s  327/500 shared iters
+time="2026-06-14T12:55:24-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"8e6453f4-c6c9-4d76-9f97-ac92a4e633b0\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m50.0s), 25/25 VUs, 328 complete and 0 interrupted iterations
+checkout_load   [  66% ] 25 VUs  0h02m49.6s/1h0m0s  328/500 shared iters
+time="2026-06-14T12:55:24-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"8264700d-4ed4-4a37-8136-41dc1b41ea49\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:25-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"872fcfa0-19b0-403b-86df-4c5e064288e1\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m51.0s), 25/25 VUs, 330 complete and 0 interrupted iterations
+checkout_load   [  66% ] 25 VUs  0h02m50.6s/1h0m0s  330/500 shared iters
+time="2026-06-14T12:55:26-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"532b455c-f5d0-4728-8fc9-a557e375c02a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:26-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f1b41de7-f7d7-4cb2-b67e-89e72c72534c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:26-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"8636eb51-30e6-49ec-8f66-4df8bc001e9d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m52.0s), 25/25 VUs, 333 complete and 0 interrupted iterations
+checkout_load   [  67% ] 25 VUs  0h02m51.6s/1h0m0s  333/500 shared iters
+
+running (0h02m53.0s), 25/25 VUs, 333 complete and 0 interrupted iterations
+checkout_load   [  67% ] 25 VUs  0h02m52.6s/1h0m0s  333/500 shared iters
+time="2026-06-14T12:55:27-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"32767695-5c3c-4b73-a67b-d380506fa40d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:28-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5e730be8-1cc2-4045-abf6-e44145db5668\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:28-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"a7f09d61-3f16-462a-bdca-0e12f591d5b2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m54.0s), 25/25 VUs, 336 complete and 0 interrupted iterations
+checkout_load   [  67% ] 25 VUs  0h02m53.6s/1h0m0s  336/500 shared iters
+time="2026-06-14T12:55:29-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"18013cf3-bb2c-4ba0-80ab-09ba764af2e8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:29-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"13c5ba53-c9ff-4402-af6e-633b5ad7938f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m55.0s), 25/25 VUs, 338 complete and 0 interrupted iterations
+checkout_load   [  68% ] 25 VUs  0h02m54.6s/1h0m0s  338/500 shared iters
+time="2026-06-14T12:55:29-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4243c671-9768-43c4-97b9-9cff786350f2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:30-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"07506431-45de-4973-9ee1-1ed04549aadd\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:30-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"17bbf142-5c37-4f27-b53e-cde6197434fa\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m56.0s), 25/25 VUs, 341 complete and 0 interrupted iterations
+checkout_load   [  68% ] 25 VUs  0h02m55.6s/1h0m0s  341/500 shared iters
+time="2026-06-14T12:55:31-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"54289008-fb1e-49ea-abec-b2f657550622\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m57.0s), 25/25 VUs, 342 complete and 0 interrupted iterations
+checkout_load   [  68% ] 25 VUs  0h02m56.6s/1h0m0s  342/500 shared iters
+time="2026-06-14T12:55:32-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f058ce67-c260-4a61-9ae1-9f96657348d9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:32-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"89b65fb9-f4f3-449f-b9da-db07e3d4e0d9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m58.0s), 25/25 VUs, 344 complete and 0 interrupted iterations
+checkout_load   [  69% ] 25 VUs  0h02m57.6s/1h0m0s  344/500 shared iters
+time="2026-06-14T12:55:32-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ed5a9b4a-511d-4053-a643-3d436e950666\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:33-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e2aebcbd-d120-482a-91b9-dd7938d69e87\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h02m59.0s), 25/25 VUs, 346 complete and 0 interrupted iterations
+checkout_load   [  69% ] 25 VUs  0h02m58.6s/1h0m0s  346/500 shared iters
+time="2026-06-14T12:55:34-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"72bbe756-3cab-46e1-a814-db89bb500a2f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:34-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"fa844907-0feb-4f65-a36c-67229e5721db\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:34-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"101db814-c801-4681-bf1c-809de6a60180\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m00.0s), 25/25 VUs, 349 complete and 0 interrupted iterations
+checkout_load   [  70% ] 25 VUs  0h02m59.6s/1h0m0s  349/500 shared iters
+time="2026-06-14T12:55:35-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"45385508-f361-40f4-b342-e0742fce4e85\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m01.0s), 25/25 VUs, 350 complete and 0 interrupted iterations
+checkout_load   [  70% ] 25 VUs  0h03m00.6s/1h0m0s  350/500 shared iters
+time="2026-06-14T12:55:35-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e2448eaf-9177-4f48-90a3-40ac448ad9ab\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:36-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"cd21295e-18ea-456a-9b1a-f22ced39553c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m02.0s), 25/25 VUs, 352 complete and 0 interrupted iterations
+checkout_load   [  70% ] 25 VUs  0h03m01.6s/1h0m0s  352/500 shared iters
+time="2026-06-14T12:55:37-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"0210964b-08aa-40bd-9ee6-cd6c5a38643f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:37-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5bfeeab5-dcea-4853-806a-30e1afc3e1eb\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m03.0s), 25/25 VUs, 354 complete and 0 interrupted iterations
+checkout_load   [  71% ] 25 VUs  0h03m02.6s/1h0m0s  354/500 shared iters
+time="2026-06-14T12:55:38-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"d1060d16-562d-4a50-b0e2-5d7f6c3fc328\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:38-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"2ef3fe9b-1a2e-453b-a68e-3205668a3894\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m04.0s), 25/25 VUs, 356 complete and 0 interrupted iterations
+checkout_load   [  71% ] 25 VUs  0h03m03.6s/1h0m0s  356/500 shared iters
+time="2026-06-14T12:55:38-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"efb8c18d-54af-4854-aa6c-65408bd160f2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m05.0s), 25/25 VUs, 357 complete and 0 interrupted iterations
+checkout_load   [  71% ] 25 VUs  0h03m04.6s/1h0m0s  357/500 shared iters
+time="2026-06-14T12:55:40-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"601c4686-7c08-4c83-884a-d6bde3ed043e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:40-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b7fc40d3-dfdb-4e16-b204-e724e3d2e10e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:40-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"1b019980-0177-458b-a7cd-332d97b6f34a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m06.0s), 25/25 VUs, 360 complete and 0 interrupted iterations
+checkout_load   [  72% ] 25 VUs  0h03m05.6s/1h0m0s  360/500 shared iters
+time="2026-06-14T12:55:41-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b11c303f-dec0-41ee-9b38-e1b4714be819\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m07.0s), 25/25 VUs, 361 complete and 0 interrupted iterations
+checkout_load   [  72% ] 25 VUs  0h03m06.6s/1h0m0s  361/500 shared iters
+time="2026-06-14T12:55:41-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"1f986bf8-4862-4938-9a93-371f20002d98\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:42-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"435c4be4-bca0-45a6-a67d-f27df47c65f9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:42-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"74ff4855-49c7-4dcd-a062-1cb087294438\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m08.0s), 25/25 VUs, 364 complete and 0 interrupted iterations
+checkout_load   [  73% ] 25 VUs  0h03m07.6s/1h0m0s  364/500 shared iters
+time="2026-06-14T12:55:42-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"927450c0-4ce5-4b4f-bb6c-f93988d35990\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m09.0s), 25/25 VUs, 365 complete and 0 interrupted iterations
+checkout_load   [  73% ] 25 VUs  0h03m08.6s/1h0m0s  365/500 shared iters
+time="2026-06-14T12:55:43-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"efb1c138-e85f-486f-bcbc-47f553c89361\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:44-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"619b8ad8-0273-4219-9f53-cd1b073e9d20\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m10.0s), 25/25 VUs, 367 complete and 0 interrupted iterations
+checkout_load   [  73% ] 25 VUs  0h03m09.6s/1h0m0s  367/500 shared iters
+time="2026-06-14T12:55:44-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f8d60411-5728-45db-a884-ee506af123ba\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:45-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ccf3cbe1-89e0-4caa-92a9-e9ce87724c18\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:45-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"3f6cffb0-411c-4b94-9f94-b7ea37a82464\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m11.0s), 25/25 VUs, 370 complete and 0 interrupted iterations
+checkout_load   [  74% ] 25 VUs  0h03m10.6s/1h0m0s  370/500 shared iters
+time="2026-06-14T12:55:46-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4215d0e8-7e7a-46f9-98fa-573cca585a3a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:46-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"a28a6ac1-d964-411b-9efe-c1c9e78eca9b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m12.0s), 25/25 VUs, 372 complete and 0 interrupted iterations
+checkout_load   [  74% ] 25 VUs  0h03m11.6s/1h0m0s  372/500 shared iters
+time="2026-06-14T12:55:47-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"538b34a5-9b7a-4f54-b0fd-43ee3bd97bc4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m13.0s), 25/25 VUs, 373 complete and 0 interrupted iterations
+checkout_load   [  75% ] 25 VUs  0h03m12.6s/1h0m0s  373/500 shared iters
+time="2026-06-14T12:55:48-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"45bac577-596e-4a57-8320-2d2d91f52a19\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:48-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"714896be-9aa9-46b6-804f-19d0906e3b2f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m14.0s), 25/25 VUs, 375 complete and 0 interrupted iterations
+checkout_load   [  75% ] 25 VUs  0h03m13.6s/1h0m0s  375/500 shared iters
+time="2026-06-14T12:55:48-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"152f430c-ff4a-451e-8c37-88dc124abc68\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:49-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ff9c15a4-aaba-4f66-b7b2-1121d58e38d9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:49-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"9952264b-76e2-4956-b641-81dffab0d78e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m15.0s), 25/25 VUs, 378 complete and 0 interrupted iterations
+checkout_load   [  76% ] 25 VUs  0h03m14.6s/1h0m0s  378/500 shared iters
+time="2026-06-14T12:55:49-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"0106c480-77c7-43eb-be07-a20e8ca939d9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m16.0s), 25/25 VUs, 379 complete and 0 interrupted iterations
+checkout_load   [  76% ] 25 VUs  0h03m15.6s/1h0m0s  379/500 shared iters
+time="2026-06-14T12:55:51-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"94801290-f887-43cf-97dc-e5d49c56dd21\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:51-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ec619d3e-d2cd-41b9-8f1b-cd1f87b1338c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m17.0s), 25/25 VUs, 381 complete and 0 interrupted iterations
+checkout_load   [  76% ] 25 VUs  0h03m16.6s/1h0m0s  381/500 shared iters
+time="2026-06-14T12:55:52-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b2e4f34f-acae-4f4a-accc-3e9e7c5565ef\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m18.0s), 25/25 VUs, 382 complete and 0 interrupted iterations
+checkout_load   [  76% ] 25 VUs  0h03m17.6s/1h0m0s  382/500 shared iters
+time="2026-06-14T12:55:52-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"47ed985c-ee79-45d1-8797-e2995f99f46a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:53-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"59f863c8-bb57-4498-9a1a-cf789484b86c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:53-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ac288d22-8e23-4b2e-a48f-e8638e6954ee\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m19.0s), 25/25 VUs, 385 complete and 0 interrupted iterations
+checkout_load   [  77% ] 25 VUs  0h03m18.6s/1h0m0s  385/500 shared iters
+time="2026-06-14T12:55:54-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4d790bc8-cce9-4250-92ce-5b1a097bab55\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:54-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"6b691131-0a43-4023-a5a7-007be07fde92\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:54-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b249d411-d964-4323-8fdc-9c868ec22d30\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m20.0s), 25/25 VUs, 388 complete and 0 interrupted iterations
+checkout_load   [  78% ] 25 VUs  0h03m19.6s/1h0m0s  388/500 shared iters
+
+running (0h03m21.0s), 25/25 VUs, 388 complete and 0 interrupted iterations
+checkout_load   [  78% ] 25 VUs  0h03m20.6s/1h0m0s  388/500 shared iters
+time="2026-06-14T12:55:56-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"cffc32a3-a739-474e-ba94-52fedcaafc15\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:56-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e7b58c53-a402-406e-a134-6bf2302c5e11\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:56-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"6a8592c0-6899-4a30-9346-fd9ef46587cc\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m22.0s), 25/25 VUs, 391 complete and 0 interrupted iterations
+checkout_load   [  78% ] 25 VUs  0h03m21.6s/1h0m0s  391/500 shared iters
+time="2026-06-14T12:55:56-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"93693aa1-f4b7-4c25-ba57-8b57f591ed02\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:57-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"edd56649-a072-44c0-8d19-89756033cbc8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:57-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"dca1f19d-fcd1-47d4-bf41-f249c17869cc\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m23.0s), 25/25 VUs, 394 complete and 0 interrupted iterations
+checkout_load   [  79% ] 25 VUs  0h03m22.6s/1h0m0s  394/500 shared iters
+time="2026-06-14T12:55:58-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"920627a0-902e-46e5-b520-215d1827c264\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m24.0s), 25/25 VUs, 395 complete and 0 interrupted iterations
+checkout_load   [  79% ] 25 VUs  0h03m23.6s/1h0m0s  395/500 shared iters
+time="2026-06-14T12:55:58-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ec2cd006-163e-4ebb-8b36-66fee753ba6a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:55:59-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"7132b7d0-16a3-4e75-a661-7b3814e6a15b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m25.0s), 25/25 VUs, 397 complete and 0 interrupted iterations
+checkout_load   [  79% ] 25 VUs  0h03m24.6s/1h0m0s  397/500 shared iters
+time="2026-06-14T12:55:59-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"0fc9bd3a-4109-45a1-8937-78c0d38b1dad\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:00-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"21177028-1f7a-48fe-a09e-b7c02f39c1f2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m26.0s), 25/25 VUs, 399 complete and 0 interrupted iterations
+checkout_load   [  80% ] 25 VUs  0h03m25.6s/1h0m0s  399/500 shared iters
+time="2026-06-14T12:56:00-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"9a0a533b-c0d9-4ab3-8aaa-9350deafd6c5\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:01-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"3ba94333-7943-4e84-b773-2873043878cb\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m27.0s), 25/25 VUs, 401 complete and 0 interrupted iterations
+checkout_load   [  80% ] 25 VUs  0h03m26.6s/1h0m0s  401/500 shared iters
+time="2026-06-14T12:56:02-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"55b09c91-cb10-488e-808c-fc462575ed56\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m28.0s), 25/25 VUs, 402 complete and 0 interrupted iterations
+checkout_load   [  80% ] 25 VUs  0h03m27.6s/1h0m0s  402/500 shared iters
+time="2026-06-14T12:56:03-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e15aac84-4ce8-461e-81da-5d74b1b4e64c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:03-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"623b3201-babd-42f2-a74a-bf365794daec\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:03-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"50e47cac-9b7d-4584-ac71-578f6dda2ab0\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:03-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ce991232-8029-47bf-a29c-4bdd2e32eb6a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m29.0s), 25/25 VUs, 406 complete and 0 interrupted iterations
+checkout_load   [  81% ] 25 VUs  0h03m28.6s/1h0m0s  406/500 shared iters
+
+running (0h03m30.0s), 25/25 VUs, 406 complete and 0 interrupted iterations
+checkout_load   [  81% ] 25 VUs  0h03m29.6s/1h0m0s  406/500 shared iters
+time="2026-06-14T12:56:04-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"cd4a8399-8956-4797-801b-fb721c7400d5\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:05-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"eaeae53b-46da-440c-bd05-b96c6e145fbd\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:05-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"6cc1d5c9-a6e1-4a7c-82b3-297c96cdd0b1\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:05-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"a1628b79-d719-4953-98e7-3c15f8078216\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m31.0s), 25/25 VUs, 410 complete and 0 interrupted iterations
+checkout_load   [  82% ] 25 VUs  0h03m30.6s/1h0m0s  410/500 shared iters
+
+running (0h03m32.0s), 25/25 VUs, 410 complete and 0 interrupted iterations
+checkout_load   [  82% ] 25 VUs  0h03m31.6s/1h0m0s  410/500 shared iters
+time="2026-06-14T12:56:06-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"448497fc-4c1b-4f77-acf1-ff466bca0134\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:06-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"8476c04f-919b-4529-a7d1-52c97388264a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m33.0s), 25/25 VUs, 412 complete and 0 interrupted iterations
+checkout_load   [  82% ] 25 VUs  0h03m32.6s/1h0m0s  412/500 shared iters
+time="2026-06-14T12:56:08-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"c88f7049-ed44-46c4-a730-1e69ae8c0176\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:08-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"698301a3-1532-40ea-9b63-ef9d4b858c8f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m34.0s), 25/25 VUs, 414 complete and 0 interrupted iterations
+checkout_load   [  83% ] 25 VUs  0h03m33.6s/1h0m0s  414/500 shared iters
+time="2026-06-14T12:56:08-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"1a03b642-466f-44d5-ad09-7b3d685783cb\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:09-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"1fe9d767-f961-46ed-afa1-9c8c5e8965b4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:09-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e0ac7083-d670-4912-8114-cdd8380261dc\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:09-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"7a6ba5e2-a8b9-4daf-a8bb-c82dd44d9afb\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m35.0s), 25/25 VUs, 418 complete and 0 interrupted iterations
+checkout_load   [  84% ] 25 VUs  0h03m34.6s/1h0m0s  418/500 shared iters
+
+running (0h03m36.0s), 25/25 VUs, 418 complete and 0 interrupted iterations
+checkout_load   [  84% ] 25 VUs  0h03m35.6s/1h0m0s  418/500 shared iters
+time="2026-06-14T12:56:11-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"bd4ab473-c9e6-4496-b291-ddfaaa9f1c2d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:11-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"adb9f5cc-3ea4-481a-aa17-517ef989ddab\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:11-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"11ab7fd1-cd75-477f-9d34-72d741edd994\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m37.0s), 25/25 VUs, 421 complete and 0 interrupted iterations
+checkout_load   [  84% ] 25 VUs  0h03m36.6s/1h0m0s  421/500 shared iters
+time="2026-06-14T12:56:11-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"c9e96c79-0104-4cb7-a6ea-ef271cefdde2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:12-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"60f1fd0c-b982-4639-aa8d-8adb21aed23b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m38.0s), 25/25 VUs, 423 complete and 0 interrupted iterations
+checkout_load   [  85% ] 25 VUs  0h03m37.6s/1h0m0s  423/500 shared iters
+time="2026-06-14T12:56:13-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"2356f061-3c00-4727-b819-74e028c13b3d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:13-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"60bca997-1ddc-43fc-9fb5-9cb6368fcc45\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m39.0s), 25/25 VUs, 425 complete and 0 interrupted iterations
+checkout_load   [  85% ] 25 VUs  0h03m38.6s/1h0m0s  425/500 shared iters
+time="2026-06-14T12:56:14-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b26e8b32-9a71-47b2-a255-e09115ce91ed\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:14-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"a31edaad-72a9-48f8-a23f-4c07604639f3\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m40.0s), 25/25 VUs, 427 complete and 0 interrupted iterations
+checkout_load   [  85% ] 25 VUs  0h03m39.6s/1h0m0s  427/500 shared iters
+time="2026-06-14T12:56:15-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"aea7b0eb-c9f8-40a0-a9c1-87e1bf4d0fa0\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m41.0s), 25/25 VUs, 428 complete and 0 interrupted iterations
+checkout_load   [  86% ] 25 VUs  0h03m40.6s/1h0m0s  428/500 shared iters
+time="2026-06-14T12:56:16-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"0e5a6cc8-5948-4826-aca8-f3ca5441d482\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:16-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"9eda4a1e-431d-40db-903e-7995fbdce647\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m42.0s), 25/25 VUs, 430 complete and 0 interrupted iterations
+checkout_load   [  86% ] 25 VUs  0h03m41.6s/1h0m0s  430/500 shared iters
+time="2026-06-14T12:56:17-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4744f642-22b3-47d3-ac7e-9be83124deb7\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:17-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"fe501a3f-7625-4f4f-97d1-207389b178d4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m43.0s), 25/25 VUs, 432 complete and 0 interrupted iterations
+checkout_load   [  86% ] 25 VUs  0h03m42.6s/1h0m0s  432/500 shared iters
+time="2026-06-14T12:56:17-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"9f340841-d9cd-4935-8463-2ad09643a375\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:18-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4fb71046-60b2-459f-b3cd-4790c468bd44\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m44.0s), 25/25 VUs, 434 complete and 0 interrupted iterations
+checkout_load   [  87% ] 25 VUs  0h03m43.6s/1h0m0s  434/500 shared iters
+time="2026-06-14T12:56:19-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"29e4d5c4-b03b-44f6-9bb9-6cae33f783c4\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:19-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ca6a8f0c-72f4-4849-b688-bd196cd44e81\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m45.0s), 25/25 VUs, 436 complete and 0 interrupted iterations
+checkout_load   [  87% ] 25 VUs  0h03m44.6s/1h0m0s  436/500 shared iters
+time="2026-06-14T12:56:20-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"c4662374-b645-4a55-992d-d2080495b8c1\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:20-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"3532b6d8-66cd-4a5a-83ea-ea715108738a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m46.0s), 25/25 VUs, 438 complete and 0 interrupted iterations
+checkout_load   [  88% ] 25 VUs  0h03m45.6s/1h0m0s  438/500 shared iters
+time="2026-06-14T12:56:21-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"42499666-7f8c-45f7-b95b-3794623f6229\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:21-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"875988fc-1ae7-40d8-9bf4-32d084d5e04d\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:21-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"d6e22a35-3c03-4d64-9352-3da5ceb88289\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m47.0s), 25/25 VUs, 441 complete and 0 interrupted iterations
+checkout_load   [  88% ] 25 VUs  0h03m46.6s/1h0m0s  441/500 shared iters
+time="2026-06-14T12:56:22-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"48e24433-951d-4a91-86ba-b841cee5d049\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m48.0s), 25/25 VUs, 442 complete and 0 interrupted iterations
+checkout_load   [  88% ] 25 VUs  0h03m47.6s/1h0m0s  442/500 shared iters
+time="2026-06-14T12:56:23-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"38e4f994-32de-4384-b082-10235944077e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:23-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f6715c50-367b-4872-bbac-d1943e5b3d10\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m49.0s), 25/25 VUs, 444 complete and 0 interrupted iterations
+checkout_load   [  89% ] 25 VUs  0h03m48.6s/1h0m0s  444/500 shared iters
+time="2026-06-14T12:56:24-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"189d646e-1c1d-4a60-a98b-24b6f740d4a2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m50.0s), 25/25 VUs, 445 complete and 0 interrupted iterations
+checkout_load   [  89% ] 25 VUs  0h03m49.6s/1h0m0s  445/500 shared iters
+time="2026-06-14T12:56:25-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"76c538e7-6a52-4eab-a25f-2a21e0fa55ba\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:25-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"af3c0e6e-0a92-41c3-8c1c-35672da1bd97\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:25-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"128ed3d4-34a3-47bf-9da7-701b224c4577\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:25-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"1f1f65f9-095b-4653-9521-1582b8ae8304\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m51.0s), 25/25 VUs, 449 complete and 0 interrupted iterations
+checkout_load   [  90% ] 25 VUs  0h03m50.6s/1h0m0s  449/500 shared iters
+
+running (0h03m52.0s), 25/25 VUs, 449 complete and 0 interrupted iterations
+checkout_load   [  90% ] 25 VUs  0h03m51.6s/1h0m0s  449/500 shared iters
+time="2026-06-14T12:56:27-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5533a3b0-99a5-4f3f-8d1b-8d996474dd82\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:27-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"00d68cdb-70a3-4d12-9f87-dad5779bf06b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:27-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"a66f8f18-aeaa-4d0c-99e7-3ce8d960b988\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m53.0s), 25/25 VUs, 452 complete and 0 interrupted iterations
+checkout_load   [  90% ] 25 VUs  0h03m52.6s/1h0m0s  452/500 shared iters
+time="2026-06-14T12:56:28-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b20717e5-5a77-45b8-8e0d-d9263a21bfa5\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:28-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"7b98f91a-16d6-4e22-96b7-65042db50285\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:28-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"378a0055-23d4-46bf-a5f1-a6e72e91599a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m54.0s), 25/25 VUs, 455 complete and 0 interrupted iterations
+checkout_load   [  91% ] 25 VUs  0h03m53.6s/1h0m0s  455/500 shared iters
+
+running (0h03m55.0s), 25/25 VUs, 455 complete and 0 interrupted iterations
+checkout_load   [  91% ] 25 VUs  0h03m54.6s/1h0m0s  455/500 shared iters
+time="2026-06-14T12:56:29-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"69f7c5f0-74e6-445f-8c40-f3fd6ec72387\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:29-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"c4487d91-c376-4138-8e9f-7f3032eab0d1\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:30-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"160f8377-74c1-4ae2-ab42-73f47bd06629\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:30-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e2d5e15b-574c-4ec1-8e9b-13cc3298976a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m56.0s), 25/25 VUs, 459 complete and 0 interrupted iterations
+checkout_load   [  92% ] 25 VUs  0h03m55.6s/1h0m0s  459/500 shared iters
+
+running (0h03m57.0s), 25/25 VUs, 459 complete and 0 interrupted iterations
+checkout_load   [  92% ] 25 VUs  0h03m56.6s/1h0m0s  459/500 shared iters
+time="2026-06-14T12:56:31-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"6cbe894d-f714-450e-a70b-3df3e8e5210b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:32-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"008f1e3f-c9ea-49e7-8fea-36a379e7fbcd\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m58.0s), 25/25 VUs, 461 complete and 0 interrupted iterations
+checkout_load   [  92% ] 25 VUs  0h03m57.6s/1h0m0s  461/500 shared iters
+time="2026-06-14T12:56:33-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"74672880-af6b-4018-a55d-12fe691d04f9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:33-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"f389725a-7cd5-4344-9eec-be5cd1be612c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:33-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"49b5e8b4-9dd9-46a9-8ffa-9b4ba2de653f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h03m59.0s), 25/25 VUs, 464 complete and 0 interrupted iterations
+checkout_load   [  93% ] 25 VUs  0h03m58.6s/1h0m0s  464/500 shared iters
+time="2026-06-14T12:56:34-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"6356675c-19f5-4e6a-9ccc-d5f2d89e1c8b\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:34-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"ce0894ad-2354-487f-8911-f0befe3aeb1c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:34-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"0e9dcdd5-b2ed-4743-b0e5-3a11bb70dafb\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h04m00.0s), 25/25 VUs, 467 complete and 0 interrupted iterations
+checkout_load   [  93% ] 25 VUs  0h03m59.6s/1h0m0s  467/500 shared iters
+
+running (0h04m01.0s), 25/25 VUs, 467 complete and 0 interrupted iterations
+checkout_load   [  93% ] 25 VUs  0h04m00.6s/1h0m0s  467/500 shared iters
+time="2026-06-14T12:56:35-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"622a312a-3ccb-4df4-8669-11fd5021746f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:36-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"46b2de62-4eba-4dde-9eb3-c29d96a49c44\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:36-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"34ea1e91-d8a6-4a2e-b32f-a9943474b624\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h04m02.0s), 25/25 VUs, 470 complete and 0 interrupted iterations
+checkout_load   [  94% ] 25 VUs  0h04m01.6s/1h0m0s  470/500 shared iters
+time="2026-06-14T12:56:37-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b84ef1fa-85f6-4b5f-91d8-2348b767d276\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:37-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"d0c4d0d5-ce6b-4175-8469-6c1b127cd3ab\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h04m03.0s), 25/25 VUs, 472 complete and 0 interrupted iterations
+checkout_load   [  94% ] 25 VUs  0h04m02.6s/1h0m0s  472/500 shared iters
+time="2026-06-14T12:56:38-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"1743ed78-36ad-4be6-887b-4e0cf7591934\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h04m04.0s), 25/25 VUs, 473 complete and 0 interrupted iterations
+checkout_load   [  95% ] 25 VUs  0h04m03.6s/1h0m0s  473/500 shared iters
+time="2026-06-14T12:56:39-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"9ad2d2b4-47af-45dc-9b31-12a94a4d5336\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:39-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"94eeada8-6db2-43f6-836c-7c09152085a2\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:39-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"6c3d4daf-99ba-4e03-b051-2115b86f1174\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h04m05.0s), 24/25 VUs, 476 complete and 0 interrupted iterations
+checkout_load   [  95% ] 25 VUs  0h04m04.6s/1h0m0s  476/500 shared iters
+time="2026-06-14T12:56:40-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"2bd902bd-a1df-4f1d-8f07-0e17bd9e3d85\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:40-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"7499a1f1-f074-49fd-ad2a-71c3a79cfcb5\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h04m06.0s), 22/25 VUs, 478 complete and 0 interrupted iterations
+checkout_load   [  96% ] 25 VUs  0h04m05.6s/1h0m0s  478/500 shared iters
+time="2026-06-14T12:56:41-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"11dae1d1-78d3-40ff-a40d-264309795a31\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h04m07.0s), 21/25 VUs, 479 complete and 0 interrupted iterations
+checkout_load   [  96% ] 25 VUs  0h04m06.6s/1h0m0s  479/500 shared iters
+time="2026-06-14T12:56:42-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"6a9fbae1-2b56-4b3d-9d4a-85c21ab22edd\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:42-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"c8699425-f786-40d4-84af-59355ed69433\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:42-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"d363668c-6e5c-47d3-b916-08fde06b4141\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h04m08.0s), 18/25 VUs, 482 complete and 0 interrupted iterations
+checkout_load   [  96% ] 25 VUs  0h04m07.6s/1h0m0s  482/500 shared iters
+
+running (0h04m09.0s), 18/25 VUs, 482 complete and 0 interrupted iterations
+checkout_load   [  96% ] 25 VUs  0h04m08.6s/1h0m0s  482/500 shared iters
+time="2026-06-14T12:56:43-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"274db48b-6534-4ebd-8005-0685574f96b5\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:44-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"e212360d-4f01-465a-989e-70066af7cd37\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:44-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"c9a96541-bcd0-4c97-bde2-b61d28494aa8\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:44-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"25223cd7-8d37-4a33-aed4-eae4223aa77f\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h04m10.0s), 14/25 VUs, 486 complete and 0 interrupted iterations
+checkout_load   [  97% ] 25 VUs  0h04m09.6s/1h0m0s  486/500 shared iters
+time="2026-06-14T12:56:45-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"437e3097-30a4-41e0-880c-35e68af070ae\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h04m11.0s), 13/25 VUs, 487 complete and 0 interrupted iterations
+checkout_load   [  97% ] 25 VUs  0h04m10.6s/1h0m0s  487/500 shared iters
+time="2026-06-14T12:56:45-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"9a67f5d2-2a8a-4595-a402-179f62134f8a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:46-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"c4a81b2e-ea83-4cfd-90c9-3ce914116bfa\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:46-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5ff8db89-143c-444c-87fa-ec7cff398a01\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h04m12.0s), 10/25 VUs, 490 complete and 0 interrupted iterations
+checkout_load   [  98% ] 25 VUs  0h04m11.6s/1h0m0s  490/500 shared iters
+time="2026-06-14T12:56:47-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"05d05ef9-c90f-4169-bba8-9152dba5381c\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h04m13.0s), 09/25 VUs, 491 complete and 0 interrupted iterations
+checkout_load   [  98% ] 25 VUs  0h04m12.6s/1h0m0s  491/500 shared iters
+time="2026-06-14T12:56:48-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5473836d-5b59-498c-9c5e-9b41084de1e9\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:48-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"41361646-8fb9-415d-8202-e8b69b0c28ea\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h04m14.0s), 07/25 VUs, 493 complete and 0 interrupted iterations
+checkout_load   [  99% ] 25 VUs  0h04m13.6s/1h0m0s  493/500 shared iters
+time="2026-06-14T12:56:48-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"4e34b856-5d73-40d7-b52e-77c560c3e7b3\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:49-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"deb63640-cbe5-469c-9a83-314f4670027e\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h04m15.0s), 05/25 VUs, 495 complete and 0 interrupted iterations
+checkout_load   [  99% ] 25 VUs  0h04m14.6s/1h0m0s  495/500 shared iters
+time="2026-06-14T12:56:50-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"85f89dab-e030-4244-90fe-2047e0204104\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:50-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"aee8df0d-269d-4094-adf2-9e42ec039c6a\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:50-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"b6fc0878-511b-402b-b0d5-6834c95608cd\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+running (0h04m16.0s), 02/25 VUs, 498 complete and 0 interrupted iterations
+checkout_load   [ 100% ] 25 VUs  0h04m15.6s/1h0m0s  498/500 shared iters
+
+running (0h04m17.0s), 02/25 VUs, 498 complete and 0 interrupted iterations
+checkout_load   [ 100% ] 25 VUs  0h04m16.6s/1h0m0s  498/500 shared iters
+time="2026-06-14T12:56:51-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"5bc3b18f-afbb-4664-a9e2-2043f383cd86\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+time="2026-06-14T12:56:52-05:00" level=info msg="TRACE|{\"scenario\":\"CARGA-500\",\"checkoutId\":\"0bf9b1ad-e5b8-4a3d-a8f8-1194f27599c1\",\"status\":\"COMPLETED\",\"completed\":true}" source=console
+
+
+  █ THRESHOLDS
+
+    functional_checkout_error_rate
+    ✓ 'rate<=0.05' rate=0.00%
+
+    http_req_failed
+    ✓ 'rate<=0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS
+
+    checks_total.......: 7963    30.962555/s
+    checks_succeeded...: 100.00% 7963 out of 7963
+    checks_failed......: 0.00%   0 out of 7963
+
+    ✓ setup register status 201
+    ✓ setup products status 200
+    ✓ register status 201
+    ✓ products status 200
+    ✓ cart add status 201
+    ✓ checkout status 202
+    ✓ checkout status poll 200
+
+    CUSTOM
+    checkout_final_latency_ms........: avg=12.53s  min=2.56s   med=12.57s  p(90)=13.56s   p(95)=13.65s   p(99)=13.74s   max=15.05s
+    checkouts_attempted..............: 500    1.944151/s
+    checkouts_completed..............: 500    1.944151/s
+    functional_checkout_error_rate...: 0.00%  0 out of 500
+
+    HTTP
+    http_req_duration................: avg=99.42ms min=80.25ms med=87.28ms p(90)=104.67ms p(95)=168.21ms p(99)=201.79ms max=1.51s
+      { expected_response:true }.....: avg=99.42ms min=80.25ms med=87.28ms p(90)=104.67ms p(95)=168.21ms p(99)=201.79ms max=1.51s
+    http_req_failed..................: 0.00%  0 out of 7963
+    http_reqs........................: 7963   30.962555/s
+
+    EXECUTION
+    iteration_duration...............: avg=12.53s  min=2.56s   med=12.57s  p(90)=13.56s   p(95)=13.65s   p(99)=13.74s   max=15.05s
+    iterations.......................: 500    1.944151/s
+    vus..............................: 2      min=2         max=25
+    vus_max..........................: 25     min=25        max=25
+
+    NETWORK
+    data_received....................: 4.7 MB 18 kB/s
+    data_sent........................: 3.9 MB 15 kB/s
+
+
+
+
+running (0h04m17.2s), 00/25 VUs, 500 complete and 0 interrupted iterations
+checkout_load ✓ [ 100% ] 25 VUs  0h04m16.8s/1h0m0s  500/500 shared iters
