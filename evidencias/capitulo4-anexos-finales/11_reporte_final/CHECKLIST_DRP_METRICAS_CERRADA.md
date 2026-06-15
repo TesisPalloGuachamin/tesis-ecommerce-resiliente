@@ -2,6 +2,17 @@
 
 RUN_ID: `cap4-drp-20260614-185235`
 
+## Referencia de versionamiento
+
+Las evidencias DRP/metricas quedaron versionadas en el commit:
+
+- Commit completo: `6bbb6f3c26c47470160fcebd0484e6d63a862dcc`
+- Commit corto: `6bbb6f3`
+- Fecha/hora: `2026-06-14T22:01:08-05:00`
+- Rama: `cap4-cierre-tecnico`
+- RUN_ID principal: `cap4-drp-20260614-185235`
+- RUN_ID_AWS_PRINCIPAL: `cap4-drp-aws-main-20260614-191520`
+
 | Elemento | Estado | Evidencia | Observacion |
 |---|---|---|---|
 | Clasificacion de escenarios | CERRADO | `08_drp/clasificacion_escenarios_drp.md` | Diferencia AWS principal DRP, CARGA-1000 complementaria, AWS alterna, Azure, GCP y on-premise. |
