@@ -1,0 +1,220 @@
+{
+    "root_group": {
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {
+            "setup": {
+                "name": "setup",
+                "path": "::setup",
+                "id": "5c0f8025f7e0b6654089e5b00e950f1a",
+                "groups": {},
+                "checks": {
+                        "setup register status 201": {
+                            "name": "setup register status 201",
+                            "path": "::setup::setup register status 201",
+                            "id": "beef9bc3e3503374f9af1eb4559f1782",
+                            "passes": 1,
+                            "fails": 0
+                        },
+                        "setup products status 200": {
+                            "fails": 0,
+                            "name": "setup products status 200",
+                            "path": "::setup::setup products status 200",
+                            "id": "e19388a430b236e9b4f2142463481c3f",
+                            "passes": 1
+                        }
+                    }
+            }
+        },
+        "checks": {
+            "register status 201": {
+                "id": "a202de701392e9f2e1b9725c6057d0c0",
+                "passes": 200,
+                "fails": 0,
+                "name": "register status 201",
+                "path": "::register status 201"
+            },
+            "products status 200": {
+                "path": "::products status 200",
+                "id": "7a463d11f81f84d56ee861b8840edb44",
+                "passes": 200,
+                "fails": 0,
+                "name": "products status 200"
+            },
+            "cart add status 201": {
+                "name": "cart add status 201",
+                "path": "::cart add status 201",
+                "id": "d29b6ae0dd4628d6d2786ada9c94901b",
+                "passes": 200,
+                "fails": 0
+            },
+            "checkout status 202": {
+                "name": "checkout status 202",
+                "path": "::checkout status 202",
+                "id": "4493a660934d0f4352a782e058db8b1d",
+                "passes": 200,
+                "fails": 0
+            },
+            "checkout status poll 200": {
+                "name": "checkout status poll 200",
+                "path": "::checkout status poll 200",
+                "id": "6622fff2a332ed30813a5fbb1932d561",
+                "passes": 1721,
+                "fails": 0
+            }
+        }
+    },
+    "metrics": {
+        "http_req_blocked": {
+            "avg": 1.0683920257629793,
+            "min": 0.001587,
+            "med": 0.009056,
+            "p(90)": 0.015272800000000001,
+            "p(95)": 0.017673300000000003,
+            "p(99)": 83.09037268000037,
+            "max": 93.677761
+        },
+        "vus": {
+            "value": 1,
+            "min": 1,
+            "max": 10
+        },
+        "http_req_failed": {
+            "fails": 2523,
+            "passes": 0,
+            "thresholds": {
+                "rate<=0.01": false
+            },
+            "value": 0
+        },
+        "http_req_sending": {
+            "max": 1.686815,
+            "avg": 0.035076630994847334,
+            "min": 0.005879,
+            "med": 0.031548,
+            "p(90)": 0.05455360000000001,
+            "p(95)": 0.0615521,
+            "p(99)": 0.10448404
+        },
+        "checkouts_completed": {
+            "rate": 1.87735871628371,
+            "count": 200
+        },
+        "checkout_final_latency_ms": {
+            "p(90)": 5396.3,
+            "p(95)": 5490.05,
+            "p(99)": 5900.019999999999,
+            "max": 6748,
+            "avg": 5185.295,
+            "min": 1748,
+            "med": 5268.5
+        },
+        "http_req_duration": {
+            "p(99)": 429.2768643000003,
+            "max": 972.552273,
+            "avg": 108.01454905112976,
+            "min": 81.481383,
+            "med": 91.521056,
+            "p(90)": 169.088762,
+            "p(95)": 184.6106387
+        },
+        "data_received": {
+            "count": 1514234,
+            "rate": 14213.801991965736
+        },
+        "functional_checkout_error_rate": {
+            "passes": 0,
+            "fails": 200,
+            "thresholds": {
+                "rate<=0.05": false
+            },
+            "value": 0
+        },
+        "http_req_duration{expected_response:true}": {
+            "max": 972.552273,
+            "avg": 108.01454905112976,
+            "min": 81.481383,
+            "med": 91.521056,
+            "p(90)": 169.088762,
+            "p(95)": 184.6106387,
+            "p(99)": 429.2768643000003
+        },
+        "iteration_duration": {
+            "min": 1748.010952,
+            "med": 5269.288573,
+            "p(90)": 5396.8888442,
+            "p(95)": 5490.485605,
+            "p(99)": 5900.093057499998,
+            "max": 6748.448353,
+            "avg": 5185.749241165003
+        },
+        "vus_max": {
+            "value": 10,
+            "min": 10,
+            "max": 10
+        },
+        "http_reqs": {
+            "count": 2523,
+            "rate": 23.682880205919002
+        },
+        "checks": {
+            "passes": 2523,
+            "fails": 0,
+            "value": 1
+        },
+        "checkouts_attempted": {
+            "count": 200,
+            "rate": 1.87735871628371
+        },
+        "http_req_waiting": {
+            "max": 972.416626,
+            "avg": 107.41983811414997,
+            "min": 81.155766,
+            "med": 90.994551,
+            "p(90)": 168.6713244,
+            "p(95)": 184.4884843,
+            "p(99)": 421.27410822000627
+        },
+        "data_sent": {
+            "rate": 11503.515534028433,
+            "count": 1225500
+        },
+        "http_req_connecting": {
+            "p(95)": 0,
+            "p(99)": 83.00753454000039,
+            "max": 92.659532,
+            "avg": 1.0572030210067378,
+            "min": 0,
+            "med": 0,
+            "p(90)": 0
+        },
+        "http_req_receiving": {
+            "avg": 0.559634305984939,
+            "min": 0.020639,
+            "med": 0.290322,
+            "p(90)": 0.6103206000000001,
+            "p(95)": 0.8552636000000001,
+            "p(99)": 2.2718842800000276,
+            "max": 471.203191
+        },
+        "http_req_tls_handshaking": {
+            "avg": 0,
+            "min": 0,
+            "med": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "p(99)": 0,
+            "max": 0
+        },
+        "iterations": {
+            "count": 200,
+            "rate": 1.87735871628371
+        }
+    },
+    "setup_data": {
+        "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+        "productName": "Laptop Dell XPS 13",
+        "productPrice": 1299.99
+    }
+}

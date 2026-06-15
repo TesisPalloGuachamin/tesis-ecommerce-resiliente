@@ -1,0 +1,220 @@
+{
+    "metrics": {
+        "checkouts_attempted": {
+            "count": 500,
+            "rate": 1.9441514095467922
+        },
+        "functional_checkout_error_rate": {
+            "passes": 0,
+            "fails": 500,
+            "thresholds": {
+                "rate<=0.05": false
+            },
+            "value": 0
+        },
+        "iteration_duration": {
+            "p(99)": 13744.35590126,
+            "max": 15058.270636,
+            "avg": 12534.833631125997,
+            "min": 2562.129802,
+            "med": 12573.771044000001,
+            "p(90)": 13567.763247,
+            "p(95)": 13656.0902321
+        },
+        "data_received": {
+            "count": 4655226,
+            "rate": 18100.928379317753
+        },
+        "http_req_duration{expected_response:true}": {
+            "p(90)": 104.6740496,
+            "p(95)": 168.21633200000002,
+            "p(99)": 201.79303550000003,
+            "max": 1514.48867,
+            "avg": 99.42078116476208,
+            "min": 80.256147,
+            "med": 87.287706
+        },
+        "vus": {
+            "value": 2,
+            "min": 2,
+            "max": 25
+        },
+        "http_req_duration": {
+            "max": 1514.48867,
+            "avg": 99.42078116476208,
+            "min": 80.256147,
+            "med": 87.287706,
+            "p(90)": 104.6740496,
+            "p(95)": 168.21633200000002,
+            "p(99)": 201.79303550000003
+        },
+        "http_req_receiving": {
+            "min": 0.014327,
+            "med": 0.229106,
+            "p(90)": 0.5111064000000001,
+            "p(95)": 0.6951977999999999,
+            "p(99)": 1.5477023200000002,
+            "max": 33.189128,
+            "avg": 0.31005516538992856
+        },
+        "checks": {
+            "passes": 7963,
+            "fails": 0,
+            "value": 1
+        },
+        "http_req_blocked": {
+            "p(90)": 0.014959,
+            "p(95)": 0.0168285,
+            "p(99)": 83.15411152,
+            "max": 197.333468,
+            "avg": 1.1286927101594846,
+            "min": 0.001092,
+            "med": 0.009767
+        },
+        "http_req_waiting": {
+            "min": 79.938241,
+            "med": 86.972341,
+            "p(90)": 104.2867894,
+            "p(95)": 167.8574379,
+            "p(99)": 201.46438334,
+            "max": 1514.263724,
+            "avg": 99.07544418736624
+        },
+        "vus_max": {
+            "min": 25,
+            "max": 25,
+            "value": 25
+        },
+        "data_sent": {
+            "count": 3897187,
+            "rate": 15153.44319863487
+        },
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 7963,
+            "thresholds": {
+                "rate<=0.01": false
+            },
+            "value": 0
+        },
+        "http_req_sending": {
+            "avg": 0.03528181200552555,
+            "min": 0.003357,
+            "med": 0.032855,
+            "p(90)": 0.05132600000000001,
+            "p(95)": 0.05820249999999999,
+            "p(99)": 0.10034432000000001,
+            "max": 0.416866
+        },
+        "checkout_final_latency_ms": {
+            "p(95)": 13656,
+            "p(99)": 13744.14,
+            "max": 15058,
+            "avg": 12534.33,
+            "min": 2561,
+            "med": 12573,
+            "p(90)": 13567.1
+        },
+        "http_req_connecting": {
+            "p(90)": 0,
+            "p(95)": 0,
+            "p(99)": 83.02288088,
+            "max": 197.209963,
+            "avg": 1.1168962968730376,
+            "min": 0,
+            "med": 0
+        },
+        "checkouts_completed": {
+            "count": 500,
+            "rate": 1.9441514095467922
+        },
+        "iterations": {
+            "rate": 1.9441514095467922,
+            "count": 500
+        },
+        "http_reqs": {
+            "count": 7963,
+            "rate": 30.962555348442212
+        },
+        "http_req_tls_handshaking": {
+            "p(95)": 0,
+            "p(99)": 0,
+            "max": 0,
+            "avg": 0,
+            "min": 0,
+            "med": 0,
+            "p(90)": 0
+        }
+    },
+    "setup_data": {
+        "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+        "productName": "Laptop Dell XPS 13",
+        "productPrice": 1299.99
+    },
+    "root_group": {
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {
+            "setup": {
+                "name": "setup",
+                "path": "::setup",
+                "id": "5c0f8025f7e0b6654089e5b00e950f1a",
+                "groups": {},
+                "checks": {
+                        "setup register status 201": {
+                            "id": "beef9bc3e3503374f9af1eb4559f1782",
+                            "passes": 1,
+                            "fails": 0,
+                            "name": "setup register status 201",
+                            "path": "::setup::setup register status 201"
+                        },
+                        "setup products status 200": {
+                            "path": "::setup::setup products status 200",
+                            "id": "e19388a430b236e9b4f2142463481c3f",
+                            "passes": 1,
+                            "fails": 0,
+                            "name": "setup products status 200"
+                        }
+                    }
+            }
+        },
+        "checks": {
+            "register status 201": {
+                "name": "register status 201",
+                "path": "::register status 201",
+                "id": "a202de701392e9f2e1b9725c6057d0c0",
+                "passes": 500,
+                "fails": 0
+            },
+            "products status 200": {
+                "name": "products status 200",
+                "path": "::products status 200",
+                "id": "7a463d11f81f84d56ee861b8840edb44",
+                "passes": 500,
+                "fails": 0
+            },
+            "cart add status 201": {
+                "name": "cart add status 201",
+                "path": "::cart add status 201",
+                "id": "d29b6ae0dd4628d6d2786ada9c94901b",
+                "passes": 500,
+                "fails": 0
+            },
+            "checkout status 202": {
+                "path": "::checkout status 202",
+                "id": "4493a660934d0f4352a782e058db8b1d",
+                "passes": 500,
+                "fails": 0,
+                "name": "checkout status 202"
+            },
+            "checkout status poll 200": {
+                "fails": 0,
+                "name": "checkout status poll 200",
+                "path": "::checkout status poll 200",
+                "id": "6622fff2a332ed30813a5fbb1932d561",
+                "passes": 5961
+            }
+        },
+        "name": "",
+        "path": ""
+    }
+}

@@ -1,0 +1,113 @@
+## before 2026-06-15T00:17:33Z
+{"component": "core-api", "url": "http://AWS_PRINCIPAL_HOST:8080/actuator/health", "status": 200, "elapsedSeconds": 0.207564, "ok": true, "summary": {"status": "UP", "components": {"db": {"status": "UP", "details": {"database": "PostgreSQL", "validationQuery": "isValid()"}}, "diskSpace": {"status": "UP", "details": {"total": 21395124224, "free": 13362139136, "threshold": 10485760, "path": "/app/.", "exists": true}}, "ping": {"status": "UP"}, "rabbit": {"status": "UP", "details": {"version": "3.12.14"}}}}, "error": null}
+{"component": "checkout-service", "url": "http://AWS_PRINCIPAL_HOST:8082/api/actuator/health", "status": 200, "elapsedSeconds": 0.179846, "ok": true, "summary": {"status": "UP", "components": {"db": {"status": "UP", "details": {"database": "PostgreSQL", "validationQuery": "isValid()"}}, "diskSpace": {"status": "UP", "details": {"total": 21395124224, "free": 13362139136, "threshold": 10485760, "path": "/app/.", "exists": true}}, "ping": {"status": "UP"}, "rabbit": {"status": "UP", "details": {"version": "3.12.14"}}}}, "error": null}
+{"component": "prometheus-targets", "url": "http://AWS_PRINCIPAL_HOST:9090/api/v1/targets", "status": 200, "elapsedSeconds": 0.186748, "ok": true, "summary": [{"job": "checkout-service", "health": "up"}, {"job": "core-api", "health": "up"}, {"job": "prometheus", "health": "up"}], "error": null}
+{"component": "grafana-health", "url": "http://AWS_PRINCIPAL_HOST:3000/api/health", "status": 200, "elapsedSeconds": 0.188218, "ok": true, "summary": {"database": "ok", "version": "13.0.1", "commit": "a100054f"}, "error": null}
+### docker ps
+tesis-checkout-db Up 4 hours (healthy)
+tesis-checkout-service Up 4 hours (healthy)
+tesis-core-api Up 4 hours (healthy)
+tesis-core-db Up 4 hours (healthy)
+tesis-grafana Up 4 hours
+tesis-prometheus Up 4 hours
+tesis-rabbitmq Up 4 hours (healthy)
+
+
+## after 2026-06-15T00:18:26Z
+{"component": "core-api", "url": "http://AWS_PRINCIPAL_HOST:8080/actuator/health", "status": 200, "elapsedSeconds": 0.193305, "ok": true, "summary": {"status": "UP", "components": {"db": {"status": "UP", "details": {"database": "PostgreSQL", "validationQuery": "isValid()"}}, "diskSpace": {"status": "UP", "details": {"total": 21395124224, "free": 13361930240, "threshold": 10485760, "path": "/app/.", "exists": true}}, "ping": {"status": "UP"}, "rabbit": {"status": "UP", "details": {"version": "3.12.14"}}}}, "error": null}
+{"component": "checkout-service", "url": "http://AWS_PRINCIPAL_HOST:8082/api/actuator/health", "status": 200, "elapsedSeconds": 0.20234, "ok": true, "summary": {"status": "UP", "components": {"db": {"status": "UP", "details": {"database": "PostgreSQL", "validationQuery": "isValid()"}}, "diskSpace": {"status": "UP", "details": {"total": 21395124224, "free": 13361930240, "threshold": 10485760, "path": "/app/.", "exists": true}}, "ping": {"status": "UP"}, "rabbit": {"status": "UP", "details": {"version": "3.12.14"}}}}, "error": null}
+{"component": "prometheus-targets", "url": "http://AWS_PRINCIPAL_HOST:9090/api/v1/targets", "status": 200, "elapsedSeconds": 0.191149, "ok": true, "summary": [{"job": "checkout-service", "health": "up"}, {"job": "core-api", "health": "down"}, {"job": "prometheus", "health": "up"}], "error": null}
+{"component": "grafana-health", "url": "http://AWS_PRINCIPAL_HOST:3000/api/health", "status": 200, "elapsedSeconds": 0.179946, "ok": true, "summary": {"database": "ok", "version": "13.0.1", "commit": "a100054f"}, "error": null}
+### docker ps
+tesis-checkout-db Up 4 hours (healthy)
+tesis-checkout-service Up 4 hours (healthy)
+tesis-core-api Up 30 seconds (health: starting)
+tesis-core-db Up 4 hours (healthy)
+tesis-grafana Up 4 hours
+tesis-prometheus Up 4 hours
+tesis-rabbitmq Up 4 hours (healthy)
+
+
+## incident verification
+[
+  {
+    "attempt": 1,
+    "status": null,
+    "elapsedSeconds": 0.091714,
+    "ok": false,
+    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  }
+]
+## recovery checks
+[
+  {
+    "attempt": 1,
+    "status": null,
+    "elapsedSeconds": 0.109238,
+    "ok": false,
+    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  },
+  {
+    "attempt": 2,
+    "status": null,
+    "elapsedSeconds": 0.097182,
+    "ok": false,
+    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  },
+  {
+    "attempt": 3,
+    "status": null,
+    "elapsedSeconds": 0.085394,
+    "ok": false,
+    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  },
+  {
+    "attempt": 4,
+    "status": null,
+    "elapsedSeconds": 0.092237,
+    "ok": false,
+    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  },
+  {
+    "attempt": 5,
+    "status": null,
+    "elapsedSeconds": 0.09381,
+    "ok": false,
+    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  },
+  {
+    "attempt": 6,
+    "status": null,
+    "elapsedSeconds": 0.10669,
+    "ok": false,
+    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  },
+  {
+    "attempt": 7,
+    "status": null,
+    "elapsedSeconds": 0.107762,
+    "ok": false,
+    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  },
+  {
+    "attempt": 8,
+    "status": null,
+    "elapsedSeconds": 0.104719,
+    "ok": false,
+    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  },
+  {
+    "attempt": 9,
+    "status": null,
+    "elapsedSeconds": 0.119061,
+    "ok": false,
+    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  },
+  {
+    "attempt": 10,
+    "status": 200,
+    "elapsedSeconds": 0.631812,
+    "ok": true,
+    "error": null
+  }
+]

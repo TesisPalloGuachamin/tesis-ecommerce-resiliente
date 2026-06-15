@@ -1,0 +1,104 @@
+{
+  "host": "AWS_PRINCIPAL_HOST",
+  "queues": [
+    {
+      "name": "checkout-service.checkout-accepted.q",
+      "state": "running",
+      "messages": 916,
+      "messages_ready": 916,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "publish_count": 3,
+      "deliver_count": null,
+      "ack_count": null
+    },
+    {
+      "name": "checkout-service.checkout-completed.q",
+      "state": "running",
+      "messages": 916,
+      "messages_ready": 916,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "publish_count": 3,
+      "deliver_count": null,
+      "ack_count": null
+    },
+    {
+      "name": "checkout-service.checkout-failed.q",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "publish_count": null,
+      "deliver_count": null,
+      "ack_count": null
+    },
+    {
+      "name": "checkout-service.checkout-requested.q",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 1,
+      "publish_count": 3,
+      "deliver_count": 3,
+      "ack_count": 3
+    },
+    {
+      "name": "checkout-service.dlq",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "publish_count": null,
+      "deliver_count": null,
+      "ack_count": null
+    },
+    {
+      "name": "checkout-service.payment-processed.q",
+      "state": "running",
+      "messages": 916,
+      "messages_ready": 916,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "publish_count": 3,
+      "deliver_count": null,
+      "ack_count": null
+    },
+    {
+      "name": "core-api.checkout-completed.q",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 1,
+      "publish_count": 3,
+      "deliver_count": 3,
+      "ack_count": 3
+    },
+    {
+      "name": "core-api.checkout-failed.q",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 1,
+      "publish_count": null,
+      "deliver_count": null,
+      "ack_count": null
+    },
+    {
+      "name": "core-api.dlq",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "publish_count": null,
+      "deliver_count": null,
+      "ack_count": null
+    }
+  ]
+}

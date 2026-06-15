@@ -1,0 +1,216 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {
+          "__name__": "jvm_memory_used_bytes",
+          "area": "heap",
+          "id": "Tenured Gen",
+          "instance": "core-api:8080",
+          "job": "core-api"
+        },
+        "value": [
+          1781469053.645,
+          "37795984"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "jvm_memory_used_bytes",
+          "area": "nonheap",
+          "id": "CodeHeap 'profiled nmethods'",
+          "instance": "core-api:8080",
+          "job": "core-api"
+        },
+        "value": [
+          1781469053.645,
+          "13312768"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "jvm_memory_used_bytes",
+          "area": "heap",
+          "id": "Eden Space",
+          "instance": "core-api:8080",
+          "job": "core-api"
+        },
+        "value": [
+          1781469053.645,
+          "35367624"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "jvm_memory_used_bytes",
+          "area": "nonheap",
+          "id": "Metaspace",
+          "instance": "core-api:8080",
+          "job": "core-api"
+        },
+        "value": [
+          1781469053.645,
+          "89404936"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "jvm_memory_used_bytes",
+          "area": "nonheap",
+          "id": "CodeHeap 'non-nmethods'",
+          "instance": "core-api:8080",
+          "job": "core-api"
+        },
+        "value": [
+          1781469053.645,
+          "1418752"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "jvm_memory_used_bytes",
+          "area": "heap",
+          "id": "Survivor Space",
+          "instance": "core-api:8080",
+          "job": "core-api"
+        },
+        "value": [
+          1781469053.645,
+          "5869600"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "jvm_memory_used_bytes",
+          "area": "nonheap",
+          "id": "Compressed Class Space",
+          "instance": "core-api:8080",
+          "job": "core-api"
+        },
+        "value": [
+          1781469053.645,
+          "12357216"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "jvm_memory_used_bytes",
+          "area": "nonheap",
+          "id": "CodeHeap 'non-profiled nmethods'",
+          "instance": "core-api:8080",
+          "job": "core-api"
+        },
+        "value": [
+          1781469053.645,
+          "3613056"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "jvm_memory_used_bytes",
+          "area": "heap",
+          "id": "Tenured Gen",
+          "instance": "checkout-service:8082",
+          "job": "checkout-service"
+        },
+        "value": [
+          1781469053.645,
+          "32015240"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "jvm_memory_used_bytes",
+          "area": "nonheap",
+          "id": "CodeHeap 'profiled nmethods'",
+          "instance": "checkout-service:8082",
+          "job": "checkout-service"
+        },
+        "value": [
+          1781469053.645,
+          "9896320"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "jvm_memory_used_bytes",
+          "area": "heap",
+          "id": "Eden Space",
+          "instance": "checkout-service:8082",
+          "job": "checkout-service"
+        },
+        "value": [
+          1781469053.645,
+          "5100752"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "jvm_memory_used_bytes",
+          "area": "nonheap",
+          "id": "Metaspace",
+          "instance": "checkout-service:8082",
+          "job": "checkout-service"
+        },
+        "value": [
+          1781469053.645,
+          "80785048"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "jvm_memory_used_bytes",
+          "area": "nonheap",
+          "id": "CodeHeap 'non-nmethods'",
+          "instance": "checkout-service:8082",
+          "job": "checkout-service"
+        },
+        "value": [
+          1781469053.645,
+          "1412352"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "jvm_memory_used_bytes",
+          "area": "heap",
+          "id": "Survivor Space",
+          "instance": "checkout-service:8082",
+          "job": "checkout-service"
+        },
+        "value": [
+          1781469053.645,
+          "5825952"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "jvm_memory_used_bytes",
+          "area": "nonheap",
+          "id": "Compressed Class Space",
+          "instance": "checkout-service:8082",
+          "job": "checkout-service"
+        },
+        "value": [
+          1781469053.645,
+          "11261776"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "jvm_memory_used_bytes",
+          "area": "nonheap",
+          "id": "CodeHeap 'non-profiled nmethods'",
+          "instance": "checkout-service:8082",
+          "job": "checkout-service"
+        },
+        "value": [
+          1781469053.645,
+          "3047296"
+        ]
+      }
+    ]
+  }
+}

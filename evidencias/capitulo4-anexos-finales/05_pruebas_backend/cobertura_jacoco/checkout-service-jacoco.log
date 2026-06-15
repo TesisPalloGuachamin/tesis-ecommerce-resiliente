@@ -1,0 +1,65 @@
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ---------------------< com.tesis:checkout-service >---------------------
+[INFO] Building checkout-service 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:3.3.2:clean (default-clean) @ checkout-service ---
+[INFO] Deleting /media/christopher/CHRISDDE1/TESIS APP/apps/checkout-service/target
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.12:prepare-agent (default) @ checkout-service ---
+[INFO] argLine set to "-javaagent:/home/christopher/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/media/christopher/CHRISDDE1/TESIS APP/apps/checkout-service/target/jacoco.exec"
+[INFO]
+[INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ checkout-service ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO]
+[INFO] --- maven-compiler-plugin:3.11.0:compile (default-compile) @ checkout-service ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 26 source files with javac [debug release 17] to target/classes
+[INFO]
+[INFO] --- maven-resources-plugin:3.3.1:testResources (default-testResources) @ checkout-service ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO]
+[INFO] --- maven-compiler-plugin:3.11.0:testCompile (default-testCompile) @ checkout-service ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 2 source files with javac [debug release 17] to target/test-classes
+[INFO]
+[INFO] --- maven-surefire-plugin:3.1.2:test (default-test) @ checkout-service ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCaseTest
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+18:13:28.702 [main] INFO com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Processing checkout for request: 84f48a46-d418-452c-9597-3e9a929ee508
+18:13:28.731 [main] INFO com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Checkout completed successfully for order: ORD-12345678
+18:13:28.779 [main] INFO com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Processing checkout for request: 27389a9a-6a9a-46f0-b45e-d7fd82d8e3f0
+18:13:28.779 [main] INFO com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Checkout request 27389a9a-6a9a-46f0-b45e-d7fd82d8e3f0 already processed
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.479 s -- in com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCaseTest
+[INFO] Running com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment.StripeSimulatedPaymentAdapterTest
+18:13:28.793 [main] INFO com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment.StripeSimulatedPaymentAdapter -- Executing Stripe simulated payment for order: 69a17d78-8ff5-41d1-a183-92465b58c026, amount: 100.00
+18:13:29.294 [main] INFO com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment.StripeSimulatedPaymentAdapter -- Stripe simulated payment approved for order: 69a17d78-8ff5-41d1-a183-92465b58c026, transaction: stripe_sim_1fe74f52-b99f-41c4-8098-4dcbccfec560
+18:13:29.302 [main] INFO com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment.StripeSimulatedPaymentAdapter -- Executing Stripe simulated payment for order: b0ec22d6-78f0-49fe-baa2-ad3fc7b262ec, amount: 50.00
+18:13:29.803 [main] INFO com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment.StripeSimulatedPaymentAdapter -- Stripe simulated payment approved for order: b0ec22d6-78f0-49fe-baa2-ad3fc7b262ec, transaction: stripe_sim_7e90511e-2c4c-4c69-b407-3d8f10d7e5da
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.015 s -- in com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment.StripeSimulatedPaymentAdapterTest
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.12:report (report) @ checkout-service ---
+[INFO] Loading execution data file /media/christopher/CHRISDDE1/TESIS APP/apps/checkout-service/target/jacoco.exec
+[INFO] Analyzed bundle 'checkout-service' with 31 classes
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.12:report (default-cli) @ checkout-service ---
+[INFO] Loading execution data file /media/christopher/CHRISDDE1/TESIS APP/apps/checkout-service/target/jacoco.exec
+[INFO] Analyzed bundle 'checkout-service' with 31 classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.774 s
+[INFO] Finished at: 2026-06-14T18:13:30-05:00
+[INFO] ------------------------------------------------------------------------

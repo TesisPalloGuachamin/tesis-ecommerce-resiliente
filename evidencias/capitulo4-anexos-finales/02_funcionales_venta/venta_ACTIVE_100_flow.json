@@ -1,0 +1,114 @@
+{
+  "run_id": "cap4-core4-20260614-162647",
+  "flow": "sale",
+  "base_url": "http://AWS_PRINCIPAL_HOST:8080",
+  "passed": true,
+  "user_id": "6c834557-2138-4f02-8590-5db9bb40f3ac",
+  "test_user": "cap4-core4-20260614-162647-seller-1781456226@example.com",
+  "listing": {
+    "id": "bf2dc1b6-99e8-4121-ad79-f8780aba1e7f",
+    "title": "cap4-core4-20260614-162647 Listing ACTIVE",
+    "description": "Evidencia limpia de listing ACTIVE para cierre tecnico Capitulo 4.",
+    "price": 64.25,
+    "quantity": 1,
+    "status": "ACTIVE",
+    "createdAt": "2026-06-14T16:57:06.875728",
+    "updatedAt": "2026-06-14T16:57:06.875749"
+  },
+  "steps": [
+    {
+      "label": "auth/register",
+      "request": {
+        "method": "POST",
+        "path": "/api/v1/auth/register",
+        "body": {
+          "email": "cap4-core4-20260614-162647-seller-1781456226@example.com",
+          "password": "***MASKED***",
+          "name": "cap4-core4-20260614-162647 Seller"
+        },
+        "authorization": null
+      },
+      "response": {
+        "status": 201,
+        "elapsed_ms": 252.11,
+        "body": {
+          "token": "***MASKED***",
+          "user": {
+            "id": "6c834557-2138-4f02-8590-5db9bb40f3ac",
+            "email": "cap4-core4-20260614-162647-seller-1781456226@example.com",
+            "name": "cap4-core4-20260614-162647 Seller",
+            "enabled": true
+          }
+        },
+        "error": null
+      },
+      "expected_status": [
+        201
+      ],
+      "passed": true
+    },
+    {
+      "label": "listing/create",
+      "request": {
+        "method": "POST",
+        "path": "/api/v1/listings",
+        "body": {
+          "title": "cap4-core4-20260614-162647 Listing ACTIVE",
+          "description": "Evidencia limpia de listing ACTIVE para cierre tecnico Capitulo 4.",
+          "price": 64.25,
+          "quantity": 1
+        },
+        "authorization": "Bearer ***MASKED***"
+      },
+      "response": {
+        "status": 201,
+        "elapsed_ms": 183.22,
+        "body": {
+          "id": "bf2dc1b6-99e8-4121-ad79-f8780aba1e7f",
+          "sellerId": "6c834557-2138-4f02-8590-5db9bb40f3ac",
+          "title": "cap4-core4-20260614-162647 Listing ACTIVE",
+          "description": "Evidencia limpia de listing ACTIVE para cierre tecnico Capitulo 4.",
+          "price": 64.25,
+          "quantity": 1,
+          "status": "ACTIVE",
+          "createdAt": "2026-06-14T16:57:06.875727511",
+          "updatedAt": "2026-06-14T16:57:06.875749343"
+        },
+        "error": null
+      },
+      "expected_status": [
+        201
+      ],
+      "passed": true
+    },
+    {
+      "label": "listing/get-by-id",
+      "request": {
+        "method": "GET",
+        "path": "/api/v1/listings/bf2dc1b6-99e8-4121-ad79-f8780aba1e7f",
+        "body": null,
+        "authorization": "Bearer ***MASKED***"
+      },
+      "response": {
+        "status": 200,
+        "elapsed_ms": 188.87,
+        "body": {
+          "id": "bf2dc1b6-99e8-4121-ad79-f8780aba1e7f",
+          "sellerId": "6c834557-2138-4f02-8590-5db9bb40f3ac",
+          "title": "cap4-core4-20260614-162647 Listing ACTIVE",
+          "description": "Evidencia limpia de listing ACTIVE para cierre tecnico Capitulo 4.",
+          "price": 64.25,
+          "quantity": 1,
+          "status": "ACTIVE",
+          "createdAt": "2026-06-14T16:57:06.875728",
+          "updatedAt": "2026-06-14T16:57:06.875749"
+        },
+        "error": null
+      },
+      "expected_status": [
+        200
+      ],
+      "passed": true
+    }
+  ]
+}

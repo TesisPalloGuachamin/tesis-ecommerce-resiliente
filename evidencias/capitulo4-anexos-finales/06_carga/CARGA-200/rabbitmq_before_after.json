@@ -1,0 +1,329 @@
+{
+  "run_id": "cap4-load-20260614-124116",
+  "scenario": "CARGA-200",
+  "before": [
+    {
+      "name": "checkout-service.checkout-accepted.q",
+      "state": "running",
+      "messages": 916,
+      "messages_ready": 916,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": {
+        "publish": 3,
+        "publish_details": {
+          "rate": 0
+        }
+      }
+    },
+    {
+      "name": "checkout-service.checkout-completed.q",
+      "state": "running",
+      "messages": 916,
+      "messages_ready": 916,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": {
+        "publish": 3,
+        "publish_details": {
+          "rate": 0
+        }
+      }
+    },
+    {
+      "name": "checkout-service.checkout-failed.q",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": null
+    },
+    {
+      "name": "checkout-service.checkout-requested.q",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 1,
+      "message_stats": {
+        "ack": 3,
+        "ack_details": {
+          "rate": 0
+        },
+        "deliver": 3,
+        "deliver_details": {
+          "rate": 0
+        },
+        "deliver_get": 3,
+        "deliver_get_details": {
+          "rate": 0
+        },
+        "deliver_no_ack": 0,
+        "deliver_no_ack_details": {
+          "rate": 0
+        },
+        "get": 0,
+        "get_details": {
+          "rate": 0
+        },
+        "get_empty": 0,
+        "get_empty_details": {
+          "rate": 0
+        },
+        "get_no_ack": 0,
+        "get_no_ack_details": {
+          "rate": 0
+        },
+        "publish": 3,
+        "publish_details": {
+          "rate": 0
+        },
+        "redeliver": 0,
+        "redeliver_details": {
+          "rate": 0
+        }
+      }
+    },
+    {
+      "name": "checkout-service.dlq",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": null
+    },
+    {
+      "name": "checkout-service.payment-processed.q",
+      "state": "running",
+      "messages": 916,
+      "messages_ready": 916,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": {
+        "publish": 3,
+        "publish_details": {
+          "rate": 0
+        }
+      }
+    }
+  ],
+  "after": [
+    {
+      "name": "checkout-service.checkout-accepted.q",
+      "state": "running",
+      "messages": 1105,
+      "messages_ready": 1105,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": {
+        "publish": 202,
+        "publish_details": {
+          "rate": 2
+        }
+      }
+    },
+    {
+      "name": "checkout-service.checkout-completed.q",
+      "state": "running",
+      "messages": 1105,
+      "messages_ready": 1105,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": {
+        "publish": 201,
+        "publish_details": {
+          "rate": 2
+        }
+      }
+    },
+    {
+      "name": "checkout-service.checkout-failed.q",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": null
+    },
+    {
+      "name": "checkout-service.checkout-requested.q",
+      "state": "running",
+      "messages": 8,
+      "messages_ready": 0,
+      "messages_unacknowledged": 8,
+      "consumers": 1,
+      "message_stats": {
+        "ack": 201,
+        "ack_details": {
+          "rate": 2
+        },
+        "deliver": 203,
+        "deliver_details": {
+          "rate": 0.8
+        },
+        "deliver_get": 203,
+        "deliver_get_details": {
+          "rate": 0.8
+        },
+        "deliver_no_ack": 0,
+        "deliver_no_ack_details": {
+          "rate": 0
+        },
+        "get": 0,
+        "get_details": {
+          "rate": 0
+        },
+        "get_empty": 0,
+        "get_empty_details": {
+          "rate": 0
+        },
+        "get_no_ack": 0,
+        "get_no_ack_details": {
+          "rate": 0
+        },
+        "publish": 203,
+        "publish_details": {
+          "rate": 0.8
+        },
+        "redeliver": 0,
+        "redeliver_details": {
+          "rate": 0
+        }
+      }
+    },
+    {
+      "name": "checkout-service.dlq",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": null
+    },
+    {
+      "name": "checkout-service.payment-processed.q",
+      "state": "running",
+      "messages": 1105,
+      "messages_ready": 1105,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": {
+        "publish": 201,
+        "publish_details": {
+          "rate": 2
+        }
+      }
+    }
+  ],
+  "after_drain_verification": [
+    {
+      "name": "checkout-service.checkout-accepted.q",
+      "state": "running",
+      "messages": 3116,
+      "messages_ready": 3116,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": {
+        "publish": 2203,
+        "publish_details": {
+          "rate": 0
+        }
+      }
+    },
+    {
+      "name": "checkout-service.checkout-completed.q",
+      "state": "running",
+      "messages": 3116,
+      "messages_ready": 3116,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": {
+        "publish": 2203,
+        "publish_details": {
+          "rate": 0
+        }
+      }
+    },
+    {
+      "name": "checkout-service.checkout-failed.q",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": null
+    },
+    {
+      "name": "checkout-service.checkout-requested.q",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 1,
+      "message_stats": {
+        "ack": 2203,
+        "ack_details": {
+          "rate": 0
+        },
+        "deliver": 2203,
+        "deliver_details": {
+          "rate": 0
+        },
+        "deliver_get": 2203,
+        "deliver_get_details": {
+          "rate": 0
+        },
+        "deliver_no_ack": 0,
+        "deliver_no_ack_details": {
+          "rate": 0
+        },
+        "get": 0,
+        "get_details": {
+          "rate": 0
+        },
+        "get_empty": 0,
+        "get_empty_details": {
+          "rate": 0
+        },
+        "get_no_ack": 0,
+        "get_no_ack_details": {
+          "rate": 0
+        },
+        "publish": 2203,
+        "publish_details": {
+          "rate": 0
+        },
+        "redeliver": 0,
+        "redeliver_details": {
+          "rate": 0
+        }
+      }
+    },
+    {
+      "name": "checkout-service.dlq",
+      "state": "running",
+      "messages": 0,
+      "messages_ready": 0,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": null
+    },
+    {
+      "name": "checkout-service.payment-processed.q",
+      "state": "running",
+      "messages": 3116,
+      "messages_ready": 3116,
+      "messages_unacknowledged": 0,
+      "consumers": 0,
+      "message_stats": {
+        "publish": 2203,
+        "publish_details": {
+          "rate": 0
+        }
+      }
+    }
+  ],
+  "after_drain_note": "Verificacion posterior de drenaje de cola critica despues de finalizar la campana escalonada."
+}

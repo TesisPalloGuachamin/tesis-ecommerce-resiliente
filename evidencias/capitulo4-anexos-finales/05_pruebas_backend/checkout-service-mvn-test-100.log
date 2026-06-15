@@ -1,0 +1,49 @@
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ---------------------< com.tesis:checkout-service >---------------------
+[INFO] Building checkout-service 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ checkout-service ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO]
+[INFO] --- maven-compiler-plugin:3.11.0:compile (default-compile) @ checkout-service ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:3.3.1:testResources (default-testResources) @ checkout-service ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO]
+[INFO] --- maven-compiler-plugin:3.11.0:testCompile (default-testCompile) @ checkout-service ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:3.1.2:test (default-test) @ checkout-service ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCaseTest
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+11:54:55.293 [main] INFO com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Processing checkout for request: 03888e7b-3066-4b11-8fc3-6cc093814e18
+11:54:55.310 [main] INFO com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Checkout completed successfully for order: ORD-12345678
+11:54:55.333 [main] INFO com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Processing checkout for request: 1c85818d-e37d-4907-9476-f23f14a6e74c
+11:54:55.333 [main] INFO com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Checkout request 1c85818d-e37d-4907-9476-f23f14a6e74c already processed
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.002 s -- in com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCaseTest
+[INFO] Running com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment.StripeSimulatedPaymentAdapterTest
+11:54:55.342 [main] INFO com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment.StripeSimulatedPaymentAdapter -- Executing Stripe simulated payment for order: cc1cb5d5-63b5-4f35-863e-724da03cbfdb, amount: 100.00
+11:54:55.843 [main] INFO com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment.StripeSimulatedPaymentAdapter -- Stripe simulated payment approved for order: cc1cb5d5-63b5-4f35-863e-724da03cbfdb, transaction: stripe_sim_f7c48b40-a17e-4dfd-a96c-354795c11cce
+11:54:55.849 [main] INFO com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment.StripeSimulatedPaymentAdapter -- Executing Stripe simulated payment for order: 6e3e0306-b967-4167-9dd9-32594b4d0b88, amount: 50.00
+11:54:56.350 [main] INFO com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment.StripeSimulatedPaymentAdapter -- Stripe simulated payment approved for order: 6e3e0306-b967-4167-9dd9-32594b4d0b88, transaction: stripe_sim_9ee8f2a9-22ed-4a7a-a224-e0a8b0a7aedb
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.013 s -- in com.tesis.ecommerce.checkoutservice.infrastructure.adapter.out.payment.StripeSimulatedPaymentAdapterTest
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.302 s
+[INFO] Finished at: 2026-06-14T11:54:56-05:00
+[INFO] ------------------------------------------------------------------------

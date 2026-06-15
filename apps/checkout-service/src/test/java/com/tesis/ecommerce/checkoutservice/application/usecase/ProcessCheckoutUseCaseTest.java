@@ -138,4 +138,93 @@ class ProcessCheckoutUseCaseTest {
         verify(paymentPort, never()).executePayment(any(UUID.class), any(BigDecimal.class));
     }
 
+    @Test
+    void testProcessCheckoutPublishesFailureWhenPaymentFails() {
+        when(inboxEventRepository.findByEventId(testEvent.getEventId()))
+                .thenReturn(Optional.empty());
+
+        var mockOrder = Order.builder()
+                .id(UUID.randomUUID())
+                .orderNumber("ORD-FAILED")
+                .checkoutRequestId(testEvent.getEventId())
+                .userId(testEvent.getUserId())
+                .status("PENDING")
+                .totalAmount(testEvent.getTotalAmount())
+                .build();
+
+        when(orderRepository.save(any())).thenReturn(mockOrder);
+
+        var mockPaymentAttempt = new PaymentAttempt();
+        mockPaymentAttempt.setId(UUID.randomUUID());
+        mockPaymentAttempt.setOrderId(mockOrder.getId());
+        mockPaymentAttempt.setAmount(testEvent.getTotalAmount());
+        mockPaymentAttempt.setStatus("PENDING");
+        mockPaymentAttempt.setAttemptNumber(1);
+        when(paymentAttemptRepository.save(any())).thenReturn(mockPaymentAttempt);
+
+        var paymentResult = new PaymentPort.PaymentResult(null, false, "simulated decline");
+        when(paymentPort.executePayment(any(UUID.class), any(BigDecimal.class)))
+                .thenReturn(paymentResult);
+
+        var result = processCheckoutUseCase.execute(testEvent);
+
+        assertEquals("FAILED", result.getStatus());
+        verify(eventPublisherPort).publishPaymentProcessed(mockOrder.getId(), null, false);
+        verify(eventPublisherPort).publishCheckoutFailed(testEvent.getRequestId(), "simulated decline");
+        verify(eventPublisherPort, never()).publishCheckoutCompleted(any(UUID.class), any(UUID.class));
+        verify(inboxEventRepository, times(2)).save(any(InboxEvent.class));
+    }
+
+    @Test
+    void testProcessCheckoutWithNullItemsCreatesEmptyOrderItems() {
+        testEvent.setItems(null);
+        when(inboxEventRepository.findByEventId(testEvent.getEventId()))
+                .thenReturn(Optional.empty());
+
+        var mockOrder = Order.builder()
+                .id(UUID.randomUUID())
+                .orderNumber("ORD-NOITEMS")
+                .checkoutRequestId(testEvent.getEventId())
+                .userId(testEvent.getUserId())
+                .status("PENDING")
+                .totalAmount(testEvent.getTotalAmount())
+                .build();
+
+        when(orderRepository.save(any())).thenAnswer(invocation -> invocation.getArgument(0));
+
+        var mockPaymentAttempt = new PaymentAttempt();
+        mockPaymentAttempt.setId(UUID.randomUUID());
+        when(paymentAttemptRepository.save(any())).thenReturn(mockPaymentAttempt);
+
+        when(paymentPort.executePayment(any(UUID.class), any(BigDecimal.class)))
+                .thenReturn(new PaymentPort.PaymentResult("txn-empty", true, null));
+
+        var result = processCheckoutUseCase.execute(testEvent);
+
+        assertNotNull(result.getItems());
+        assertTrue(result.getItems().isEmpty());
+        assertEquals("COMPLETED", result.getStatus());
+    }
+
+    @Test
+    void testProcessCheckoutFailsWhenInboxExistsButOrderIsMissing() {
+        var existingInboxEvent = InboxEvent.builder()
+                .id(UUID.randomUUID())
+                .eventId(testEvent.getEventId())
+                .eventType("checkout.requested")
+                .processed(true)
+                .build();
+
+        when(inboxEventRepository.findByEventId(testEvent.getEventId()))
+                .thenReturn(Optional.of(existingInboxEvent));
+        when(orderRepository.findByCheckoutRequestId(testEvent.getEventId()))
+                .thenReturn(Optional.empty());
+
+        var exception = assertThrows(RuntimeException.class, () -> processCheckoutUseCase.execute(testEvent));
+
+        assertEquals("Inbox event exists but order not found", exception.getMessage());
+        verify(orderRepository, never()).save(any());
+        verify(paymentPort, never()).executePayment(any(UUID.class), any(BigDecimal.class));
+    }
+
 }

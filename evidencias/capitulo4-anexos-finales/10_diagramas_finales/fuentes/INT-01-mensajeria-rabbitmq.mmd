@@ -1,0 +1,33 @@
+---
+title: "INT-01: Mensajeria asincrona RabbitMQ"
+---
+sequenceDiagram
+    actor Mobile as App movil
+    participant Core as core-api
+    participant CoreDB as core_db
+    participant Exchange as RabbitMQ exchange
+    participant QueueReq as checkout-requested.q
+    participant Checkout as checkout-service
+    participant CheckoutDB as checkout_db
+    participant QueueDone as checkout-completed.q
+
+    Mobile->>Core: POST /api/v1/checkout {cartId}
+    Core->>CoreDB: crea CheckoutRequest PENDING
+    Core->>Exchange: publica checkout.requested
+    Core-->>Mobile: 202 {requestId, status:PENDING}
+
+    Exchange->>QueueReq: enruta checkout.requested
+    QueueReq->>Checkout: consume mensaje
+    Checkout->>CheckoutDB: registra InboxEvent y Order
+    Checkout->>Checkout: ejecuta pago simulado in-process
+    Checkout->>CheckoutDB: Order COMPLETED
+    Checkout->>Exchange: publica checkout.completed
+
+    Exchange->>QueueDone: enruta checkout.completed
+    QueueDone->>Core: consume checkout.completed
+    Core->>CoreDB: actualiza CheckoutRequest COMPLETED
+
+    Mobile->>Core: GET /api/v1/checkout/{requestId}
+    Core-->>Mobile: 200 {status:COMPLETED}
+
+    Note over Exchange,Checkout: RabbitMQ desacopla publicacion y consumo asincrono.<br/>No representa resiliencia automatica por si mismo.

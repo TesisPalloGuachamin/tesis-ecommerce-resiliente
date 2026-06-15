@@ -9,6 +9,7 @@ target/
 .vscode/
 .DS_Store
 *.log
+!evidencias/capitulo4-anexos-finales/**/*.log
 .env
 .env.local
 node_modules/
@@ -21,3 +22,4 @@ crash.log
 *.tfstate.*
 crash.log
 infra/environments/demo/terraform.tfvars
+evidencias/capitulo4-cierre-tecnico/

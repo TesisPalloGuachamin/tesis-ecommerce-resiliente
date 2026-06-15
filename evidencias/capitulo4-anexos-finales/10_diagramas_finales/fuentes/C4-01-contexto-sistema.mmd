@@ -1,0 +1,25 @@
+---
+title: "C4-01: Contexto del sistema"
+---
+flowchart TB
+    usuario["Comprador / Vendedor<br/>Usuario de la app movil<br/>Compra, gestiona carrito,<br/>inicia checkout y publica listings"]
+
+    sistema["Plataforma movil e-commerce<br/>React Native/Expo + backend REST<br/>Arquitectura hexagonal<br/>Mensajeria asincrona para checkout"]
+
+    pago["Adaptador de pago simulado<br/>Dentro de checkout-service<br/>Sin SDK real, sin credenciales,<br/>sin transacciones financieras"]
+
+    aws["AWS principal sandbox<br/>EC2 + Docker Compose<br/>core-api, checkout-service,<br/>RabbitMQ, PostgreSQL,<br/>Prometheus y Grafana"]
+
+    usuario -->|"HTTPS REST / Bearer JWT"| sistema
+    sistema -->|"pago simulado in-process"| pago
+    sistema -->|"desplegado y observado en"| aws
+
+    classDef actor fill:#08427b,color:#ffffff,stroke:#052e56
+    classDef system fill:#1168bd,color:#ffffff,stroke:#0b4884
+    classDef simulated fill:#2d882d,color:#ffffff,stroke:#1f5f1f
+    classDef infra fill:#666666,color:#ffffff,stroke:#444444
+
+    class usuario actor
+    class sistema system
+    class pago simulated
+    class aws infra

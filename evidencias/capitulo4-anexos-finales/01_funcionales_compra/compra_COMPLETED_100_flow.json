@@ -1,0 +1,207 @@
+{
+  "run_id": "cap4-core4-20260614-162647",
+  "flow": "purchase",
+  "base_url": "http://AWS_PRINCIPAL_HOST:8080",
+  "passed": true,
+  "user_id": "7b290424-d3a8-4b8d-bcce-2b337e10baac",
+  "test_user": "cap4-core4-20260614-162647-buyer-1781456224@example.com",
+  "product": {
+    "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+    "sku": "PROD001",
+    "name": "Laptop Dell XPS 13",
+    "price": 1299.99
+  },
+  "cart_id": "51d68b64-0c92-4708-8fd6-566f6e2e1827",
+  "checkout_request_id": "bf08ff9a-ed24-4baf-8643-1d8c740107ee",
+  "final_status": "COMPLETED",
+  "total_amount": 1299.99,
+  "rabbitmq_queue_before": {
+    "label": "before_checkout_publish",
+    "queue": "checkout-service.checkout-requested.q",
+    "state": "running",
+    "messages": 0,
+    "messages_ready": 0,
+    "messages_unacknowledged": 0,
+    "consumers": 1,
+    "publish_count": 2,
+    "deliver_count": 2,
+    "ack_count": 2
+  },
+  "rabbitmq_queue_after": {
+    "label": "after_checkout_completed_stable",
+    "queue": "checkout-service.checkout-requested.q",
+    "state": "running",
+    "messages": 0,
+    "messages_ready": 0,
+    "messages_unacknowledged": 0,
+    "consumers": 1,
+    "publish_count": 2,
+    "deliver_count": 2,
+    "ack_count": 2
+  },
+  "steps": [
+    {
+      "label": "auth/register",
+      "request": {
+        "method": "POST",
+        "path": "/api/v1/auth/register",
+        "body": {
+          "email": "cap4-core4-20260614-162647-buyer-1781456224@example.com",
+          "password": "***MASKED***",
+          "name": "cap4-core4-20260614-162647 Buyer"
+        },
+        "authorization": null
+      },
+      "response": {
+        "status": 201,
+        "elapsed_ms": 289.75,
+        "body": {
+          "token": "***MASKED***",
+          "user": {
+            "id": "7b290424-d3a8-4b8d-bcce-2b337e10baac",
+            "email": "cap4-core4-20260614-162647-buyer-1781456224@example.com",
+            "name": "cap4-core4-20260614-162647 Buyer",
+            "enabled": true
+          }
+        },
+        "error": null
+      },
+      "expected_status": [
+        201
+      ],
+      "passed": true
+    },
+    {
+      "label": "catalog/products",
+      "request": {
+        "method": "GET",
+        "path": "/api/v1/products",
+        "body": null,
+        "authorization": "Bearer ***MASKED***"
+      },
+      "response": {
+        "status": 200,
+        "elapsed_ms": 182.73,
+        "body": [
+          {
+            "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+            "sku": "PROD001",
+            "name": "Laptop Dell XPS 13",
+            "description": "High-performance laptop with Intel i7 processor",
+            "price": 1299.99,
+            "stock": 10,
+            "active": true
+          },
+          {
+            "id": "b025f43f-65e0-4162-bbf9-fd4b63088c04",
+            "sku": "PROD002",
+            "name": "Wireless Mouse Logitech",
+            "description": "Ergonomic wireless mouse with USB receiver",
+            "price": 29.99,
+            "stock": 50,
+            "active": true
+          }
+        ],
+        "error": null
+      },
+      "expected_status": [
+        200
+      ],
+      "passed": true
+    },
+    {
+      "label": "cart/add-item",
+      "request": {
+        "method": "POST",
+        "path": "/api/v1/cart/items",
+        "body": {
+          "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+          "quantity": 1
+        },
+        "authorization": "Bearer ***MASKED***"
+      },
+      "response": {
+        "status": 201,
+        "elapsed_ms": 186.92,
+        "body": {
+          "id": "51d68b64-0c92-4708-8fd6-566f6e2e1827",
+          "userId": "7b290424-d3a8-4b8d-bcce-2b337e10baac",
+          "items": [
+            {
+              "id": "a22c62c6-6251-4c7b-a521-3ded7e0bcf6a",
+              "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+              "product": {
+                "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+                "sku": "PROD001",
+                "name": "Laptop Dell XPS 13",
+                "description": "High-performance laptop with Intel i7 processor",
+                "price": 1299.99,
+                "stock": 10,
+                "active": true
+              },
+              "quantity": 1,
+              "unitPrice": 1299.99,
+              "total": 1299.99
+            }
+          ],
+          "total": 1299.99
+        },
+        "error": null
+      },
+      "expected_status": [
+        201
+      ],
+      "passed": true
+    },
+    {
+      "label": "checkout/create",
+      "request": {
+        "method": "POST",
+        "path": "/api/v1/checkout",
+        "body": {
+          "cartId": "51d68b64-0c92-4708-8fd6-566f6e2e1827"
+        },
+        "authorization": "Bearer ***MASKED***"
+      },
+      "response": {
+        "status": 202,
+        "elapsed_ms": 208.61,
+        "body": {
+          "requestId": "bf08ff9a-ed24-4baf-8643-1d8c740107ee",
+          "userId": "7b290424-d3a8-4b8d-bcce-2b337e10baac",
+          "totalAmount": 1299.99,
+          "status": "PENDING"
+        },
+        "error": null
+      },
+      "expected_status": [
+        202
+      ],
+      "passed": true
+    },
+    {
+      "label": "checkout/status-attempt-1",
+      "request": {
+        "method": "GET",
+        "path": "/api/v1/checkout/bf08ff9a-ed24-4baf-8643-1d8c740107ee",
+        "body": null,
+        "authorization": "Bearer ***MASKED***"
+      },
+      "response": {
+        "status": 200,
+        "elapsed_ms": 168.9,
+        "body": {
+          "requestId": "bf08ff9a-ed24-4baf-8643-1d8c740107ee",
+          "userId": "7b290424-d3a8-4b8d-bcce-2b337e10baac",
+          "totalAmount": 1299.99,
+          "status": "COMPLETED"
+        },
+        "error": null
+      },
+      "expected_status": [
+        200
+      ],
+      "passed": true
+    }
+  ]
+}

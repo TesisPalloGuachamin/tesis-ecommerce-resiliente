@@ -1,0 +1,47 @@
+---
+title: "C4-04: Componentes de checkout-service"
+---
+flowchart LR
+    rabbit["RabbitMQ"]
+    db[("checkout_db<br/>PostgreSQL")]
+
+    subgraph checkoutsvc["checkout-service - Arquitectura hexagonal"]
+        consumer["CheckoutEventConsumer<br/>consume checkout.requested"]
+        health["Actuator health / prometheus<br/>observabilidad tecnica"]
+
+        process["ProcessCheckoutUseCase<br/>orquesta checkout<br/>inbox idempotente<br/>order, payment, completed/failed"]
+
+        domain["Modelos de dominio<br/>Order, OrderItem,<br/>PaymentAttempt, InboxEvent,<br/>CheckoutRequest"]
+
+        ports["Puertos de salida<br/>OrderRepository<br/>PaymentAttemptRepository<br/>InboxEventRepository<br/>PaymentPort<br/>EventPublisherPort"]
+
+        payment["StripeSimulatedPaymentAdapter<br/>Pago simulado in-process<br/>transactionId stripe_sim_*<br/>sin API Stripe real"]
+
+        publisher["RabbitEventPublisher<br/>accepted, payment.processed,<br/>completed, failed"]
+
+        jpa["JPA Repository Adapters<br/>orders, payment_attempts,<br/>inbox_events"]
+    end
+
+    rabbit -->|"checkout.requested"| consumer
+    consumer --> process
+    process --> domain
+    process --> ports
+    ports --> payment
+    ports --> publisher
+    ports --> jpa
+    publisher --> rabbit
+    jpa --> db
+
+    classDef ext fill:#666666,color:#ffffff
+    classDef adapter fill:#1168bd,color:#ffffff
+    classDef usecase fill:#2f75b5,color:#ffffff
+    classDef domain fill:#2d882d,color:#ffffff
+    classDef db fill:#23a4d4,color:#ffffff
+    classDef simulated fill:#198754,color:#ffffff
+
+    class rabbit ext
+    class consumer,health,publisher,jpa adapter
+    class process,ports usecase
+    class domain domain
+    class db db
+    class payment simulated

@@ -1,0 +1,55 @@
+## BEFORE_FINAL_LONGPOLL
+timestamp=2026-06-14T12:52:30-05:00
+
+A newer release of "Amazon Linux" is available.
+  Version 2023.11.20260509:
+  Version 2023.11.20260511:
+  Version 2023.11.20260514:
+  Version 2023.11.20260526:
+  Version 2023.12.20260608:
+  Version 2023.12.20260611:
+Run "/usr/bin/dnf check-release-update" for full release and version update info
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+CORE_DB_CHECKOUT_REQUESTS
+3650|3650|0
+CHECKOUT_DB_ORDERS
+3650|3650|0
+CHECKOUT_DB_PAYMENT_ATTEMPTS
+SUCCESS|3650
+
+## AFTER_FINAL_LONGPOLL
+timestamp=2026-06-14T12:57:03-05:00
+
+A newer release of "Amazon Linux" is available.
+  Version 2023.11.20260509:
+  Version 2023.11.20260511:
+  Version 2023.11.20260514:
+  Version 2023.11.20260526:
+  Version 2023.12.20260608:
+  Version 2023.12.20260611:
+Run "/usr/bin/dnf check-release-update" for full release and version update info
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+CORE_DB_CHECKOUT_REQUESTS
+4150|4150|0
+CHECKOUT_DB_ORDERS
+4150|4150|0
+CHECKOUT_DB_PAYMENT_ATTEMPTS
+SUCCESS|4150

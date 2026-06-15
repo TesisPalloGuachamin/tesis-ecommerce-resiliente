@@ -1,0 +1,82 @@
+{
+  "status": "success",
+  "data": {
+    "activeTargets": [
+      {
+        "discoveredLabels": {
+          "__address__": "checkout-service:8082",
+          "__metrics_path__": "/api/actuator/prometheus",
+          "__scheme__": "http",
+          "__scrape_interval__": "15s",
+          "__scrape_timeout__": "10s",
+          "job": "checkout-service"
+        },
+        "labels": {
+          "instance": "checkout-service:8082",
+          "job": "checkout-service"
+        },
+        "scrapePool": "checkout-service",
+        "scrapeUrl": "http://checkout-service:8082/api/actuator/prometheus",
+        "globalUrl": "http://checkout-service:8082/api/actuator/prometheus",
+        "lastError": "",
+        "lastScrape": "2026-06-14T20:30:46.755855353Z",
+        "lastScrapeDuration": 0.012235063,
+        "health": "up",
+        "scrapeInterval": "15s",
+        "scrapeTimeout": "10s"
+      },
+      {
+        "discoveredLabels": {
+          "__address__": "core-api:8080",
+          "__metrics_path__": "/actuator/prometheus",
+          "__scheme__": "http",
+          "__scrape_interval__": "15s",
+          "__scrape_timeout__": "10s",
+          "job": "core-api"
+        },
+        "labels": {
+          "instance": "core-api:8080",
+          "job": "core-api"
+        },
+        "scrapePool": "core-api",
+        "scrapeUrl": "http://core-api:8080/actuator/prometheus",
+        "globalUrl": "http://core-api:8080/actuator/prometheus",
+        "lastError": "",
+        "lastScrape": "2026-06-14T20:30:44.85324677Z",
+        "lastScrapeDuration": 0.017590061,
+        "health": "up",
+        "scrapeInterval": "15s",
+        "scrapeTimeout": "10s"
+      },
+      {
+        "discoveredLabels": {
+          "__address__": "prometheus:9090",
+          "__metrics_path__": "/metrics",
+          "__scheme__": "http",
+          "__scrape_interval__": "15s",
+          "__scrape_timeout__": "10s",
+          "job": "prometheus"
+        },
+        "labels": {
+          "instance": "prometheus:9090",
+          "job": "prometheus"
+        },
+        "scrapePool": "prometheus",
+        "scrapeUrl": "http://prometheus:9090/metrics",
+        "globalUrl": "http://prometheus:9090/metrics",
+        "lastError": "",
+        "lastScrape": "2026-06-14T20:30:38.479433693Z",
+        "lastScrapeDuration": 0.005887263,
+        "health": "up",
+        "scrapeInterval": "15s",
+        "scrapeTimeout": "10s"
+      }
+    ],
+    "droppedTargets": [],
+    "droppedTargetCounts": {
+      "checkout-service": 0,
+      "core-api": 0,
+      "prometheus": 0
+    }
+  }
+}

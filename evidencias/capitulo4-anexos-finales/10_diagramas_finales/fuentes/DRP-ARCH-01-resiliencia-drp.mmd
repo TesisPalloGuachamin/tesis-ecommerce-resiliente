@@ -1,0 +1,37 @@
+---
+title: "DRP-ARCH-01: Vista de resiliencia y clasificacion DRP"
+---
+flowchart LR
+    subgraph principal["AWS principal - observado principal"]
+        awsmain["AWS principal sandbox<br/>Retest DRP controlado<br/>core-api, checkout-service,<br/>RabbitMQ, PostgreSQL<br/>RTO 31.506 s<br/>MTTR 69.801 s<br/>RPO funcional 0"]
+        obs["Verificacion post-DRP<br/>externa e interna PASS<br/>Prometheus/Grafana operativos"]
+    end
+
+    subgraph alterna["AWS region alterna - observado con limitaciones"]
+        awsalt["Recuperacion historica<br/>RTO 452 s<br/>MTTR 452 s<br/>RPO temporal 2009 s<br/>RPO funcional 0<br/>Sin active-active"]
+    end
+
+    subgraph azure["Azure - alcance minimo con limitaciones"]
+        az["Recuperacion minima historica<br/>RTO efectivo 534.517 s<br/>MTTR efectivo 534.517 s<br/>RPO temporal 4911 s<br/>RPO funcional 0<br/>No entorno activo continuo"]
+    end
+
+    subgraph documental["GCP / On-premise - documental"]
+        gcp["Google Cloud<br/>sin prueba operativa<br/>sin metricas DRP"]
+        onprem["On-premise<br/>fallback documental<br/>sin infraestructura observada"]
+    end
+
+    awsmain -->|"escenario alterno documentado"| awsalt
+    awsalt -->|"comparacion con alcance minimo"| az
+    az -.->|"analisis documental"| gcp
+    gcp -.->|"analisis documental"| onprem
+    awsmain --- obs
+
+    classDef observed fill:#198754,color:#ffffff
+    classDef limited fill:#ffc107,color:#111111
+    classDef minimal fill:#fd7e14,color:#111111
+    classDef doc fill:#dc3545,color:#ffffff
+
+    class awsmain,obs observed
+    class awsalt limited
+    class az minimal
+    class gcp,onprem doc

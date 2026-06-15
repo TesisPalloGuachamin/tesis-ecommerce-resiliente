@@ -1,0 +1,84 @@
+---
+title: "C4-03: Componentes de core-api"
+---
+flowchart LR
+    mobile["App movil<br/>React Native / Expo"]
+    rabbit["RabbitMQ"]
+    db[("core_db<br/>PostgreSQL")]
+
+    subgraph coreapi["core-api - Arquitectura hexagonal"]
+        subgraph inAdapters["Adaptadores de entrada"]
+            auth["AuthController<br/>register, login, me"]
+            products["ProductController<br/>products, product detail"]
+            cart["CartController<br/>cart, cart items"]
+            checkoutCtrl["CheckoutController<br/>checkout, checkout status"]
+            listings["ListingController<br/>create/list/get listing"]
+            consumer["CheckoutEventConsumer<br/>consume completed/failed"]
+        end
+
+        subgraph app["Casos de uso"]
+            authUC["Register / Login / Current user"]
+            productUC["Get products / Get product by id"]
+            cartUC["Cart use cases"]
+            checkoutUC["CheckoutUseCase<br/>publica checkout.requested"]
+            listingUC["Listing use cases"]
+        end
+
+        domain["Modelos de dominio<br/>User, Product, Cart,<br/>CheckoutRequest, Listing"]
+
+        ports["Puertos de salida<br/>Repositories, EventPublisher,<br/>JwtProvider, PasswordEncoder"]
+
+        subgraph outAdapters["Adaptadores de salida"]
+            jpa["JPA Repository Adapters"]
+            event["Rabbit EventPublisherAdapter"]
+            jwt["JwtProviderAdapter"]
+            pwd["PasswordEncoderAdapter"]
+            security["Spring Security + JwtAuthFilter"]
+        end
+    end
+
+    mobile --> auth
+    mobile --> products
+    mobile --> cart
+    mobile --> checkoutCtrl
+    mobile --> listings
+    rabbit --> consumer
+
+    auth --> authUC
+    products --> productUC
+    cart --> cartUC
+    checkoutCtrl --> checkoutUC
+    listings --> listingUC
+    consumer --> checkoutUC
+
+    authUC --> domain
+    productUC --> domain
+    cartUC --> domain
+    checkoutUC --> domain
+    listingUC --> domain
+
+    authUC --> ports
+    productUC --> ports
+    cartUC --> ports
+    checkoutUC --> ports
+    listingUC --> ports
+    ports --> jpa
+    ports --> event
+    ports --> jwt
+    ports --> pwd
+    security -.-> auth
+
+    jpa --> db
+    event --> rabbit
+
+    classDef ext fill:#666666,color:#ffffff
+    classDef adapter fill:#1168bd,color:#ffffff
+    classDef usecase fill:#2f75b5,color:#ffffff
+    classDef domain fill:#2d882d,color:#ffffff
+    classDef db fill:#23a4d4,color:#ffffff
+
+    class mobile,rabbit ext
+    class auth,products,cart,checkoutCtrl,listings,consumer,jpa,event,jwt,pwd,security adapter
+    class authUC,productUC,cartUC,checkoutUC,listingUC,ports usecase
+    class domain domain
+    class db db
