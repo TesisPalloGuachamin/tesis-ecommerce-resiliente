@@ -7,7 +7,10 @@ const vus = Number(__ENV.VUS || '10');
 const runId = __ENV.RUN_ID || 'cap4-load-local';
 const scenarioName = __ENV.SCENARIO_NAME || 'CARGA-200';
 const baseUrl = (__ENV.BASE_URL || 'http://AWS_PRINCIPAL_HOST:8080').replace(/\/$/, '');
-const password = __ENV.TEST_PASSWORD || 'Cap4LoadTest123!';
+const password = __ENV.TEST_PASSWORD;
+if (!password) {
+  throw new Error('TEST_PASSWORD env var is required');
+}
 const pollAttempts = Number(__ENV.POLL_ATTEMPTS || '12');
 const pollDelaySeconds = Number(__ENV.POLL_DELAY_SECONDS || '0.5');
 
