@@ -1,0 +1,1106 @@
+{
+  "runId": "cap4-drp-20260614-185235",
+  "runIdAwsPrincipal": "cap4-drp-aws-main-20260614-191520",
+  "baseUrl": "http://AWS_PRINCIPAL_HOST:8080",
+  "preSmoke": {
+    "label": "drp-pre",
+    "startedAt": "2026-06-15T00:17:49Z",
+    "passed": true,
+    "checkoutRequestId": "5a683cab-3ab5-4ced-b433-b6e0f24ecc61",
+    "finalStatus": "COMPLETED",
+    "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+    "cartId": "066e22d4-469f-4dc9-aab7-d085ab1a6880",
+    "completedAt": "2026-06-15T00:17:51Z"
+  },
+  "postSmoke": {
+    "label": "drp-post",
+    "startedAt": "2026-06-15T00:18:22Z",
+    "passed": true,
+    "checkoutRequestId": "4a0c8485-904a-4b16-afa6-cdf93819f612",
+    "finalStatus": "COMPLETED",
+    "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+    "cartId": "5f69b2e4-7d28-4d32-be74-e6ab120c2a94",
+    "completedAt": "2026-06-15T00:18:25Z"
+  },
+  "previousCheckoutAfterRecovery": {
+    "checked": true,
+    "status": 200,
+    "finalStatus": "COMPLETED",
+    "passed": true
+  },
+  "steps": [
+    {
+      "label": "health_before_core-api",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/actuator/health",
+      "status": 200,
+      "elapsedSeconds": 0.207564,
+      "expected": [
+        200
+      ],
+      "passed": true,
+      "request": null,
+      "response": {
+        "status": "UP",
+        "components": {
+          "db": {
+            "status": "UP",
+            "details": {
+              "database": "PostgreSQL",
+              "validationQuery": "isValid()"
+            }
+          },
+          "diskSpace": {
+            "status": "UP",
+            "details": {
+              "total": 21395124224,
+              "free": 13362139136,
+              "threshold": 10485760,
+              "path": "/app/.",
+              "exists": true
+            }
+          },
+          "ping": {
+            "status": "UP"
+          },
+          "rabbit": {
+            "status": "UP",
+            "details": {
+              "version": "3.12.14"
+            }
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "label": "health_before_checkout-service",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8082/api/actuator/health",
+      "status": 200,
+      "elapsedSeconds": 0.179846,
+      "expected": [
+        200
+      ],
+      "passed": true,
+      "request": null,
+      "response": {
+        "status": "UP",
+        "components": {
+          "db": {
+            "status": "UP",
+            "details": {
+              "database": "PostgreSQL",
+              "validationQuery": "isValid()"
+            }
+          },
+          "diskSpace": {
+            "status": "UP",
+            "details": {
+              "total": 21395124224,
+              "free": 13362139136,
+              "threshold": 10485760,
+              "path": "/app/.",
+              "exists": true
+            }
+          },
+          "ping": {
+            "status": "UP"
+          },
+          "rabbit": {
+            "status": "UP",
+            "details": {
+              "version": "3.12.14"
+            }
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "label": "health_before_prometheus-targets",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:9090/api/v1/targets",
+      "status": 200,
+      "elapsedSeconds": 0.186748,
+      "expected": [
+        200
+      ],
+      "passed": true,
+      "request": null,
+      "response": {
+        "status": "success",
+        "data": {
+          "activeTargets": [
+            {
+              "discoveredLabels": {
+                "__address__": "checkout-service:8082",
+                "__metrics_path__": "/api/actuator/prometheus",
+                "__scheme__": "http",
+                "__scrape_interval__": "15s",
+                "__scrape_timeout__": "10s",
+                "job": "checkout-service"
+              },
+              "labels": {
+                "instance": "checkout-service:8082",
+                "job": "checkout-service"
+              },
+              "scrapePool": "checkout-service",
+              "scrapeUrl": "http://checkout-service:8082/api/actuator/prometheus",
+              "globalUrl": "http://checkout-service:8082/api/actuator/prometheus",
+              "lastError": "",
+              "lastScrape": "2026-06-15T00:17:31.755855353Z",
+              "lastScrapeDuration": 0.004179781,
+              "health": "up",
+              "scrapeInterval": "15s",
+              "scrapeTimeout": "10s"
+            },
+            {
+              "discoveredLabels": {
+                "__address__": "core-api:8080",
+                "__metrics_path__": "/actuator/prometheus",
+                "__scheme__": "http",
+                "__scrape_interval__": "15s",
+                "__scrape_timeout__": "10s",
+                "job": "core-api"
+              },
+              "labels": {
+                "instance": "core-api:8080",
+                "job": "core-api"
+              },
+              "scrapePool": "core-api",
+              "scrapeUrl": "http://core-api:8080/actuator/prometheus",
+              "globalUrl": "http://core-api:8080/actuator/prometheus",
+              "lastError": "",
+              "lastScrape": "2026-06-15T00:17:29.854023967Z",
+              "lastScrapeDuration": 0.011301743,
+              "health": "up",
+              "scrapeInterval": "15s",
+              "scrapeTimeout": "10s"
+            },
+            {
+              "discoveredLabels": {
+                "__address__": "prometheus:9090",
+                "__metrics_path__": "/metrics",
+                "__scheme__": "http",
+                "__scrape_interval__": "15s",
+                "__scrape_timeout__": "10s",
+                "job": "prometheus"
+              },
+              "labels": {
+                "instance": "prometheus:9090",
+                "job": "prometheus"
+              },
+              "scrapePool": "prometheus",
+              "scrapeUrl": "http://prometheus:9090/metrics",
+              "globalUrl": "http://prometheus:9090/metrics",
+              "lastError": "",
+              "lastScrape": "2026-06-15T00:17:23.479433693Z",
+              "lastScrapeDuration": 0.006294678,
+              "health": "up",
+              "scrapeInterval": "15s",
+              "scrapeTimeout": "10s"
+            }
+          ],
+          "droppedTargets": [],
+          "droppedTargetCounts": {
+            "checkout-service": 0,
+            "core-api": 0,
+            "prometheus": 0
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "label": "health_before_grafana-health",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:3000/api/health",
+      "status": 200,
+      "elapsedSeconds": 0.188218,
+      "expected": [
+        200
+      ],
+      "passed": true,
+      "request": null,
+      "response": {
+        "database": "ok",
+        "version": "13.0.1",
+        "commit": "a100054f"
+      },
+      "error": null
+    },
+    {
+      "label": "drp-pre_register",
+      "method": "POST",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/auth/register",
+      "status": 201,
+      "elapsedSeconds": 0.290186,
+      "expected": [
+        201
+      ],
+      "passed": true,
+      "request": {
+        "email": "drp-pre-1781482669@example.com",
+        "password": "[MASKED]",
+        "name": "drp-pre User"
+      },
+      "response": {
+        "token": "[MASKED]",
+        "user": {
+          "id": "8891b258-1f5d-4f15-ab50-2a630359af7e",
+          "email": "drp-pre-1781482669@example.com",
+          "name": "drp-pre User",
+          "enabled": true
+        }
+      },
+      "error": null
+    },
+    {
+      "label": "drp-pre_products",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/products",
+      "status": 200,
+      "elapsedSeconds": 0.185185,
+      "expected": [
+        200
+      ],
+      "passed": true,
+      "request": null,
+      "response": [
+        {
+          "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+          "sku": "PROD001",
+          "name": "Laptop Dell XPS 13",
+          "description": "High-performance laptop with Intel i7 processor",
+          "price": 1299.99,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "b025f43f-65e0-4162-bbf9-fd4b63088c04",
+          "sku": "PROD002",
+          "name": "Wireless Mouse Logitech",
+          "description": "Ergonomic wireless mouse with USB receiver",
+          "price": 29.99,
+          "stock": 50,
+          "active": true
+        }
+      ],
+      "error": null
+    },
+    {
+      "label": "drp-pre_cart_add",
+      "method": "POST",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/cart/items",
+      "status": 201,
+      "elapsedSeconds": 0.319252,
+      "expected": [
+        201
+      ],
+      "passed": true,
+      "request": {
+        "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+        "quantity": 1
+      },
+      "response": {
+        "id": "066e22d4-469f-4dc9-aab7-d085ab1a6880",
+        "userId": "8891b258-1f5d-4f15-ab50-2a630359af7e",
+        "items": [
+          {
+            "id": "d1512040-f09c-440d-a13f-6eaa6f91f138",
+            "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+            "product": {
+              "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+              "sku": "PROD001",
+              "name": "Laptop Dell XPS 13",
+              "description": "High-performance laptop with Intel i7 processor",
+              "price": 1299.99,
+              "stock": 10,
+              "active": true
+            },
+            "quantity": 1,
+            "unitPrice": 1299.99,
+            "total": 1299.99
+          }
+        ],
+        "total": 1299.99
+      },
+      "error": null
+    },
+    {
+      "label": "drp-pre_checkout",
+      "method": "POST",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/checkout",
+      "status": 202,
+      "elapsedSeconds": 0.232207,
+      "expected": [
+        202
+      ],
+      "passed": true,
+      "request": {
+        "cartId": "066e22d4-469f-4dc9-aab7-d085ab1a6880"
+      },
+      "response": {
+        "requestId": "5a683cab-3ab5-4ced-b433-b6e0f24ecc61",
+        "userId": "8891b258-1f5d-4f15-ab50-2a630359af7e",
+        "totalAmount": 1299.99,
+        "status": "PENDING"
+      },
+      "error": null
+    },
+    {
+      "label": "drp-pre_poll_1",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/checkout/5a683cab-3ab5-4ced-b433-b6e0f24ecc61",
+      "status": 200,
+      "elapsedSeconds": 0.174055,
+      "expected": [
+        200
+      ],
+      "passed": true,
+      "request": null,
+      "response": {
+        "requestId": "5a683cab-3ab5-4ced-b433-b6e0f24ecc61",
+        "userId": "8891b258-1f5d-4f15-ab50-2a630359af7e",
+        "totalAmount": 1299.99,
+        "status": "COMPLETED"
+      },
+      "error": null
+    },
+    {
+      "label": "incident_core_health_check_1",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/actuator/health",
+      "status": null,
+      "elapsedSeconds": 0.091714,
+      "expected": [
+        200
+      ],
+      "passed": false,
+      "request": null,
+      "response": null,
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "label": "recovery_core_health_check_1",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/actuator/health",
+      "status": null,
+      "elapsedSeconds": 0.109238,
+      "expected": [
+        200
+      ],
+      "passed": false,
+      "request": null,
+      "response": null,
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "label": "recovery_core_health_check_2",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/actuator/health",
+      "status": null,
+      "elapsedSeconds": 0.097182,
+      "expected": [
+        200
+      ],
+      "passed": false,
+      "request": null,
+      "response": null,
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "label": "recovery_core_health_check_3",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/actuator/health",
+      "status": null,
+      "elapsedSeconds": 0.085394,
+      "expected": [
+        200
+      ],
+      "passed": false,
+      "request": null,
+      "response": null,
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "label": "recovery_core_health_check_4",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/actuator/health",
+      "status": null,
+      "elapsedSeconds": 0.092237,
+      "expected": [
+        200
+      ],
+      "passed": false,
+      "request": null,
+      "response": null,
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "label": "recovery_core_health_check_5",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/actuator/health",
+      "status": null,
+      "elapsedSeconds": 0.09381,
+      "expected": [
+        200
+      ],
+      "passed": false,
+      "request": null,
+      "response": null,
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "label": "recovery_core_health_check_6",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/actuator/health",
+      "status": null,
+      "elapsedSeconds": 0.10669,
+      "expected": [
+        200
+      ],
+      "passed": false,
+      "request": null,
+      "response": null,
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "label": "recovery_core_health_check_7",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/actuator/health",
+      "status": null,
+      "elapsedSeconds": 0.107762,
+      "expected": [
+        200
+      ],
+      "passed": false,
+      "request": null,
+      "response": null,
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "label": "recovery_core_health_check_8",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/actuator/health",
+      "status": null,
+      "elapsedSeconds": 0.104719,
+      "expected": [
+        200
+      ],
+      "passed": false,
+      "request": null,
+      "response": null,
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "label": "recovery_core_health_check_9",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/actuator/health",
+      "status": null,
+      "elapsedSeconds": 0.119061,
+      "expected": [
+        200
+      ],
+      "passed": false,
+      "request": null,
+      "response": null,
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "label": "recovery_core_health_check_10",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/actuator/health",
+      "status": 200,
+      "elapsedSeconds": 0.631812,
+      "expected": [
+        200
+      ],
+      "passed": true,
+      "request": null,
+      "response": {
+        "status": "UP",
+        "components": {
+          "db": {
+            "status": "UP",
+            "details": {
+              "database": "PostgreSQL",
+              "validationQuery": "isValid()"
+            }
+          },
+          "diskSpace": {
+            "status": "UP",
+            "details": {
+              "total": 21395124224,
+              "free": 13362069504,
+              "threshold": 10485760,
+              "path": "/app/.",
+              "exists": true
+            }
+          },
+          "ping": {
+            "status": "UP"
+          },
+          "rabbit": {
+            "status": "UP",
+            "details": {
+              "version": "3.12.14"
+            }
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "label": "drp-post_register",
+      "method": "POST",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/auth/register",
+      "status": 201,
+      "elapsedSeconds": 0.847416,
+      "expected": [
+        201
+      ],
+      "passed": true,
+      "request": {
+        "email": "drp-post-1781482702@example.com",
+        "password": "[MASKED]",
+        "name": "drp-post User"
+      },
+      "response": {
+        "token": "[MASKED]",
+        "user": {
+          "id": "f64b36a6-3e18-4b0e-983c-865bc5685980",
+          "email": "drp-post-1781482702@example.com",
+          "name": "drp-post User",
+          "enabled": true
+        }
+      },
+      "error": null
+    },
+    {
+      "label": "drp-post_products",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/products",
+      "status": 200,
+      "elapsedSeconds": 0.294858,
+      "expected": [
+        200
+      ],
+      "passed": true,
+      "request": null,
+      "response": [
+        {
+          "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+          "sku": "PROD001",
+          "name": "Laptop Dell XPS 13",
+          "description": "High-performance laptop with Intel i7 processor",
+          "price": 1299.99,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "b025f43f-65e0-4162-bbf9-fd4b63088c04",
+          "sku": "PROD002",
+          "name": "Wireless Mouse Logitech",
+          "description": "Ergonomic wireless mouse with USB receiver",
+          "price": 29.99,
+          "stock": 50,
+          "active": true
+        }
+      ],
+      "error": null
+    },
+    {
+      "label": "drp-post_cart_add",
+      "method": "POST",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/cart/items",
+      "status": 201,
+      "elapsedSeconds": 0.359119,
+      "expected": [
+        201
+      ],
+      "passed": true,
+      "request": {
+        "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+        "quantity": 1
+      },
+      "response": {
+        "id": "5f69b2e4-7d28-4d32-be74-e6ab120c2a94",
+        "userId": "f64b36a6-3e18-4b0e-983c-865bc5685980",
+        "items": [
+          {
+            "id": "ee418b0d-8135-4c7e-871b-964a4855ff08",
+            "productId": "3521ffba-1fac-4988-b9be-02216bd3360f",
+            "product": {
+              "id": "3521ffba-1fac-4988-b9be-02216bd3360f",
+              "sku": "PROD001",
+              "name": "Laptop Dell XPS 13",
+              "description": "High-performance laptop with Intel i7 processor",
+              "price": 1299.99,
+              "stock": 10,
+              "active": true
+            },
+            "quantity": 1,
+            "unitPrice": 1299.99,
+            "total": 1299.99
+          }
+        ],
+        "total": 1299.99
+      },
+      "error": null
+    },
+    {
+      "label": "drp-post_checkout",
+      "method": "POST",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/checkout",
+      "status": 202,
+      "elapsedSeconds": 0.308047,
+      "expected": [
+        202
+      ],
+      "passed": true,
+      "request": {
+        "cartId": "5f69b2e4-7d28-4d32-be74-e6ab120c2a94"
+      },
+      "response": {
+        "requestId": "4a0c8485-904a-4b16-afa6-cdf93819f612",
+        "userId": "f64b36a6-3e18-4b0e-983c-865bc5685980",
+        "totalAmount": 1299.99,
+        "status": "PENDING"
+      },
+      "error": null
+    },
+    {
+      "label": "drp-post_poll_1",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/checkout/4a0c8485-904a-4b16-afa6-cdf93819f612",
+      "status": 200,
+      "elapsedSeconds": 0.214179,
+      "expected": [
+        200
+      ],
+      "passed": true,
+      "request": null,
+      "response": {
+        "requestId": "4a0c8485-904a-4b16-afa6-cdf93819f612",
+        "userId": "f64b36a6-3e18-4b0e-983c-865bc5685980",
+        "totalAmount": 1299.99,
+        "status": "COMPLETED"
+      },
+      "error": null
+    },
+    {
+      "label": "verify_pre_checkout_after_recovery",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/api/v1/checkout/5a683cab-3ab5-4ced-b433-b6e0f24ecc61",
+      "status": 200,
+      "elapsedSeconds": 0.221761,
+      "expected": [
+        200
+      ],
+      "passed": true,
+      "request": null,
+      "response": {
+        "requestId": "5a683cab-3ab5-4ced-b433-b6e0f24ecc61",
+        "userId": "8891b258-1f5d-4f15-ab50-2a630359af7e",
+        "totalAmount": 1299.99,
+        "status": "COMPLETED"
+      },
+      "error": null
+    },
+    {
+      "label": "health_after_core-api",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8080/actuator/health",
+      "status": 200,
+      "elapsedSeconds": 0.193305,
+      "expected": [
+        200
+      ],
+      "passed": true,
+      "request": null,
+      "response": {
+        "status": "UP",
+        "components": {
+          "db": {
+            "status": "UP",
+            "details": {
+              "database": "PostgreSQL",
+              "validationQuery": "isValid()"
+            }
+          },
+          "diskSpace": {
+            "status": "UP",
+            "details": {
+              "total": 21395124224,
+              "free": 13361930240,
+              "threshold": 10485760,
+              "path": "/app/.",
+              "exists": true
+            }
+          },
+          "ping": {
+            "status": "UP"
+          },
+          "rabbit": {
+            "status": "UP",
+            "details": {
+              "version": "3.12.14"
+            }
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "label": "health_after_checkout-service",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:8082/api/actuator/health",
+      "status": 200,
+      "elapsedSeconds": 0.20234,
+      "expected": [
+        200
+      ],
+      "passed": true,
+      "request": null,
+      "response": {
+        "status": "UP",
+        "components": {
+          "db": {
+            "status": "UP",
+            "details": {
+              "database": "PostgreSQL",
+              "validationQuery": "isValid()"
+            }
+          },
+          "diskSpace": {
+            "status": "UP",
+            "details": {
+              "total": 21395124224,
+              "free": 13361930240,
+              "threshold": 10485760,
+              "path": "/app/.",
+              "exists": true
+            }
+          },
+          "ping": {
+            "status": "UP"
+          },
+          "rabbit": {
+            "status": "UP",
+            "details": {
+              "version": "3.12.14"
+            }
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "label": "health_after_prometheus-targets",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:9090/api/v1/targets",
+      "status": 200,
+      "elapsedSeconds": 0.191149,
+      "expected": [
+        200
+      ],
+      "passed": true,
+      "request": null,
+      "response": {
+        "status": "success",
+        "data": {
+          "activeTargets": [
+            {
+              "discoveredLabels": {
+                "__address__": "checkout-service:8082",
+                "__metrics_path__": "/api/actuator/prometheus",
+                "__scheme__": "http",
+                "__scrape_interval__": "15s",
+                "__scrape_timeout__": "10s",
+                "job": "checkout-service"
+              },
+              "labels": {
+                "instance": "checkout-service:8082",
+                "job": "checkout-service"
+              },
+              "scrapePool": "checkout-service",
+              "scrapeUrl": "http://checkout-service:8082/api/actuator/prometheus",
+              "globalUrl": "http://checkout-service:8082/api/actuator/prometheus",
+              "lastError": "",
+              "lastScrape": "2026-06-15T00:18:16.755855353Z",
+              "lastScrapeDuration": 0.005235971,
+              "health": "up",
+              "scrapeInterval": "15s",
+              "scrapeTimeout": "10s"
+            },
+            {
+              "discoveredLabels": {
+                "__address__": "core-api:8080",
+                "__metrics_path__": "/actuator/prometheus",
+                "__scheme__": "http",
+                "__scrape_interval__": "15s",
+                "__scrape_timeout__": "10s",
+                "job": "core-api"
+              },
+              "labels": {
+                "instance": "core-api:8080",
+                "job": "core-api"
+              },
+              "scrapePool": "core-api",
+              "scrapeUrl": "http://core-api:8080/actuator/prometheus",
+              "globalUrl": "http://core-api:8080/actuator/prometheus",
+              "lastError": "Get \"http://core-api:8080/actuator/prometheus\": dial tcp DOCKER_INTERNAL_IP:8080: connect: connection refused",
+              "lastScrape": "2026-06-15T00:18:14.85088705Z",
+              "lastScrapeDuration": 0.001271612,
+              "health": "down",
+              "scrapeInterval": "15s",
+              "scrapeTimeout": "10s"
+            },
+            {
+              "discoveredLabels": {
+                "__address__": "prometheus:9090",
+                "__metrics_path__": "/metrics",
+                "__scheme__": "http",
+                "__scrape_interval__": "15s",
+                "__scrape_timeout__": "10s",
+                "job": "prometheus"
+              },
+              "labels": {
+                "instance": "prometheus:9090",
+                "job": "prometheus"
+              },
+              "scrapePool": "prometheus",
+              "scrapeUrl": "http://prometheus:9090/metrics",
+              "globalUrl": "http://prometheus:9090/metrics",
+              "lastError": "",
+              "lastScrape": "2026-06-15T00:18:23.482182505Z",
+              "lastScrapeDuration": 0.01374003,
+              "health": "up",
+              "scrapeInterval": "15s",
+              "scrapeTimeout": "10s"
+            }
+          ],
+          "droppedTargets": [],
+          "droppedTargetCounts": {
+            "checkout-service": 0,
+            "core-api": 0,
+            "prometheus": 0
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "label": "health_after_grafana-health",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:3000/api/health",
+      "status": 200,
+      "elapsedSeconds": 0.179946,
+      "expected": [
+        200
+      ],
+      "passed": true,
+      "request": null,
+      "response": {
+        "database": "ok",
+        "version": "13.0.1",
+        "commit": "a100054f"
+      },
+      "error": null
+    },
+    {
+      "label": "prometheus_targets",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:9090/api/v1/targets",
+      "status": 200,
+      "elapsedSeconds": 0.183782,
+      "expected": [
+        200
+      ],
+      "passed": true,
+      "request": null,
+      "response": {
+        "status": "success",
+        "data": {
+          "activeTargets": [
+            {
+              "discoveredLabels": {
+                "__address__": "checkout-service:8082",
+                "__metrics_path__": "/api/actuator/prometheus",
+                "__scheme__": "http",
+                "__scrape_interval__": "15s",
+                "__scrape_timeout__": "10s",
+                "job": "checkout-service"
+              },
+              "labels": {
+                "instance": "checkout-service:8082",
+                "job": "checkout-service"
+              },
+              "scrapePool": "checkout-service",
+              "scrapeUrl": "http://checkout-service:8082/api/actuator/prometheus",
+              "globalUrl": "http://checkout-service:8082/api/actuator/prometheus",
+              "lastError": "",
+              "lastScrape": "2026-06-15T00:18:46.755855353Z",
+              "lastScrapeDuration": 0.005031416,
+              "health": "up",
+              "scrapeInterval": "15s",
+              "scrapeTimeout": "10s"
+            },
+            {
+              "discoveredLabels": {
+                "__address__": "core-api:8080",
+                "__metrics_path__": "/actuator/prometheus",
+                "__scheme__": "http",
+                "__scrape_interval__": "15s",
+                "__scrape_timeout__": "10s",
+                "job": "core-api"
+              },
+              "labels": {
+                "instance": "core-api:8080",
+                "job": "core-api"
+              },
+              "scrapePool": "core-api",
+              "scrapeUrl": "http://core-api:8080/actuator/prometheus",
+              "globalUrl": "http://core-api:8080/actuator/prometheus",
+              "lastError": "",
+              "lastScrape": "2026-06-15T00:18:59.853760158Z",
+              "lastScrapeDuration": 0.129463386,
+              "health": "up",
+              "scrapeInterval": "15s",
+              "scrapeTimeout": "10s"
+            },
+            {
+              "discoveredLabels": {
+                "__address__": "prometheus:9090",
+                "__metrics_path__": "/metrics",
+                "__scheme__": "http",
+                "__scrape_interval__": "15s",
+                "__scrape_timeout__": "10s",
+                "job": "prometheus"
+              },
+              "labels": {
+                "instance": "prometheus:9090",
+                "job": "prometheus"
+              },
+              "scrapePool": "prometheus",
+              "scrapeUrl": "http://prometheus:9090/metrics",
+              "globalUrl": "http://prometheus:9090/metrics",
+              "lastError": "",
+              "lastScrape": "2026-06-15T00:18:53.479433693Z",
+              "lastScrapeDuration": 0.008759922,
+              "health": "up",
+              "scrapeInterval": "15s",
+              "scrapeTimeout": "10s"
+            }
+          ],
+          "droppedTargets": [],
+          "droppedTargetCounts": {
+            "checkout-service": 0,
+            "core-api": 0,
+            "prometheus": 0
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "label": "prometheus_query_up",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:9090/api/v1/query?query=up",
+      "status": 200,
+      "elapsedSeconds": 0.198524,
+      "expected": [
+        200
+      ],
+      "passed": true,
+      "request": null,
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {
+                "__name__": "up",
+                "instance": "core-api:8080",
+                "job": "core-api"
+              },
+              "value": [
+                1781482740.845,
+                "1"
+              ]
+            },
+            {
+              "metric": {
+                "__name__": "up",
+                "instance": "checkout-service:8082",
+                "job": "checkout-service"
+              },
+              "value": [
+                1781482740.845,
+                "1"
+              ]
+            },
+            {
+              "metric": {
+                "__name__": "up",
+                "instance": "prometheus:9090",
+                "job": "prometheus"
+              },
+              "value": [
+                1781482740.845,
+                "1"
+              ]
+            }
+          ]
+        }
+      },
+      "error": null
+    },
+    {
+      "label": "prometheus_query_core_checkout",
+      "method": "GET",
+      "url": "http://AWS_PRINCIPAL_HOST:9090/api/v1/query?query=up%7Bjob%3D~%22core-api%7Ccheckout-service%22%7D",
+      "status": 200,
+      "elapsedSeconds": 0.18885,
+      "expected": [
+        200
+      ],
+      "passed": true,
+      "request": null,
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {
+                "__name__": "up",
+                "instance": "core-api:8080",
+                "job": "core-api"
+              },
+              "value": [
+                1781482741.04,
+                "1"
+              ]
+            },
+            {
+              "metric": {
+                "__name__": "up",
+                "instance": "checkout-service:8082",
+                "job": "checkout-service"
+              },
+              "value": [
+                1781482741.04,
+                "1"
+              ]
+            }
+          ]
+        }
+      },
+      "error": null
+    }
+  ]
+}

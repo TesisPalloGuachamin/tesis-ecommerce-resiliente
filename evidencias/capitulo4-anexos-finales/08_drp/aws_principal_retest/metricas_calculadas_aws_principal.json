@@ -1,0 +1,19 @@
+{
+  "runId": "cap4-drp-20260614-185235",
+  "runIdAwsPrincipal": "cap4-drp-aws-main-20260614-191520",
+  "source": "aws_principal_retest",
+  "rtoSeconds": 31.506,
+  "mttrSeconds": 69.801,
+  "rpoTemporalSeconds": 0.0,
+  "rpoFunctionalExpected": 2,
+  "rpoFunctionalRecovered": 2,
+  "rpoFunctionalMissingCheckoutIds": 0,
+  "availabilityObservedPercent": 64.08527196797435,
+  "functionalErrorRatePercent": 0.0,
+  "latencyP95Seconds": 0.6045430860984193,
+  "latencySamplesCount": 23,
+  "preCheckoutId": "5a683cab-3ab5-4ced-b433-b6e0f24ecc61",
+  "postCheckoutId": "4a0c8485-904a-4b16-afa6-cdf93819f612",
+  "coreStopReturnCode": 0,
+  "coreStartReturnCode": 0
+}

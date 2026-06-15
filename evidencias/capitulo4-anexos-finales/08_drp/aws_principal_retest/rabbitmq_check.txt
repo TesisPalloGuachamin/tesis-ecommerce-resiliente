@@ -1,0 +1,30 @@
+## before 2026-06-15T00:17:42Z
+returnCode=0
+Timeout: 60.0 seconds ...
+Listing queues for vhost / ...
+name	messages	messages_ready	messages_unacknowledged
+checkout-service.checkout-requested.q	0	0	0
+checkout-service.checkout-accepted.q	3117	3117	0
+checkout-service.dlq	0	0	0
+core-api.checkout-completed.q	0	0	0
+checkout-service.payment-processed.q	3117	3117	0
+checkout-service.checkout-failed.q	0	0	0
+checkout-service.checkout-completed.q	3117	3117	0
+core-api.checkout-failed.q	0	0	0
+core-api.dlq	0	0	0
+
+
+## after 2026-06-15T00:18:36Z
+returnCode=0
+Timeout: 60.0 seconds ...
+Listing queues for vhost / ...
+name	messages	messages_ready	messages_unacknowledged
+checkout-service.checkout-requested.q	0	0	0
+checkout-service.checkout-accepted.q	3119	3119	0
+checkout-service.dlq	0	0	0
+core-api.checkout-completed.q	0	0	0
+checkout-service.payment-processed.q	3119	3119	0
+checkout-service.checkout-failed.q	0	0	0
+checkout-service.checkout-completed.q	3119	3119	0
+core-api.checkout-failed.q	0	0	0
+core-api.dlq	0	0	0

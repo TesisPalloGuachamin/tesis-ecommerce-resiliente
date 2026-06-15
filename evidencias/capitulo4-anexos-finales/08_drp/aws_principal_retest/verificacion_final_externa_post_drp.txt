@@ -1,0 +1,22 @@
+# Verificacion final externa post-DRP
+RUN_ID: `cap4-drp-20260614-185235`
+RUN_ID_AWS_PRINCIPAL: `cap4-drp-aws-main-20260614-191520`
+Fecha UTC: `2026-06-15T02:48:58Z`
+Host: `AWS_PRINCIPAL_HOST`
+
+## Resultado
+- core_api: HTTP 200 PASS=True
+- checkout_service: HTTP 200 PASS=True
+- register: HTTP 201 PASS=True status=
+- login: HTTP 200 PASS=True status=
+- products: HTTP 200 PASS=True status=
+- cart_add: HTTP 201 PASS=True status=
+- checkout_create: HTTP 202 PASS=True status=
+- checkout_final: HTTP 200 PASS=True status=COMPLETED
+- listing_create: HTTP 201 PASS=True status=ACTIVE
+- listing_get: HTTP 200 PASS=True status=ACTIVE
+- prometheus targets: HTTP 200 PASS=True
+- grafana health: HTTP 200 PASS=True
+
+## Interpretacion
+La verificacion externa no destructiva confirma accesibilidad del backend en el nuevo laboratorio cuando los checks principales pasan. CARGA-1000 sigue siendo complemento operativo y no DRP.
