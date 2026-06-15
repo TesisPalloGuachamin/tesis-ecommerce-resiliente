@@ -1,5 +1,14 @@
 # Checklist diagramas Capitulo 4 cerrada
 
+## Referencia de versionamiento
+
+Las evidencias de diagramas finales del Capitulo 4 quedaron versionadas en el commit:
+
+- Commit completo: `2ee8d1091251472d26e08642bb70bea61d1c9437`
+- Commit corto: `2ee8d10`
+- Fecha/hora: `2026-06-14T22:48:11-05:00`
+- Rama: `cap4-cierre-tecnico`
+
 | Elemento | Estado | Evidencia | Observacion |
 |---|---|---|---|
 | Fuentes existentes revisadas | CERRADO | `evidencias/arq-diag-01/`; `10_diagramas_finales/auditoria_diagramas_capitulo4.md` | Se revisaron Mermaid, PlantUML y documentacion asociada |
