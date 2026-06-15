@@ -1,0 +1,26 @@
+---
+title: "INT-02: Adaptador conceptual de pago simulado"
+---
+flowchart LR
+    usecase["ProcessCheckoutUseCase<br/>checkout-service"]
+    port["PaymentPort<br/>interfaz de dominio"]
+    adapter["StripeSimulatedPaymentAdapter<br/>adaptador simulado<br/>delay controlado<br/>transactionId stripe_sim_*<br/>success=true en sandbox"]
+    real["Stripe API real<br/>NO utilizada<br/>sin SDK real<br/>sin credenciales<br/>sin transaccion financiera"]
+    db[("checkout_db<br/>payment_attempts")]
+
+    usecase -->|"executePayment(orderId, amount)"| port
+    port -.->|"implementado por"| adapter
+    adapter -->|"registra intento simulado"| db
+    adapter -.->|"sin llamada externa"| real
+
+    classDef usecase fill:#1168bd,color:#ffffff
+    classDef port fill:#444444,color:#ffffff
+    classDef simulated fill:#198754,color:#ffffff
+    classDef external fill:#999999,color:#ffffff,stroke-dasharray: 5 5
+    classDef db fill:#23a4d4,color:#ffffff
+
+    class usecase usecase
+    class port port
+    class adapter simulated
+    class real external
+    class db db

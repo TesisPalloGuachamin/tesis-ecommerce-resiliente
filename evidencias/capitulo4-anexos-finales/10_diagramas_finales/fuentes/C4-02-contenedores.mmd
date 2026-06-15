@@ -1,0 +1,47 @@
+---
+title: "C4-02: Contenedores"
+---
+flowchart TD
+    usuario["Comprador / Vendedor"]
+
+    subgraph plataforma["Plataforma e-commerce sandbox"]
+        mobile["App movil<br/>React Native / Expo<br/>EXPO_PUBLIC_API_BASE_URL<br/>configura endpoint backend<br/>No failover automatico"]
+
+        core["core-api<br/>Spring Boot 3.2 / Java 17<br/>API REST publica<br/>Auth, productos, carrito,<br/>checkout y listings"]
+
+        rabbit["RabbitMQ<br/>Broker AMQP<br/>Exchange ecommerce.checkout.exchange<br/>Desacoplamiento asincrono<br/>No resiliencia automatica por si mismo"]
+
+        checkout["checkout-service<br/>Spring Boot 3.2 / Java 17<br/>Procesa checkout<br/>Inbox idempotente<br/>Pago simulado"]
+
+        coredb[("core_db<br/>PostgreSQL<br/>users, products, carts,<br/>checkout_requests, listings")]
+
+        checkoutdb[("checkout_db<br/>PostgreSQL<br/>orders, order_items,<br/>payment_attempts, inbox_events")]
+
+        prom["Prometheus<br/>Targets verificados UP<br/>core-api, checkout-service, prometheus"]
+
+        graf["Grafana<br/>Health/API verificado<br/>Datasource Prometheus"]
+    end
+
+    usuario -->|"Touch / UI"| mobile
+    mobile -->|"HTTPS REST / JWT"| core
+    core -->|"JDBC/JPA"| coredb
+    core -->|"publica checkout.requested"| rabbit
+    rabbit -->|"entrega checkout.requested"| checkout
+    checkout -->|"publica accepted / processed / completed"| rabbit
+    rabbit -->|"entrega checkout.completed"| core
+    checkout -->|"JDBC/JPA"| checkoutdb
+    prom -.->|"scrape /actuator/prometheus"| core
+    prom -.->|"scrape /api/actuator/prometheus"| checkout
+    graf -.->|"consulta datasource"| prom
+
+    classDef actor fill:#08427b,color:#ffffff
+    classDef container fill:#1168bd,color:#ffffff
+    classDef db fill:#23a4d4,color:#ffffff
+    classDef broker fill:#ff6600,color:#ffffff
+    classDef obs fill:#6f42c1,color:#ffffff
+
+    class usuario actor
+    class mobile,core,checkout container
+    class coredb,checkoutdb db
+    class rabbit broker
+    class prom,graf obs

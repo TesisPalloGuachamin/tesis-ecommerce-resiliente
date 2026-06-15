@@ -1,0 +1,40 @@
+---
+title: "DEP-01: Despliegue final sandbox"
+---
+flowchart TB
+    mobile["App movil<br/>React Native / Expo<br/>cliente configurado por<br/>EXPO_PUBLIC_API_BASE_URL"]
+
+    subgraph aws["AWS principal sandbox"]
+        subgraph docker["Docker Compose sobre EC2"]
+            core["tesis-core-api<br/>core-api :8080<br/>/actuator/health<br/>/actuator/prometheus"]
+            checkout["tesis-checkout-service<br/>checkout-service :8082<br/>/api/actuator/health<br/>/api/actuator/prometheus"]
+            rabbit["tesis-rabbitmq<br/>AMQP 5672<br/>Management 15672"]
+            coredb[("tesis-core-db<br/>PostgreSQL<br/>core_db")]
+            checkoutdb[("tesis-checkout-db<br/>PostgreSQL<br/>checkout_db")]
+            prom["tesis-prometheus<br/>observabilidad operativa verificada<br/>targets UP"]
+            graf["tesis-grafana<br/>health/API verificado<br/>datasource Prometheus"]
+        end
+    end
+
+    mobile -->|"REST / JWT"| core
+    core -->|"JDBC"| coredb
+    checkout -->|"JDBC"| checkoutdb
+    core -->|"AMQP publish/consume"| rabbit
+    checkout -->|"AMQP consume/publish"| rabbit
+    prom -.->|"scrape"| core
+    prom -.->|"scrape"| checkout
+    prom -.->|"scrape"| prom
+    graf -.->|"datasource"| prom
+
+    classDef client fill:#08427b,color:#ffffff
+    classDef service fill:#1168bd,color:#ffffff
+    classDef broker fill:#ff6600,color:#ffffff
+    classDef db fill:#23a4d4,color:#ffffff
+    classDef obs fill:#6f42c1,color:#ffffff
+    classDef sandbox fill:#eeeeee,color:#111111,stroke:#444444
+
+    class mobile client
+    class core,checkout service
+    class rabbit broker
+    class coredb,checkoutdb db
+    class prom,graf obs
