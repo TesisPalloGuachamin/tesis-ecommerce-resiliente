@@ -1,5 +1,14 @@
 # Checklist trazabilidad Capitulo 4 cerrada
 
+## Referencia de versionamiento
+
+Las evidencias de trazabilidad del Capitulo 4 quedaron versionadas en el commit:
+
+- Commit completo: `501637ea3988b7838f8c724791997d774830ef8a`
+- Commit corto: `501637e`
+- Fecha/hora: `2026-06-14T22:25:14-05:00`
+- Rama: `cap4-cierre-tecnico`
+
 | Elemento | Estado | Evidencia | Observacion |
 |---|---|---|---|
 | Carpeta de trazabilidad | CERRADO | `09_trazabilidad_capitulo4/` | Carpeta creada para tablas finales del Capitulo 4 |
