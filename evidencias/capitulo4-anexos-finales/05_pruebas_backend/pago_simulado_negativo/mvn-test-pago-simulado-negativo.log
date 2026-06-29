@@ -1,0 +1,49 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------------< [0;36mcom.tesis:checkout-service[0;1m >---------------------[m
+[[1;34mINFO[m] [1mBuilding checkout-service 1.0.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjacoco-maven-plugin:0.8.12:prepare-agent[m [1m(default)[m @ [36mcheckout-service[0;1m ---[m
+[[1;34mINFO[m] argLine set to "-javaagent:/home/christopher/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/media/christopher/CHRISDDE1/TESIS APP/apps/checkout-service/target/jacoco.exec"
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:resources[m [1m(default-resources)[m @ [36mcheckout-service[0;1m ---[m
+[[1;34mINFO[m] Copying 1 resource from src/main/resources to target/classes
+[[1;34mINFO[m] Copying 1 resource from src/main/resources to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:compile[m [1m(default-compile)[m @ [36mcheckout-service[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:testResources[m [1m(default-testResources)[m @ [36mcheckout-service[0;1m ---[m
+[[1;34mINFO[m] Copying 1 resource from src/test/resources to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:testCompile[m [1m(default-testCompile)[m @ [36mcheckout-service[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module! :source
+[[1;34mINFO[m] Compiling 4 source files with javac [debug release 17] to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.1.2:test[m [1m(default-test)[m @ [36mcheckout-service[0;1m ---[m
+[[1;34mINFO[m] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running com.tesis.ecommerce.checkoutservice.application.usecase.[1mProcessCheckoutUseCaseTest[m
+17:24:19.730 [main] INFO com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Processing checkout for request: bd7860ba-09bc-438f-bd9a-6648515a3623
+17:24:19.766 [main] ERROR com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase -- Checkout failed for order: ORD-FAILED, reason: simulated decline
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.552 s -- in com.tesis.ecommerce.checkoutservice.application.usecase.[1mProcessCheckoutUseCaseTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 1, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjacoco-maven-plugin:0.8.12:report[m [1m(report)[m @ [36mcheckout-service[0;1m ---[m
+[[1;34mINFO[m] Loading execution data file /media/christopher/CHRISDDE1/TESIS APP/apps/checkout-service/target/jacoco.exec
+[[1;34mINFO[m] Analyzed bundle 'checkout-service' with 31 classes
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  5.235 s
+[[1;34mINFO[m] Finished at: 2026-06-29T17:24:20-05:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[0m
