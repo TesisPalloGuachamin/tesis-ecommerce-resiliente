@@ -1,0 +1,3 @@
+/home/ec2-user/tesis-ecommerce-full/apps/checkout-service/Dockerfile
+/home/ec2-user/tesis-ecommerce-full/apps/core-api/Dockerfile
+/home/ec2-user/tesis-ecommerce-full/deploy/compose/docker-compose.dev.yml

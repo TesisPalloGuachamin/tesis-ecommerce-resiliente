@@ -1,0 +1,39 @@
+tesis-checkout-service  | 
+tesis-checkout-service  |   .   ____          _            __ _ _
+tesis-checkout-service  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+tesis-checkout-service  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+tesis-checkout-service  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+tesis-checkout-service  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+tesis-checkout-service  |  =========|_|==============|___/=/_/_/_/
+tesis-checkout-service  |  :: Spring Boot ::                (v3.2.0)
+tesis-checkout-service  | 
+tesis-checkout-service  | 2026-07-08T02:28:04.038Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Starting CheckoutServiceApplication v1.0.0 using Java 17.0.19 with PID 1 (/app/app.jar started by root in /app)
+tesis-checkout-service  | 2026-07-08T02:28:04.041Z DEBUG 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Running with Spring Boot v3.2.0, Spring v6.1.1
+tesis-checkout-service  | 2026-07-08T02:28:04.054Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : No active profile set, falling back to 1 default profile: "default"
+tesis-checkout-service  | 2026-07-08T02:28:19.436Z  WARN 1 --- [checkout-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+tesis-checkout-service  | 2026-07-08T02:28:27.338Z  WARN 1 --- [checkout-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+tesis-checkout-service  | 2026-07-08T02:28:32.264Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Started CheckoutServiceApplication in 30.813 seconds (process running for 32.983)
+tesis-checkout-service  | 
+tesis-checkout-service  |   .   ____          _            __ _ _
+tesis-checkout-service  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+tesis-checkout-service  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+tesis-checkout-service  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+tesis-checkout-service  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+tesis-checkout-service  |  =========|_|==============|___/=/_/_/_/
+tesis-checkout-service  |  :: Spring Boot ::                (v3.2.0)
+tesis-checkout-service  | 
+tesis-checkout-service  | 2026-07-08T02:28:51.292Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Starting CheckoutServiceApplication v1.0.0 using Java 17.0.19 with PID 1 (/app/app.jar started by root in /app)
+tesis-checkout-service  | 2026-07-08T02:28:51.313Z DEBUG 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Running with Spring Boot v3.2.0, Spring v6.1.1
+tesis-checkout-service  | 2026-07-08T02:28:51.315Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : No active profile set, falling back to 1 default profile: "default"
+tesis-checkout-service  | 2026-07-08T02:28:58.959Z  WARN 1 --- [checkout-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+tesis-checkout-service  | 2026-07-08T02:29:03.605Z  WARN 1 --- [checkout-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+tesis-checkout-service  | 2026-07-08T02:29:05.756Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Started CheckoutServiceApplication in 15.52 seconds (process running for 16.699)
+tesis-checkout-service  | 2026-07-08T02:29:05.909Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.requested event: 95b5abc2-a99b-4698-8fd6-3003db74786b
+tesis-checkout-service  | 2026-07-08T02:29:05.921Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.a.u.ProcessCheckoutUseCase       : Processing checkout for request: 95b5abc2-a99b-4698-8fd6-3003db74786b
+tesis-checkout-service  | 2026-07-08T02:29:06.247Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.accepted event for checkout request: dc6d863f-9dc3-4acd-bb34-b7c249d21b34
+tesis-checkout-service  | 2026-07-08T02:29:06.253Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Executing Stripe simulated payment for order: 17e255a6-66f3-4f20-9065-b2c2a5f8e3b8, amount: 29.99
+tesis-checkout-service  | 2026-07-08T02:29:06.754Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Stripe simulated payment approved for order: 17e255a6-66f3-4f20-9065-b2c2a5f8e3b8, transaction: stripe_sim_f00ef7f3-39a4-4f08-9abc-57d1eb54cfab
+tesis-checkout-service  | 2026-07-08T02:29:06.761Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published payment.processed event for order: 17e255a6-66f3-4f20-9065-b2c2a5f8e3b8, success: true
+tesis-checkout-service  | 2026-07-08T02:29:06.767Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.completed event for checkout request: dc6d863f-9dc3-4acd-bb34-b7c249d21b34
+tesis-checkout-service  | 2026-07-08T02:29:06.769Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.a.u.ProcessCheckoutUseCase       : Checkout completed successfully for order: ORD-87091338
+tesis-checkout-service  | 2026-07-08T02:29:06.956Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Checkout processed successfully for event: 95b5abc2-a99b-4698-8fd6-3003db74786b

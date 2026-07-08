@@ -1,0 +1,31 @@
+[
+  {
+    "payload_bytes": 92,
+    "redelivered": false,
+    "exchange": "checkout.dlx",
+    "routing_key": "checkout.requested.dlq",
+    "message_count": 0,
+    "properties": {
+      "headers": {
+        "x-death": [
+          {
+            "count": 1,
+            "exchange": "ecommerce.checkout.exchange",
+            "queue": "checkout-service.checkout-requested.q",
+            "reason": "rejected",
+            "routing-keys": [
+              "checkout.requested"
+            ],
+            "time": 1783478034
+          }
+        ],
+        "x-first-death-exchange": "ecommerce.checkout.exchange",
+        "x-first-death-queue": "checkout-service.checkout-requested.q",
+        "x-first-death-reason": "rejected"
+      },
+      "content_type": "application/json"
+    },
+    "payload": "{\"eventId\":null,\"requestId\":null,\"userId\":null,\"totalAmount\":29.99,\"items\":[],\"timestamp\":0}",
+    "payload_encoding": "string"
+  }
+]

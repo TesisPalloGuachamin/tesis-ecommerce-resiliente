@@ -1,0 +1,83 @@
+[
+  {
+    "name": "checkout-service.checkout-accepted.q",
+    "messages": 16,
+    "messages_ready": 16,
+    "messages_unacknowledged": 0,
+    "consumers": 0,
+    "durable": true,
+    "state": "running"
+  },
+  {
+    "name": "checkout-service.checkout-completed.q",
+    "messages": 16,
+    "messages_ready": 16,
+    "messages_unacknowledged": 0,
+    "consumers": 0,
+    "durable": true,
+    "state": "running"
+  },
+  {
+    "name": "checkout-service.checkout-failed.q",
+    "messages": 0,
+    "messages_ready": 0,
+    "messages_unacknowledged": 0,
+    "consumers": 0,
+    "durable": true,
+    "state": "running"
+  },
+  {
+    "name": "checkout-service.checkout-requested.q",
+    "messages": 0,
+    "messages_ready": 0,
+    "messages_unacknowledged": 0,
+    "consumers": 1,
+    "durable": true,
+    "state": "running"
+  },
+  {
+    "name": "checkout-service.dlq",
+    "messages": 0,
+    "messages_ready": 0,
+    "messages_unacknowledged": 0,
+    "consumers": 0,
+    "durable": true,
+    "state": "running"
+  },
+  {
+    "name": "checkout-service.payment-processed.q",
+    "messages": 16,
+    "messages_ready": 16,
+    "messages_unacknowledged": 0,
+    "consumers": 0,
+    "durable": true,
+    "state": "running"
+  },
+  {
+    "name": "core-api.checkout-completed.q",
+    "messages": 9,
+    "messages_ready": 0,
+    "messages_unacknowledged": 9,
+    "consumers": 1,
+    "durable": true,
+    "state": "running"
+  },
+  {
+    "name": "core-api.checkout-failed.q",
+    "messages": 0,
+    "messages_ready": 0,
+    "messages_unacknowledged": 0,
+    "consumers": 1,
+    "durable": true,
+    "state": "running"
+  },
+  {
+    "name": "core-api.dlq",
+    "messages": 0,
+    "messages_ready": 0,
+    "messages_unacknowledged": 0,
+    "consumers": 0,
+    "durable": true,
+    "state": "running"
+  }
+]

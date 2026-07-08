@@ -1,0 +1,4 @@
+expected=Mensaje fallido llega a checkout-service.dlq con requeue deshabilitado en sandbox
+observed=dlq_messages=1
+status=PASS
+limitations=

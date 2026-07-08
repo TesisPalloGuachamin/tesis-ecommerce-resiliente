@@ -1,0 +1,4 @@
+expected=Mensaje acumulado y procesado tras reiniciar consumidor
+observed=ready=1 final=COMPLETED
+status=PASS
+limitations=

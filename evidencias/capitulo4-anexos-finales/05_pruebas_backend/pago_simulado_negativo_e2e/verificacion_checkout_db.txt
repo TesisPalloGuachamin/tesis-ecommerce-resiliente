@@ -1,0 +1,10 @@
+               event_id               | order_status | total_amount | payment_status |   error_message   
+--------------------------------------+--------------+--------------+----------------+-------------------
+ 0e0cb7e8-f383-4e63-a56f-37cb381213cd | FAILED       |        29.99 | FAILED         | simulated decline
+(1 row)
+
+               event_id               |     event_type     | processed |         created_at         |        processed_at        
+--------------------------------------+--------------------+-----------+----------------------------+----------------------------
+ 0e0cb7e8-f383-4e63-a56f-37cb381213cd | checkout.requested | t         | 2026-07-08 02:05:28.500761 | 2026-07-08 02:05:28.749928
+(1 row)
+

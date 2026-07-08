@@ -1,0 +1,24 @@
+tesis-checkout-service  | 
+tesis-checkout-service  |   .   ____          _            __ _ _
+tesis-checkout-service  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+tesis-checkout-service  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+tesis-checkout-service  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+tesis-checkout-service  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+tesis-checkout-service  |  =========|_|==============|___/=/_/_/_/
+tesis-checkout-service  |  :: Spring Boot ::                (v3.2.0)
+tesis-checkout-service  | 
+tesis-checkout-service  | 2026-07-08T02:04:52.472Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Starting CheckoutServiceApplication v1.0.0 using Java 17.0.19 with PID 1 (/app/app.jar started by root in /app)
+tesis-checkout-service  | 2026-07-08T02:04:52.495Z DEBUG 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Running with Spring Boot v3.2.0, Spring v6.1.1
+tesis-checkout-service  | 2026-07-08T02:04:52.497Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : No active profile set, falling back to 1 default profile: "default"
+tesis-checkout-service  | 2026-07-08T02:05:08.818Z  WARN 1 --- [checkout-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+tesis-checkout-service  | 2026-07-08T02:05:16.563Z  WARN 1 --- [checkout-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+tesis-checkout-service  | 2026-07-08T02:05:21.613Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Started CheckoutServiceApplication in 31.143 seconds (process running for 33.285)
+tesis-checkout-service  | 2026-07-08T02:05:28.059Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.requested event: 0e0cb7e8-f383-4e63-a56f-37cb381213cd
+tesis-checkout-service  | 2026-07-08T02:05:28.086Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.a.u.ProcessCheckoutUseCase       : Processing checkout for request: 0e0cb7e8-f383-4e63-a56f-37cb381213cd
+tesis-checkout-service  | 2026-07-08T02:05:28.711Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.accepted event for checkout request: 1bd8b411-6b6c-4802-80dc-8ccd536a2bad
+tesis-checkout-service  | 2026-07-08T02:05:28.728Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Executing Stripe simulated payment for order: d56dc9ef-8272-474a-bbbc-7a5e88f25520, amount: 29.99
+tesis-checkout-service  | 2026-07-08T02:05:28.729Z  WARN 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Stripe simulated payment declined for order: d56dc9ef-8272-474a-bbbc-7a5e88f25520, amount: 29.99, reason: simulated decline
+tesis-checkout-service  | 2026-07-08T02:05:28.736Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published payment.processed event for order: d56dc9ef-8272-474a-bbbc-7a5e88f25520, success: false
+tesis-checkout-service  | 2026-07-08T02:05:28.746Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.failed event for checkout request: 1bd8b411-6b6c-4802-80dc-8ccd536a2bad, reason: simulated decline
+tesis-checkout-service  | 2026-07-08T02:05:28.749Z ERROR 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.a.u.ProcessCheckoutUseCase       : Checkout failed for order: ORD-F84461DD, reason: simulated decline
+tesis-checkout-service  | 2026-07-08T02:05:29.028Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Checkout processed successfully for event: 0e0cb7e8-f383-4e63-a56f-37cb381213cd

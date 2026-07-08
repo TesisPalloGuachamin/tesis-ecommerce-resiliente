@@ -1,0 +1,29 @@
+[0m[1mmodule.ec2_demo.aws_security_group.demo_sg: Creating...[0m[0m
+[0m[1mmodule.ec2_demo.aws_security_group.demo_sg: Creation complete after 4s [id=sg-017c622d4007e54d0][0m
+[0m[1mmodule.ec2_demo.aws_instance.demo_ec2: Creating...[0m[0m
+[0m[1mmodule.ec2_demo.aws_instance.demo_ec2: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.ec2_demo.aws_instance.demo_ec2: Creation complete after 14s [id=i-080b41a8f9b9a239f][0m
+[0m[1mnull_resource.upload_assets: Creating...[0m[0m
+[0m[1mnull_resource.upload_assets: Provisioning with 'remote-exec'...[0m[0m
+[0m[1mnull_resource.upload_assets (remote-exec):[0m [0mConnecting to remote host via SSH...
+[0m[1mnull_resource.upload_assets (remote-exec):[0m [0m  Host: 44.201.53.79
+[0m[1mnull_resource.upload_assets (remote-exec):[0m [0m  User: ec2-user
+[0m[1mnull_resource.upload_assets (remote-exec):[0m [0m  Password: false
+[0m[1mnull_resource.upload_assets (remote-exec):[0m [0m  Private key: true
+[0m[1mnull_resource.upload_assets (remote-exec):[0m [0m  Certificate: false
+[0m[1mnull_resource.upload_assets (remote-exec):[0m [0m  SSH Agent: true
+[0m[1mnull_resource.upload_assets (remote-exec):[0m [0m  Checking Host Key: false
+[0m[1mnull_resource.upload_assets (remote-exec):[0m [0m  Target Platform: unix
+[0m[1mnull_resource.upload_assets (remote-exec):[0m [0mConnected!
+[0m[1mnull_resource.upload_assets: Provisioning with 'local-exec'...[0m[0m
+[0m[1mnull_resource.upload_assets (local-exec):[0m [0mExecuting: ["/bin/sh" "-c" "scp -i ~/.ssh/vockey.pem -o StrictHostKeyChecking=no -r ../../../deploy/compose/* ec2-user@44.201.53.79:/home/ec2-user/tesis-ecommerce/deploy/compose/\nscp -i ~/.ssh/vockey.pem -o StrictHostKeyChecking=no ../../../deploy/compose/.env* ec2-user@44.201.53.79:/home/ec2-user/tesis-ecommerce/deploy/compose/\n"]
+[0m[1mnull_resource.upload_assets (local-exec):[0m [0mWarning: Permanently added '44.201.53.79' (ED25519) to the list of known hosts.
+[0m[1mnull_resource.upload_assets: Still creating... [10s elapsed][0m[0m
+[0m[1mnull_resource.upload_assets: Creation complete after 17s [id=1538575573228363285][0m
+[0m[1m[32m
+Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+[0m[0m[1m[32m
+Outputs:
+
+[0mdemo_instance_id = "i-080b41a8f9b9a239f"
+demo_instance_public_ip = "44.201.53.79"

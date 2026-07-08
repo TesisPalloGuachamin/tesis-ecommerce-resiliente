@@ -1,0 +1,4 @@
+expected=Outbox pendiente se publica al volver RabbitMQ
+observed=event=c8145d37-f73f-44a5-b91d-edc974d26a5d final=COMPLETED
+status=PASS
+limitations=

@@ -1,0 +1,312 @@
+tesis-checkout-service  | 
+tesis-checkout-service  |   .   ____          _            __ _ _
+tesis-checkout-service  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+tesis-checkout-service  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+tesis-checkout-service  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+tesis-checkout-service  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+tesis-checkout-service  |  =========|_|==============|___/=/_/_/_/
+tesis-checkout-service  |  :: Spring Boot ::                (v3.2.0)
+tesis-checkout-service  | 
+tesis-checkout-service  | 2026-07-08T02:28:04.038Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Starting CheckoutServiceApplication v1.0.0 using Java 17.0.19 with PID 1 (/app/app.jar started by root in /app)
+tesis-checkout-service  | 2026-07-08T02:28:04.041Z DEBUG 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Running with Spring Boot v3.2.0, Spring v6.1.1
+tesis-checkout-service  | 2026-07-08T02:28:04.054Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : No active profile set, falling back to 1 default profile: "default"
+tesis-checkout-service  | 2026-07-08T02:28:19.436Z  WARN 1 --- [checkout-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+tesis-checkout-service  | 2026-07-08T02:28:27.338Z  WARN 1 --- [checkout-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+tesis-checkout-service  | 2026-07-08T02:28:32.264Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Started CheckoutServiceApplication in 30.813 seconds (process running for 32.983)
+tesis-checkout-service  | 
+tesis-checkout-service  |   .   ____          _            __ _ _
+tesis-checkout-service  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+tesis-checkout-service  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+tesis-checkout-service  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+tesis-checkout-service  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+tesis-checkout-service  |  =========|_|==============|___/=/_/_/_/
+tesis-checkout-service  |  :: Spring Boot ::                (v3.2.0)
+tesis-checkout-service  | 
+tesis-checkout-service  | 2026-07-08T02:28:51.292Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Starting CheckoutServiceApplication v1.0.0 using Java 17.0.19 with PID 1 (/app/app.jar started by root in /app)
+tesis-checkout-service  | 2026-07-08T02:28:51.313Z DEBUG 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Running with Spring Boot v3.2.0, Spring v6.1.1
+tesis-checkout-service  | 2026-07-08T02:28:51.315Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : No active profile set, falling back to 1 default profile: "default"
+tesis-checkout-service  | 2026-07-08T02:28:58.959Z  WARN 1 --- [checkout-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+tesis-checkout-service  | 2026-07-08T02:29:03.605Z  WARN 1 --- [checkout-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+tesis-checkout-service  | 2026-07-08T02:29:05.756Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Started CheckoutServiceApplication in 15.52 seconds (process running for 16.699)
+tesis-checkout-service  | 2026-07-08T02:29:05.909Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.requested event: 95b5abc2-a99b-4698-8fd6-3003db74786b
+tesis-checkout-service  | 2026-07-08T02:29:05.921Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.a.u.ProcessCheckoutUseCase       : Processing checkout for request: 95b5abc2-a99b-4698-8fd6-3003db74786b
+tesis-checkout-service  | 2026-07-08T02:29:06.247Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.accepted event for checkout request: dc6d863f-9dc3-4acd-bb34-b7c249d21b34
+tesis-checkout-service  | 2026-07-08T02:29:06.253Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Executing Stripe simulated payment for order: 17e255a6-66f3-4f20-9065-b2c2a5f8e3b8, amount: 29.99
+tesis-checkout-service  | 2026-07-08T02:29:06.754Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Stripe simulated payment approved for order: 17e255a6-66f3-4f20-9065-b2c2a5f8e3b8, transaction: stripe_sim_f00ef7f3-39a4-4f08-9abc-57d1eb54cfab
+tesis-checkout-service  | 2026-07-08T02:29:06.761Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published payment.processed event for order: 17e255a6-66f3-4f20-9065-b2c2a5f8e3b8, success: true
+tesis-checkout-service  | 2026-07-08T02:29:06.767Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.completed event for checkout request: dc6d863f-9dc3-4acd-bb34-b7c249d21b34
+tesis-checkout-service  | 2026-07-08T02:29:06.769Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.a.u.ProcessCheckoutUseCase       : Checkout completed successfully for order: ORD-87091338
+tesis-checkout-service  | 2026-07-08T02:29:06.956Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Checkout processed successfully for event: 95b5abc2-a99b-4698-8fd6-3003db74786b
+tesis-checkout-service  | 2026-07-08T02:29:14.968Z ERROR 1 --- [checkout-service] [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+tesis-checkout-service  | 
+tesis-checkout-service  | org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:594) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:711) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareChannel(CachingConnectionFactory.java:662) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.getCachedChannelProxy(CachingConnectionFactory.java:636) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.getChannel(CachingConnectionFactory.java:526) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$ChannelCachingConnectionProxy.createChannel(CachingConnectionFactory.java:1423) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2231) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2198) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2178) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:465) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:449) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1936) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1904) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1383) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1225) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+tesis-checkout-service  | Caused by: java.net.ConnectException: Connection refused
+tesis-checkout-service  | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+tesis-checkout-service  | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/java.net.SocksSocketImpl.connect(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/java.net.Socket.connect(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:61) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-checkout-service  | 	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1249) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-checkout-service  | 	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:632) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:607) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:557) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	... 15 common frames omitted
+tesis-checkout-service  | 
+tesis-checkout-service  | 2026-07-08T02:29:19.212Z  WARN 1 --- [checkout-service] [nio-8082-exec-1] o.s.b.a.amqp.RabbitHealthIndicator       : Rabbit health check failed
+tesis-checkout-service  | 
+tesis-checkout-service  | org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:594) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:711) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:257) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2225) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2198) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2178) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.amqp.RabbitHealthIndicator.getVersion(RabbitHealthIndicator.java:49) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.amqp.RabbitHealthIndicator.doHealthCheck(RabbitHealthIndicator.java:44) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:82) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthIndicator.getHealth(HealthIndicator.java:37) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.getHealth(HealthEndpointWebExtension.java:94) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.getHealth(HealthEndpointWebExtension.java:47) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointSupport.getLoggedHealth(HealthEndpointSupport.java:172) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:145) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointSupport.getAggregateContribution(HealthEndpointSupport.java:156) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:141) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:110) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:81) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.health(HealthEndpointWebExtension.java:80) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.health(HealthEndpointWebExtension.java:69) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281) ~[spring-core-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:74) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:60) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$ServletWebOperationAdapter.handle(AbstractWebMvcEndpointHandlerMapping.java:321) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(AbstractWebMvcEndpointHandlerMapping.java:428) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+tesis-checkout-service  | Caused by: java.net.ConnectException: Connection refused
+tesis-checkout-service  | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+tesis-checkout-service  | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/java.net.SocksSocketImpl.connect(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/java.net.Socket.connect(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:61) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-checkout-service  | 	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1249) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-checkout-service  | 	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:632) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:607) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:557) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	... 82 common frames omitted
+tesis-checkout-service  | 
+tesis-checkout-service  | 2026-07-08T02:29:19.978Z  WARN 1 --- [checkout-service] [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+tesis-checkout-service  | 2026-07-08T02:29:19.984Z ERROR 1 --- [checkout-service] [ntContainer#0-3] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+tesis-checkout-service  | 2026-07-08T02:29:24.988Z  WARN 1 --- [checkout-service] [ntContainer#0-3] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+tesis-checkout-service  | 2026-07-08T02:30:03.459Z ERROR 1 --- [checkout-service] [ntContainer#0-4] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+tesis-checkout-service  | 2026-07-08T02:30:03.465Z  WARN 1 --- [checkout-service] [nio-8082-exec-3] o.s.b.a.amqp.RabbitHealthIndicator       : Rabbit health check failed
+tesis-checkout-service  | 
+tesis-checkout-service  | org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:594) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:711) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:257) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2225) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2198) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2178) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.amqp.RabbitHealthIndicator.getVersion(RabbitHealthIndicator.java:49) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.amqp.RabbitHealthIndicator.doHealthCheck(RabbitHealthIndicator.java:44) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:82) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthIndicator.getHealth(HealthIndicator.java:37) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.getHealth(HealthEndpointWebExtension.java:94) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.getHealth(HealthEndpointWebExtension.java:47) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointSupport.getLoggedHealth(HealthEndpointSupport.java:172) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:145) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointSupport.getAggregateContribution(HealthEndpointSupport.java:156) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:141) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:110) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:81) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.health(HealthEndpointWebExtension.java:80) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.health(HealthEndpointWebExtension.java:69) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281) ~[spring-core-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:74) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:60) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$ServletWebOperationAdapter.handle(AbstractWebMvcEndpointHandlerMapping.java:321) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(AbstractWebMvcEndpointHandlerMapping.java:428) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-checkout-service  | 	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+tesis-checkout-service  | Caused by: java.net.ConnectException: Connection refused
+tesis-checkout-service  | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+tesis-checkout-service  | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/java.net.SocksSocketImpl.connect(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/java.net.Socket.connect(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:61) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-checkout-service  | 	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1249) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-checkout-service  | 	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:632) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:607) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:557) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	... 82 common frames omitted
+tesis-checkout-service  | 
+tesis-checkout-service  | 2026-07-08T02:30:03.475Z  WARN 1 --- [checkout-service] [nio-8082-exec-3] o.s.b.a.health.HealthEndpointSupport     : Health contributor org.springframework.boot.actuate.amqp.RabbitHealthIndicator (rabbit) took 14165ms to respond
+tesis-checkout-service  | 2026-07-08T02:30:08.499Z  WARN 1 --- [checkout-service] [ntContainer#0-4] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+tesis-checkout-service  | 2026-07-08T02:30:08.502Z ERROR 1 --- [checkout-service] [ntContainer#0-5] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+tesis-checkout-service  | 2026-07-08T02:30:13.511Z  WARN 1 --- [checkout-service] [ntContainer#0-5] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+tesis-checkout-service  | 2026-07-08T02:30:16.416Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.requested event: c8145d37-f73f-44a5-b91d-edc974d26a5d
+tesis-checkout-service  | 2026-07-08T02:30:16.418Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.a.u.ProcessCheckoutUseCase       : Processing checkout for request: c8145d37-f73f-44a5-b91d-edc974d26a5d
+tesis-checkout-service  | 2026-07-08T02:30:16.431Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.accepted event for checkout request: 222f320a-c2bc-421c-a3a8-5fb5853f7800
+tesis-checkout-service  | 2026-07-08T02:30:16.444Z  INFO 1 --- [checkout-service] [ntContainer#0-6] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Executing Stripe simulated payment for order: 3aa74d11-78ad-420f-82cb-1c34b107e6d5, amount: 29.99
+tesis-checkout-service  | 2026-07-08T02:30:16.945Z  INFO 1 --- [checkout-service] [ntContainer#0-6] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Stripe simulated payment approved for order: 3aa74d11-78ad-420f-82cb-1c34b107e6d5, transaction: stripe_sim_e7131f67-6fc1-476b-864d-2f9664c417c2
+tesis-checkout-service  | 2026-07-08T02:30:16.946Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published payment.processed event for order: 3aa74d11-78ad-420f-82cb-1c34b107e6d5, success: true
+tesis-checkout-service  | 2026-07-08T02:30:16.948Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.completed event for checkout request: 222f320a-c2bc-421c-a3a8-5fb5853f7800
+tesis-checkout-service  | 2026-07-08T02:30:16.948Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.a.u.ProcessCheckoutUseCase       : Checkout completed successfully for order: ORD-80469BB5
+tesis-checkout-service  | 2026-07-08T02:30:16.968Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Checkout processed successfully for event: c8145d37-f73f-44a5-b91d-edc974d26a5d
+tesis-checkout-service  | 2026-07-08T02:30:22.473Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.requested event: ede992bb-a0c9-4494-9ca5-0a5d07ae9608
+tesis-checkout-service  | 2026-07-08T02:30:22.475Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.a.u.ProcessCheckoutUseCase       : Processing checkout for request: ede992bb-a0c9-4494-9ca5-0a5d07ae9608
+tesis-checkout-service  | 2026-07-08T02:30:22.489Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.accepted event for checkout request: 3964a157-100f-4c41-9b8c-a008a133b8f5
+tesis-checkout-service  | 2026-07-08T02:30:22.493Z  INFO 1 --- [checkout-service] [ntContainer#0-6] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Executing Stripe simulated payment for order: 52ea01bc-4c5b-40b0-914c-d727a1688c75, amount: 29.99
+tesis-checkout-service  | 2026-07-08T02:30:22.994Z  INFO 1 --- [checkout-service] [ntContainer#0-6] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Stripe simulated payment approved for order: 52ea01bc-4c5b-40b0-914c-d727a1688c75, transaction: stripe_sim_2ddb2c4e-a455-48ab-935a-2fe54225d113
+tesis-checkout-service  | 2026-07-08T02:30:22.996Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published payment.processed event for order: 52ea01bc-4c5b-40b0-914c-d727a1688c75, success: true
+tesis-checkout-service  | 2026-07-08T02:30:22.997Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.completed event for checkout request: 3964a157-100f-4c41-9b8c-a008a133b8f5
+tesis-checkout-service  | 2026-07-08T02:30:22.997Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.a.u.ProcessCheckoutUseCase       : Checkout completed successfully for order: ORD-D62FF8CA
+tesis-checkout-service  | 2026-07-08T02:30:23.011Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Checkout processed successfully for event: ede992bb-a0c9-4494-9ca5-0a5d07ae9608
+tesis-checkout-service  | 2026-07-08T02:30:24.963Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.requested event: ede992bb-a0c9-4494-9ca5-0a5d07ae9608
+tesis-checkout-service  | 2026-07-08T02:30:24.971Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.a.u.ProcessCheckoutUseCase       : Processing checkout for request: ede992bb-a0c9-4494-9ca5-0a5d07ae9608
+tesis-checkout-service  | 2026-07-08T02:30:24.985Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.a.u.ProcessCheckoutUseCase       : Checkout request ede992bb-a0c9-4494-9ca5-0a5d07ae9608 already processed
+tesis-checkout-service  | 2026-07-08T02:30:25.010Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Checkout processed successfully for event: ede992bb-a0c9-4494-9ca5-0a5d07ae9608
+tesis-checkout-service  | 2026-07-08T02:30:25.012Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.requested event: ede992bb-a0c9-4494-9ca5-0a5d07ae9608
+tesis-checkout-service  | 2026-07-08T02:30:25.013Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.a.u.ProcessCheckoutUseCase       : Processing checkout for request: ede992bb-a0c9-4494-9ca5-0a5d07ae9608
+tesis-checkout-service  | 2026-07-08T02:30:25.017Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.a.u.ProcessCheckoutUseCase       : Checkout request ede992bb-a0c9-4494-9ca5-0a5d07ae9608 already processed
+tesis-checkout-service  | 2026-07-08T02:30:25.023Z  INFO 1 --- [checkout-service] [ntContainer#0-6] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Checkout processed successfully for event: ede992bb-a0c9-4494-9ca5-0a5d07ae9608

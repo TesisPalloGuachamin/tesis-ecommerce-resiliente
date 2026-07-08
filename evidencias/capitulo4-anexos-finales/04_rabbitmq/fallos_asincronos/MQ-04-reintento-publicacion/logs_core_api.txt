@@ -1,0 +1,502 @@
+# Log compactado: últimas 500 líneas de la evidencia AWS final
+# Archivo original reducido para evitar anexos no trazables de gran tamaño
+tesis-core-api  | 	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$ServletWebOperationAdapter.handle(AbstractWebMvcEndpointHandlerMapping.java:321) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(AbstractWebMvcEndpointHandlerMapping.java:428) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+tesis-core-api  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+tesis-core-api  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+tesis-core-api  | 	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+tesis-core-api  | 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at com.tesis.ecommerce.coreapi.infrastructure.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:41) ~[!/:1.0.0]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+tesis-core-api  | Caused by: java.net.UnknownHostException: rabbitmq
+tesis-core-api  | 	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801) ~[na:na]
+tesis-core-api  | 	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533) ~[na:na]
+tesis-core-api  | 	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385) ~[na:na]
+tesis-core-api  | 	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306) ~[na:na]
+tesis-core-api  | 	at com.rabbitmq.client.DnsRecordIpAddressResolver.resolveIpAddresses(DnsRecordIpAddressResolver.java:83) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-core-api  | 	at com.rabbitmq.client.DnsRecordIpAddressResolver.getAddresses(DnsRecordIpAddressResolver.java:73) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-core-api  | 	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1245) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-core-api  | 	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:632) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:607) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:557) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	... 159 common frames omitted
+tesis-core-api  | 
+tesis-core-api  | 2026-07-08T02:30:10.903Z  INFO 1 --- [core-api] [ntContainer#0-5] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@4ea65c86: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+tesis-core-api  | 2026-07-08T02:30:10.905Z  INFO 1 --- [core-api] [ntContainer#1-5] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@3c361bae: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+tesis-core-api  | 2026-07-08T02:30:10.906Z  INFO 1 --- [core-api] [ntContainer#0-6] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:30:10.908Z ERROR 1 --- [core-api] [ntContainer#0-6] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+tesis-core-api  | 2026-07-08T02:30:10.908Z  INFO 1 --- [core-api] [ntContainer#1-6] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:30:10.909Z ERROR 1 --- [core-api] [ntContainer#1-6] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+tesis-core-api  | 2026-07-08T02:30:10.909Z  INFO 1 --- [core-api] [ntContainer#0-6] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:30:10.913Z  INFO 1 --- [core-api] [ntContainer#1-6] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:30:11.403Z DEBUG 1 --- [core-api] [   scheduling-1] c.t.e.c.i.config.OutboxPollingScheduler  : Found 1 unpublished events in outbox, attempting to republish
+tesis-core-api  | 2026-07-08T02:30:11.404Z  INFO 1 --- [core-api] [   scheduling-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:30:11.405Z  WARN 1 --- [core-api] [   scheduling-1] c.t.e.c.i.config.OutboxPollingScheduler  : Failed to republish event dc47e55c-c34a-4479-a989-d1e7a9094c16, will retry in next cycle: java.net.ConnectException: Connection refused
+tesis-core-api  | 2026-07-08T02:30:15.912Z  WARN 1 --- [core-api] [ntContainer#0-6] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+tesis-core-api  | 2026-07-08T02:30:15.913Z  INFO 1 --- [core-api] [ntContainer#0-6] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@1d304a85: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+tesis-core-api  | 2026-07-08T02:30:15.915Z  INFO 1 --- [core-api] [ntContainer#0-7] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:30:15.921Z  INFO 1 --- [core-api] [ntContainer#0-7] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#5f1d270a:27/SimpleConnection@53fb6113 [delegate=amqp://guest@172.18.0.4:5672/, localPort=37250]
+tesis-core-api  | 2026-07-08T02:30:15.923Z  WARN 1 --- [core-api] [ntContainer#1-6] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+tesis-core-api  | 2026-07-08T02:30:15.924Z  INFO 1 --- [core-api] [ntContainer#1-6] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@35a009df: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+tesis-core-api  | 2026-07-08T02:30:16.410Z DEBUG 1 --- [core-api] [   scheduling-1] c.t.e.c.i.config.OutboxPollingScheduler  : Found 1 unpublished events in outbox, attempting to republish
+tesis-core-api  | 2026-07-08T02:30:16.413Z  INFO 1 --- [core-api] [   scheduling-1] c.t.e.c.i.config.OutboxPollingScheduler  : Successfully republished event dc47e55c-c34a-4479-a989-d1e7a9094c16 with type checkout.requested
+tesis-core-api  | 2026-07-08T02:30:16.955Z  INFO 1 --- [core-api] [ntContainer#0-7] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.completed event: 41d179b4-3e33-4b96-ac7d-91b333ec1241
+tesis-core-api  | 2026-07-08T02:30:16.967Z  INFO 1 --- [core-api] [ntContainer#0-7] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Checkout completed for request: 222f320a-c2bc-421c-a3a8-5fb5853f7800
+tesis-core-api  | 2026-07-08T02:30:21.642Z DEBUG 1 --- [core-api] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/checkout/222f320a-c2bc-421c-a3a8-5fb5853f7800
+tesis-core-api  | 2026-07-08T02:30:21.649Z DEBUG 1 --- [core-api] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/checkout/222f320a-c2bc-421c-a3a8-5fb5853f7800
+tesis-core-api  | 2026-07-08T02:30:22.232Z DEBUG 1 --- [core-api] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/register
+tesis-core-api  | 2026-07-08T02:30:22.233Z DEBUG 1 --- [core-api] [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+tesis-core-api  | 2026-07-08T02:30:22.237Z DEBUG 1 --- [core-api] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/register
+tesis-core-api  | 2026-07-08T02:30:22.349Z DEBUG 1 --- [core-api] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/products
+tesis-core-api  | 2026-07-08T02:30:22.358Z DEBUG 1 --- [core-api] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/products
+tesis-core-api  | 2026-07-08T02:30:22.392Z DEBUG 1 --- [core-api] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/cart/items
+tesis-core-api  | 2026-07-08T02:30:22.397Z DEBUG 1 --- [core-api] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/cart/items
+tesis-core-api  | 2026-07-08T02:30:22.450Z DEBUG 1 --- [core-api] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/checkout
+tesis-core-api  | 2026-07-08T02:30:22.456Z DEBUG 1 --- [core-api] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/checkout
+tesis-core-api  | 2026-07-08T02:30:22.471Z  INFO 1 --- [core-api] [nio-8080-exec-6] c.t.e.c.i.a.o.m.EventPublisherAdapter    : Published event: 5ccd5acd-7b65-48df-80a9-20f13df39460
+tesis-core-api  | 2026-07-08T02:30:22.523Z DEBUG 1 --- [core-api] [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/checkout/3964a157-100f-4c41-9b8c-a008a133b8f5
+tesis-core-api  | 2026-07-08T02:30:22.534Z DEBUG 1 --- [core-api] [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/checkout/3964a157-100f-4c41-9b8c-a008a133b8f5
+tesis-core-api  | 2026-07-08T02:30:23.002Z  INFO 1 --- [core-api] [ntContainer#0-7] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.completed event: 8adaec10-ee2f-49ae-ac6c-1e9af2b7e983
+tesis-core-api  | 2026-07-08T02:30:23.011Z  INFO 1 --- [core-api] [ntContainer#0-7] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Checkout completed for request: 3964a157-100f-4c41-9b8c-a008a133b8f5
+tesis-core-api  | 2026-07-08T02:30:24.559Z DEBUG 1 --- [core-api] [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/checkout/3964a157-100f-4c41-9b8c-a008a133b8f5
+tesis-core-api  | 2026-07-08T02:30:24.566Z DEBUG 1 --- [core-api] [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/checkout/3964a157-100f-4c41-9b8c-a008a133b8f5
+tesis-core-api  | 2026-07-08T02:30:30.938Z  INFO 1 --- [core-api] [ntContainer#1-7] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@5a925579: tags=[[amq.ctag-vLf9SZpzj9pmjhNcz2l2OA]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@172.18.0.4:5672/,2), conn: Proxy@7d5caf3 Shared Rabbit Connection: SimpleConnection@53fb6113 [delegate=amqp://guest@172.18.0.4:5672/, localPort=37250], acknowledgeMode=AUTO local queue size=0
+tesis-core-api  | 2026-07-08T02:30:30.940Z  INFO 1 --- [core-api] [ntContainer#1-8] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:30:30.941Z ERROR 1 --- [core-api] [ntContainer#1-8] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+tesis-core-api  | 
+tesis-core-api  | org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+tesis-core-api  | 	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:594) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:711) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareChannel(CachingConnectionFactory.java:662) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.getCachedChannelProxy(CachingConnectionFactory.java:636) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.getChannel(CachingConnectionFactory.java:526) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$ChannelCachingConnectionProxy.createChannel(CachingConnectionFactory.java:1423) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2231) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2198) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2178) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:465) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:449) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1936) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1904) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1383) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1225) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+tesis-core-api  | Caused by: java.net.ConnectException: Connection refused
+tesis-core-api  | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+tesis-core-api  | 	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:684) ~[na:na]
+tesis-core-api  | 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547) ~[na:na]
+tesis-core-api  | 	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[na:na]
+tesis-core-api  | 	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+tesis-core-api  | 	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+tesis-core-api  | 	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:61) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-core-api  | 	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1249) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-core-api  | 	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:632) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:607) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:557) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	... 15 common frames omitted
+tesis-core-api  | 
+tesis-core-api  | 2026-07-08T02:30:30.942Z  INFO 1 --- [core-api] [ntContainer#1-8] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:30:31.018Z  INFO 1 --- [core-api] [ntContainer#0-7] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@8c25651: tags=[[amq.ctag-5JcVgLMRFWRyVPqkeZV6Ow]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@172.18.0.4:5672/,1), conn: Proxy@7d5caf3 Shared Rabbit Connection: null, acknowledgeMode=AUTO local queue size=0
+tesis-core-api  | 2026-07-08T02:30:31.020Z  INFO 1 --- [core-api] [ntContainer#0-8] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:30:31.020Z ERROR 1 --- [core-api] [ntContainer#0-8] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+tesis-core-api  | 
+tesis-core-api  | org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+tesis-core-api  | 	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:594) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:711) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:257) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2225) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2198) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2178) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:465) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:449) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1936) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1904) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1383) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1225) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+tesis-core-api  | Caused by: java.net.ConnectException: Connection refused
+tesis-core-api  | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+tesis-core-api  | 	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:684) ~[na:na]
+tesis-core-api  | 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547) ~[na:na]
+tesis-core-api  | 	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[na:na]
+tesis-core-api  | 	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+tesis-core-api  | 	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+tesis-core-api  | 	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:61) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-core-api  | 	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1249) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-core-api  | 	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:632) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:607) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:557) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	... 12 common frames omitted
+tesis-core-api  | 
+tesis-core-api  | 2026-07-08T02:30:31.021Z  INFO 1 --- [core-api] [ntContainer#0-8] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:30:35.945Z  WARN 1 --- [core-api] [ntContainer#1-8] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+tesis-core-api  | 2026-07-08T02:30:35.946Z  INFO 1 --- [core-api] [ntContainer#1-8] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@2c05b5f4: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+tesis-core-api  | 2026-07-08T02:30:35.948Z  INFO 1 --- [core-api] [ntContainer#1-9] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:30:35.948Z ERROR 1 --- [core-api] [ntContainer#1-9] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+tesis-core-api  | 2026-07-08T02:30:35.948Z  INFO 1 --- [core-api] [ntContainer#1-9] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:30:36.024Z  WARN 1 --- [core-api] [ntContainer#0-8] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+tesis-core-api  | 2026-07-08T02:30:36.025Z  INFO 1 --- [core-api] [ntContainer#0-8] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@189ac701: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+tesis-core-api  | 2026-07-08T02:30:36.026Z  INFO 1 --- [core-api] [ntContainer#0-9] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:30:36.027Z ERROR 1 --- [core-api] [ntContainer#0-9] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+tesis-core-api  | 2026-07-08T02:30:36.027Z  INFO 1 --- [core-api] [ntContainer#0-9] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:30:37.274Z DEBUG 1 --- [core-api] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/register
+tesis-core-api  | 2026-07-08T02:30:37.275Z DEBUG 1 --- [core-api] [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+tesis-core-api  | 2026-07-08T02:30:37.276Z DEBUG 1 --- [core-api] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/register
+tesis-core-api  | 2026-07-08T02:30:37.385Z DEBUG 1 --- [core-api] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/products
+tesis-core-api  | 2026-07-08T02:30:37.391Z DEBUG 1 --- [core-api] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/products
+tesis-core-api  | 2026-07-08T02:30:37.423Z DEBUG 1 --- [core-api] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/cart/items
+tesis-core-api  | 2026-07-08T02:30:37.428Z DEBUG 1 --- [core-api] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/cart/items
+tesis-core-api  | 2026-07-08T02:30:37.469Z DEBUG 1 --- [core-api] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/checkout
+tesis-core-api  | 2026-07-08T02:30:37.476Z DEBUG 1 --- [core-api] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/checkout
+tesis-core-api  | 2026-07-08T02:30:37.504Z  INFO 1 --- [core-api] [nio-8080-exec-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:30:40.049Z DEBUG 1 --- [core-api] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+tesis-core-api  | 2026-07-08T02:30:40.050Z DEBUG 1 --- [core-api] [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+tesis-core-api  | 2026-07-08T02:30:40.052Z DEBUG 1 --- [core-api] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+tesis-core-api  | 2026-07-08T02:30:40.952Z  WARN 1 --- [core-api] [ntContainer#1-9] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+tesis-core-api  | 2026-07-08T02:30:40.953Z  INFO 1 --- [core-api] [ntContainer#1-9] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@1f6ea6f2: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+tesis-core-api  | 2026-07-08T02:30:41.033Z  WARN 1 --- [core-api] [ntContainer#0-9] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+tesis-core-api  | 2026-07-08T02:30:41.033Z  INFO 1 --- [core-api] [ntContainer#0-9] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@59f8c668: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+tesis-core-api  | 2026-07-08T02:31:00.314Z  WARN 1 --- [core-api] [nio-8080-exec-2] c.t.e.c.i.a.o.m.EventPublisherAdapter    : Failed to publish event to RabbitMQ immediately, will retry via polling: 2f453ce2-5c6c-4f11-b53d-bc3128ed7e0c
+tesis-core-api  | 2026-07-08T02:31:00.315Z  INFO 1 --- [core-api] [tContainer#0-10] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:31:00.319Z ERROR 1 --- [core-api] [tContainer#0-10] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+tesis-core-api  | 2026-07-08T02:31:00.320Z  INFO 1 --- [core-api] [tContainer#1-10] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:31:00.323Z ERROR 1 --- [core-api] [tContainer#1-10] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+tesis-core-api  | 2026-07-08T02:31:00.323Z  INFO 1 --- [core-api] [tContainer#1-10] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:31:00.328Z  INFO 1 --- [core-api] [nio-8080-exec-4] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:31:00.329Z  WARN 1 --- [core-api] [nio-8080-exec-4] o.s.b.a.amqp.RabbitHealthIndicator       : Rabbit health check failed
+tesis-core-api  | 
+tesis-core-api  | org.springframework.amqp.AmqpIOException: java.net.UnknownHostException: rabbitmq
+tesis-core-api  | 	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:70) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:594) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:711) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:257) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2225) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2198) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2178) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.boot.actuate.amqp.RabbitHealthIndicator.getVersion(RabbitHealthIndicator.java:49) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at org.springframework.boot.actuate.amqp.RabbitHealthIndicator.doHealthCheck(RabbitHealthIndicator.java:44) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:82) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at org.springframework.boot.actuate.health.HealthIndicator.getHealth(HealthIndicator.java:37) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.getHealth(HealthEndpointWebExtension.java:94) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.getHealth(HealthEndpointWebExtension.java:47) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at org.springframework.boot.actuate.health.HealthEndpointSupport.getLoggedHealth(HealthEndpointSupport.java:172) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:145) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at org.springframework.boot.actuate.health.HealthEndpointSupport.getAggregateContribution(HealthEndpointSupport.java:156) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:141) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:110) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:81) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.health(HealthEndpointWebExtension.java:80) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.health(HealthEndpointWebExtension.java:69) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+tesis-core-api  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+tesis-core-api  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+tesis-core-api  | 	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+tesis-core-api  | 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281) ~[spring-core-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:74) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:60) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$ServletWebOperationAdapter.handle(AbstractWebMvcEndpointHandlerMapping.java:321) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(AbstractWebMvcEndpointHandlerMapping.java:428) ~[spring-boot-actuator-3.2.0.jar!/:3.2.0]
+tesis-core-api  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+tesis-core-api  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+tesis-core-api  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+tesis-core-api  | 	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+tesis-core-api  | 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at com.tesis.ecommerce.coreapi.infrastructure.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:41) ~[!/:1.0.0]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.2.0.jar!/:6.2.0]
+tesis-core-api  | 	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar!/:6.1.1]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar!/:na]
+tesis-core-api  | 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+tesis-core-api  | Caused by: java.net.UnknownHostException: rabbitmq
+tesis-core-api  | 	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801) ~[na:na]
+tesis-core-api  | 	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533) ~[na:na]
+tesis-core-api  | 	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385) ~[na:na]
+tesis-core-api  | 	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306) ~[na:na]
+tesis-core-api  | 	at com.rabbitmq.client.DnsRecordIpAddressResolver.resolveIpAddresses(DnsRecordIpAddressResolver.java:83) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-core-api  | 	at com.rabbitmq.client.DnsRecordIpAddressResolver.getAddresses(DnsRecordIpAddressResolver.java:73) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-core-api  | 	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1245) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-core-api  | 	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198) ~[amqp-client-5.19.0.jar!/:5.19.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:632) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:607) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:557) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-core-api  | 	... 159 common frames omitted
+tesis-core-api  | 
+tesis-core-api  | 2026-07-08T02:31:00.339Z  INFO 1 --- [core-api] [tContainer#0-10] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:31:00.345Z  WARN 1 --- [core-api] [nio-8080-exec-4] o.s.b.a.health.HealthEndpointSupport     : Health contributor org.springframework.boot.actuate.amqp.RabbitHealthIndicator (rabbit) took 20291ms to respond
+tesis-core-api  | 2026-07-08T02:31:01.465Z DEBUG 1 --- [core-api] [   scheduling-1] c.t.e.c.i.config.OutboxPollingScheduler  : Found 1 unpublished events in outbox, attempting to republish
+tesis-core-api  | 2026-07-08T02:31:01.466Z  INFO 1 --- [core-api] [   scheduling-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:31:01.466Z  WARN 1 --- [core-api] [   scheduling-1] c.t.e.c.i.config.OutboxPollingScheduler  : Failed to republish event 2f453ce2-5c6c-4f11-b53d-bc3128ed7e0c, will retry in next cycle: java.net.UnknownHostException: rabbitmq
+tesis-core-api  | 2026-07-08T02:31:05.344Z  INFO 1 --- [core-api] [tContainer#1-10] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@490f6bfd: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+tesis-core-api  | 2026-07-08T02:31:05.346Z  INFO 1 --- [core-api] [tContainer#1-11] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:31:05.346Z ERROR 1 --- [core-api] [tContainer#1-11] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+tesis-core-api  | 2026-07-08T02:31:05.346Z  INFO 1 --- [core-api] [tContainer#1-11] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:31:05.350Z  INFO 1 --- [core-api] [tContainer#0-10] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@208354d9: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+tesis-core-api  | 2026-07-08T02:31:05.354Z  INFO 1 --- [core-api] [tContainer#0-11] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:31:05.356Z ERROR 1 --- [core-api] [tContainer#0-11] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+tesis-core-api  | 2026-07-08T02:31:05.357Z  INFO 1 --- [core-api] [tContainer#0-11] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:31:06.472Z DEBUG 1 --- [core-api] [   scheduling-1] c.t.e.c.i.config.OutboxPollingScheduler  : Found 1 unpublished events in outbox, attempting to republish
+tesis-core-api  | 2026-07-08T02:31:06.473Z  INFO 1 --- [core-api] [   scheduling-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:31:06.473Z  WARN 1 --- [core-api] [   scheduling-1] c.t.e.c.i.config.OutboxPollingScheduler  : Failed to republish event 2f453ce2-5c6c-4f11-b53d-bc3128ed7e0c, will retry in next cycle: java.net.UnknownHostException: rabbitmq
+tesis-core-api  | 2026-07-08T02:31:10.350Z  INFO 1 --- [core-api] [tContainer#1-11] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@40970837: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+tesis-core-api  | 2026-07-08T02:31:10.352Z  INFO 1 --- [core-api] [tContainer#1-12] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:31:10.362Z  INFO 1 --- [core-api] [tContainer#0-11] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@7637e28f: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+tesis-core-api  | 2026-07-08T02:31:10.365Z  INFO 1 --- [core-api] [tContainer#1-12] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#5f1d270a:48/SimpleConnection@2b2bac79 [delegate=amqp://guest@172.18.0.4:5672/, localPort=44484]
+tesis-core-api  | 2026-07-08T02:31:11.482Z DEBUG 1 --- [core-api] [   scheduling-1] c.t.e.c.i.config.OutboxPollingScheduler  : Found 1 unpublished events in outbox, attempting to republish
+tesis-core-api  | 2026-07-08T02:31:11.484Z  INFO 1 --- [core-api] [   scheduling-1] c.t.e.c.i.config.OutboxPollingScheduler  : Successfully republished event 2f453ce2-5c6c-4f11-b53d-bc3128ed7e0c with type checkout.requested
+tesis-core-api  | 2026-07-08T02:31:12.019Z  INFO 1 --- [core-api] [tContainer#0-12] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.completed event: ae9ff75c-37a4-46f4-a6e7-43648ca39e03
+tesis-core-api  | 2026-07-08T02:31:12.035Z  INFO 1 --- [core-api] [tContainer#0-12] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Checkout completed for request: dfcfecbd-e5e7-4f9e-aed0-ccbc5711e648
+tesis-core-api  | 2026-07-08T02:31:20.172Z DEBUG 1 --- [core-api] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+tesis-core-api  | 2026-07-08T02:31:20.173Z DEBUG 1 --- [core-api] [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+tesis-core-api  | 2026-07-08T02:31:20.175Z DEBUG 1 --- [core-api] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+tesis-core-api  | 2026-07-08T02:31:23.103Z DEBUG 1 --- [core-api] [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/checkout/dfcfecbd-e5e7-4f9e-aed0-ccbc5711e648
+tesis-core-api  | 2026-07-08T02:31:23.109Z DEBUG 1 --- [core-api] [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/checkout/dfcfecbd-e5e7-4f9e-aed0-ccbc5711e648

@@ -1,0 +1,4 @@
+expected=Con default-requeue-rejected=true el mensaje fallido no pasa a DLQ
+observed=dlq_messages=0
+status=PASS
+limitations=Comportamiento default/delegado a Spring AMQP; no hay retry/backoff de consumidor configurado.

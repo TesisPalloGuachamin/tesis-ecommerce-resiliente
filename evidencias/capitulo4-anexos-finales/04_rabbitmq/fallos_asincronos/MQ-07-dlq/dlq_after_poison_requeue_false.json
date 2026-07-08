@@ -1,0 +1,8 @@
+{
+  "name": "checkout-service.dlq",
+  "messages": 1,
+  "messages_ready": 1,
+  "messages_unacknowledged": 0,
+  "consumers": 0,
+  "state": "running"
+}
