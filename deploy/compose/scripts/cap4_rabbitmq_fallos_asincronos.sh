@@ -89,6 +89,35 @@ wait_http() {
   return 1
 }
 
+wait_container_stopped() {
+  local container="$1"
+  for _ in $(seq 1 45); do
+    if [[ "$(docker inspect -f '{{.State.Running}}' "$container" 2>/dev/null || echo false)" == "false" ]]; then
+      return 0
+    fi
+    sleep 1
+  done
+  echo "Timeout waiting for $container to stop" >&2
+  return 1
+}
+
+wait_queue_ready() {
+  local queue="$1"
+  local expected="$2"
+  local output="$3"
+  for _ in $(seq 1 90); do
+    rabbit_queue "$queue" > "$output"
+    local ready
+    ready="$(jq -r '.messages_ready // 0' "$output")"
+    if [[ "$ready" -ge "$expected" ]]; then
+      return 0
+    fi
+    sleep 2
+  done
+  rabbit_queue "$queue" > "$output" || true
+  return 1
+}
+
 start_stack() {
   local requeue="${1:-true}"
   export RABBITMQ_LISTENER_DEFAULT_REQUEUE_REJECTED="$requeue"
@@ -274,13 +303,14 @@ mq01_consumer_stopped() {
   local dir="$OUT_DIR/MQ-01-consumidor-detenido"
   scenario_header "$dir" "MQ-01" "Consumidor checkout-service detenido"
   compose stop checkout-service
+  wait_container_stopped tesis-checkout-service
+  compose ps > "$dir/docker_compose_ps_consumer_stopped.txt"
   rabbit_queue "checkout-service.checkout-requested.q" > "$dir/queue_before_request.json"
   create_checkout "$dir"
   local request_id token
   request_id="$(jq -r '.requestId' "$dir/generated_checkout.json")"
   token="$(jq -r '.token' "$dir/generated_checkout.json")"
-  sleep 3
-  rabbit_queue "checkout-service.checkout-requested.q" > "$dir/queue_during_consumer_down.json"
+  wait_queue_ready "checkout-service.checkout-requested.q" 1 "$dir/queue_during_consumer_down.json" || true
   compose start checkout-service
   wait_http "http://localhost:8082/api/actuator/health" "checkout-service"
   local final_status
@@ -375,14 +405,15 @@ mq05_queue_drain() {
   local dir="$OUT_DIR/MQ-05-cola-acumulada-drenaje"
   scenario_header "$dir" "MQ-05" "Cola acumulada y drenaje"
   compose stop checkout-service
+  wait_container_stopped tesis-checkout-service
+  compose ps > "$dir/docker_compose_ps_consumer_stopped.txt"
   local ids_file="$dir/generated_checkouts.jsonl"
   : > "$ids_file"
   for _ in 1 2 3; do
     create_checkout "$dir"
     jq -c . "$dir/generated_checkout.json" >> "$ids_file"
   done
-  sleep 3
-  rabbit_queue "checkout-service.checkout-requested.q" > "$dir/queue_accumulated.json"
+  wait_queue_ready "checkout-service.checkout-requested.q" 3 "$dir/queue_accumulated.json" || true
   compose start checkout-service
   wait_http "http://localhost:8082/api/actuator/health" "checkout-service"
   local completed=0
@@ -496,7 +527,12 @@ write_report() {
 main() {
   write_compose_override
   write_versions
+  rm -rf "$OUT_DIR"/MQ-*
   start_stack true
+  purge_queue "checkout-service.checkout-requested.q"
+  purge_queue "checkout-service.dlq"
+  purge_queue "core-api.checkout-completed.q"
+  purge_queue "core-api.checkout-failed.q"
   compose images > "$OUT_DIR/docker_images.txt"
 
   mq01_consumer_stopped
