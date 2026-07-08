@@ -304,7 +304,7 @@ EOF
 | Fecha UTC | \`$(date -u -Iseconds)\` |
 | Rama | \`$(git_branch)\` |
 | Commit | \`$(git_commit)\` |
-| Ambiente | Docker Compose local \`deploy/compose/docker-compose.dev.yml\` |
+| Ambiente | Docker Compose sandbox sobre EC2 AWS con \`deploy/compose/docker-compose.dev.yml\` |
 | Dato de entrada | Producto con precio \`29.99\`, cantidad \`1\` |
 | Condicion simulada | \`PaymentPort\` retorna \`success=false\` por bandera sandbox del adaptador simulado |
 | HTTP registro | \`$(jq -r '.register.meta.http_code' "$OUT_DIR/respuestas_http.json")\` |

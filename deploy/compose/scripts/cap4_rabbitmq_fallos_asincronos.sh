@@ -534,7 +534,7 @@ write_report() {
     echo "| Fecha UTC | \`$(date -u -Iseconds)\` |"
     echo "| Rama | \`$(git_branch)\` |"
     echo "| Commit | \`$(git_commit)\` |"
-    echo "| Ambiente | Docker Compose local, core-api, checkout-service, Postgres separados y RabbitMQ |"
+    echo "| Ambiente | Docker Compose sandbox sobre EC2 AWS, core-api, checkout-service, Postgres separados y RabbitMQ |"
     echo
     echo "## Mecanismos verificados"
     echo
