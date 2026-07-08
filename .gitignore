@@ -10,8 +10,12 @@ target/
 .DS_Store
 *.log
 !evidencias/capitulo4-anexos-finales/**/*.log
+evidencias/capitulo4-anexos-finales/**/runtime/
+evidencias/capitulo4-anexos-finales/**/docker-compose.runtime.override.yml
 .env
 .env.local
+.docker-tmp/
+.tmp/
 node_modules/
 .terraform/
 *.tfstate

@@ -53,3 +53,13 @@ logging:
     com.tesis.ecommerce: INFO
     org.springframework: WARN
     org.hibernate: WARN
+
+payment:
+  simulator:
+    decline:
+      enabled: false
+      amount: 29.99
+
+rabbitmq:
+  listener:
+    default-requeue-rejected: true
