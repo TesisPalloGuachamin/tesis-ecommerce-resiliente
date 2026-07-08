@@ -4,7 +4,7 @@
 |---|---|
 | RUN_ID | `cap4-mq-failures-20260708T022708Z` |
 | Fecha UTC | `2026-07-08T02:35:38+00:00` |
-| Rama | `cap4-ajustes-tutor-final` |
+| Rama | `cap4-ajustes-final` |
 | Commit | `acf46725bb4dfd49081eb1a18c1a7084e34f520e` |
 | Ambiente | Docker Compose sandbox sobre EC2 AWS, core-api, checkout-service, Postgres separados y RabbitMQ |
 

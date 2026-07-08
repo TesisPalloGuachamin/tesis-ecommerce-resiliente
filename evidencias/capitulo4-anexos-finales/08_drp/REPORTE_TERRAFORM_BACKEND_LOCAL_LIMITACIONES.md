@@ -3,7 +3,7 @@
 | Campo | Valor |
 |---|---|
 | Fecha de revision | 2026-07-08 |
-| Rama de trabajo | `cap4-ajustes-tutor-final` |
+| Rama de trabajo | `cap4-ajustes-final` |
 | Commit de referencia | `acf46725bb4dfd49081eb1a18c1a7084e34f520e` |
 | Terraform local registrado | `Terraform v1.8.5` en `evidencias/capitulo4-anexos-finales/08_drp/aws_cap4_ajustes_final/ambiente_local_preparacion.txt` |
 

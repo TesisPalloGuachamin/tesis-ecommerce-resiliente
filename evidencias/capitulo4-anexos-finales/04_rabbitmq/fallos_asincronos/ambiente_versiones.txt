@@ -1,7 +1,7 @@
 run_id=cap4-mq-failures-20260708T022708Z
 date_utc=2026-07-08T02:27:08+00:00
 date_local=2026-07-08T02:27:08+00:00
-git_branch=cap4-ajustes-tutor-final
+git_branch=cap4-ajustes-final
 git_commit=acf46725bb4dfd49081eb1a18c1a7084e34f520e
 runtime_dir=/home/ec2-user/.tesis-cap4-runtime/cap4-mq-failures-20260708T022708Z
 docker=Docker version 25.0.14, build 0bab007

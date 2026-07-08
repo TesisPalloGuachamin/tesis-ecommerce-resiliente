@@ -3,7 +3,7 @@
 | Campo | Valor |
 |---|---|
 | Fecha de revision | 2026-07-08 |
-| Rama de trabajo | `cap4-ajustes-tutor-final` |
+| Rama de trabajo | `cap4-ajustes-final` |
 | Commit de referencia | `acf46725bb4dfd49081eb1a18c1a7084e34f520e` |
 | Proyecto revisado | `apps/core-api` |
 

@@ -3,7 +3,7 @@
 | Campo | Valor |
 |---|---|
 | Fecha de revision | 2026-07-08 |
-| Rama de trabajo | `cap4-ajustes-tutor-final` |
+| Rama de trabajo | `cap4-ajustes-final` |
 | Commit actual de referencia | `acf46725bb4dfd49081eb1a18c1a7084e34f520e` |
 | Cierre tecnico anterior | `a5947c69399a4355fab06514def75cd27a64c5fb` |
 | Tag de cierre anterior | `v1.0-cap4-final-evidence` |

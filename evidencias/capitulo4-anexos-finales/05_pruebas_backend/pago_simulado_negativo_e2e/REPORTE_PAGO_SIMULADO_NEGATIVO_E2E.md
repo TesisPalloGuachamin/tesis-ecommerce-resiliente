@@ -4,7 +4,7 @@
 |---|---|
 | RUN_ID | `cap4-payment-negative-e2e-20260708T020358Z` |
 | Fecha UTC | `2026-07-08T02:05:30+00:00` |
-| Rama | `cap4-ajustes-tutor-final` |
+| Rama | `cap4-ajustes-final` |
 | Commit | `90d0b4f549578eb56ae900c815912c50ca76dda3` |
 | Ambiente | Docker Compose sandbox sobre EC2 AWS con `deploy/compose/docker-compose.dev.yml` |
 | Dato de entrada | Producto con precio `29.99`, cantidad `1` |

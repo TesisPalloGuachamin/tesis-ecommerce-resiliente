@@ -3,7 +3,7 @@
 | Campo | Valor |
 |---|---|
 | Fecha de consolidacion | 2026-07-08 |
-| Rama de trabajo | `cap4-ajustes-tutor-final` |
+| Rama de trabajo | `cap4-ajustes-final` |
 | Commit actual de referencia | `acf46725bb4dfd49081eb1a18c1a7084e34f520e` |
 
 | ID | Nombre | Ambiente | Fecha | Commit | Imagen desplegada | Precondiciones | Datos de entrada | Pasos | Resultado esperado | Resultado observado | Criterio de aprobacion | Evidencia | Estado |
