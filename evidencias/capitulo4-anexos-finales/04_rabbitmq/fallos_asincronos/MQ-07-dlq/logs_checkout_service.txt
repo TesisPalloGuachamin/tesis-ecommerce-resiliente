@@ -1,0 +1,15 @@
+tesis-checkout-service  | 
+tesis-checkout-service  |   .   ____          _            __ _ _
+tesis-checkout-service  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+tesis-checkout-service  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+tesis-checkout-service  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+tesis-checkout-service  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+tesis-checkout-service  |  =========|_|==============|___/=/_/_/_/
+tesis-checkout-service  |  :: Spring Boot ::                (v3.2.0)
+tesis-checkout-service  | 
+tesis-checkout-service  | 2026-07-08T02:34:08.441Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Starting CheckoutServiceApplication v1.0.0 using Java 17.0.19 with PID 1 (/app/app.jar started by root in /app)
+tesis-checkout-service  | 2026-07-08T02:34:08.463Z DEBUG 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Running with Spring Boot v3.2.0, Spring v6.1.1
+tesis-checkout-service  | 2026-07-08T02:34:08.469Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : No active profile set, falling back to 1 default profile: "default"
+tesis-checkout-service  | 2026-07-08T02:34:26.905Z  WARN 1 --- [checkout-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+tesis-checkout-service  | 2026-07-08T02:34:35.789Z  WARN 1 --- [checkout-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+tesis-checkout-service  | 2026-07-08T02:34:40.271Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Started CheckoutServiceApplication in 34.295 seconds (process running for 36.796)

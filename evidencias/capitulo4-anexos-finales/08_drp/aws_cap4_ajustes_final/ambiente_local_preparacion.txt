@@ -1,0 +1,14 @@
+run_id=cap4-aws-ajustes-20260708T015522Z
+date_utc=2026-07-08T01:55:22+00:00
+date_local=2026-07-07T20:55:22-05:00
+branch=cap4-ajustes-final
+commit_base=a5947c69399a4355fab06514def75cd27a64c5fb
+status_start=12 changed paths
+docker=Docker version 20.10.24+dfsg1, build 297e128
+docker_compose=Docker Compose version v5.1.4
+java=openjdk version "17.0.19" 2026-04-21
+maven=[1mApache Maven 3.8.7[m
+node=v18.20.4
+k6=k6 v2.0.0 (commit/8c3be52cc1, go1.26.3, linux/amd64)
+terraform=Terraform v1.8.5
+aws_cli=aws-cli/2.34.9 Python/3.13.11 Linux/6.12.90+deb12.1-amd64 exe/x86_64.debian.12

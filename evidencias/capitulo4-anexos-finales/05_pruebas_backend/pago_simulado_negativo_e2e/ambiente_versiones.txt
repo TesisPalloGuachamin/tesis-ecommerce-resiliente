@@ -1,0 +1,13 @@
+run_id=cap4-payment-negative-e2e-20260708T020358Z
+date_utc=2026-07-08T02:03:58+00:00
+date_local=2026-07-08T02:03:58+00:00
+git_branch=cap4-ajustes-final
+git_commit=90d0b4f549578eb56ae900c815912c50ca76dda3
+runtime_dir=/home/ec2-user/.tesis-cap4-runtime/cap4-payment-negative-e2e-20260708T020358Z
+docker=Docker version 25.0.14, build 0bab007
+docker_compose=Docker Compose version v2.24.5
+java=./deploy/compose/scripts/cap4_pago_simulado_negativo_e2e.sh: line 55: java: command not found
+maven=
+node=
+k6=
+terraform=

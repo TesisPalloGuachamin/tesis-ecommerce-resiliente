@@ -1,0 +1,8 @@
+{
+  "name": "checkout-service.checkout-requested.q",
+  "messages": 3,
+  "messages_ready": 3,
+  "messages_unacknowledged": 0,
+  "consumers": 0,
+  "state": "running"
+}

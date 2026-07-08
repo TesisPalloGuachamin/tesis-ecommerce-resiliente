@@ -1,0 +1,9 @@
+{
+  "token": "<JWT_TEST_TOKEN_REDACTED>",
+  "user": {
+    "id": "6d6df02c-f717-4248-b905-acf2b762231c",
+    "email": "cap4-negative-cap4-payment-negative-e2e-20260708T020358Z@example.com",
+    "name": "Cap4 Negative Payment",
+    "enabled": true
+  }
+}

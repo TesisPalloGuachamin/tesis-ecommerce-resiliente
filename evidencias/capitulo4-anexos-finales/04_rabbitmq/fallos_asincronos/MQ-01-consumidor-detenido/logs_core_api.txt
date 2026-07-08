@@ -1,0 +1,79 @@
+tesis-core-api  | 
+tesis-core-api  |   .   ____          _            __ _ _
+tesis-core-api  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+tesis-core-api  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+tesis-core-api  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+tesis-core-api  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+tesis-core-api  |  =========|_|==============|___/=/_/_/_/
+tesis-core-api  |  :: Spring Boot ::                (v3.2.0)
+tesis-core-api  | 
+tesis-core-api  | 2026-07-08T02:28:04.239Z  INFO 1 --- [core-api] [           main] c.t.e.coreapi.CoreApiApplication         : Starting CoreApiApplication v1.0.0 using Java 17.0.19 with PID 1 (/app/app.jar started by root in /app)
+tesis-core-api  | 2026-07-08T02:28:04.243Z DEBUG 1 --- [core-api] [           main] c.t.e.coreapi.CoreApiApplication         : Running with Spring Boot v3.2.0, Spring v6.1.1
+tesis-core-api  | 2026-07-08T02:28:04.245Z  INFO 1 --- [core-api] [           main] c.t.e.coreapi.CoreApiApplication         : No active profile set, falling back to 1 default profile: "default"
+tesis-core-api  | 2026-07-08T02:28:11.489Z  INFO 1 --- [core-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+tesis-core-api  | 2026-07-08T02:28:11.819Z  INFO 1 --- [core-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 284 ms. Found 7 JPA repository interfaces.
+tesis-core-api  | 2026-07-08T02:28:15.538Z  INFO 1 --- [core-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+tesis-core-api  | 2026-07-08T02:28:15.600Z  INFO 1 --- [core-api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+tesis-core-api  | 2026-07-08T02:28:15.602Z  INFO 1 --- [core-api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+tesis-core-api  | 2026-07-08T02:28:15.752Z  INFO 1 --- [core-api] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+tesis-core-api  | 2026-07-08T02:28:15.762Z  INFO 1 --- [core-api] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 11215 ms
+tesis-core-api  | 2026-07-08T02:28:16.910Z DEBUG 1 --- [core-api] [           main] c.t.e.c.i.c.JwtAuthenticationFilter      : Filter 'jwtAuthenticationFilter' configured for use
+tesis-core-api  | 2026-07-08T02:28:17.439Z  INFO 1 --- [core-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+tesis-core-api  | 2026-07-08T02:28:18.303Z  INFO 1 --- [core-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@333a44f2
+tesis-core-api  | 2026-07-08T02:28:18.313Z  INFO 1 --- [core-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+tesis-core-api  | 2026-07-08T02:28:18.931Z  INFO 1 --- [core-api] [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+tesis-core-api  | 2026-07-08T02:28:18.931Z  INFO 1 --- [core-api] [           main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+tesis-core-api  | 2026-07-08T02:28:18.931Z  INFO 1 --- [core-api] [           main] o.f.c.internal.license.VersionPrinter    : 
+tesis-core-api  | 2026-07-08T02:28:19.021Z  INFO 1 --- [core-api] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://core-db:5432/core_db (PostgreSQL 15.18)
+tesis-core-api  | 2026-07-08T02:28:19.205Z  INFO 1 --- [core-api] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+tesis-core-api  | 2026-07-08T02:28:19.230Z  INFO 1 --- [core-api] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.112s)
+tesis-core-api  | 2026-07-08T02:28:19.303Z  INFO 1 --- [core-api] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+tesis-core-api  | 2026-07-08T02:28:19.521Z  INFO 1 --- [core-api] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+tesis-core-api  | 2026-07-08T02:28:19.615Z  INFO 1 --- [core-api] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - initial schema"
+tesis-core-api  | 2026-07-08T02:28:19.854Z  INFO 1 --- [core-api] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "2 - seed data"
+tesis-core-api  | 2026-07-08T02:28:19.892Z  INFO 1 --- [core-api] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "3 - create listings"
+tesis-core-api  | 2026-07-08T02:28:19.992Z  INFO 1 --- [core-api] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 3 migrations to schema "public", now at version v3 (execution time 00:00.261s)
+tesis-core-api  | 2026-07-08T02:28:20.474Z  INFO 1 --- [core-api] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+tesis-core-api  | 2026-07-08T02:28:20.718Z  INFO 1 --- [core-api] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+tesis-core-api  | 2026-07-08T02:28:20.842Z  INFO 1 --- [core-api] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+tesis-core-api  | 2026-07-08T02:28:21.747Z  INFO 1 --- [core-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+tesis-core-api  | 2026-07-08T02:28:21.928Z  WARN 1 --- [core-api] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+tesis-core-api  | 2026-07-08T02:28:25.736Z  INFO 1 --- [core-api] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+tesis-core-api  | 2026-07-08T02:28:25.887Z  INFO 1 --- [core-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+tesis-core-api  | 2026-07-08T02:28:32.309Z  WARN 1 --- [core-api] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+tesis-core-api  | 2026-07-08T02:28:32.479Z  WARN 1 --- [core-api] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+tesis-core-api  | 
+tesis-core-api  | Using generated security password: dffa3c06-7af0-451d-8f10-88be061277f0
+tesis-core-api  | 
+tesis-core-api  | This generated password is for development use only. Your security configuration must be updated before running your application in production.
+tesis-core-api  | 
+tesis-core-api  | 2026-07-08T02:28:34.073Z  INFO 1 --- [core-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+tesis-core-api  | 2026-07-08T02:28:34.199Z  INFO 1 --- [core-api] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@13473685, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@61a809ee, org.springframework.security.web.context.SecurityContextHolderFilter@43b9ef41, org.springframework.security.web.header.HeaderWriterFilter@200ef05b, org.springframework.web.filter.CorsFilter@3ec6bc6f, org.springframework.security.web.authentication.logout.LogoutFilter@522fc67, com.tesis.ecommerce.coreapi.infrastructure.config.JwtAuthenticationFilter@731db93f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@50ade311, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51ce8293, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4b6c5fa2, org.springframework.security.web.session.SessionManagementFilter@6adee80f, org.springframework.security.web.access.ExceptionTranslationFilter@5698a866, org.springframework.security.web.access.intercept.AuthorizationFilter@6092d41]
+tesis-core-api  | 2026-07-08T02:28:35.688Z  INFO 1 --- [core-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+tesis-core-api  | 2026-07-08T02:28:35.695Z  INFO 1 --- [core-api] [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+tesis-core-api  | 2026-07-08T02:28:35.783Z  INFO 1 --- [core-api] [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#5f1d270a:0/SimpleConnection@31a8b0bb [delegate=amqp://guest@172.18.0.4:5672/, localPort=37306]
+tesis-core-api  | 2026-07-08T02:28:35.961Z  INFO 1 --- [core-api] [           main] c.t.e.coreapi.CoreApiApplication         : Started CoreApiApplication in 34.187 seconds (process running for 36.624)
+tesis-core-api  | 2026-07-08T02:28:37.750Z  INFO 1 --- [core-api] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+tesis-core-api  | 2026-07-08T02:28:37.751Z  INFO 1 --- [core-api] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+tesis-core-api  | 2026-07-08T02:28:37.755Z  INFO 1 --- [core-api] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+tesis-core-api  | 2026-07-08T02:28:37.772Z DEBUG 1 --- [core-api] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+tesis-core-api  | 2026-07-08T02:28:37.807Z DEBUG 1 --- [core-api] [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+tesis-core-api  | 2026-07-08T02:28:37.813Z  WARN 1 --- [core-api] [nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/actuator/health' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+tesis-core-api  | 2026-07-08T02:28:37.829Z DEBUG 1 --- [core-api] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+tesis-core-api  | 2026-07-08T02:28:40.780Z DEBUG 1 --- [core-api] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/register
+tesis-core-api  | 2026-07-08T02:28:40.783Z DEBUG 1 --- [core-api] [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+tesis-core-api  | 2026-07-08T02:28:40.788Z DEBUG 1 --- [core-api] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/register
+tesis-core-api  | 2026-07-08T02:28:41.442Z DEBUG 1 --- [core-api] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/products
+tesis-core-api  | 2026-07-08T02:28:41.536Z DEBUG 1 --- [core-api] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/products
+tesis-core-api  | 2026-07-08T02:28:41.603Z DEBUG 1 --- [core-api] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/cart/items
+tesis-core-api  | 2026-07-08T02:28:41.614Z DEBUG 1 --- [core-api] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/cart/items
+tesis-core-api  | 2026-07-08T02:28:41.833Z DEBUG 1 --- [core-api] [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/checkout
+tesis-core-api  | 2026-07-08T02:28:41.848Z DEBUG 1 --- [core-api] [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/checkout
+tesis-core-api  | 2026-07-08T02:28:41.930Z  INFO 1 --- [core-api] [nio-8080-exec-8] c.t.e.c.i.a.o.m.EventPublisherAdapter    : Published event: 716b0351-9572-4d12-b9e6-19835a012ec5
+tesis-core-api  | 2026-07-08T02:28:59.726Z DEBUG 1 --- [core-api] [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
+tesis-core-api  | 2026-07-08T02:28:59.727Z DEBUG 1 --- [core-api] [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+tesis-core-api  | 2026-07-08T02:28:59.731Z DEBUG 1 --- [core-api] [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
+tesis-core-api  | 2026-07-08T02:29:06.803Z  INFO 1 --- [core-api] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.completed event: 1841caea-4f86-4141-b6a9-3815e3a72750
+tesis-core-api  | 2026-07-08T02:29:06.819Z  INFO 1 --- [core-api] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Checkout completed for request: dc6d863f-9dc3-4acd-bb34-b7c249d21b34
+tesis-core-api  | 2026-07-08T02:29:13.569Z DEBUG 1 --- [core-api] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/checkout/dc6d863f-9dc3-4acd-bb34-b7c249d21b34
+tesis-core-api  | 2026-07-08T02:29:13.580Z DEBUG 1 --- [core-api] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/checkout/dc6d863f-9dc3-4acd-bb34-b7c249d21b34

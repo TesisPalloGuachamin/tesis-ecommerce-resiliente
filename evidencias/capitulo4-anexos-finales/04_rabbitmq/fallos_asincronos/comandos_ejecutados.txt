@@ -1,0 +1,4 @@
+RABBITMQ_LISTENER_DEFAULT_REQUEUE_REJECTED=true docker compose -f deploy/compose/docker-compose.dev.yml -f fallos_asincronos/docker-compose.runtime.override.yml up -d core-api checkout-service
+RABBITMQ_LISTENER_DEFAULT_REQUEUE_REJECTED=true docker compose up -d --force-recreate --no-deps checkout-service
+RABBITMQ_LISTENER_DEFAULT_REQUEUE_REJECTED=false docker compose up -d --force-recreate --no-deps checkout-service
+RABBITMQ_LISTENER_DEFAULT_REQUEUE_REJECTED=true docker compose up -d --force-recreate --no-deps checkout-service

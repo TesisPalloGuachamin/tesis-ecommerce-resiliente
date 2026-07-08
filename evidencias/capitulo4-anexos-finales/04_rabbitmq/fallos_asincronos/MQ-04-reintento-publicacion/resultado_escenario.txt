@@ -1,0 +1,4 @@
+expected=OutboxPollingScheduler republica evento pendiente
+observed=final=COMPLETED
+status=PASS
+limitations=

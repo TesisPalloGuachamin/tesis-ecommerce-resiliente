@@ -1,0 +1,4 @@
+expected=Duplicado no genera segunda orden ni segundo pago
+observed=event=ede992bb-a0c9-4494-9ca5-0a5d07ae9608
+status=PASS
+limitations=

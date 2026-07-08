@@ -1,0 +1,4 @@
+expected=Tres mensajes acumulados se drenan tras reiniciar consumidor
+observed=accumulated=3 completed=3 remaining=0
+status=PASS
+limitations=

@@ -1,0 +1,4 @@
+id=MQ-02
+name=Broker RabbitMQ no disponible
+date_utc=2026-07-08T02:29:14+00:00
+commit=acf46725bb4dfd49081eb1a18c1a7084e34f520e

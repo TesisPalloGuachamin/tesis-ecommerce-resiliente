@@ -1,0 +1,8 @@
+RUN_ID=cap4-payment-negative-e2e-20260708T020358Z
+test=negative simulated payment end-to-end
+condition=PAYMENT_SIMULATOR_DECLINE_ENABLED=true and total amount 29.99
+request_id=1bd8b411-6b6c-4802-80dc-8ccd536a2bad
+event_id=0e0cb7e8-f383-4e63-a56f-37cb381213cd
+expected=FAILED
+observed=FAILED
+result=PASS

@@ -1,0 +1,6 @@
+CONTAINER                REPOSITORY                 TAG                      IMAGE ID            SIZE
+tesis-checkout-db        postgres                   15-alpine                9b4593c6de44        292MB
+tesis-checkout-service   compose-checkout-service   latest                   4eff0d214db3        236MB
+tesis-core-api           compose-core-api           latest                   d212cf275a38        398MB
+tesis-core-db            postgres                   15-alpine                9b4593c6de44        292MB
+tesis-rabbitmq           rabbitmq                   3.12-management-alpine   b4c22cf1a563        173MB

@@ -1,0 +1,9 @@
+{
+  "token": "<JWT_TEST_TOKEN_REDACTED>",
+  "user": {
+    "id": "6a6358e5-9554-409c-8c1f-50cc92c02182",
+    "email": "cap4-mq-cap4-mq-failures-20260708T022708Z-1783477885056134927@example.com",
+    "name": "Cap4 MQ Test",
+    "enabled": true
+  }
+}

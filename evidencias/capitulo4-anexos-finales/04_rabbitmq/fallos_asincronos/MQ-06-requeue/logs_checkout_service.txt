@@ -1,0 +1,502 @@
+# Log compactado: últimas 500 líneas de la evidencia AWS final
+# Archivo original reducido para evitar anexos no trazables de gran tamaño
+tesis-checkout-service  | 	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:565) ~[spring-orm-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:794) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:757) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:669) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:419) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765) ~[spring-aop-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717) ~[spring-aop-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase$$SpringCGLIB$$0.execute(<generated>) ~[!/:1.0.0]
+tesis-checkout-service  | 	at com.tesis.ecommerce.checkoutservice.infrastructure.adapter.in.messaging.CheckoutEventConsumer.handleCheckoutRequested(CheckoutEventConsumer.java:23) ~[!/:1.0.0]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169) ~[spring-messaging-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.KotlinAwareInvocableHandlerMethod.doInvoke(KotlinAwareInvocableHandlerMethod.java:45) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119) ~[spring-messaging-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:75) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:277) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:224) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:149) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1662) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1581) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1569) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1560) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListenerAndHandleException(AbstractMessageListenerContainer.java:1505) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.lambda$executeListener$8(AbstractMessageListenerContainer.java:1483) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at io.micrometer.observation.Observation.observe(Observation.java:499) ~[micrometer-observation-1.12.0.jar!/:1.12.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1483) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:994) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:941) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1325) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1227) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+tesis-checkout-service  | Caused by: org.hibernate.exception.ConstraintViolationException: could not execute batch [Batch entry 0 insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values ('2026-07-08 02:32:18.076558+00',NULL,'checkout.requested','CheckoutRequestedEvent(eventId=null, requestId=null, userId=null, totalAmount=29.99, items=[], timestamp=0)','FALSE',NULL,'3662cebf-02ff-40c5-89be-1388653f4413'::uuid) was aborted: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (3662cebf-02ff-40c5-89be-1388653f4413, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:18.076558, null).  Call getNextException to see other errors in the batch.] [insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values (?,?,?,?,?,?,?)]
+tesis-checkout-service  | 	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:97) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.lambda$performExecution$2(BatchImpl.java:287) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.PreparedStatementGroupSingleTable.forEachStatement(PreparedStatementGroupSingleTable.java:59) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.performExecution(BatchImpl.java:260) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.execute(BatchImpl.java:239) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.getBatch(JdbcCoordinatorImpl.java:173) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleBatched.resolveBatch(MutationExecutorSingleBatched.java:47) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleBatched.performBatchedOperations(MutationExecutorSingleBatched.java:60) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:54) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.persister.entity.mutation.InsertCoordinator.doStaticInserts(InsertCoordinator.java:171) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.persister.entity.mutation.InsertCoordinator.coordinateInsert(InsertCoordinator.java:112) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2865) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:102) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:631) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:498) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:363) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1415) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:496) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2325) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1988) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561) ~[spring-orm-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	... 34 common frames omitted
+tesis-checkout-service  | Caused by: java.sql.BatchUpdateException: Batch entry 0 insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values ('2026-07-08 02:32:18.076558+00',NULL,'checkout.requested','CheckoutRequestedEvent(eventId=null, requestId=null, userId=null, totalAmount=29.99, items=[], timestamp=0)','FALSE',NULL,'3662cebf-02ff-40c5-89be-1388653f4413'::uuid) was aborted: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (3662cebf-02ff-40c5-89be-1388653f4413, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:18.076558, null).  Call getNextException to see other errors in the batch.
+tesis-checkout-service  | 	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:165) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2402) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:574) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.jdbc.PgStatement.internalExecuteBatch(PgStatement.java:896) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:919) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1685) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at com.zaxxer.hikari.pool.ProxyStatement.executeBatch(ProxyStatement.java:127) ~[HikariCP-5.0.1.jar!/:na]
+tesis-checkout-service  | 	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeBatch(HikariProxyPreparedStatement.java) ~[HikariCP-5.0.1.jar!/:na]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.lambda$performExecution$2(BatchImpl.java:273) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	... 59 common frames omitted
+tesis-checkout-service  | Caused by: org.postgresql.util.PSQLException: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (3662cebf-02ff-40c5-89be-1388653f4413, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:18.076558, null).
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	... 66 common frames omitted
+tesis-checkout-service  | 
+tesis-checkout-service  | 2026-07-08T02:32:18.632Z  WARN 1 --- [checkout-service] [ntContainer#0-1] s.a.r.l.ConditionalRejectingErrorHandler : Execution of Rabbit message listener failed.
+tesis-checkout-service  | 
+tesis-checkout-service  | org.springframework.amqp.rabbit.support.ListenerExecutionFailedException: Listener method 'public void com.tesis.ecommerce.checkoutservice.infrastructure.adapter.in.messaging.CheckoutEventConsumer.handleCheckoutRequested(com.tesis.ecommerce.checkoutservice.application.dto.CheckoutRequestedEvent)' threw exception
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:286) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:224) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:149) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1662) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1581) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1569) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1560) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListenerAndHandleException(AbstractMessageListenerContainer.java:1505) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.lambda$executeListener$8(AbstractMessageListenerContainer.java:1483) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at io.micrometer.observation.Observation.observe(Observation.java:499) ~[micrometer-observation-1.12.0.jar!/:1.12.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1483) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:994) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:941) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1325) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1227) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+tesis-checkout-service  | Caused by: org.springframework.dao.DataIntegrityViolationException: could not execute batch [Batch entry 0 insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values ('2026-07-08 02:32:18.076558+00',NULL,'checkout.requested','CheckoutRequestedEvent(eventId=null, requestId=null, userId=null, totalAmount=29.99, items=[], timestamp=0)','FALSE',NULL,'3662cebf-02ff-40c5-89be-1388653f4413'::uuid) was aborted: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (3662cebf-02ff-40c5-89be-1388653f4413, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:18.076558, null).  Call getNextException to see other errors in the batch.] [insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values (?,?,?,?,?,?,?)]; SQL [insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values (?,?,?,?,?,?,?)]; constraint [event_id" of relation "inbox_events]
+tesis-checkout-service  | 	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:290) ~[spring-orm-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241) ~[spring-orm-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:565) ~[spring-orm-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:794) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:757) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:669) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:419) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765) ~[spring-aop-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717) ~[spring-aop-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase$$SpringCGLIB$$0.execute(<generated>) ~[!/:1.0.0]
+tesis-checkout-service  | 	at com.tesis.ecommerce.checkoutservice.infrastructure.adapter.in.messaging.CheckoutEventConsumer.handleCheckoutRequested(CheckoutEventConsumer.java:23) ~[!/:1.0.0]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169) ~[spring-messaging-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.KotlinAwareInvocableHandlerMethod.doInvoke(KotlinAwareInvocableHandlerMethod.java:45) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119) ~[spring-messaging-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:75) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:277) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	... 15 common frames omitted
+tesis-checkout-service  | Caused by: org.hibernate.exception.ConstraintViolationException: could not execute batch [Batch entry 0 insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values ('2026-07-08 02:32:18.076558+00',NULL,'checkout.requested','CheckoutRequestedEvent(eventId=null, requestId=null, userId=null, totalAmount=29.99, items=[], timestamp=0)','FALSE',NULL,'3662cebf-02ff-40c5-89be-1388653f4413'::uuid) was aborted: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (3662cebf-02ff-40c5-89be-1388653f4413, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:18.076558, null).  Call getNextException to see other errors in the batch.] [insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values (?,?,?,?,?,?,?)]
+tesis-checkout-service  | 	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:97) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.lambda$performExecution$2(BatchImpl.java:287) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.PreparedStatementGroupSingleTable.forEachStatement(PreparedStatementGroupSingleTable.java:59) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.performExecution(BatchImpl.java:260) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.execute(BatchImpl.java:239) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.getBatch(JdbcCoordinatorImpl.java:173) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleBatched.resolveBatch(MutationExecutorSingleBatched.java:47) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleBatched.performBatchedOperations(MutationExecutorSingleBatched.java:60) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:54) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.persister.entity.mutation.InsertCoordinator.doStaticInserts(InsertCoordinator.java:171) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.persister.entity.mutation.InsertCoordinator.coordinateInsert(InsertCoordinator.java:112) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2865) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:102) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:631) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:498) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:363) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1415) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:496) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2325) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1988) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561) ~[spring-orm-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	... 34 common frames omitted
+tesis-checkout-service  | Caused by: java.sql.BatchUpdateException: Batch entry 0 insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values ('2026-07-08 02:32:18.076558+00',NULL,'checkout.requested','CheckoutRequestedEvent(eventId=null, requestId=null, userId=null, totalAmount=29.99, items=[], timestamp=0)','FALSE',NULL,'3662cebf-02ff-40c5-89be-1388653f4413'::uuid) was aborted: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (3662cebf-02ff-40c5-89be-1388653f4413, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:18.076558, null).  Call getNextException to see other errors in the batch.
+tesis-checkout-service  | 	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:165) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2402) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:574) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.jdbc.PgStatement.internalExecuteBatch(PgStatement.java:896) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:919) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1685) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at com.zaxxer.hikari.pool.ProxyStatement.executeBatch(ProxyStatement.java:127) ~[HikariCP-5.0.1.jar!/:na]
+tesis-checkout-service  | 	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeBatch(HikariProxyPreparedStatement.java) ~[HikariCP-5.0.1.jar!/:na]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.lambda$performExecution$2(BatchImpl.java:273) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	... 59 common frames omitted
+tesis-checkout-service  | Caused by: org.postgresql.util.PSQLException: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (3662cebf-02ff-40c5-89be-1388653f4413, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:18.076558, null).
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	... 66 common frames omitted
+tesis-checkout-service  | 
+tesis-checkout-service  | 2026-07-08T02:32:18.638Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.requested event: null
+tesis-checkout-service  | 2026-07-08T02:32:18.639Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.a.u.ProcessCheckoutUseCase       : Processing checkout for request: null
+tesis-checkout-service  | 2026-07-08T02:32:18.654Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.accepted event for checkout request: null
+tesis-checkout-service  | 2026-07-08T02:32:18.659Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Executing Stripe simulated payment for order: e1a4f897-e2bb-4f83-9dd5-6fd76264f699, amount: 29.99
+tesis-checkout-service  | 2026-07-08T02:32:19.160Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Stripe simulated payment approved for order: e1a4f897-e2bb-4f83-9dd5-6fd76264f699, transaction: stripe_sim_0e53bc06-749d-476e-a1e3-dc4704f5f3f3
+tesis-checkout-service  | 2026-07-08T02:32:19.161Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published payment.processed event for order: e1a4f897-e2bb-4f83-9dd5-6fd76264f699, success: true
+tesis-checkout-service  | 2026-07-08T02:32:19.164Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.completed event for checkout request: null
+tesis-checkout-service  | 2026-07-08T02:32:19.164Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.a.u.ProcessCheckoutUseCase       : Checkout completed successfully for order: ORD-FF2F0111
+tesis-checkout-service  | 2026-07-08T02:32:19.170Z ERROR 1 --- [checkout-service] [ntContainer#0-1] org.hibernate.orm.jdbc.batch             : HHH100501: Exception executing batch [java.sql.BatchUpdateException: Batch entry 0 insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values ('2026-07-08 02:32:18.646264+00',NULL,'checkout.requested','CheckoutRequestedEvent(eventId=null, requestId=null, userId=null, totalAmount=29.99, items=[], timestamp=0)','FALSE',NULL,'c3c6930a-f400-4e18-8a55-36436c05d745'::uuid) was aborted: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (c3c6930a-f400-4e18-8a55-36436c05d745, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:18.646264, null).  Call getNextException to see other errors in the batch.], SQL: insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values (?,?,?,?,?,?,?)
+tesis-checkout-service  | 2026-07-08T02:32:19.170Z  WARN 1 --- [checkout-service] [ntContainer#0-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23502
+tesis-checkout-service  | 2026-07-08T02:32:19.171Z ERROR 1 --- [checkout-service] [ntContainer#0-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : Batch entry 0 insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values ('2026-07-08 02:32:18.646264+00',NULL,'checkout.requested','CheckoutRequestedEvent(eventId=null, requestId=null, userId=null, totalAmount=29.99, items=[], timestamp=0)','FALSE',NULL,'c3c6930a-f400-4e18-8a55-36436c05d745'::uuid) was aborted: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (c3c6930a-f400-4e18-8a55-36436c05d745, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:18.646264, null).  Call getNextException to see other errors in the batch.
+tesis-checkout-service  | 2026-07-08T02:32:19.172Z ERROR 1 --- [checkout-service] [ntContainer#0-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (c3c6930a-f400-4e18-8a55-36436c05d745, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:18.646264, null).
+tesis-checkout-service  | 2026-07-08T02:32:19.173Z ERROR 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Error processing checkout event: null
+tesis-checkout-service  | 
+tesis-checkout-service  | org.springframework.dao.DataIntegrityViolationException: could not execute batch [Batch entry 0 insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values ('2026-07-08 02:32:18.646264+00',NULL,'checkout.requested','CheckoutRequestedEvent(eventId=null, requestId=null, userId=null, totalAmount=29.99, items=[], timestamp=0)','FALSE',NULL,'c3c6930a-f400-4e18-8a55-36436c05d745'::uuid) was aborted: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (c3c6930a-f400-4e18-8a55-36436c05d745, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:18.646264, null).  Call getNextException to see other errors in the batch.] [insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values (?,?,?,?,?,?,?)]; SQL [insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values (?,?,?,?,?,?,?)]; constraint [event_id" of relation "inbox_events]
+tesis-checkout-service  | 	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:290) ~[spring-orm-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241) ~[spring-orm-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:565) ~[spring-orm-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:794) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:757) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:669) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:419) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765) ~[spring-aop-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717) ~[spring-aop-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase$$SpringCGLIB$$0.execute(<generated>) ~[!/:1.0.0]
+tesis-checkout-service  | 	at com.tesis.ecommerce.checkoutservice.infrastructure.adapter.in.messaging.CheckoutEventConsumer.handleCheckoutRequested(CheckoutEventConsumer.java:23) ~[!/:1.0.0]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169) ~[spring-messaging-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.KotlinAwareInvocableHandlerMethod.doInvoke(KotlinAwareInvocableHandlerMethod.java:45) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119) ~[spring-messaging-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:75) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:277) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:224) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:149) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1662) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1581) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1569) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1560) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListenerAndHandleException(AbstractMessageListenerContainer.java:1505) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.lambda$executeListener$8(AbstractMessageListenerContainer.java:1483) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at io.micrometer.observation.Observation.observe(Observation.java:499) ~[micrometer-observation-1.12.0.jar!/:1.12.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1483) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:994) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:941) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1325) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1227) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+tesis-checkout-service  | Caused by: org.hibernate.exception.ConstraintViolationException: could not execute batch [Batch entry 0 insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values ('2026-07-08 02:32:18.646264+00',NULL,'checkout.requested','CheckoutRequestedEvent(eventId=null, requestId=null, userId=null, totalAmount=29.99, items=[], timestamp=0)','FALSE',NULL,'c3c6930a-f400-4e18-8a55-36436c05d745'::uuid) was aborted: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (c3c6930a-f400-4e18-8a55-36436c05d745, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:18.646264, null).  Call getNextException to see other errors in the batch.] [insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values (?,?,?,?,?,?,?)]
+tesis-checkout-service  | 	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:97) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.lambda$performExecution$2(BatchImpl.java:287) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.PreparedStatementGroupSingleTable.forEachStatement(PreparedStatementGroupSingleTable.java:59) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.performExecution(BatchImpl.java:260) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.execute(BatchImpl.java:239) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.getBatch(JdbcCoordinatorImpl.java:173) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleBatched.resolveBatch(MutationExecutorSingleBatched.java:47) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleBatched.performBatchedOperations(MutationExecutorSingleBatched.java:60) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:54) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.persister.entity.mutation.InsertCoordinator.doStaticInserts(InsertCoordinator.java:171) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.persister.entity.mutation.InsertCoordinator.coordinateInsert(InsertCoordinator.java:112) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2865) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:102) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:631) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:498) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:363) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1415) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:496) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2325) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1988) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561) ~[spring-orm-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	... 34 common frames omitted
+tesis-checkout-service  | Caused by: java.sql.BatchUpdateException: Batch entry 0 insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values ('2026-07-08 02:32:18.646264+00',NULL,'checkout.requested','CheckoutRequestedEvent(eventId=null, requestId=null, userId=null, totalAmount=29.99, items=[], timestamp=0)','FALSE',NULL,'c3c6930a-f400-4e18-8a55-36436c05d745'::uuid) was aborted: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (c3c6930a-f400-4e18-8a55-36436c05d745, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:18.646264, null).  Call getNextException to see other errors in the batch.
+tesis-checkout-service  | 	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:165) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2402) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:574) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.jdbc.PgStatement.internalExecuteBatch(PgStatement.java:896) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:919) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1685) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at com.zaxxer.hikari.pool.ProxyStatement.executeBatch(ProxyStatement.java:127) ~[HikariCP-5.0.1.jar!/:na]
+tesis-checkout-service  | 	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeBatch(HikariProxyPreparedStatement.java) ~[HikariCP-5.0.1.jar!/:na]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.lambda$performExecution$2(BatchImpl.java:273) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	... 59 common frames omitted
+tesis-checkout-service  | Caused by: org.postgresql.util.PSQLException: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (c3c6930a-f400-4e18-8a55-36436c05d745, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:18.646264, null).
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	... 66 common frames omitted
+tesis-checkout-service  | 
+tesis-checkout-service  | 2026-07-08T02:32:19.178Z  WARN 1 --- [checkout-service] [ntContainer#0-1] s.a.r.l.ConditionalRejectingErrorHandler : Execution of Rabbit message listener failed.
+tesis-checkout-service  | 
+tesis-checkout-service  | org.springframework.amqp.rabbit.support.ListenerExecutionFailedException: Listener method 'public void com.tesis.ecommerce.checkoutservice.infrastructure.adapter.in.messaging.CheckoutEventConsumer.handleCheckoutRequested(com.tesis.ecommerce.checkoutservice.application.dto.CheckoutRequestedEvent)' threw exception
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:286) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:224) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:149) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1662) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1581) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1569) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1560) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListenerAndHandleException(AbstractMessageListenerContainer.java:1505) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.lambda$executeListener$8(AbstractMessageListenerContainer.java:1483) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at io.micrometer.observation.Observation.observe(Observation.java:499) ~[micrometer-observation-1.12.0.jar!/:1.12.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1483) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:994) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:941) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1325) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1227) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+tesis-checkout-service  | Caused by: org.springframework.dao.DataIntegrityViolationException: could not execute batch [Batch entry 0 insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values ('2026-07-08 02:32:18.646264+00',NULL,'checkout.requested','CheckoutRequestedEvent(eventId=null, requestId=null, userId=null, totalAmount=29.99, items=[], timestamp=0)','FALSE',NULL,'c3c6930a-f400-4e18-8a55-36436c05d745'::uuid) was aborted: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (c3c6930a-f400-4e18-8a55-36436c05d745, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:18.646264, null).  Call getNextException to see other errors in the batch.] [insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values (?,?,?,?,?,?,?)]; SQL [insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values (?,?,?,?,?,?,?)]; constraint [event_id" of relation "inbox_events]
+tesis-checkout-service  | 	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:290) ~[spring-orm-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241) ~[spring-orm-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:565) ~[spring-orm-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:794) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:757) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:669) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:419) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765) ~[spring-aop-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717) ~[spring-aop-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase$$SpringCGLIB$$0.execute(<generated>) ~[!/:1.0.0]
+tesis-checkout-service  | 	at com.tesis.ecommerce.checkoutservice.infrastructure.adapter.in.messaging.CheckoutEventConsumer.handleCheckoutRequested(CheckoutEventConsumer.java:23) ~[!/:1.0.0]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169) ~[spring-messaging-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.KotlinAwareInvocableHandlerMethod.doInvoke(KotlinAwareInvocableHandlerMethod.java:45) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119) ~[spring-messaging-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:75) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:277) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	... 15 common frames omitted
+tesis-checkout-service  | Caused by: org.hibernate.exception.ConstraintViolationException: could not execute batch [Batch entry 0 insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values ('2026-07-08 02:32:18.646264+00',NULL,'checkout.requested','CheckoutRequestedEvent(eventId=null, requestId=null, userId=null, totalAmount=29.99, items=[], timestamp=0)','FALSE',NULL,'c3c6930a-f400-4e18-8a55-36436c05d745'::uuid) was aborted: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (c3c6930a-f400-4e18-8a55-36436c05d745, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:18.646264, null).  Call getNextException to see other errors in the batch.] [insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values (?,?,?,?,?,?,?)]
+tesis-checkout-service  | 	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:97) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.lambda$performExecution$2(BatchImpl.java:287) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.PreparedStatementGroupSingleTable.forEachStatement(PreparedStatementGroupSingleTable.java:59) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.performExecution(BatchImpl.java:260) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.execute(BatchImpl.java:239) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.getBatch(JdbcCoordinatorImpl.java:173) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleBatched.resolveBatch(MutationExecutorSingleBatched.java:47) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleBatched.performBatchedOperations(MutationExecutorSingleBatched.java:60) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:54) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.persister.entity.mutation.InsertCoordinator.doStaticInserts(InsertCoordinator.java:171) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.persister.entity.mutation.InsertCoordinator.coordinateInsert(InsertCoordinator.java:112) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2865) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:102) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:631) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:498) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:363) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1415) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:496) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2325) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1988) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561) ~[spring-orm-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	... 34 common frames omitted
+tesis-checkout-service  | Caused by: java.sql.BatchUpdateException: Batch entry 0 insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values ('2026-07-08 02:32:18.646264+00',NULL,'checkout.requested','CheckoutRequestedEvent(eventId=null, requestId=null, userId=null, totalAmount=29.99, items=[], timestamp=0)','FALSE',NULL,'c3c6930a-f400-4e18-8a55-36436c05d745'::uuid) was aborted: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (c3c6930a-f400-4e18-8a55-36436c05d745, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:18.646264, null).  Call getNextException to see other errors in the batch.
+tesis-checkout-service  | 	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:165) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2402) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:574) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.jdbc.PgStatement.internalExecuteBatch(PgStatement.java:896) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:919) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1685) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at com.zaxxer.hikari.pool.ProxyStatement.executeBatch(ProxyStatement.java:127) ~[HikariCP-5.0.1.jar!/:na]
+tesis-checkout-service  | 	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeBatch(HikariProxyPreparedStatement.java) ~[HikariCP-5.0.1.jar!/:na]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.lambda$performExecution$2(BatchImpl.java:273) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	... 59 common frames omitted
+tesis-checkout-service  | Caused by: org.postgresql.util.PSQLException: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (c3c6930a-f400-4e18-8a55-36436c05d745, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:18.646264, null).
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	... 66 common frames omitted
+tesis-checkout-service  | 
+tesis-checkout-service  | 2026-07-08T02:32:19.181Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Received checkout.requested event: null
+tesis-checkout-service  | 2026-07-08T02:32:19.184Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.a.u.ProcessCheckoutUseCase       : Processing checkout for request: null
+tesis-checkout-service  | 2026-07-08T02:32:19.230Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.accepted event for checkout request: null
+tesis-checkout-service  | 2026-07-08T02:32:19.248Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Executing Stripe simulated payment for order: 9e479f08-102e-4024-9f75-5d904153e463, amount: 29.99
+tesis-checkout-service  | 2026-07-08T02:32:19.749Z  INFO 1 --- [checkout-service] [ntContainer#0-1] .c.i.a.o.p.StripeSimulatedPaymentAdapter : Stripe simulated payment approved for order: 9e479f08-102e-4024-9f75-5d904153e463, transaction: stripe_sim_8e6014a3-cd08-4107-98f3-d208922dbd1a
+tesis-checkout-service  | 2026-07-08T02:32:19.750Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published payment.processed event for order: 9e479f08-102e-4024-9f75-5d904153e463, success: true
+tesis-checkout-service  | 2026-07-08T02:32:19.755Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.o.m.RabbitEventPublisher     : Published checkout.completed event for checkout request: null
+tesis-checkout-service  | 2026-07-08T02:32:19.755Z  INFO 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.a.u.ProcessCheckoutUseCase       : Checkout completed successfully for order: ORD-C428CD61
+tesis-checkout-service  | 2026-07-08T02:32:19.765Z ERROR 1 --- [checkout-service] [ntContainer#0-1] org.hibernate.orm.jdbc.batch             : HHH100501: Exception executing batch [java.sql.BatchUpdateException: Batch entry 0 insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values ('2026-07-08 02:32:19.192877+00',NULL,'checkout.requested','CheckoutRequestedEvent(eventId=null, requestId=null, userId=null, totalAmount=29.99, items=[], timestamp=0)','FALSE',NULL,'1ecfdc95-4032-4e09-85aa-3f0eae73d425'::uuid) was aborted: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (1ecfdc95-4032-4e09-85aa-3f0eae73d425, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:19.192877, null).  Call getNextException to see other errors in the batch.], SQL: insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values (?,?,?,?,?,?,?)
+tesis-checkout-service  | 2026-07-08T02:32:19.769Z  WARN 1 --- [checkout-service] [ntContainer#0-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23502
+tesis-checkout-service  | 2026-07-08T02:32:19.771Z ERROR 1 --- [checkout-service] [ntContainer#0-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : Batch entry 0 insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values ('2026-07-08 02:32:19.192877+00',NULL,'checkout.requested','CheckoutRequestedEvent(eventId=null, requestId=null, userId=null, totalAmount=29.99, items=[], timestamp=0)','FALSE',NULL,'1ecfdc95-4032-4e09-85aa-3f0eae73d425'::uuid) was aborted: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (1ecfdc95-4032-4e09-85aa-3f0eae73d425, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:19.192877, null).  Call getNextException to see other errors in the batch.
+tesis-checkout-service  | 2026-07-08T02:32:19.771Z ERROR 1 --- [checkout-service] [ntContainer#0-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (1ecfdc95-4032-4e09-85aa-3f0eae73d425, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:19.192877, null).
+tesis-checkout-service  | 2026-07-08T02:32:19.774Z ERROR 1 --- [checkout-service] [ntContainer#0-1] c.t.e.c.i.a.i.m.CheckoutEventConsumer    : Error processing checkout event: null
+tesis-checkout-service  | 
+tesis-checkout-service  | org.springframework.dao.DataIntegrityViolationException: could not execute batch [Batch entry 0 insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values ('2026-07-08 02:32:19.192877+00',NULL,'checkout.requested','CheckoutRequestedEvent(eventId=null, requestId=null, userId=null, totalAmount=29.99, items=[], timestamp=0)','FALSE',NULL,'1ecfdc95-4032-4e09-85aa-3f0eae73d425'::uuid) was aborted: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (1ecfdc95-4032-4e09-85aa-3f0eae73d425, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:19.192877, null).  Call getNextException to see other errors in the batch.] [insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values (?,?,?,?,?,?,?)]; SQL [insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values (?,?,?,?,?,?,?)]; constraint [event_id" of relation "inbox_events]
+tesis-checkout-service  | 	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:290) ~[spring-orm-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241) ~[spring-orm-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:565) ~[spring-orm-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:794) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:757) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:669) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:419) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765) ~[spring-aop-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717) ~[spring-aop-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at com.tesis.ecommerce.checkoutservice.application.usecase.ProcessCheckoutUseCase$$SpringCGLIB$$0.execute(<generated>) ~[!/:1.0.0]
+tesis-checkout-service  | 	at com.tesis.ecommerce.checkoutservice.infrastructure.adapter.in.messaging.CheckoutEventConsumer.handleCheckoutRequested(CheckoutEventConsumer.java:23) ~[!/:1.0.0]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+tesis-checkout-service  | 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169) ~[spring-messaging-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.KotlinAwareInvocableHandlerMethod.doInvoke(KotlinAwareInvocableHandlerMethod.java:45) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119) ~[spring-messaging-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:75) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:277) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:224) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:149) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1662) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1581) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1569) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1560) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListenerAndHandleException(AbstractMessageListenerContainer.java:1505) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.lambda$executeListener$8(AbstractMessageListenerContainer.java:1483) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at io.micrometer.observation.Observation.observe(Observation.java:499) ~[micrometer-observation-1.12.0.jar!/:1.12.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1483) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:994) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:941) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1325) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1227) ~[spring-rabbit-3.1.0.jar!/:3.1.0]
+tesis-checkout-service  | 	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+tesis-checkout-service  | Caused by: org.hibernate.exception.ConstraintViolationException: could not execute batch [Batch entry 0 insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values ('2026-07-08 02:32:19.192877+00',NULL,'checkout.requested','CheckoutRequestedEvent(eventId=null, requestId=null, userId=null, totalAmount=29.99, items=[], timestamp=0)','FALSE',NULL,'1ecfdc95-4032-4e09-85aa-3f0eae73d425'::uuid) was aborted: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (1ecfdc95-4032-4e09-85aa-3f0eae73d425, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:19.192877, null).  Call getNextException to see other errors in the batch.] [insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values (?,?,?,?,?,?,?)]
+tesis-checkout-service  | 	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:97) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.lambda$performExecution$2(BatchImpl.java:287) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.PreparedStatementGroupSingleTable.forEachStatement(PreparedStatementGroupSingleTable.java:59) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.performExecution(BatchImpl.java:260) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.execute(BatchImpl.java:239) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.getBatch(JdbcCoordinatorImpl.java:173) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleBatched.resolveBatch(MutationExecutorSingleBatched.java:47) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleBatched.performBatchedOperations(MutationExecutorSingleBatched.java:60) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:54) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.persister.entity.mutation.InsertCoordinator.doStaticInserts(InsertCoordinator.java:171) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.persister.entity.mutation.InsertCoordinator.coordinateInsert(InsertCoordinator.java:112) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2865) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:102) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:631) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:498) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:363) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1415) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:496) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2325) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1988) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561) ~[spring-orm-6.1.1.jar!/:6.1.1]
+tesis-checkout-service  | 	... 34 common frames omitted
+tesis-checkout-service  | Caused by: java.sql.BatchUpdateException: Batch entry 0 insert into inbox_events (created_at,event_id,event_type,payload,processed,processed_at,id) values ('2026-07-08 02:32:19.192877+00',NULL,'checkout.requested','CheckoutRequestedEvent(eventId=null, requestId=null, userId=null, totalAmount=29.99, items=[], timestamp=0)','FALSE',NULL,'1ecfdc95-4032-4e09-85aa-3f0eae73d425'::uuid) was aborted: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (1ecfdc95-4032-4e09-85aa-3f0eae73d425, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:19.192877, null).  Call getNextException to see other errors in the batch.
+tesis-checkout-service  | 	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:165) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2402) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:574) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.jdbc.PgStatement.internalExecuteBatch(PgStatement.java:896) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:919) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1685) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at com.zaxxer.hikari.pool.ProxyStatement.executeBatch(ProxyStatement.java:127) ~[HikariCP-5.0.1.jar!/:na]
+tesis-checkout-service  | 	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeBatch(HikariProxyPreparedStatement.java) ~[HikariCP-5.0.1.jar!/:na]
+tesis-checkout-service  | 	at org.hibernate.engine.jdbc.batch.internal.BatchImpl.lambda$performExecution$2(BatchImpl.java:273) ~[hibernate-core-6.3.1.Final.jar!/:6.3.1.Final]
+tesis-checkout-service  | 	... 59 common frames omitted
+tesis-checkout-service  | Caused by: org.postgresql.util.PSQLException: ERROR: null value in column "event_id" of relation "inbox_events" violates not-null constraint
+tesis-checkout-service  |   Detail: Failing row contains (1ecfdc95-4032-4e09-85aa-3f0eae73d425, null, checkout.requested, CheckoutRequestedEvent(eventId=null, requestId=null, userId=null..., f, 2026-07-08 02:32:19.192877, null).
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401) ~[postgresql-42.6.0.jar!/:42.6.0]
+tesis-checkout-service  | 	... 66 common frames omitted
+tesis-checkout-service  | 
+tesis-checkout-service  | 
+tesis-checkout-service  |   .   ____          _            __ _ _
+tesis-checkout-service  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+tesis-checkout-service  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+tesis-checkout-service  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+tesis-checkout-service  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+tesis-checkout-service  |  =========|_|==============|___/=/_/_/_/
+tesis-checkout-service  |  :: Spring Boot ::                (v3.2.0)
+tesis-checkout-service  | 
+tesis-checkout-service  | 2026-07-08T02:32:27.678Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Starting CheckoutServiceApplication v1.0.0 using Java 17.0.19 with PID 1 (/app/app.jar started by root in /app)
+tesis-checkout-service  | 2026-07-08T02:32:27.685Z DEBUG 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Running with Spring Boot v3.2.0, Spring v6.1.1
+tesis-checkout-service  | 2026-07-08T02:32:27.688Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : No active profile set, falling back to 1 default profile: "default"
+tesis-checkout-service  | 2026-07-08T02:32:44.811Z  WARN 1 --- [checkout-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+tesis-checkout-service  | 2026-07-08T02:32:53.203Z  WARN 1 --- [checkout-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+tesis-checkout-service  | 2026-07-08T02:32:57.638Z  INFO 1 --- [checkout-service] [           main] c.t.e.c.CheckoutServiceApplication       : Started CheckoutServiceApplication in 32.042 seconds (process running for 34.004)

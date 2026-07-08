@@ -1,0 +1,6 @@
+{
+  "name": "checkout_final",
+  "method": "GET",
+  "url": "http://localhost:8080/api/v1/checkout/1bd8b411-6b6c-4802-80dc-8ccd536a2bad",
+  "http_code": 200
+}

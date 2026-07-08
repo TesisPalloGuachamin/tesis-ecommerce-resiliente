@@ -1,0 +1,4 @@
+export PAYMENT_SIMULATOR_DECLINE_ENABLED=true
+export PAYMENT_SIMULATOR_DECLINE_AMOUNT=29.99
+SKIP_DOCKER_BUILD=true docker compose -f deploy/compose/docker-compose.dev.yml -f pago_simulado_negativo_e2e/docker-compose.runtime.override.yml up -d core-api checkout-service
+docker compose -f /home/ec2-user/tesis-ecommerce-full/deploy/compose/docker-compose.dev.yml -f /home/ec2-user/tesis-ecommerce-full/evidencias/capitulo4-anexos-finales/05_pruebas_backend/pago_simulado_negativo_e2e/docker-compose.runtime.override.yml up -d core-api checkout-service

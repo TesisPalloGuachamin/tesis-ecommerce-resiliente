@@ -1,0 +1,106 @@
+{
+  "register": {
+    "meta": {
+      "name": "register",
+      "method": "POST",
+      "url": "http://localhost:8080/api/v1/auth/register",
+      "http_code": 201
+    },
+    "body": {
+      "token": "<JWT_TEST_TOKEN_REDACTED>",
+      "user": {
+        "id": "6d6df02c-f717-4248-b905-acf2b762231c",
+        "email": "cap4-negative-cap4-payment-negative-e2e-20260708T020358Z@example.com",
+        "name": "Cap4 Negative Payment",
+        "enabled": true
+      }
+    }
+  },
+  "products": {
+    "meta": {
+      "name": "products",
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/products",
+      "http_code": 200
+    },
+    "body": [
+      {
+        "id": "7b595686-ba1a-43a2-af13-e1236c3bac09",
+        "sku": "PROD001",
+        "name": "Laptop Dell XPS 13",
+        "description": "High-performance laptop with Intel i7 processor",
+        "price": 1299.99,
+        "stock": 10,
+        "active": true
+      },
+      {
+        "id": "00712163-cf56-4aeb-93de-82f62c86385f",
+        "sku": "PROD002",
+        "name": "Wireless Mouse Logitech",
+        "description": "Ergonomic wireless mouse with USB receiver",
+        "price": 29.99,
+        "stock": 50,
+        "active": true
+      }
+    ]
+  },
+  "cart_add": {
+    "meta": {
+      "name": "cart_add",
+      "method": "POST",
+      "url": "http://localhost:8080/api/v1/cart/items",
+      "http_code": 201
+    },
+    "body": {
+      "id": "8966d059-8508-4a51-ab0b-774d13f97c2c",
+      "userId": "6d6df02c-f717-4248-b905-acf2b762231c",
+      "items": [
+        {
+          "id": "9b06d60c-1a24-413b-9bbd-95a52a4d60de",
+          "productId": "00712163-cf56-4aeb-93de-82f62c86385f",
+          "product": {
+            "id": "00712163-cf56-4aeb-93de-82f62c86385f",
+            "sku": "PROD002",
+            "name": "Wireless Mouse Logitech",
+            "description": "Ergonomic wireless mouse with USB receiver",
+            "price": 29.99,
+            "stock": 50,
+            "active": true
+          },
+          "quantity": 1,
+          "unitPrice": 29.99,
+          "total": 29.99
+        }
+      ],
+      "total": 29.99
+    }
+  },
+  "checkout_start": {
+    "meta": {
+      "name": "checkout_start",
+      "method": "POST",
+      "url": "http://localhost:8080/api/v1/checkout",
+      "http_code": 202
+    },
+    "body": {
+      "requestId": "1bd8b411-6b6c-4802-80dc-8ccd536a2bad",
+      "userId": "6d6df02c-f717-4248-b905-acf2b762231c",
+      "totalAmount": 29.99,
+      "status": "PENDING"
+    }
+  },
+  "checkout_final": {
+    "meta": {
+      "name": "checkout_final",
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/checkout/1bd8b411-6b6c-4802-80dc-8ccd536a2bad",
+      "http_code": 200
+    },
+    "body": {
+      "requestId": "1bd8b411-6b6c-4802-80dc-8ccd536a2bad",
+      "userId": "6d6df02c-f717-4248-b905-acf2b762231c",
+      "totalAmount": 29.99,
+      "status": "FAILED"
+    }
+  }
+}

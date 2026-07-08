@@ -1,0 +1,5 @@
+              request_id              |  status   | total_amount 
+--------------------------------------+-----------+--------------
+ dc6d863f-9dc3-4acd-bb34-b7c249d21b34 | COMPLETED |        29.99
+(1 row)
+
