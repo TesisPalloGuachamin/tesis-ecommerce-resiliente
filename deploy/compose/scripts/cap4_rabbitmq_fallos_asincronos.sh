@@ -118,6 +118,39 @@ wait_queue_ready() {
   return 1
 }
 
+wait_queue_consumers() {
+  local queue="$1"
+  local expected="$2"
+  local output="$3"
+  for _ in $(seq 1 90); do
+    rabbit_queue "$queue" > "$output"
+    local consumers
+    consumers="$(jq -r '.consumers // 0' "$output")"
+    if [[ "$consumers" -ge "$expected" ]]; then
+      return 0
+    fi
+    sleep 2
+  done
+  rabbit_queue "$queue" > "$output" || true
+  return 1
+}
+
+wait_queue_drained() {
+  local queue="$1"
+  local output="$2"
+  for _ in $(seq 1 90); do
+    rabbit_queue "$queue" > "$output"
+    local messages
+    messages="$(jq -r '.messages // 0' "$output")"
+    if [[ "$messages" -eq 0 ]]; then
+      return 0
+    fi
+    sleep 2
+  done
+  rabbit_queue "$queue" > "$output" || true
+  return 1
+}
+
 start_stack() {
   local requeue="${1:-true}"
   export RABBITMQ_LISTENER_DEFAULT_REQUEUE_REJECTED="$requeue"
@@ -313,6 +346,7 @@ mq01_consumer_stopped() {
   wait_queue_ready "checkout-service.checkout-requested.q" 1 "$dir/queue_during_consumer_down.json" || true
   compose start checkout-service
   wait_http "http://localhost:8082/api/actuator/health" "checkout-service"
+  wait_queue_consumers "checkout-service.checkout-requested.q" 1 "$dir/queue_consumer_after_restart.json" || true
   local final_status
   final_status="$(poll_status "$dir" "$request_id" "$token" "COMPLETED")"
   rabbit_queue "checkout-service.checkout-requested.q" > "$dir/queue_after_restart.json"
@@ -416,6 +450,7 @@ mq05_queue_drain() {
   wait_queue_ready "checkout-service.checkout-requested.q" 3 "$dir/queue_accumulated.json" || true
   compose start checkout-service
   wait_http "http://localhost:8082/api/actuator/health" "checkout-service"
+  wait_queue_consumers "checkout-service.checkout-requested.q" 1 "$dir/queue_consumer_after_restart.json" || true
   local completed=0
   while read -r row; do
     [[ -z "$row" ]] && continue
@@ -425,7 +460,7 @@ mq05_queue_drain() {
     status="$(poll_status "$dir" "$request_id" "$token" "COMPLETED")"
     [[ "$status" == "COMPLETED" ]] && completed=$((completed + 1))
   done < "$ids_file"
-  rabbit_queue "checkout-service.checkout-requested.q" > "$dir/queue_drained.json"
+  wait_queue_drained "checkout-service.checkout-requested.q" "$dir/queue_drained.json" || true
   local accumulated remaining
   accumulated="$(jq -r '.messages_ready' "$dir/queue_accumulated.json")"
   remaining="$(jq -r '.messages' "$dir/queue_drained.json")"
